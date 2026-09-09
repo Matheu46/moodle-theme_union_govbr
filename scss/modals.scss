@@ -58,7 +58,7 @@
     justify-content: space-between;
     padding: 1.25rem 1.5rem;
     background-color: var(--background-light, #ffffff);
-    border-bottom: 1px solid var(--color-secondary-03, #ededed);
+    border-bottom: 1px solid transparent;
     border-top-left-radius: var(--surface-rounder-md, 8px);
     border-top-right-radius: var(--surface-rounder-md, 8px);
 
@@ -132,8 +132,8 @@
     justify-content: flex-end;
     gap: 0.75rem;
     padding: 1rem 1.5rem;
-    background-color: var(--color-secondary-02, #f8f8f8);
-    border-top: 1px solid var(--color-secondary-03, #ededed);
+    background-color: transparent;
+    border-top: 1px solid transparent;
     border-bottom-left-radius: var(--surface-rounder-md, 8px);
     border-bottom-right-radius: var(--surface-rounder-md, 8px);
 
