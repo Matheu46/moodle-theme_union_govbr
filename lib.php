@@ -87,6 +87,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($tablesfile);
     }
 
+    // Append pagination.scss if it exists.
+    $paginationfile = __DIR__ . '/scss/pagination.scss';
+    if (file_exists($paginationfile)) {
+        $scss .= "\n" . file_get_contents($paginationfile);
+    }
+
     return $scss;
 }
 

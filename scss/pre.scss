@@ -217,3 +217,25 @@ $table-th-font-weight:      600;
 $table-border-color:        #ededed;
 $table-striped-bg:          #f8f8f8;
 $table-hover-bg:            #edf5ff;
+
+// =============================================================================
+// Bootstrap Pagination Variables
+// =============================================================================
+$pagination-padding-y:              0.375rem;
+$pagination-padding-x:              0.625rem;
+$pagination-color:                  $govbr-gray-80;
+$pagination-bg:                     transparent;
+$pagination-border-width:           1px;
+$pagination-border-color:           transparent;
+$pagination-border-radius:          $surface-rounder-pill;
+$pagination-margin-start:           0.25rem;
+$pagination-hover-color:            $govbr-blue-warm-vivid-80;
+$pagination-hover-bg:               #dbe8fb;
+$pagination-hover-border-color:     transparent;
+$pagination-active-color:           $govbr-pure-0;
+$pagination-active-bg:              $govbr-blue-warm-vivid-70;
+$pagination-active-border-color:    $govbr-blue-warm-vivid-70;
+$pagination-disabled-color:         $govbr-gray-50;
+$pagination-disabled-bg:            transparent;
+$pagination-disabled-border-color:  transparent;
+$pagination-focus-box-shadow:       none;
