@@ -51,6 +51,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($mainfile);
     }
 
+    // Append lists.scss if it exists.
+    $listsfile = __DIR__ . '/scss/lists.scss';
+    if (file_exists($listsfile)) {
+        $scss .= "\n" . file_get_contents($listsfile);
+    }
+
     return $scss;
 }
 

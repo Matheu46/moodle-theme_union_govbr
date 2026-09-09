@@ -148,3 +148,9 @@ $link-hover-decoration: underline;
 
 // Borders
 $border-color:  $govbr-gray-20;            // #cccccc
+
+// =============================================================================
+// Navbar & Navigation Heights (Synchronized to prevent moremenu autoCollapse bug)
+// =============================================================================
+$navbar-height: 72px;
+$moremenu-height: $navbar-height;

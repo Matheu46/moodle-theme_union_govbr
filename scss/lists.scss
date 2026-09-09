@@ -1,0 +1,221 @@
+// =============================================================================
+// Gov.br DS - List Component (lists.scss)
+// Guidelines: https://www.gov.br/ds/components/list?tab=visao-geral
+// =============================================================================
+
+// 1. Standard Gov.br DS Component (.br-list & .br-item)
+.br-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: var(--color-secondary-01, #ffffff);
+
+    // List header
+    > .header,
+    > .list-header {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--color-secondary-07, #555555);
+        border-bottom: 1px solid var(--color-secondary-04, #cccccc);
+        background-color: var(--color-secondary-02, #f8f8f8);
+
+        .title {
+            font-weight: 700;
+            color: var(--color-secondary-08, #333333);
+        }
+    }
+
+    // List item (.br-item)
+    .br-item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 48px;
+        padding: 0.5rem 1rem;
+        color: var(--color-secondary-08, #333333);
+        text-decoration: none;
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--color-secondary-03, #ededed);
+        transition: background-color 0.2s ease, color 0.2s ease;
+        text-align: left;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        // Hover state
+        &:hover:not(.disabled):not([disabled]) {
+            background-color: var(--color-secondary-02, #f8f8f8);
+            color: var(--color-primary-default, #1351b4);
+        }
+
+        // Active and selected states
+        &.active,
+        &.selected,
+        &[data-active="true"] {
+            background-color: var(--blue-warm-vivid-5, #edf5ff);
+            color: var(--color-primary-default, #1351b4);
+            font-weight: 600;
+            border-left: 4px solid var(--color-primary-default, #1351b4);
+            padding-left: calc(1rem - 4px);
+        }
+
+        // Disabled state
+        &.disabled,
+        &[disabled] {
+            opacity: 0.45;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        // Content area inside br-item
+        .content {
+            flex: 1 1 auto;
+        }
+
+        // Action or support slot inside br-item
+        .support,
+        .action {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            margin-left: auto;
+        }
+    }
+
+    // Density modifiers
+    &.density-small,
+    &.small {
+        .br-item {
+            min-height: 36px;
+            padding: 0.25rem 1rem;
+            font-size: 0.875rem;
+        }
+    }
+
+    &.density-large,
+    &.large {
+        .br-item {
+            min-height: 56px;
+            padding: 1rem 1.25rem;
+            font-size: 1.125rem;
+        }
+    }
+
+    // Horizontal list variant
+    &.horizontal {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .br-item {
+            flex: 1 1 auto;
+            width: auto;
+            border-bottom: 0;
+            border-right: 1px solid var(--color-secondary-03, #ededed);
+
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+
+    // Divider between items
+    .br-divider {
+        height: 1px;
+        background-color: var(--color-secondary-04, #cccccc);
+        margin: 0;
+        border: 0;
+    }
+}
+
+// 2. Moodle & Bootstrap Integration (.list-group)
+// Applies Gov.br DS patterns to all Moodle list-group elements (drawers, activity index, settings, etc.)
+.list-group {
+    border-radius: 4px;
+    border-color: var(--color-secondary-04, #cccccc);
+
+    .list-group-item {
+        color: var(--color-secondary-08, #333333);
+        background-color: var(--color-secondary-01, #ffffff);
+        border-color: var(--color-secondary-03, #ededed);
+        padding: 0.625rem 1rem;
+        font-family: 'Rawline', 'Raleway', sans-serif;
+        transition: background-color 0.15s ease, color 0.15s ease;
+
+        // Actionable items
+        &.list-group-item-action {
+            &:hover,
+            &:focus {
+                background-color: var(--color-secondary-02, #f8f8f8);
+                color: var(--color-primary-default, #1351b4);
+            }
+
+            &:active {
+                background-color: var(--blue-warm-vivid-10, #d4e5ff);
+                color: var(--color-primary-darken-01, #0c326f);
+            }
+        }
+
+        // Active state in Moodle (course index, active page, navigation)
+        &.active {
+            background-color: var(--blue-warm-vivid-5, #edf5ff);
+            color: var(--color-primary-default, #1351b4);
+            border-color: var(--color-secondary-03, #ededed);
+            border-left: 4px solid var(--color-primary-default, #1351b4);
+            font-weight: 600;
+        }
+
+        // Disabled state
+        &.disabled,
+        &:disabled {
+            color: var(--color-secondary-05, #9e9d9d);
+            background-color: var(--color-secondary-02, #f8f8f8);
+            cursor: not-allowed;
+        }
+    }
+
+    &.list-group-flush {
+        .list-group-item {
+            border-left: 0;
+            border-right: 0;
+
+            &:first-child {
+                border-top: 0;
+            }
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+}
+
+// 3. Standard Typographic Lists (ul, ol in content, courses, forums)
+.content,
+.activity-description,
+.user-description,
+.format-topics,
+.format-weeks {
+    ul,
+    ol {
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+
+        li {
+            margin-bottom: 0.25rem;
+            line-height: 1.45;
+            color: var(--color-secondary-08, #333333);
+
+            &::marker {
+                color: var(--color-primary-default, #1351b4);
+            }
+        }
+    }
+}
+
