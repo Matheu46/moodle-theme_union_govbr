@@ -1,0 +1,163 @@
+// =============================================================================
+// Gov.br DS - Breadcrumb Component (breadcrumb.scss)
+// Guidelines: https://www.gov.br/ds/components/breadcrumb?tab=visao-geral
+// =============================================================================
+
+// 1. Moodle Native Breadcrumb Styling (.breadcrumb)
+#page-navbar .breadcrumb {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 0.5rem 0;
+    margin-bottom: 0.75rem;
+    font-size: 0.8125rem; // ~13px (Gov.br font-size-scale-down-01)
+    font-weight: 500;
+    list-style: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0;
+
+    // Scrollbar aesthetics for horizontal scroll
+    &::-webkit-scrollbar {
+        height: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-secondary-04, #cccccc);
+        border-radius: 4px;
+    }
+
+    // Individual item
+    .breadcrumb-item {
+        display: inline-flex;
+        align-items: center;
+        color: var(--color-secondary-08, #333333);
+        line-height: 1.5;
+
+        // Links
+        a:not([aria-current="page"]) {
+            color: var(--interactive, #1351b4);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.15s ease-in-out;
+
+            &:hover {
+                color: var(--color-primary-darken-01, #0c326f);
+                text-decoration: underline;
+            }
+
+            &:focus-visible {
+                outline: 2px dashed var(--focus-color, #c2850c);
+                outline-offset: 2px;
+                border-radius: 2px;
+            }
+        }
+
+        // Active / Current page (last item, aria-current="page", or text span)
+        &.active,
+        &:last-child,
+        [aria-current="page"],
+        > span {
+            color: var(--color-secondary-08, #333333);
+            font-weight: 600;
+        }
+
+        // Specifically ensure current page link does not look interactive
+        [aria-current="page"] {
+            color: var(--color-secondary-08, #333333);
+            pointer-events: none;
+            cursor: default;
+            text-decoration: none !important;
+
+            &:hover {
+                color: var(--color-secondary-08, #333333);
+                text-decoration: none !important;
+            }
+        }
+
+        // Chevron-right separator between crumbs (Gov.br DS standard)
+        + .breadcrumb-item::before {
+            content: "\f054" !important; // fa-chevron-right
+            font-family: 'Font Awesome 6 Free', 'FontAwesome' !important;
+            font-weight: 900 !important;
+            font-size: 0.5625rem; // 9px
+            color: var(--color-secondary-04, #cccccc);
+            padding: 0 0.5rem;
+            display: inline-block;
+        }
+
+        // Home crumb icon on the first item
+        &:first-child a::before,
+        &:first-child > span:first-child::before {
+            content: "\f015"; // fa-house / fa-home
+            font-family: 'Font Awesome 6 Free', 'FontAwesome';
+            font-weight: 900;
+            font-size: 0.8125rem;
+            margin-right: 0.35rem;
+            vertical-align: -1px;
+        }
+
+    }
+}
+
+// 2. Official Gov.br DS Breadcrumb Utility Classes (.br-breadcrumb)
+.br-breadcrumb {
+    display: inline-grid;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    min-height: 28px;
+    position: relative;
+
+    .crumb-list {
+        align-items: center;
+        border: 0;
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .crumb {
+        align-items: center;
+        display: flex;
+
+        a {
+            color: var(--interactive, #1351b4);
+            text-decoration: none;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            &:hover {
+                color: var(--color-primary-darken-01, #0c326f);
+                text-decoration: underline;
+            }
+        }
+
+        + .crumb::before {
+            content: "\f054";
+            font-family: 'Font Awesome 6 Free', 'FontAwesome';
+            font-weight: 900;
+            font-size: 0.5625rem;
+            color: var(--color-secondary-04, #cccccc);
+            padding: 0 0.5rem;
+        }
+
+        &[active],
+        &:last-child span {
+            color: var(--color-secondary-08, #333333);
+            font-weight: 600;
+        }
+    }
+}
+
+// Support RTL reading order
+[dir="rtl"] {
+    .breadcrumb .breadcrumb-item + .breadcrumb-item::before,
+    .br-breadcrumb .crumb + .crumb::before {
+        content: "\f053" !important; // fa-chevron-left
+    }
+}

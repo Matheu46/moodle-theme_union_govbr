@@ -57,6 +57,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($listsfile);
     }
 
+    // Append breadcrumb.scss if it exists.
+    $breadcrumbfile = __DIR__ . '/scss/breadcrumb.scss';
+    if (file_exists($breadcrumbfile)) {
+        $scss .= "\n" . file_get_contents($breadcrumbfile);
+    }
+
     return $scss;
 }
 
