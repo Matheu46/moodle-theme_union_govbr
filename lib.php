@@ -63,6 +63,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($breadcrumbfile);
     }
 
+    // Append buttons.scss if it exists.
+    $buttonsfile = __DIR__ . '/scss/buttons.scss';
+    if (file_exists($buttonsfile)) {
+        $scss .= "\n" . file_get_contents($buttonsfile);
+    }
+
     return $scss;
 }
 
