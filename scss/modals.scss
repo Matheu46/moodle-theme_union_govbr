@@ -1,0 +1,207 @@
+// =============================================================================
+// Gov.br DS - Modal Component (modals.scss)
+// Guidelines: https://www.gov.br/ds/components/modal?tab=visao-geral
+// =============================================================================
+
+// 1. Scrim / Backdrop (.modal-backdrop)
+.modal-backdrop {
+    background-color: var(--surface-overlay-scrim, rgba(0, 0, 0, 0.45));
+
+    &.show {
+        opacity: 1;
+    }
+}
+
+// 2. Modal Container (.modal, .modal-dialog, .modal-content, .br-modal)
+.modal {
+    // Dialog positioning and margins
+    .modal-dialog {
+        margin: 1.75rem auto;
+
+        // Centered modal
+        &.modal-dialog-centered {
+            display: flex;
+            align-items: center;
+            min-height: calc(100% - 3.5rem);
+        }
+    }
+
+    // Modal surface content
+    .modal-content,
+    &.br-modal {
+        background-color: var(--background-light, #ffffff);
+        border: 1px solid var(--color-secondary-03, #ededed);
+        border-radius: var(--surface-rounder-md, 8px);
+        box-shadow: var(--surface-shadow-xl, 0 10px 30px rgba(0, 0, 0, 0.25));
+        overflow: hidden;
+        outline: 0;
+    }
+}
+
+// Standalone Gov.br DS Modal (.br-modal)
+.br-modal {
+    background-color: var(--background-light, #ffffff);
+    border: 1px solid var(--color-secondary-03, #ededed);
+    border-radius: var(--surface-rounder-md, 8px);
+    box-shadow: var(--surface-shadow-xl, 0 10px 30px rgba(0, 0, 0, 0.25));
+    overflow: hidden;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+// 3. Modal Header (.modal-header, .br-modal-header)
+.modal-header,
+.br-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    background-color: var(--background-light, #ffffff);
+    border-bottom: 1px solid var(--color-secondary-03, #ededed);
+    border-top-left-radius: var(--surface-rounder-md, 8px);
+    border-top-right-radius: var(--surface-rounder-md, 8px);
+
+    // Modal title
+    .modal-title,
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 1.25rem; // 20px
+        font-weight: 600;
+        color: var(--color-secondary-08, #333333);
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    // Close button (.btn-close, .close)
+    .btn-close,
+    button[data-action="hide"],
+    .close {
+        padding: 0.5rem;
+        margin: -0.5rem -0.5rem -0.5rem auto;
+        border-radius: 50%;
+        transition: background-color 0.15s ease-in-out, opacity 0.15s ease-in-out;
+        opacity: 0.7;
+
+        &:hover {
+            opacity: 1;
+            background-color: var(--color-secondary-02, #f8f8f8);
+        }
+
+        &:focus-visible,
+        &:focus {
+            opacity: 1;
+            outline: 2px dashed var(--focus-color, #c2850c) !important;
+            outline-offset: 2px !important;
+            box-shadow: none !important;
+        }
+    }
+}
+
+// 4. Modal Body (.modal-body, .br-modal-body)
+.modal-body,
+.br-modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1.5rem;
+    color: var(--color-secondary-08, #333333);
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: 0.875rem; // 14px
+    line-height: 1.5;
+
+    // Scrollable body
+    .modal-dialog-scrollable & {
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color-secondary-04, #cccccc);
+            border-radius: 4px;
+        }
+    }
+}
+
+// 5. Modal Footer (.modal-footer, .br-modal-footer)
+.modal-footer,
+.br-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-secondary-02, #f8f8f8);
+    border-top: 1px solid var(--color-secondary-03, #ededed);
+    border-bottom-left-radius: var(--surface-rounder-md, 8px);
+    border-bottom-right-radius: var(--surface-rounder-md, 8px);
+
+    // Reset margins for action buttons in modal footer
+    .btn,
+    .br-button {
+        margin: 0;
+    }
+}
+
+// 6. Modal Sizes
+.modal-sm .modal-content {
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.modal-lg .modal-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.modal-xl .modal-content {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+// 7. Moodle Specific Modal Enhancements
+
+// Activity Chooser Modal
+.modchooser.modal-dialog {
+    .modal-content {
+        border-radius: var(--surface-rounder-md, 8px);
+        max-width: 1140px; // Is better on modal-xl
+    }
+
+    .modal-header {
+        border-bottom: 1px solid var(--color-secondary-03, #ededed);
+    }
+
+    .optionscontainer .option {
+        border-radius: var(--surface-rounder-sm, 4px);
+        transition: background-color 0.15s ease-in-out;
+
+        &:hover {
+            background-color: var(--color-primary-pastel-02, #dbe8fb);
+        }
+    }
+}
+
+// Legacy Moodle YUI Dialogues (.moodle-dialogue)
+.moodle-dialogue-base .moodle-dialogue-wrap {
+    background-color: var(--background-light, #ffffff);
+    border: 1px solid var(--color-secondary-03, #ededed);
+    border-radius: var(--surface-rounder-md, 8px);
+    box-shadow: var(--surface-shadow-xl, 0 10px 30px rgba(0, 0, 0, 0.25));
+    overflow: hidden;
+
+    .moodle-dialogue-hd {
+        padding: 1rem 1.25rem;
+        background-color: var(--background-light, #ffffff);
+        border-bottom: 1px solid var(--color-secondary-03, #ededed);
+        font-weight: 600;
+        color: var(--color-secondary-08, #333333);
+    }
+
+    .moodle-dialogue-bd {
+        padding: 1.25rem;
+        color: var(--color-secondary-08, #333333);
+        font-size: 0.875rem;
+    }
+}

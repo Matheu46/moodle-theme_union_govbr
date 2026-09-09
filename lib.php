@@ -93,6 +93,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($paginationfile);
     }
 
+    // Append modals.scss if it exists.
+    $modalsfile = __DIR__ . '/scss/modals.scss';
+    if (file_exists($modalsfile)) {
+        $scss .= "\n" . file_get_contents($modalsfile);
+    }
+
     return $scss;
 }
 

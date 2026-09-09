@@ -239,3 +239,19 @@ $pagination-disabled-color:         $govbr-gray-50;
 $pagination-disabled-bg:            transparent;
 $pagination-disabled-border-color:  transparent;
 $pagination-focus-box-shadow:       none;
+
+// =============================================================================
+// Bootstrap Modal Variables
+// =============================================================================
+$modal-content-border-radius:   $surface-rounder-md;
+$modal-content-border-color:    #ededed;
+$modal-content-box-shadow-xs:   $surface-shadow-lg;
+$modal-content-box-shadow-sm-up: 0 10px 30px rgba(0, 0, 0, 0.25);
+$modal-backdrop-bg:             #000000;
+$modal-backdrop-opacity:        0.45;
+$modal-header-border-color:     #ededed;
+$modal-header-padding:          1.25rem 1.5rem;
+$modal-footer-border-color:     #ededed;
+$modal-footer-bg:               #f8f8f8;
+$modal-footer-margin-between:   0.75rem;
+
