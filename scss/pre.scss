@@ -268,10 +268,10 @@ $input-placeholder-color:        $govbr-gray-50;      // #757575
 $input-disabled-bg:              $govbr-gray-2;       // #f8f8f8
 $input-disabled-border-color:    $govbr-gray-10;      // #e6e6e6
 
-$form-select-border-radius:      $surface-rounder-sm; // 4px
-$form-select-border-color:       $govbr-gray-20;      // #cccccc
-$form-select-focus-border-color: $govbr-blue-warm-vivid-70; // #1351b4
-$form-select-focus-box-shadow:   none;
-$form-select-disabled-bg:        $govbr-gray-2;       // #f8f8f8
+$form-select-border-radius:      $surface-rounder-sm;       // 4px
+$form-select-border-color:       $govbr-gray-40;            // #888888
+$form-select-focus-border-color: $govbr-yellow-vivid-20;    // #ffcd07
+$form-select-focus-box-shadow:   0 0 0 2px $govbr-yellow-vivid-20;
+$form-select-disabled-bg:        $govbr-gray-2;             // #f8f8f8
 
 

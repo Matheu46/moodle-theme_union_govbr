@@ -105,6 +105,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($inputsfile);
     }
 
+    // Append selects.scss if it exists.
+    $selectsfile = __DIR__ . '/scss/selects.scss';
+    if (file_exists($selectsfile)) {
+        $scss .= "\n" . file_get_contents($selectsfile);
+    }
+
     return $scss;
 }
 

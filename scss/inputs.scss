@@ -242,9 +242,8 @@
     }
 }
 
-// 2. Moodle Form Controls Mapping (.form-control, .form-select, text inputs)
+// 2. Moodle Form Controls Mapping (.form-control, text inputs)
 .form-control,
-.form-select,
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -316,8 +315,7 @@ textarea.form-control {
 }
 
 // 3. Moodle Form Density Variants
-.form-control-sm,
-.form-select-sm {
+.form-control-sm {
     height: var(--input-small, 32px) !important;
     min-height: var(--input-small, 32px) !important;
     padding-left: var(--spacing-scale-baseh, 12px) !important;
@@ -325,8 +323,7 @@ textarea.form-control {
     font-size: var(--font-size-scale-base, 0.875rem) !important;
 }
 
-.form-control-lg,
-.form-select-lg {
+.form-control-lg {
     height: var(--input-large, 48px) !important;
     min-height: var(--input-large, 48px) !important;
     padding-left: var(--spacing-scale-3x, 24px) !important;
@@ -368,9 +365,7 @@ label,
 
 // 5. Validation Feedback States
 .form-control.is-invalid,
-.form-select.is-invalid,
-.was-validated .form-control:invalid,
-.was-validated .form-select:invalid {
+.was-validated .form-control:invalid {
     border-color: var(--danger, #e52207) !important;
     border-width: 2px !important;
 
@@ -393,9 +388,7 @@ label,
 }
 
 .form-control.is-valid,
-.form-select.is-valid,
-.was-validated .form-control:valid,
-.was-validated .form-select:valid {
+.was-validated .form-control:valid {
     border-color: var(--success, #168821) !important;
     border-width: 2px !important;
 
@@ -503,50 +496,4 @@ label,
     }
 }
 
-// Moodle Autocomplete Tags & Suggestions
-.form-autocomplete-selection {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    margin-bottom: 0.5rem;
 
-    .badge {
-        font-family: var(--font-family-base, 'Rawline', sans-serif);
-        font-size: 0.8125rem;
-        font-weight: 500;
-        border-radius: var(--surface-rounder-pill, 999em);
-        background-color: var(--color-primary-pastel-02, #dbe8fb);
-        color: var(--color-primary-darken-01, #0c326f);
-        border: 1px solid var(--interactive, #1351b4);
-        padding: 0.35rem 0.75rem;
-
-        [data-role="remove"] {
-            margin-left: 0.35rem;
-            cursor: pointer;
-            color: var(--color-primary-darken-01, #0c326f);
-        }
-    }
-}
-
-.form-autocomplete-suggestions {
-    border-radius: var(--surface-rounder-md, 8px);
-    box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
-    border: 1px solid var(--color-secondary-03, #ededed);
-    background-color: var(--background-light, #ffffff);
-    padding: 0.5rem 0;
-
-    li {
-        padding: 0.5rem 1rem;
-        font-family: var(--font-family-base, 'Rawline', sans-serif);
-        font-size: 0.875rem;
-        color: var(--color-secondary-08, #333333);
-        cursor: pointer;
-        transition: background-color 0.15s ease-in-out;
-
-        &:hover,
-        &[aria-selected="true"] {
-            background-color: var(--color-primary-pastel-02, #dbe8fb);
-            color: var(--color-primary-darken-01, #0c326f);
-        }
-    }
-}
