@@ -1,0 +1,168 @@
+// =============================================================================
+// Gov.br DS - Design Tokens (tokens.scss)
+// Guidelines: https://www.gov.br/ds/fundamentos-visuais/superficie?tab=visao-geral
+// =============================================================================
+
+:root {
+    // -------------------------------------------------------------------------
+    // 1. Surface Tokens (Superfície)
+    // -------------------------------------------------------------------------
+
+    // Border Width (Espessura)
+    --surface-width-none: 0;
+    --surface-width-sm:   1px;
+    --surface-width-md:   2px;
+    --surface-width-lg:   4px;
+
+    // Border Radius / Rounder (Arredondamento)
+    --surface-rounder-none: 0;
+    --surface-rounder-sm:   4px;
+    --surface-rounder-md:   8px;
+    --surface-rounder-lg:   16px;
+    --surface-rounder-pill: 999em;
+
+    // Opacity (Opacidade)
+    --surface-opacity-none:    0;
+    --surface-opacity-xs:      0.16;
+    --surface-opacity-sm:      0.3;
+    --surface-opacity-md:      0.45;
+    --surface-opacity-lg:      0.65;
+    --surface-opacity-xl:      0.85;
+    --surface-opacity-default: 1;
+
+    // Shadows / Elevation (Sombras e Elevação)
+    --surface-shadow-none: none;
+    --surface-shadow-sm:   0 1px 6px rgba(0, 0, 0, 0.16);
+    --surface-shadow-md:   0 3px 6px rgba(0, 0, 0, 0.16);
+    --surface-shadow-lg:   0 6px 6px rgba(0, 0, 0, 0.16);
+    --surface-shadow-xl:   0 9px 6px rgba(0, 0, 0, 0.16);
+
+    // Blur
+    --surface-blur-none: 0;
+    --surface-blur-sm:   1px;
+    --surface-blur-md:   3px;
+    --surface-blur-lg:   6px;
+    --surface-blur-xl:   9px;
+
+    // Offset
+    --surface-offset-none:  0;
+    --surface-offset-sm:    1px;
+    --surface-offset-md:    3px;
+    --surface-offset-lg:    6px;
+    --surface-offset-xl:    9px;
+    --surface-offset-sm-n: -1px;
+    --surface-offset-md-n: -3px;
+    --surface-offset-lg-n: -6px;
+    --surface-offset-xl-n: -9px;
+
+    // Borders
+    --surface-border-solid-none: 0 solid var(--color-secondary-04, #cccccc);
+    --surface-border-solid-sm:   1px solid var(--color-secondary-03, #ededed);
+    --surface-border-solid-md:   2px solid var(--color-secondary-04, #cccccc);
+    --surface-border-solid-lg:   4px solid var(--color-secondary-04, #cccccc);
+
+    // -------------------------------------------------------------------------
+    // 2. Color Tokens (Cores)
+    // -------------------------------------------------------------------------
+
+    // Primary Colors (Blue Warm Vivid)
+    --blue-warm-vivid-90: #071d41;
+    --blue-warm-vivid-80: #0c326f;
+    --blue-warm-vivid-70: #1351b4;
+    --blue-warm-vivid-60: #155bcb;
+    --blue-warm-vivid-50: #2670e8;
+    --blue-warm-vivid-40: #5992ed;
+    --blue-warm-vivid-30: #81aefc;
+    --blue-warm-vivid-20: #adcdff;
+    --blue-warm-vivid-10: #d4e5ff;
+    --blue-warm-vivid-5:  #edf5ff;
+
+    // Semantic Primary Color Tokens
+    --color-primary-default:    #1351b4;
+    --color-primary-darken-01:  #0c326f;
+    --color-primary-darken-02:  #071d41;
+    --color-primary-lighten-01: #2670e8;
+    --color-primary-lighten-02: #5992ed;
+    --color-primary-pastel-01:  #c5d4eb;
+    --color-primary-pastel-02:  #dbe8fb;
+
+    // Interactive Tokens
+    --interactive:     #1351b4;
+    --interactive-rgb: 19, 81, 180;
+    --hover:           0.16;
+    --disabled:        0.45;
+
+    // Neutrals / Secondary (Gray Scale)
+    --color-secondary-01: #ffffff;
+    --color-secondary-02: #f8f8f8;
+    --color-secondary-03: #ededed;
+    --color-secondary-04: #cccccc;
+    --color-secondary-05: #9e9d9d;
+    --color-secondary-06: #888888;
+    --color-secondary-07: #555555;
+    --color-secondary-08: #333333;
+    --color-secondary-09: #000000;
+
+    // Backgrounds
+    --background-light:       #ffffff;
+    --background-alternative: #f8f8f8;
+    --background-dark:        #071d41;
+    --border-color:           #cccccc;
+
+    // Feedback Tokens
+    --success:     #168821;
+    --info:        #155bcb;
+    --warning:     #ffcd07;
+    --danger:      #e52207;
+    --focus-color: #c2850c;
+    --focus:       #c2850c;
+
+    // Highlight Token (Gov.br Green)
+    --color-highlight: #268744;
+
+    // -------------------------------------------------------------------------
+    // 3. Spacing Tokens (Espaçamento)
+    // -------------------------------------------------------------------------
+    --spacing-scale-default: 0;
+    --spacing-scale-half:    4px;
+    --spacing-scale-base:    8px;
+    --spacing-scale-baseh:   12px;
+    --spacing-scale-2x:      16px;
+    --spacing-scale-2xh:     20px;
+    --spacing-scale-3x:      24px;
+    --spacing-scale-3xh:     28px;
+    --spacing-scale-4x:      32px;
+    --spacing-scale-4xh:     36px;
+    --spacing-scale-5x:      40px;
+    --spacing-scale-6x:      48px;
+    --spacing-scale-7x:      56px;
+    --spacing-scale-8x:      64px;
+    --spacing-scale-9x:      72px;
+    --spacing-scale-10x:     80px;
+
+    // -------------------------------------------------------------------------
+    // 4. Typography Tokens (Tipografia)
+    // -------------------------------------------------------------------------
+    --font-family-base: 'Rawline', 'Raleway', sans-serif;
+
+    --font-size-scale-down-03: 0.5rem;    // 8px
+    --font-size-scale-down-02: 0.625rem;  // 10px
+    --font-size-scale-down-01: 0.8125rem; // 13px
+    --font-size-scale-base:    0.875rem;  // 14px
+    --font-size-scale-up-01:   1rem;      // 16px
+    --font-size-scale-up-02:   1.25rem;   // 20px
+    --font-size-scale-up-03:   1.5rem;    // 24px
+    --font-size-scale-up-04:   1.75rem;   // 28px
+    --font-size-scale-up-05:   2.125rem;  // 34px
+
+    --font-weight-light:     300;
+    --font-weight-regular:   400;
+    --font-weight-medium:    500;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold:      700;
+    --font-weight-black:     900;
+
+    --font-line-height-low:    1.15;
+    --font-line-height-medium: 1.45;
+    --font-line-height-high:   1.85;
+}

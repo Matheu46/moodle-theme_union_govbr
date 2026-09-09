@@ -45,6 +45,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($postfile);
     }
 
+    // Append tokens.scss if it exists.
+    $tokensfile = __DIR__ . '/scss/tokens.scss';
+    if (file_exists($tokensfile)) {
+        $scss .= "\n" . file_get_contents($tokensfile);
+    }
+
     // Append main.scss if it exists.
     $mainfile = __DIR__ . '/scss/main.scss';
     if (file_exists($mainfile)) {
@@ -67,6 +73,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
     $buttonsfile = __DIR__ . '/scss/buttons.scss';
     if (file_exists($buttonsfile)) {
         $scss .= "\n" . file_get_contents($buttonsfile);
+    }
+
+    // Append cards.scss if it exists.
+    $cardsfile = __DIR__ . '/scss/cards.scss';
+    if (file_exists($cardsfile)) {
+        $scss .= "\n" . file_get_contents($cardsfile);
     }
 
     return $scss;

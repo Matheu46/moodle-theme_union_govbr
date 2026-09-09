@@ -156,10 +156,51 @@ $navbar-height: 72px;
 $moremenu-height: $navbar-height;
 
 // =============================================================================
+// Gov.br DS - Surface Tokens (SCSS Variables)
+// Guidelines: https://www.gov.br/ds/fundamentos-visuais/superficie?tab=visao-geral
+// =============================================================================
+// Rounder (Border Radius)
+$surface-rounder-none: 0;
+$surface-rounder-sm:   4px;
+$surface-rounder-md:   8px;
+$surface-rounder-lg:   16px;
+$surface-rounder-pill: 999em;
+
+// Width (Border Width)
+$surface-width-none:   0;
+$surface-width-sm:     1px;
+$surface-width-md:     2px;
+$surface-width-lg:     4px;
+
+// Shadows / Elevation
+$surface-shadow-none: none;
+$surface-shadow-sm:   0 1px 6px rgba(0, 0, 0, 0.16);
+$surface-shadow-md:   0 3px 6px rgba(0, 0, 0, 0.16);
+$surface-shadow-lg:   0 6px 6px rgba(0, 0, 0, 0.16);
+$surface-shadow-xl:   0 9px 6px rgba(0, 0, 0, 0.16);
+
+// Opacity
+$surface-opacity-none:    0;
+$surface-opacity-xs:      0.16;
+$surface-opacity-sm:      0.3;
+$surface-opacity-md:      0.45;
+$surface-opacity-lg:      0.65;
+$surface-opacity-xl:      0.85;
+$surface-opacity-default: 1;
+
+// =============================================================================
 // Bootstrap Button Variables
 // =============================================================================
 $btn-font-weight: 600;
-$btn-border-radius: 999em;
-$btn-border-radius-sm: 999em;
-$btn-border-radius-lg: 999em;
+$btn-border-radius:    $surface-rounder-pill;
+$btn-border-radius-sm: $surface-rounder-pill;
+$btn-border-radius-lg: $surface-rounder-pill;
 $btn-focus-box-shadow: none;
+
+// =============================================================================
+// Bootstrap Card Variables
+// =============================================================================
+$card-border-radius: $surface-rounder-md;
+$card-border-color:  #ededed;
+$card-cap-bg:        transparent;
+$card-box-shadow:    $surface-shadow-sm;

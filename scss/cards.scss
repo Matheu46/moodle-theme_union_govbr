@@ -1,0 +1,270 @@
+// =============================================================================
+// Gov.br DS - Card Component (cards.scss)
+// Guidelines: https://www.gov.br/ds/components/card?tab=visao-geral
+// =============================================================================
+
+// 1. Base Card Container (.card and .br-card)
+.card,
+.br-card {
+    background-color: var(--background-light, #ffffff);
+    border: 1px solid var(--color-secondary-03, #ededed);
+    border-radius: var(--surface-rounder-md, 8px);
+    box-shadow: var(--surface-shadow-sm, 0 1px 6px rgba(0, 0, 0, 0.16));
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    word-wrap: break-word;
+    margin-bottom: 1.25rem;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+    // Disabled state
+    &.disabled,
+    &[aria-disabled="true"] {
+        opacity: var(--disabled, 0.45) !important;
+        pointer-events: none !important;
+        cursor: not-allowed !important;
+        box-shadow: none !important;
+    }
+
+    // Interactive / Hoverable card states
+    &.hover,
+    &.is-hover,
+    &.clickable {
+        &:hover {
+            box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
+            border-color: var(--color-secondary-04, #cccccc);
+            transform: translateY(-2px);
+        }
+    }
+
+    // Focus state for interactive card
+    &:focus-visible {
+        outline: 2px dashed var(--focus-color, #c2850c) !important;
+        outline-offset: 2px !important;
+    }
+}
+
+// Hover effect for anchor cards
+a.card:hover,
+a.br-card:hover {
+    box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
+    border-color: var(--color-secondary-04, #cccccc);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+// 2. Card Header (.card-header and .card-header inside .br-card)
+.card-header,
+.br-card .card-header {
+    background-color: transparent;
+    border-bottom: 1px solid var(--color-secondary-03, #ededed);
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+
+    // Card titles in header
+    .card-title,
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-weight: 600;
+        font-size: 1.125rem; // 18px
+        color: var(--color-secondary-08, #333333);
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    // Actions or icons in header
+    .header-actions,
+    .card-actions {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
+
+// 3. Card Content / Body (.card-body and .card-content)
+.card-body,
+.card-content,
+.br-card .card-content {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    color: var(--color-secondary-08, #333333);
+    font-size: 0.875rem; // 14px
+    line-height: 1.5;
+
+    // Card text
+    .card-text {
+        color: var(--color-secondary-08, #333333);
+        margin-bottom: 0.75rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // Muted text inside card
+    .text-muted {
+        color: var(--color-secondary-06, #888888) !important;
+    }
+
+    // Card titles directly in body
+    .card-title {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-weight: 600;
+        font-size: 1.125rem;
+        color: var(--color-secondary-08, #333333);
+        margin-bottom: 0.5rem;
+    }
+
+    .card-subtitle {
+        font-size: 0.8125rem;
+        color: var(--color-secondary-06, #888888);
+        margin-bottom: 0.75rem;
+    }
+}
+
+// 4. Card Footer (.card-footer and .card-footer inside .br-card)
+.card-footer,
+.br-card .card-footer {
+    background-color: transparent;
+    border-top: 1px solid var(--color-secondary-03, #ededed);
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+
+    // Buttons inside card footer
+    .btn,
+    .br-button {
+        margin: 0;
+    }
+}
+
+// 5. Card Images
+.card-img-top,
+.br-card .card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(var(--surface-rounder-md, 8px) - 1px);
+    border-top-right-radius: calc(var(--surface-rounder-md, 8px) - 1px);
+    object-fit: cover;
+}
+
+.card-img-bottom,
+.br-card .card-img-bottom {
+    width: 100%;
+    border-bottom-left-radius: calc(var(--surface-rounder-md, 8px) - 1px);
+    border-bottom-right-radius: calc(var(--surface-rounder-md, 8px) - 1px);
+    object-fit: cover;
+}
+
+// 6. Fixed Height Card with Scroll (.card-fixed-height, .br-card.fixed-height)
+.card-fixed-height,
+.br-card.fixed-height {
+    max-height: 400px;
+
+    .card-body,
+    .card-content {
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color-secondary-04, #cccccc);
+            border-radius: 4px;
+        }
+    }
+}
+
+// 7. Moodle Specific Card Integrations
+
+// Dashboard Course Cards (myoverview, recentlyaccessedcourses, starredcourses)
+.dashboard-card-deck,
+.block-myoverview,
+.block-recentlyaccessedcourses,
+.block-starredcourses {
+    .dashboard-card,
+    .card {
+        border-radius: var(--surface-rounder-md, 8px);
+        border: 1px solid var(--color-secondary-03, #ededed);
+        box-shadow: var(--surface-shadow-sm, 0 1px 6px rgba(0, 0, 0, 0.16));
+        transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+        &:hover {
+            box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
+            border-color: var(--color-secondary-04, #cccccc);
+            transform: translateY(-2px);
+        }
+
+        .card-img-top {
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .coursename {
+            font-weight: 600;
+            color: var(--color-secondary-08, #333333);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--interactive, #1351b4);
+                text-decoration: underline;
+            }
+        }
+
+        .categoryname {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-secondary-06, #888888);
+            font-weight: 500;
+        }
+
+        // Course completion / progress bar
+        .progress {
+            height: 6px;
+            border-radius: 3px;
+            background-color: var(--color-secondary-03, #ededed);
+
+            .progress-bar {
+                background-color: var(--color-highlight, #268744); // Gov.br green highlight
+                border-radius: 3px;
+            }
+        }
+    }
+}
+
+// Sidebar / Drawer Blocks (.block.card)
+.block.card {
+    border-radius: var(--surface-rounder-md, 8px);
+    border: 1px solid var(--color-secondary-03, #ededed);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    background-color: var(--background-light, #ffffff);
+
+    .card-title {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 1rem; // 16px
+        font-weight: 600;
+        color: var(--color-secondary-08, #333333);
+    }
+}
+
+// Recently accessed items (.block-recentlyaccesseditems)
+.block-recentlyaccesseditems {
+    .card {
+        border-radius: var(--surface-rounder-md, 8px);
+        border: 1px solid var(--color-secondary-03, #ededed);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+
+        &:hover {
+            border-color: var(--interactive, #1351b4);
+            box-shadow: var(--surface-shadow-sm, 0 1px 6px rgba(0, 0, 0, 0.16));
+        }
+    }
+}
