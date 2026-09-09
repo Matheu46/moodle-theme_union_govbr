@@ -1,5 +1,77 @@
 // Main SCSS file for theme_union_govbr
 
+// =============================================================================
+// Gov.br DS - CSS Custom Properties (:root)
+// =============================================================================
+:root {
+    // Primary Colors (Blue Warm Vivid)
+    --blue-warm-vivid-90: #071d41;
+    --blue-warm-vivid-80: #0c326f;
+    --blue-warm-vivid-70: #1351b4;
+    --blue-warm-vivid-60: #155bcb;
+    --blue-warm-vivid-50: #2670e8;
+    --blue-warm-vivid-40: #5992ed;
+    --blue-warm-vivid-30: #81aefc;
+    --blue-warm-vivid-20: #adcdff;
+    --blue-warm-vivid-10: #d4e5ff;
+    --blue-warm-vivid-5:  #edf5ff;
+
+    // Semantic Primary Color Tokens
+    --color-primary-default:    #1351b4;
+    --color-primary-darken-01:  #0c326f;
+    --color-primary-darken-02:  #071d41;
+    --color-primary-lighten-01: #2670e8;
+    --color-primary-lighten-02: #5992ed;
+
+    --interactive: #1351b4;
+    --interactive-rgb: 19, 81, 180;
+
+    // Neutrals / Gray Scale
+    --color-secondary-01: #ffffff;
+    --color-secondary-02: #f8f8f8;
+    --color-secondary-03: #ededed;
+    --color-secondary-04: #cccccc;
+    --color-secondary-05: #9e9d9d;
+    --color-secondary-06: #888888;
+    --color-secondary-07: #555555;
+    --color-secondary-08: #333333;
+    --color-secondary-09: #000000;
+
+    // Feedback
+    --success: #168821;
+    --info:    #155bcb;
+    --warning: #ffcd07;
+    --danger:  #e52207;
+    --focus:   #c2850c;
+
+    // Highlight
+    --color-highlight: #268744;
+}
+
+// Base styles and refinements
 body {
-    font-family: 'rawline', 'Raleway', sans-serif;
+    font-family: 'Rawline', 'Raleway', sans-serif;
+    color: var(--color-secondary-08);
+    background-color: var(--color-secondary-01);
+}
+
+// Links
+a {
+    color: var(--interactive, #1351b4);
+    &:hover {
+        color: var(--color-primary-darken-01, #0c326f);
+    }
+}
+
+// Gov.br Buttons (colors and hover transitions)
+.btn-primary {
+    background-color: var(--color-primary-default);
+    border-color: var(--color-primary-default);
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: var(--color-primary-darken-01) !important;
+        border-color: var(--color-primary-darken-01) !important;
+    }
 }

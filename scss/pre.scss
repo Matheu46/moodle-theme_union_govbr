@@ -83,3 +83,68 @@ $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-black: 900;
+
+// =============================================================================
+// Gov.br DS - System Colors
+// =============================================================================
+
+// Primary Blue (Warm Vivid)
+$govbr-blue-warm-vivid-90: #071d41;
+$govbr-blue-warm-vivid-80: #0c326f;
+$govbr-blue-warm-vivid-70: #1351b4; // Default Primary / Interactive color
+$govbr-blue-warm-vivid-60: #155bcb;
+$govbr-blue-warm-vivid-50: #2670e8;
+$govbr-blue-warm-vivid-40: #5992ed;
+$govbr-blue-warm-vivid-30: #81aefc;
+$govbr-blue-warm-vivid-20: #adcdff;
+$govbr-blue-warm-vivid-10: #d4e5ff;
+$govbr-blue-warm-vivid-5:  #edf5ff;
+
+// Neutral Colors / Gray Scale
+$govbr-gray-90: #1b1b1b;
+$govbr-gray-80: #333333; // Main text
+$govbr-gray-70: #555555; // Secondary text
+$govbr-gray-60: #636363;
+$govbr-gray-50: #757575;
+$govbr-gray-40: #888888;
+$govbr-gray-30: #adadad;
+$govbr-gray-20: #cccccc; // Default borders
+$govbr-gray-10: #e6e6e6; // Dividers
+$govbr-gray-5:  #f0f0f0; // Alternative backgrounds
+$govbr-gray-2:  #f8f8f8;
+$govbr-pure-0:  #ffffff;
+$govbr-pure-100: #000000;
+
+// Feedback Colors
+$govbr-green-cool-vivid-50: #168821; // Success
+$govbr-yellow-vivid-20:     #ffcd07; // Warning
+$govbr-gold-vivid-40:       #c2850c; // Focus
+$govbr-red-vivid-50:        #e52207; // Danger / Error
+
+// Highlight (Gov.br Green)
+$govbr-highlight: #268744;
+
+// =============================================================================
+// Bootstrap / Moodle Variables Mapping
+// =============================================================================
+$primary:       $govbr-blue-warm-vivid-70; // #1351b4
+$secondary:     $govbr-gray-70;            // #555555
+$success:       $govbr-green-cool-vivid-50;// #168821
+$info:          $govbr-blue-warm-vivid-60; // #155bcb
+$warning:       $govbr-yellow-vivid-20;    // #ffcd07
+$danger:        $govbr-red-vivid-50;       // #e52207
+$light:         $govbr-gray-2;             // #f8f8f8
+$dark:          $govbr-blue-warm-vivid-90; // #071d41
+
+// Body colors and typography
+$body-bg:       $govbr-pure-0;             // #ffffff
+$body-color:    $govbr-gray-80;            // #333333
+$text-muted:    $govbr-gray-60;            // #636363
+
+// Links
+$link-color:            $govbr-blue-warm-vivid-70; // #1351b4
+$link-hover-color:      $govbr-blue-warm-vivid-80; // #0c326f
+$link-hover-decoration: underline;
+
+// Borders
+$border-color:  $govbr-gray-20;            // #cccccc
