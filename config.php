@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme config.
+ * Theme config for Union Gov.br.
  *
  * @package    theme_union_govbr
  * @copyright  2024 Matheus Mathias
@@ -24,17 +24,38 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+// Inherit the whole theme config from Boost Union (layouts, regions, etc.).
+require_once($CFG->dirroot . '/theme/boost_union/config.php');
+
+// Require own locallib.php.
+require_once($CFG->dirroot . '/theme/union_govbr/locallib.php');
+
+// Overwrite only the settings which differ for Union Gov.br.
 $THEME->name = 'union_govbr';
+$THEME->scss = function ($theme) {
+    return theme_union_govbr_get_main_scss_content($theme);
+};
 $THEME->parents = ['boost_union', 'boost'];
-$THEME->enable_dock = false;
-$THEME->yuicssmodules = array();
+$THEME->extrascsscallback = 'theme_union_govbr_get_extra_scss';
+$THEME->prescsscallback = 'theme_union_govbr_get_pre_scss';
+
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
-$THEME->requiredblocks = '';
-$THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
-$THEME->haseditswitch = true;
 
-// Custom SCSS functions if needed.
-// $THEME->scss = function($theme) {
-//     return theme_union_govbr_get_main_scss_content($theme);
-// };
+// Replicate essential settings from Boost Union at runtime.
+$unaddableblocks = get_config('theme_boost_union', 'unaddableblocks');
+if (!empty($unaddableblocks)) {
+    $THEME->settings->unaddableblocks = $unaddableblocks;
+}
+unset($unaddableblocks);
 
+$scss = get_config('theme_boost_union', 'scss');
+if (!empty($scss)) {
+    $THEME->settings->scss = $scss;
+}
+unset($scss);
+
+$scsspre = get_config('theme_boost_union', 'scsspre');
+if (!empty($scsspre)) {
+    $THEME->settings->scsspre = $scsspre;
+}
+unset($scsspre);

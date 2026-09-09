@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme functions.
+ * Theme Union Gov.br - Library functions.
  *
  * @package    theme_union_govbr
  * @copyright  2024 Matheus Mathias
@@ -25,14 +25,76 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Get the additional SCSS content to be compiled into the theme.
+ * Returns the main SCSS content.
  *
- * @param theme_config $theme The theme config object.
- * @return string The SCSS code to compile.
+ * @param \core\output\theme_config $theme The theme config object.
+ * @return string
  */
 function theme_union_govbr_get_main_scss_content($theme) {
-    $scss = '';
-    // Append any extra SCSS logic here.
+    global $CFG;
+
+    // Require Boost Union's library.
+    require_once($CFG->dirroot . '/theme/boost_union/lib.php');
+
+    // Get the full compiled main SCSS from Boost Union (includes Boost, Bootstrap, FontAwesome, etc.).
+    $scss = theme_boost_union_get_main_scss_content(\core\output\theme_config::load('boost_union'));
+
+    // Append post.scss if it exists.
+    $postfile = __DIR__ . '/scss/post.scss';
+    if (file_exists($postfile)) {
+        $scss .= "\n" . file_get_contents($postfile);
+    }
+
+    // Append main.scss if it exists.
+    $mainfile = __DIR__ . '/scss/main.scss';
+    if (file_exists($mainfile)) {
+        $scss .= "\n" . file_get_contents($mainfile);
+    }
+
     return $scss;
 }
 
+/**
+ * Get SCSS to prepend (variables and font definitions).
+ *
+ * @param \core\output\theme_config $theme The theme config object.
+ * @return string
+ */
+function theme_union_govbr_get_pre_scss($theme) {
+    global $CFG;
+
+    require_once($CFG->dirroot . '/theme/boost_union/lib.php');
+
+    $scss = '';
+    $prefile = __DIR__ . '/scss/pre.scss';
+    if (file_exists($prefile)) {
+        $scss .= file_get_contents($prefile);
+    }
+    return $scss;
+}
+
+/**
+ * Inject additional SCSS after main styles.
+ *
+ * @param \core\output\theme_config $theme The theme config object.
+ * @return string
+ */
+function theme_union_govbr_get_extra_scss($theme) {
+    global $CFG;
+
+    require_once($CFG->dirroot . '/theme/boost_union/lib.php');
+
+    $scss = '';
+    return $scss;
+}
+
+/**
+ * Alter CSS URLs callback for Boost Union compatibility (e.g. flavours).
+ *
+ * @param mixed $urls The CSS URLs.
+ */
+function theme_union_govbr_alter_css_urls(&$urls) {
+    global $CFG;
+    require_once($CFG->dirroot . '/theme/boost_union/lib.php');
+    theme_boost_union_alter_css_urls($urls);
+}
