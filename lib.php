@@ -81,6 +81,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($cardsfile);
     }
 
+    // Append tables.scss if it exists.
+    $tablesfile = __DIR__ . '/scss/tables.scss';
+    if (file_exists($tablesfile)) {
+        $scss .= "\n" . file_get_contents($tablesfile);
+    }
+
     return $scss;
 }
 

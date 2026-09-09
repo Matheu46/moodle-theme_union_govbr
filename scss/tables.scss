@@ -1,0 +1,319 @@
+// =============================================================================
+// Gov.br DS - Table Component (tables.scss)
+// Guidelines: https://www.gov.br/ds/components/table?tab=visao-geral
+// =============================================================================
+
+// 1. Base Table Styles (.table, .generaltable, .flexible, .br-table)
+.table,
+.generaltable,
+.flexible,
+.br-table table,
+table.br-table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    color: var(--color-secondary-08, #333333);
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: 0.875rem; // 14px
+    border-collapse: collapse;
+    background-color: var(--background-light, #ffffff);
+
+    // Caption
+    caption {
+        caption-side: top;
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 1.125rem; // 18px
+        font-weight: 600;
+        color: var(--color-secondary-08, #333333);
+        padding: 0.75rem 0;
+        text-align: left;
+    }
+
+    // Header cells (thead th)
+    thead th,
+    th.header {
+        background-color: var(--color-secondary-02, #f8f8f8);
+        color: var(--color-secondary-08, #333333);
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 1.45;
+        padding: 0.75rem 1rem;
+        border-top: none;
+        border-bottom: 2px solid var(--color-secondary-04, #cccccc);
+        vertical-align: middle;
+        text-align: left;
+
+        // Sortable column headers
+        &.sortable,
+        &.header.sortable,
+        a {
+            color: var(--interactive, #1351b4);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: color 0.15s ease-in-out;
+
+            &:hover {
+                color: var(--color-primary-darken-01, #0c326f);
+                text-decoration: underline;
+            }
+
+            // Sorting icons
+            .icon,
+            i {
+                font-size: 0.75rem;
+                color: var(--interactive, #1351b4);
+            }
+        }
+    }
+
+    // Body cells (tbody td, tbody th)
+    tbody {
+        td,
+        th {
+            padding: 0.75rem 1rem;
+            vertical-align: middle;
+            border-top: none;
+            border-bottom: 1px solid var(--color-secondary-03, #ededed);
+            color: var(--color-secondary-08, #333333);
+            line-height: 1.45;
+        }
+
+        th {
+            font-weight: 600;
+        }
+    }
+
+    // Footer cells (tfoot)
+    tfoot {
+        td,
+        th {
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            border-top: 2px solid var(--color-secondary-04, #cccccc);
+            background-color: var(--color-secondary-02, #f8f8f8);
+            color: var(--color-secondary-08, #333333);
+        }
+    }
+}
+
+// 2. Zebra Striping (.table-striped)
+.table-striped,
+.generaltable.table-striped,
+.br-table.striped table {
+    tbody tr:nth-of-type(odd) {
+        background-color: var(--color-secondary-02, #f8f8f8);
+    }
+
+    tbody tr:nth-of-type(even) {
+        background-color: var(--background-light, #ffffff);
+    }
+}
+
+// 3. Hoverable Rows (.table-hover)
+.table-hover,
+.generaltable,
+.br-table.hover table {
+    tbody tr {
+        transition: background-color 0.15s ease-in-out;
+
+        &:hover {
+            background-color: var(--blue-warm-vivid-5, #edf5ff) !important;
+        }
+    }
+}
+
+// 4. Selected / Active Row State
+.table,
+.generaltable,
+.br-table {
+    tbody tr {
+        &.selected,
+        &.active,
+        &[aria-selected="true"] {
+            background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
+            border-left: 4px solid var(--interactive, #1351b4);
+        }
+    }
+}
+
+// 5. Densities / Sizing
+// Small / Compact density
+.table-sm,
+.generaltable.table-sm,
+.br-table.small table,
+.br-table[density="small"] table {
+    thead th,
+    th.header,
+    tbody td,
+    tbody th,
+    tfoot td,
+    tfoot th {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.8125rem; // 13px
+    }
+}
+
+// Large / Spacious density
+.table-lg,
+.generaltable.table-lg,
+.br-table.large table,
+.br-table[density="large"] table {
+    thead th,
+    th.header,
+    tbody td,
+    tbody th,
+    tfoot td,
+    tfoot th {
+        padding: 1rem 1.25rem;
+        font-size: 0.9375rem; // 15px
+    }
+}
+
+// 6. Border Variants
+// Bordered table
+.table-bordered,
+.generaltable.table-bordered {
+    border: 1px solid var(--color-secondary-03, #ededed);
+
+    thead th,
+    tbody td,
+    tbody th,
+    tfoot td,
+    tfoot th {
+        border: 1px solid var(--color-secondary-03, #ededed);
+    }
+}
+
+// Borderless table
+.table-borderless,
+.generaltable.table-borderless {
+    border: none;
+
+    thead th,
+    tbody td,
+    tbody th,
+    tfoot td,
+    tfoot th {
+        border: none;
+    }
+}
+
+// 7. Responsive Table Container (.table-responsive and .br-table wrapper)
+.table-responsive,
+.br-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--surface-rounder-md, 8px);
+    border: 1px solid var(--color-secondary-03, #ededed);
+    background-color: var(--background-light, #ffffff);
+    margin-bottom: 1.5rem;
+
+    .table,
+    .generaltable {
+        margin-bottom: 0;
+    }
+
+    // Scrollbar styling
+    &::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-secondary-04, #cccccc);
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--color-secondary-02, #f8f8f8);
+    }
+}
+
+// 8. Official Gov.br DS Table Container (.br-table)
+.br-table {
+    // Header title and actions bar
+    .table-header,
+    .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid var(--color-secondary-03, #ededed);
+
+        .top-bar-title,
+        .table-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--color-secondary-08, #333333);
+            margin: 0;
+        }
+
+        .actions-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+
+    // Footer bar (pagination and page size)
+    .table-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1.25rem;
+        border-top: 1px solid var(--color-secondary-03, #ededed);
+        background-color: var(--color-secondary-02, #f8f8f8);
+        font-size: 0.8125rem;
+    }
+}
+
+// 9. Moodle Specific Table Refinements
+
+// Action icons inside table cells
+.generaltable,
+.table {
+    .action-menu,
+    .commands,
+    .action-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    // Checkbox column
+    th.col-select,
+    td.col-select,
+    .checkbox-col {
+        width: 40px;
+        text-align: center;
+
+        input[type="checkbox"] {
+            margin: 0;
+            vertical-align: middle;
+        }
+    }
+
+    // Dimmed or hidden items
+    tr.dimmed_text,
+    tr.text-muted {
+        opacity: var(--disabled, 0.45);
+    }
+}
+
+// Gradebook specific tables
+.gradestable,
+#gradetbl {
+    border-radius: var(--surface-rounder-md, 8px);
+
+    th.header {
+        font-size: 0.8125rem;
+    }
+
+    // Range / feedback columns
+    td.item {
+        font-size: 0.8125rem;
+    }
+}
