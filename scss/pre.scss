@@ -255,3 +255,23 @@ $modal-footer-border-color:     transparent;
 $modal-footer-bg:               transparent;
 $modal-footer-margin-between:   0.75rem;
 
+// =============================================================================
+// Bootstrap Input & Form Variables
+// =============================================================================
+$input-border-radius:            $surface-rounder-sm; // 4px (Gov.br default)
+$input-border-radius-sm:         $surface-rounder-sm; // 4px
+$input-border-radius-lg:         $surface-rounder-md; // 8px (Input Destaque)
+$input-border-color:             $govbr-gray-20;      // #cccccc
+$input-focus-border-color:       $govbr-blue-warm-vivid-70; // #1351b4
+$input-focus-box-shadow:         none;
+$input-placeholder-color:        $govbr-gray-50;      // #757575
+$input-disabled-bg:              $govbr-gray-2;       // #f8f8f8
+$input-disabled-border-color:    $govbr-gray-10;      // #e6e6e6
+
+$form-select-border-radius:      $surface-rounder-sm; // 4px
+$form-select-border-color:       $govbr-gray-20;      // #cccccc
+$form-select-focus-border-color: $govbr-blue-warm-vivid-70; // #1351b4
+$form-select-focus-box-shadow:   none;
+$form-select-disabled-bg:        $govbr-gray-2;       // #f8f8f8
+
+

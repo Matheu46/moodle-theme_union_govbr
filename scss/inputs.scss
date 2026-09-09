@@ -1,0 +1,552 @@
+// =============================================================================
+// Gov.br DS - Input & Form Controls (inputs.scss)
+// Guidelines: https://www.gov.br/ds/components/input?tab=visao-geral
+// =============================================================================
+
+// 1. Official Gov.br DS .br-input Component Styles
+.br-input {
+    --input-button-margin: var(--spacing-scale-half, 4px);
+    --input-padding: 0 var(--spacing-scale-2x, 16px);
+    --input-padding-button: var(--spacing-scale-5x, 40px);
+    --input-padding-icon: var(--spacing-scale-5x, 40px);
+    --input-size: var(--input-medium, 40px);
+    --input-small: 32px;
+    --input-medium: 40px;
+    --input-large: 48px;
+    --input-highlight: 56px;
+    --color: var(--color-light, #333333);
+    --color-rgb: var(--color-light-rgb, 51, 51, 51);
+    --text-color: var(--color-light, #333333);
+    --interactive: var(--interactive-light, #1351b4);
+    --interactive-rgb: var(--interactive-light-rgb, 19, 81, 180);
+    --visited: var(--visited-light, #5992ed);
+    --hover: var(--hover-light, 0.16);
+    --pressed: var(--pressed-light, 0.24);
+    --focus-color: var(--focus-color-light, #ffcd07);
+    --focus: var(--focus-color-light, #ffcd07);
+    color: var(--color);
+    position: relative;
+
+    input {
+        background-color: var(--background-light, #ffffff);
+        border-color: var(--border-color-alternative, #888888);
+        border-radius: var(--surface-rounder-sm, 4px);
+        border-style: var(--border-style, solid);
+        border-width: var(--border-width, 1px);
+        color: var(--color-light, #333333);
+        display: block;
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: var(--font-size-scale-up-01, 1rem); // 16px
+        font-weight: var(--font-weight-medium, 500);
+        height: var(--input-size);
+        margin-top: var(--spacing-scale-half, 4px);
+        padding-bottom: 0;
+        padding-left: var(--spacing-scale-2x, 16px);
+        padding-right: var(--spacing-scale-2x, 16px);
+        padding-top: 0;
+        width: 100%;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+        // Hide browser specific icons
+        &::-ms-reveal,
+        &::-ms-clear,
+        &::-webkit-calendar-picker-indicator {
+            display: none;
+        }
+
+        &[type="search"]::-webkit-search-decoration,
+        &[type="search"]::-webkit-search-cancel-button,
+        &[type="search"]::-webkit-search-results-button,
+        &[type="search"]::-webkit-search-results-decoration {
+            appearance: none;
+        }
+
+        &:not(:disabled):hover {
+            background-image: linear-gradient(rgba(var(--color-rgb), var(--hover)), rgba(var(--color-rgb), var(--hover)));
+        }
+
+        &:focus,
+        &:focus-visible,
+        &.focus-visible {
+            border-color: var(--focus, #ffcd07) !important;
+            box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
+            outline: none !important;
+        }
+
+        &:disabled,
+        &.disabled,
+        &[readonly] {
+            background-color: var(--color-secondary-02, #f8f8f8) !important;
+            border-color: var(--color-secondary-03, #ededed) !important;
+            color: var(--color-secondary-05, #9e9d9d) !important;
+            cursor: not-allowed !important;
+            opacity: var(--disabled, 0.45);
+        }
+    }
+
+    // Inline layout
+    &.input-inline {
+        display: flex;
+
+        .input-label {
+            margin-right: var(--spacing-scale-baseh, 12px);
+            margin-top: calc(var(--input-size) * 0.5 - var(--spacing-scale-half, 4px));
+        }
+
+        .input-content {
+            flex: 1;
+        }
+    }
+
+    // Input Group & Icons
+    .input-group {
+        position: relative;
+    }
+
+    .input-icon {
+        align-items: center;
+        color: var(--border-color-alternative, #888888);
+        display: flex;
+        height: var(--input-size);
+        margin-left: var(--spacing-scale-baseh, 12px);
+        position: absolute;
+        z-index: 1;
+
+        + input {
+            padding-left: var(--input-padding-icon);
+        }
+    }
+
+    // Button inside input
+    .br-button {
+        --button-size: var(--button-small, 32px);
+        --color: var(--color-light, #333333);
+        --color-rgb: var(--color-light-rgb, 51, 51, 51);
+        --text-color: var(--color-light, #333333);
+        --interactive: var(--interactive-light, #1351b4);
+        --interactive-rgb: var(--interactive-light-rgb, 19, 81, 180);
+        --visited: var(--visited-light, #5992ed);
+        --hover: var(--hover-light, 0.16);
+        --pressed: var(--pressed-light, 0.24);
+        --focus-color: var(--focus-color-light, #ffcd07);
+        --focus: var(--focus-color-light, #ffcd07);
+        border-radius: 50%;
+        float: right;
+        margin-right: var(--input-button-margin);
+        margin-top: calc((var(--input-size) + var(--spacing-scale-half, 4px)) * -1);
+        padding: 0;
+        position: relative;
+        transform: translateY(calc((var(--input-size) - var(--button-size)) * 0.5));
+        width: var(--button-size);
+    }
+
+    &.input-button input {
+        padding-right: var(--input-padding-button);
+    }
+
+    &.has-icon input {
+        padding-right: var(--input-padding-icon);
+    }
+
+    &.has-icon .br-button.circle {
+        float: right;
+        margin-right: var(--spacing-scale-half, 4px);
+        margin-top: calc((var(--button-size) + var(--spacing-scale-half, 4px) + var(--spacing-scale-half, 4px)) * -1);
+        transform: translateY(0);
+    }
+
+    &.has-icon.small .br-button.circle {
+        margin-top: calc((var(--button-size) + var(--spacing-scale-base, 8px)) * -1);
+    }
+
+    &.has-icon.large .br-button.circle {
+        margin-top: calc(var(--button-size) * -1);
+    }
+
+    // Input Highlight
+    &.input-highlight {
+        --input-button-margin: var(--spacing-scale-2x, 16px);
+        --input-padding: 0 var(--spacing-scale-3x, 24px);
+        --input-padding-button: var(--spacing-scale-7x, 56px);
+        --input-padding-icon: var(--spacing-scale-7x, 56px);
+        --input-size: var(--input-highlight, 56px);
+
+        input {
+            background-color: var(--gray-2, #f8f8f8);
+            border-color: transparent;
+            border-radius: var(--surface-rounder-md, 8px);
+            padding-left: var(--spacing-scale-3x, 24px);
+            padding-right: var(--spacing-scale-3x, 24px);
+        }
+
+        .input-icon {
+            margin-left: var(--spacing-scale-3x, 24px);
+
+            + input {
+                padding-left: var(--spacing-scale-7x, 56px);
+            }
+        }
+    }
+
+    // Validation States
+    &.success input,
+    &[data-success] input {
+        border-color: var(--success, #168821) !important;
+        border-width: 2px !important;
+    }
+
+    &.danger input,
+    &[data-danger] input {
+        border-color: var(--danger, #e52207) !important;
+        border-width: 2px !important;
+    }
+
+    &.warning input,
+    &[data-warning] input {
+        border-color: var(--warning, #ffcd07) !important;
+        border-width: 2px !important;
+    }
+
+    &.info input,
+    &[data-info] input {
+        border-color: var(--info, #155bcb) !important;
+        border-width: 2px !important;
+    }
+
+    .feedback {
+        margin-bottom: var(--spacing-scale-half, 4px);
+    }
+
+    // Density Variants
+    &.small,
+    &[data-small] {
+        --input-size: var(--input-small, 32px);
+    }
+
+    &.medium,
+    &[data-medium] {
+        --input-size: var(--input-medium, 40px);
+    }
+
+    &.large,
+    &[data-large] {
+        --input-size: var(--input-large, 48px);
+    }
+
+    &.inverted,
+    &.inverted label,
+    &.dark-mode,
+    &.dark-mode label {
+        --color: var(--color-dark, #ffffff);
+        --focus-color: var(--focus-color-dark, #ffcd07);
+    }
+}
+
+// 2. Moodle Form Controls Mapping (.form-control, .form-select, text inputs)
+.form-control,
+.form-select,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="number"],
+input[type="url"],
+input[type="tel"],
+input[type="date"] {
+    background-color: var(--background-light, #ffffff);
+    border-color: var(--border-color-alternative, #888888);
+    border-radius: var(--surface-rounder-sm, 4px);
+    border-style: solid;
+    border-width: 1px;
+    color: var(--color-light, #333333);
+    display: block;
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: var(--font-size-scale-up-01, 1rem); // 16px
+    font-weight: var(--font-weight-medium, 500);
+    height: var(--input-medium, 40px);
+    min-height: var(--input-medium, 40px);
+    // margin-top: var(--spacing-scale-half, 4px);
+    padding-bottom: 0;
+    padding-left: var(--spacing-scale-2x, 16px);
+    padding-right: var(--spacing-scale-2x, 16px);
+    padding-top: 0;
+    width: 100%;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+    // Placeholder
+    &::placeholder {
+        color: var(--color-secondary-05, #9e9d9d);
+        opacity: 1;
+    }
+
+    // Hover state
+    &:not(:disabled):hover {
+        border-color: var(--color-secondary-07, #555555);
+        background-image: linear-gradient(rgba(51, 51, 51, 0.04), rgba(51, 51, 51, 0.04));
+    }
+
+    // Focus state (Gov.br DS standard: yellow/gold focus border and box-shadow ring)
+    &:focus,
+    &:focus-visible,
+    &.focus-visible {
+        border-color: var(--focus, #ffcd07) !important;
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
+        outline: none !important;
+    }
+
+    // Disabled state
+    &:disabled,
+    &.disabled,
+    &[readonly] {
+        background-color: var(--color-secondary-02, #f8f8f8) !important;
+        border-color: var(--color-secondary-03, #ededed) !important;
+        color: var(--color-secondary-05, #9e9d9d) !important;
+        cursor: not-allowed !important;
+        opacity: var(--disabled, 0.45);
+    }
+}
+
+// Textarea
+textarea.form-control {
+    min-height: 90px;
+    height: auto;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    resize: vertical;
+}
+
+// 3. Moodle Form Density Variants
+.form-control-sm,
+.form-select-sm {
+    height: var(--input-small, 32px) !important;
+    min-height: var(--input-small, 32px) !important;
+    padding-left: var(--spacing-scale-baseh, 12px) !important;
+    padding-right: var(--spacing-scale-baseh, 12px) !important;
+    font-size: var(--font-size-scale-base, 0.875rem) !important;
+}
+
+.form-control-lg,
+.form-select-lg {
+    height: var(--input-large, 48px) !important;
+    min-height: var(--input-large, 48px) !important;
+    padding-left: var(--spacing-scale-3x, 24px) !important;
+    padding-right: var(--spacing-scale-3x, 24px) !important;
+    font-size: var(--font-size-scale-up-01, 1rem) !important;
+    border-radius: var(--surface-rounder-md, 8px) !important;
+}
+
+// 4. Form Labels & Helper Text
+label,
+.form-label,
+.col-form-label {
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-secondary-08, #333333);
+    margin-bottom: 0.25rem;
+    display: inline-block;
+
+    // Required asterisk
+    .req,
+    .required,
+    abbr.initialism[title="Required"] {
+        color: var(--danger, #e52207);
+        text-decoration: none;
+        font-weight: 700;
+        margin-left: 0.2rem;
+    }
+}
+
+.form-text,
+.text-muted,
+.help-block {
+    font-size: 0.75rem;
+    color: var(--color-secondary-06, #888888) !important;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+// 5. Validation Feedback States
+.form-control.is-invalid,
+.form-select.is-invalid,
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid {
+    border-color: var(--danger, #e52207) !important;
+    border-width: 2px !important;
+
+    &:focus,
+    &:focus-visible {
+        border-color: var(--danger, #e52207) !important;
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--danger, #e52207) !important;
+        outline: none !important;
+    }
+}
+
+.invalid-feedback {
+    color: var(--danger, #e52207);
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.form-control.is-valid,
+.form-select.is-valid,
+.was-validated .form-control:valid,
+.was-validated .form-select:valid {
+    border-color: var(--success, #168821) !important;
+    border-width: 2px !important;
+
+    &:focus,
+    &:focus-visible {
+        border-color: var(--success, #168821) !important;
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--success, #168821) !important;
+        outline: none !important;
+    }
+}
+
+.valid-feedback {
+    color: var(--success, #168821);
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: 0.25rem;
+}
+
+// 6. Input Groups (.input-group)
+.input-group {
+    .input-group-text {
+        background-color: var(--color-secondary-02, #f8f8f8);
+        border: 1px solid var(--border-color-alternative, #888888);
+        color: var(--color-secondary-07, #555555);
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 0.875rem;
+        padding: 0 0.875rem;
+        height: var(--input-medium, 40px);
+        margin-top: var(--spacing-scale-half, 4px);
+    }
+
+    > :first-child:not(:last-child) {
+        border-top-left-radius: var(--surface-rounder-sm, 4px) !important;
+        border-bottom-left-radius: var(--surface-rounder-sm, 4px) !important;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+
+    > :last-child:not(:first-child) {
+        border-top-right-radius: var(--surface-rounder-sm, 4px) !important;
+        border-bottom-right-radius: var(--surface-rounder-sm, 4px) !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+}
+
+// 7. Checkbox & Radio Buttons (.form-check-input)
+.form-check-input {
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-top: 0.15rem;
+    vertical-align: top;
+    background-color: var(--background-light, #ffffff);
+    border: 1px solid var(--border-color-alternative, #888888);
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
+    &[type="checkbox"] {
+        border-radius: 2px;
+    }
+
+    &[type="radio"] {
+        border-radius: 50%;
+    }
+
+    &:checked {
+        background-color: var(--interactive, #1351b4);
+        border-color: var(--interactive, #1351b4);
+    }
+
+    &:focus {
+        border-color: var(--focus, #ffcd07) !important;
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
+        outline: none !important;
+    }
+
+    &:disabled {
+        opacity: var(--disabled, 0.45);
+        cursor: not-allowed;
+    }
+}
+
+.form-check-label {
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: 0.875rem;
+    color: var(--color-secondary-08, #333333);
+    cursor: pointer;
+    margin-left: 0.35rem;
+}
+
+// 8. Moodle Specific Form Adjustments (.mform, .fitem, autocomplete)
+.mform {
+    .fitem {
+        margin-bottom: 1.25rem;
+    }
+
+    legend {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--color-secondary-08, #333333);
+        border-bottom: 1px solid var(--color-secondary-03, #ededed);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+// Moodle Autocomplete Tags & Suggestions
+.form-autocomplete-selection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+
+    .badge {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 0.8125rem;
+        font-weight: 500;
+        border-radius: var(--surface-rounder-pill, 999em);
+        background-color: var(--color-primary-pastel-02, #dbe8fb);
+        color: var(--color-primary-darken-01, #0c326f);
+        border: 1px solid var(--interactive, #1351b4);
+        padding: 0.35rem 0.75rem;
+
+        [data-role="remove"] {
+            margin-left: 0.35rem;
+            cursor: pointer;
+            color: var(--color-primary-darken-01, #0c326f);
+        }
+    }
+}
+
+.form-autocomplete-suggestions {
+    border-radius: var(--surface-rounder-md, 8px);
+    box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
+    border: 1px solid var(--color-secondary-03, #ededed);
+    background-color: var(--background-light, #ffffff);
+    padding: 0.5rem 0;
+
+    li {
+        padding: 0.5rem 1rem;
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 0.875rem;
+        color: var(--color-secondary-08, #333333);
+        cursor: pointer;
+        transition: background-color 0.15s ease-in-out;
+
+        &:hover,
+        &[aria-selected="true"] {
+            background-color: var(--color-primary-pastel-02, #dbe8fb);
+            color: var(--color-primary-darken-01, #0c326f);
+        }
+    }
+}

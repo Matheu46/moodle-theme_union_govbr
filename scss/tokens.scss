@@ -165,4 +165,40 @@
     --font-line-height-low:    1.15;
     --font-line-height-medium: 1.45;
     --font-line-height-high:   1.85;
+
+    // -------------------------------------------------------------------------
+    // 5. Component Specific & System Aliases
+    // -------------------------------------------------------------------------
+    --border-color-alternative: #888888;
+    --border-style:             solid;
+    --border-width:             1px;
+    --color-light:              #333333;
+    --color-light-rgb:          51, 51, 51;
+    --color-dark:               #ffffff;
+    --focus-color-light:        #ffcd07;
+    --focus-color-dark:         #ffcd07;
+    --interactive-light:        #1351b4;
+    --interactive-light-rgb:    19, 81, 180;
+    --hover-light:              0.16;
+    --pressed-light:            0.24;
+    --visited-light:            #5992ed;
+
+    --gray-2:  #f8f8f8;
+    --gray-10: #e6e6e6;
+    --gray-20: #cccccc;
+    --gray-30: #adadad;
+    --gray-40: #888888;
+    --gray-60: #636363;
+    --gray-80: #333333;
+
+    --button-small:  32px;
+    --button-medium: 40px;
+    --button-large:  48px;
+
+    --input-small:     32px;
+    --input-medium:    40px;
+    --input-large:     48px;
+    --input-highlight: 56px;
+
+    --z-index-layer-2: 200;
 }

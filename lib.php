@@ -99,6 +99,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($modalsfile);
     }
 
+    // Append inputs.scss if it exists.
+    $inputsfile = __DIR__ . '/scss/inputs.scss';
+    if (file_exists($inputsfile)) {
+        $scss .= "\n" . file_get_contents($inputsfile);
+    }
+
     return $scss;
 }
 
