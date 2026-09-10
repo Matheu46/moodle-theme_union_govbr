@@ -305,6 +305,19 @@ $alert-border-radius:    $surface-rounder-sm;       // 4px
 $alert-link-font-weight: 700;
 $alert-border-width:     1px;
 
+// =============================================================================
+// Filemanager & Drag-and-Drop Upload Variables
+// =============================================================================
+$filemanager-dnd-border-color:               $govbr-blue-warm-vivid-70; // #1351b4
+$filemanager-dnd-upload-target-bg:           $govbr-pure-0;             // #ffffff
+$filemanager-dnd-upload-target-border-color: $govbr-blue-warm-vivid-70; // #1351b4
+$filemanager-dnd-upload-target-shadow:       $govbr-blue-warm-vivid-10; // #d4e5ff
+$filemanager-dnd-upload-over-bg:             $govbr-blue-warm-vivid-5;  // #eff6fb
+$filemanager-dnd-upload-over-border-color:   $govbr-blue-warm-vivid-70; // #1351b4
+$filemanager-picker-bg:                     $govbr-pure-0;             // #ffffff
+$filemanager-picker-active-bg:              $govbr-blue-warm-vivid-10; // #d4e5ff
+
+
 
 
 

@@ -1,0 +1,401 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Gov.br Design System - Upload & File Manager Component
+ * Reference: https://www.gov.br/ds/components/upload?tab=codigos
+ *
+ * @package    theme_union_govbr
+ * @copyright  2026 Matheus Mathias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+// --------------------------------------------------------------------------
+// 1. Gov.br Design System Custom Upload (.br-upload)
+// --------------------------------------------------------------------------
+.br-upload {
+    position: relative;
+    width: 100%;
+
+    input[type="file"] {
+        display: none;
+    }
+
+    // Upload Trigger Button / Dropzone surface
+    .upload-button {
+        align-items: center;
+        background-color: transparent;
+        border: 2px dashed var(--interactive, #1351b4);
+        border-radius: var(--surface-rounder-md, 8px);
+        color: var(--interactive, #1351b4);
+        cursor: pointer;
+        display: flex;
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: var(--font-size-scale-up-01, 1rem);
+        font-style: italic;
+        font-weight: var(--font-weight-regular, 400);
+        justify-content: center;
+        min-height: 80px;
+        padding: var(--spacing-scale-2x, 16px);
+        text-align: center;
+        transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        width: 100%;
+
+        .icon,
+        i {
+            font-size: 1.5rem;
+            margin-right: var(--spacing-scale-base, 8px);
+        }
+
+        &:hover:not(:disabled) {
+            background-color: var(--color-secondary-02, #f8f8f8);
+            background-image: linear-gradient(rgba(19, 81, 180, 0.04), rgba(19, 81, 180, 0.04));
+        }
+
+        &:focus,
+        &:focus-visible {
+            outline: 2px dashed var(--focus, #ffcd07) !important;
+            outline-offset: 2px;
+        }
+
+        &:disabled {
+            border-color: var(--color-secondary-04, #cccccc);
+            color: var(--color-secondary-05, #9e9d9d);
+            cursor: not-allowed;
+            opacity: var(--disabled, 0.45);
+        }
+    }
+
+    // Dragging over state
+    &.dragging .upload-button,
+    &.is-dragging .upload-button {
+        background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
+        border-color: var(--interactive, #1351b4) !important;
+        border-style: dashed !important;
+        box-shadow: 0 0 0 4px rgba(19, 81, 180, 0.15) !important;
+    }
+
+    // Uploaded Items List
+    .upload-list {
+        margin-top: var(--spacing-scale-base, 8px);
+        position: relative;
+        width: 100%;
+
+        .upload-item,
+        .br-item {
+            align-items: center;
+            background-color: var(--background-light, #ffffff);
+            border: 1px solid var(--color-secondary-03, #ededed);
+            border-radius: var(--surface-rounder-sm, 4px);
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+
+            .content {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                flex: 1;
+
+                .name {
+                    font-family: var(--font-family-base, 'Rawline', sans-serif);
+                    font-size: var(--font-size-scale-base, 0.875rem);
+                    font-weight: var(--font-weight-medium, 500);
+                    color: var(--color-light, #333333);
+                }
+
+                .size {
+                    font-size: 0.75rem;
+                    color: var(--color-secondary-06, #888888);
+                }
+            }
+
+            .action {
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 2. Moodle Filemanager & Filepicker Layout Integration
+// --------------------------------------------------------------------------
+// Main container border and surface
+.filemanager-container,
+.filepicker-filelist {
+    background-color: var(--background-light, #ffffff) !important;
+    border: 1px solid var(--color-secondary-03, #ededed) !important;
+    border-radius: 0 0 var(--surface-rounder-md, 8px) var(--surface-rounder-md, 8px) !important;
+    box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
+    min-height: 150px;
+    position: relative;
+}
+
+// Top Toolbar (.filemanager-toolbar, .fp-navbar)
+.filemanager-toolbar,
+.fp-navbar {
+    background-color: var(--color-secondary-02, #f8f8f8);
+    border: 1px solid var(--color-secondary-03, #ededed);
+    border-bottom: 0;
+    border-radius: var(--surface-rounder-md, 8px) var(--surface-rounder-md, 8px) 0 0;
+    padding: 0.5rem 0.75rem;
+
+    // Action buttons inside toolbar (Add file, Create folder, Download)
+    .fp-btn-add a,
+    .fp-btn-mkdir a,
+    .fp-btn-download a {
+        align-items: center;
+        background-color: var(--background-light, #ffffff);
+        border: 1px solid var(--color-secondary-04, #cccccc);
+        border-radius: var(--surface-rounder-sm, 4px);
+        color: var(--interactive, #1351b4);
+        display: inline-flex;
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: var(--font-size-scale-base, 0.875rem);
+        font-weight: var(--font-weight-medium, 500);
+        line-height: 1.5;
+        padding: 0.35rem 0.75rem;
+        text-decoration: none;
+        transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
+        &:hover {
+            background-color: var(--color-secondary-02, #f8f8f8);
+            border-color: var(--interactive, #1351b4);
+            color: var(--color-primary-darken-01, #0c326f);
+        }
+
+        &:focus,
+        &:focus-visible {
+            box-shadow: 0 0 0 2px var(--focus, #ffcd07);
+            outline: none;
+        }
+
+        img {
+            margin-right: 0.35rem;
+            vertical-align: middle;
+        }
+    }
+
+    // View switcher buttons (Icons, Details list, Tree view)
+    .fp-viewbar {
+        float: right;
+
+        a {
+            background-color: var(--background-light, #ffffff);
+            border: 1px solid var(--color-secondary-04, #cccccc);
+            border-radius: var(--surface-rounder-sm, 4px);
+            color: var(--color-secondary-07, #555555);
+            display: inline-block;
+            margin-left: 2px;
+            padding: 0.35rem 0.6rem;
+            transition: all 0.15s ease-in-out;
+
+            &:hover {
+                background-color: var(--color-secondary-02, #f8f8f8);
+                color: var(--interactive, #1351b4);
+            }
+
+            &.checked {
+                background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
+                border-color: var(--interactive, #1351b4) !important;
+                color: var(--color-primary-darken-01, #0c326f) !important;
+            }
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 3. Drag and Drop Upload Area (.dndupload-target, .fm-empty-container)
+// --------------------------------------------------------------------------
+.filepicker-filelist .filepicker-container,
+.filemanager.fm-noitems .fm-empty-container,
+.filepicker-filelist .dndupload-target,
+.filemanager-container .dndupload-target {
+    background-color: var(--background-light, #ffffff);
+    border: 2px dashed var(--interactive, #1351b4) !important;
+    border-radius: var(--surface-rounder-md, 8px) !important;
+    bottom: 12px;
+    left: 12px;
+    position: absolute;
+    right: 12px;
+    text-align: center;
+    top: 12px;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+// Drag over active state
+.filepicker-filelist.dndupload-over .dndupload-target,
+.filemanager-container.dndupload-over .dndupload-target,
+.filemanager-container.dndupload-over {
+    background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
+    border-color: var(--interactive, #1351b4) !important;
+    border-style: dashed !important;
+    box-shadow: 0 0 0 4px rgba(19, 81, 180, 0.15) !important;
+}
+
+// Drag & drop instructional text
+.dndupload-message {
+    color: var(--color-light, #333333);
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: var(--font-size-scale-up-01, 1rem);
+    font-weight: var(--font-weight-medium, 500);
+}
+
+// Arrow indicator icon
+.dndupload-arrow {
+    color: var(--interactive, #1351b4) !important;
+    height: 70px;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+}
+
+// Filemanager upload in progress
+.dndupload-uploadinprogress {
+    color: var(--interactive, #1351b4);
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: var(--font-size-scale-base, 0.875rem);
+    font-weight: var(--font-weight-medium, 500);
+    padding-top: 50px;
+    text-align: center;
+}
+
+// Restrictions label (file size, allowed extensions)
+.filemanager .fp-restrictions {
+    color: var(--color-secondary-06, #888888);
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: 0.75rem;
+    margin-top: 0.35rem;
+}
+
+// --------------------------------------------------------------------------
+// 4. File Items & Thumbnails inside Filemanager
+// --------------------------------------------------------------------------
+.fp-iconview {
+    .fp-thumbnail {
+        background-color: var(--background-light, #ffffff);
+        border: 1px solid var(--color-secondary-03, #ededed);
+        border-radius: var(--surface-rounder-sm, 4px);
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+        &:hover {
+            border-color: var(--interactive, #1351b4);
+            box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.12));
+        }
+
+        img {
+            border: none;
+            border-radius: 2px;
+        }
+    }
+
+    .fp-filename-field .fp-filename {
+        background-color: var(--background-light, #ffffff);
+        color: var(--color-light, #333333);
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 0.8125rem;
+        font-weight: var(--font-weight-medium, 500);
+    }
+}
+
+// --------------------------------------------------------------------------
+// 5. Native Single File Upload Input (input[type="file"])
+// --------------------------------------------------------------------------
+input[type="file"].form-control,
+.form-file input[type="file"],
+.mform input[type="file"] {
+    background-color: var(--background-light, #ffffff);
+    border: 1px dashed var(--interactive, #1351b4);
+    border-radius: var(--surface-rounder-sm, 4px);
+    color: var(--color-light, #333333);
+    cursor: pointer;
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: var(--font-size-scale-base, 0.875rem);
+    height: auto;
+    min-height: 42px;
+    padding: 0.35rem 0.5rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &::file-selector-button,
+    &::-webkit-file-upload-button {
+        background-color: var(--interactive, #1351b4);
+        border: none;
+        border-radius: var(--surface-rounder-sm, 4px);
+        color: #ffffff;
+        cursor: pointer;
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 0.8125rem;
+        font-weight: var(--font-weight-medium, 500);
+        margin-right: 0.75rem;
+        padding: 0.35rem 0.85rem;
+        transition: background-color 0.15s ease-in-out;
+
+        &:hover {
+            background-color: var(--color-primary-darken-01, #0c326f);
+        }
+    }
+
+    &:focus,
+    &:focus-visible {
+        border-color: var(--focus, #ffcd07) !important;
+        box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+        outline: none !important;
+    }
+}
+
+// --------------------------------------------------------------------------
+// 6. Moodle Filepicker Dialogue / Modal Integration
+// --------------------------------------------------------------------------
+.filepicker .moodle-dialogue-bd {
+    background-color: var(--background-light, #ffffff);
+    border-radius: var(--surface-rounder-md, 8px);
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+}
+
+.file-picker .fp-repo-area {
+    background-color: var(--color-secondary-02, #f8f8f8);
+    border-right: 1px solid var(--color-secondary-03, #ededed);
+
+    .fp-list .fp-repo a {
+        color: var(--color-light, #333333);
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: var(--font-size-scale-base, 0.875rem);
+        font-weight: var(--font-weight-medium, 500);
+        padding: 0.65rem 1rem;
+        transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+
+        &:hover {
+            background-color: var(--color-secondary-03, #ededed);
+            color: var(--interactive, #1351b4);
+            text-decoration: none;
+        }
+    }
+
+    .fp-list .fp-repo.active {
+        background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
+
+        a {
+            border-left: 4px solid var(--interactive, #1351b4);
+            color: var(--color-primary-darken-01, #0c326f) !important;
+            font-weight: var(--font-weight-semi-bold, 600);
+            padding-left: calc(1rem - 4px);
+        }
+    }
+}
+

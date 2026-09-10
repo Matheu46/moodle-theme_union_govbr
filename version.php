@@ -18,16 +18,15 @@
  * Version details.
  *
  * @package    theme_union_govbr
- * @copyright  2024 Matheus Mathias
+ * @copyright  2026 Matheus Mathias
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2024090900; // The current plugin version (Date: YYYYMMDDXX).
+$plugin->version   = 2026090900; // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2022112800; // Requires this Moodle version.
 $plugin->component = 'theme_union_govbr'; // Full name of the plugin (used for diagnostics).
 $plugin->dependencies = [
     'theme_boost_union' => 2024041600, // Requires theme_boost_union.
 ];
-

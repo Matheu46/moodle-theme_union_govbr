@@ -18,7 +18,7 @@
  * Theme config for Union Gov.br.
  *
  * @package    theme_union_govbr
- * @copyright  2024 Matheus Mathias
+ * @copyright  2026 Matheus Mathias
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

@@ -18,7 +18,7 @@
  * Reference: https://www.gov.br/ds/components/header?tab=visao-geral
  *
  * @package    theme_union_govbr
- * @copyright  2024 Matheus Mathias
+ * @copyright  2026 Matheus Mathias
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -510,10 +510,10 @@
 // 3. Moodle Page Context Header (#page-header & .header-maxwidth)
 // --------------------------------------------------------------------------
 #page-header {
-    padding-top: 1.5rem;
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--color-secondary-03, #ededed);
+    // padding-top: 1.5rem;
+    // padding-bottom: 1rem;
+    // margin-bottom: 1.5rem;
+    // border-bottom: 1px solid var(--color-secondary-03, #ededed);
 
     .page-header-headings h1,
     .page-header-headings .h2,

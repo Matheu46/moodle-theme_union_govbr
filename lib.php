@@ -18,7 +18,7 @@
  * Theme Union Gov.br - Library functions.
  *
  * @package    theme_union_govbr
- * @copyright  2024 Matheus Mathias
+ * @copyright  2026 Matheus Mathias
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -127,6 +127,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
     $messagesfile = __DIR__ . '/scss/messages.scss';
     if (file_exists($messagesfile)) {
         $scss .= "\n" . file_get_contents($messagesfile);
+    }
+
+    // Append uploads.scss if it exists.
+    $uploadsfile = __DIR__ . '/scss/uploads.scss';
+    if (file_exists($uploadsfile)) {
+        $scss .= "\n" . file_get_contents($uploadsfile);
     }
 
     return $scss;
