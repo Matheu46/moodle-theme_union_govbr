@@ -147,6 +147,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($tagsfile);
     }
 
+    // Append menu.scss if it exists.
+    $menufile = __DIR__ . '/scss/menu.scss';
+    if (file_exists($menufile)) {
+        $scss .= "\n" . file_get_contents($menufile);
+    }
+
     return $scss;
 }
 

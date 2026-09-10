@@ -1,0 +1,640 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Gov.br Design System - Menu, Drawers & Navigation Component
+ * Reference: https://www.gov.br/ds/components/menu?tab=visao-geral
+ *
+ * @package    theme_union_govbr
+ * @copyright  2026 Matheus Mathias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+// --------------------------------------------------------------------------
+// 1. Gov.br Design System Custom Menu (.br-menu)
+// --------------------------------------------------------------------------
+.br-menu {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    height: 100%;
+    position: relative;
+
+    // Scrim / Backdrop overlay
+    .menu-scrim {
+        background-color: rgba(0, 0, 0, 0.45);
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        transition: opacity 0.25s ease-in-out;
+        z-index: 1040;
+    }
+
+    // Menu Side Panel
+    .menu-panel {
+        background-color: var(--background-light, #ffffff);
+        box-shadow: var(--surface-shadow-lg, 0 6px 6px rgba(0, 0, 0, 0.16));
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        max-width: 100vw;
+        position: relative;
+        width: 320px;
+        z-index: 1050;
+    }
+
+    // Menu Header
+    .menu-header {
+        align-items: center;
+        border-bottom: 1px solid var(--color-secondary-03, #ededed);
+        display: flex;
+        justify-content: space-between;
+        min-height: 4rem;
+        padding: 1rem 1.25rem;
+
+        .menu-title {
+            color: var(--color-light, #333333);
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-size: 1rem;
+            font-weight: var(--font-weight-semi-bold, 600);
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        .menu-close {
+            align-items: center;
+            background: transparent;
+            border: none;
+            border-radius: var(--surface-rounder-pill, 999em);
+            color: var(--color-secondary-07, #555555);
+            cursor: pointer;
+            display: inline-flex;
+            height: 2.25rem;
+            justify-content: center;
+            padding: 0;
+            transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+            width: 2.25rem;
+
+            &:hover {
+                background-color: var(--color-secondary-02, #f8f8f8);
+                color: var(--color-light, #333333);
+            }
+
+            &:focus,
+            &:focus-visible {
+                box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+                outline: none !important;
+            }
+        }
+    }
+
+    // Menu Body
+    .menu-body {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        padding: 0.5rem 0;
+
+        .menu-folder {
+            .menu-item {
+                font-weight: var(--font-weight-semi-bold, 600);
+            }
+
+            // Collapsible sub-items
+            .menu-item.level-2 {
+                font-weight: var(--font-weight-regular, 400);
+                padding-left: 2rem;
+            }
+
+            .menu-item.level-3 {
+                font-weight: var(--font-weight-regular, 400);
+                padding-left: 2.75rem;
+            }
+        }
+
+        .menu-item {
+            align-items: center;
+            border-left: 4px solid transparent;
+            color: var(--color-light, #333333);
+            display: flex;
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-size: 0.875rem;
+            font-weight: var(--font-weight-medium, 500);
+            justify-content: space-between;
+            padding: 0.75rem 1.25rem;
+            position: relative;
+            text-decoration: none;
+            transition: all 0.15s ease-in-out;
+
+            .content {
+                align-items: center;
+                display: flex;
+                flex: 1 1 auto;
+                gap: 0.75rem;
+            }
+
+            .icon,
+            i {
+                color: inherit;
+                font-size: 1rem;
+            }
+
+            .support {
+                color: var(--color-secondary-06, #888888);
+                font-size: 0.8125rem;
+                transition: transform 0.2s ease-in-out;
+            }
+
+            &:hover {
+                background-color: var(--color-secondary-02, #f8f8f8);
+                color: var(--interactive, #1351b4);
+
+                .support {
+                    color: var(--interactive, #1351b4);
+                }
+            }
+
+            &:focus,
+            &:focus-visible {
+                box-shadow: inset 0 0 0 2px var(--focus, #ffcd07) !important;
+                outline: none !important;
+            }
+
+            // Active Menu Item in Gov.br DS
+            &.active,
+            &[active],
+            &[aria-current="page"] {
+                background-color: var(--blue-warm-vivid-5, #edf5ff);
+                border-left-color: var(--interactive, #1351b4);
+                color: var(--interactive, #1351b4);
+                font-weight: var(--font-weight-semi-bold, 600);
+
+                .support {
+                    color: var(--interactive, #1351b4);
+                }
+            }
+        }
+    }
+
+    // Menu Footer
+    .menu-footer {
+        border-top: 1px solid var(--color-secondary-03, #ededed);
+        color: var(--color-secondary-07, #555555);
+        font-size: 0.75rem;
+        padding: 1rem 1.25rem;
+
+        a {
+            color: var(--interactive, #1351b4);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--color-primary-darken-01, #0c326f);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 2. Moodle Lateral Drawers (.drawer, .drawer-left, .drawer-right)
+// --------------------------------------------------------------------------
+.drawer {
+    background-color: var(--background-light, #ffffff);
+    box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+
+    // Drawer Header
+    .drawerheader {
+        align-items: center;
+        background-color: var(--background-light, #ffffff);
+        border-bottom: 1px solid var(--color-secondary-03, #ededed);
+        display: flex;
+        height: 4rem;
+        justify-content: space-between;
+        padding: 0 1rem;
+
+        .sitename,
+        h2,
+        h3,
+        h4,
+        h5 {
+            color: var(--color-light, #333333);
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-size: 0.9375rem;
+            font-weight: var(--font-weight-semi-bold, 600);
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .draweractions {
+            display: flex;
+            gap: 0.25rem;
+
+            .btn {
+                align-items: center;
+                border-radius: var(--surface-rounder-pill, 999em);
+                color: var(--color-secondary-07, #555555);
+                display: inline-flex;
+                height: 2.25rem;
+                justify-content: center;
+                padding: 0;
+                width: 2.25rem;
+
+                &:hover {
+                    background-color: var(--color-secondary-02, #f8f8f8);
+                    color: var(--color-light, #333333);
+                }
+
+                &:focus,
+                &:focus-visible {
+                    box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+                    outline: none !important;
+                }
+            }
+        }
+    }
+
+    // Drawer Scrolled Header Shadow
+    &.scrolled .drawerheader {
+        box-shadow: var(--surface-shadow-sm, 0 1px 6px rgba(0, 0, 0, 0.16));
+    }
+
+    // Drawer Body Content
+    .drawercontent {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+// --------------------------------------------------------------------------
+// 3. Moodle Course Index Navigation (.courseindex)
+// --------------------------------------------------------------------------
+.courseindex {
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+
+    .courseindex-item {
+        align-items: center;
+        border: 1px solid transparent;
+        border-left: 3px solid transparent;
+        border-radius: var(--surface-rounder-sm, 4px);
+        color: var(--color-light, #333333);
+        display: flex;
+        font-size: 0.875rem;
+        font-weight: var(--font-weight-medium, 500);
+        margin-bottom: 0.15rem;
+        padding: 0.45rem 0.65rem;
+        position: relative;
+        transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
+        .courseindex-link {
+            color: var(--color-light, #333333);
+            font-size: 0.875rem;
+            font-weight: inherit;
+            text-decoration: none;
+            transition: color 0.15s ease-in-out;
+
+            &:hover {
+                color: var(--interactive, #1351b4);
+                text-decoration: none;
+            }
+        }
+
+        .courseindex-chevron {
+            color: var(--color-secondary-06, #888888);
+            margin-right: 0.25rem;
+            transition: color 0.15s ease-in-out, transform 0.15s ease-in-out;
+
+            &:hover {
+                color: var(--interactive, #1351b4);
+            }
+        }
+
+        // Hover state
+        &:hover {
+            background-color: var(--color-secondary-02, #f8f8f8);
+            color: var(--interactive, #1351b4);
+
+            .courseindex-link {
+                color: var(--interactive, #1351b4);
+            }
+        }
+
+        // Focus state
+        &:focus-within {
+            box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+            outline: none !important;
+        }
+
+        // Active / Current page item in Gov.br DS style
+        &.pageitem,
+        &.active {
+            background-color: var(--blue-warm-vivid-5, #edf5ff) !important;
+            border-left-color: var(--interactive, #1351b4) !important;
+            color: var(--interactive, #1351b4) !important;
+            font-weight: var(--font-weight-semi-bold, 600);
+
+            .courseindex-link {
+                color: var(--interactive, #1351b4) !important;
+                font-weight: var(--font-weight-semi-bold, 600);
+            }
+
+            .courseindex-chevron {
+                color: var(--interactive, #1351b4);
+            }
+        }
+
+        // Section Title Item
+        &.courseindex-section-title {
+            font-weight: var(--font-weight-semi-bold, 600);
+
+            a {
+                color: var(--color-light, #333333);
+                font-weight: var(--font-weight-semi-bold, 600);
+            }
+        }
+
+        // Completion indicator
+        .completioninfo {
+            &.completion_complete {
+                color: var(--success, #168821) !important;
+            }
+
+            &.completion_fail {
+                color: var(--danger, #e52207) !important;
+            }
+        }
+    }
+
+    // Full section container
+    .courseindex-section {
+        border-left: 3px solid transparent;
+        margin-bottom: 0.35rem;
+
+        &.current {
+            border-left-color: var(--interactive, #1351b4);
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 4. Boost Union Offcanvas Drawer (#theme_boost_union-drawers-offcanvas)
+// --------------------------------------------------------------------------
+#theme_boost_union-drawers-offcanvas {
+    background-color: var(--background-light, #ffffff);
+    box-shadow: var(--surface-shadow-lg, 0 6px 6px rgba(0, 0, 0, 0.16));
+
+    .drawerheader {
+        border-bottom: 1px solid var(--color-secondary-03, #ededed);
+    }
+}
+
+// --------------------------------------------------------------------------
+// 5. Secondary Navigation / Course Context Tabs (.secondary-navigation)
+// --------------------------------------------------------------------------
+.secondary-navigation {
+    background-color: var(--background-light, #ffffff);
+    border-bottom: 1px solid var(--color-secondary-03, #ededed);
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    padding-bottom: 0;
+
+    .navigation {
+        background-color: transparent;
+        border-bottom: none;
+        margin: 0 auto;
+
+        .nav-tabs {
+            border: none;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.25rem;
+            margin: 0 auto;
+
+            .nav-item {
+                margin-bottom: 0;
+            }
+
+            .nav-link {
+                border: none;
+                border-bottom: 3px solid transparent;
+                border-radius: 0;
+                color: var(--color-light, #333333);
+                font-family: var(--font-family-base, 'Rawline', sans-serif);
+                font-size: 0.875rem;
+                font-weight: var(--font-weight-medium, 500);
+                padding: 0.75rem 1rem;
+                position: relative;
+                transition: all 0.15s ease-in-out;
+                white-space: nowrap;
+
+                &:hover {
+                    background-color: var(--color-secondary-02, #f8f8f8);
+                    border-bottom-color: var(--color-secondary-04, #cccccc);
+                    color: var(--interactive, #1351b4);
+                }
+
+                &:focus,
+                &:focus-visible {
+                    box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+                    outline: none !important;
+                    z-index: 2;
+                }
+
+                // Active Tab in Gov.br style
+                &.active,
+                &[aria-selected="true"] {
+                    background-color: transparent;
+                    border-bottom-color: var(--interactive, #1351b4);
+                    color: var(--interactive, #1351b4);
+                    font-weight: var(--font-weight-semi-bold, 600);
+                }
+            }
+
+            // Overflow "More" dropdown tab
+            .dropdown {
+                .dropdown-toggle {
+                    &::after {
+                        color: var(--color-secondary-07, #555555);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 6. Dropdown & Contextual Action Menus (.dropdown-menu, .moodle-actionmenu)
+// --------------------------------------------------------------------------
+.dropdown-menu {
+    background-color: var(--background-light, #ffffff);
+    border: 1px solid var(--color-secondary-03, #ededed);
+    border-radius: var(--surface-rounder-md, 8px);
+    box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    min-width: 12rem;
+    padding: 0.5rem 0;
+    z-index: 1050;
+
+    .dropdown-item {
+        align-items: center;
+        clear: both;
+        color: var(--color-light, #333333);
+        // display: flex;
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 0.875rem;
+        font-weight: var(--font-weight-regular, 400);
+        padding: 0.5rem 1rem;
+        text-align: inherit;
+        transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+        white-space: nowrap;
+
+        .icon,
+        i {
+            color: inherit;
+            font-size: 0.9375rem;
+            margin-right: 0.5rem;
+            text-align: center;
+            width: 1.25rem;
+        }
+
+        &:hover {
+            background-color: var(--color-secondary-02, #f8f8f8);
+            color: var(--interactive, #1351b4);
+        }
+
+        &:focus,
+        &:focus-visible {
+            background-color: var(--color-secondary-02, #f8f8f8);
+            box-shadow: inset 0 0 0 2px var(--focus, #ffcd07) !important;
+            color: var(--interactive, #1351b4);
+            outline: none !important;
+        }
+
+        // Destructive / Status items in dropdowns (overrides Boost's text-color: #fff !important bug)
+        &.text-danger,
+        &.editing_delete {
+            color: var(--danger, #e52207) !important;
+
+            .icon,
+            i {
+                color: var(--danger, #e52207) !important;
+            }
+        }
+
+        &:hover,
+        &:focus,
+        &:focus-visible {
+            &.text-danger,
+            &.editing_delete,
+            a.text-danger,
+            span.text-danger {
+                background-color: var(--danger-alternative, #fde0db) !important;
+                color: var(--color-red-vivid-70, #8b0a03) !important;
+
+                .icon,
+                i {
+                    color: var(--color-red-vivid-70, #8b0a03) !important;
+                }
+            }
+
+            &.text-warning,
+            a.text-warning,
+            span.text-warning {
+                background-color: var(--warning-alternative, #fff5c2) !important;
+                color: #7a591a !important;
+
+                .icon,
+                i {
+                    color: #7a591a !important;
+                }
+            }
+
+            &.text-success,
+            a.text-success,
+            span.text-success {
+                background-color: var(--success-alternative, #e3f5e1) !important;
+                color: #0f5b16 !important;
+
+                .icon,
+                i {
+                    color: #0f5b16 !important;
+                }
+            }
+
+            &.text-info,
+            a.text-info,
+            span.text-info {
+                background-color: var(--info-alternative, #dbe8fb) !important;
+                color: #0c326f !important;
+
+                .icon,
+                i {
+                    color: #0c326f !important;
+                }
+            }
+        }
+
+        &.active,
+        &:active {
+            background-color: var(--blue-warm-vivid-5, #edf5ff);
+            color: var(--interactive, #1351b4);
+            font-weight: var(--font-weight-semi-bold, 600);
+        }
+
+        &.disabled,
+        &:disabled {
+            background-color: transparent;
+            color: var(--color-secondary-05, #9e9d9d);
+            cursor: not-allowed;
+        }
+    }
+
+    .dropdown-header {
+        color: var(--color-secondary-07, #555555);
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 0.75rem;
+        font-weight: var(--font-weight-semi-bold, 600);
+        letter-spacing: 0.04em;
+        padding: 0.5rem 1rem 0.25rem;
+        text-transform: uppercase;
+    }
+
+    .dropdown-divider {
+        border-top: 1px solid var(--color-secondary-03, #ededed);
+        height: 0;
+        margin: 0.35rem 0;
+        overflow: hidden;
+    }
+}
+
+// Action Menus in Course Activities / Reports (.moodle-actionmenu, .action-menu)
+.moodle-actionmenu,
+.action-menu {
+    .dropdown-toggle {
+        &:hover {
+            color: var(--interactive, #1351b4);
+        }
+
+        &:focus,
+        &:focus-visible {
+            box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+            outline: none !important;
+        }
+    }
+}
+

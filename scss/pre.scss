@@ -345,6 +345,45 @@ $badge-padding-y:                   0.3em;
 $badge-padding-x:                   0.65em;
 $badge-border-radius:               $surface-rounder-pill;     // 999em
 
+// =============================================================================
+// Bootstrap Dropdown & Action Menu Variables
+// =============================================================================
+$dropdown-bg:                       $govbr-pure-0;             // #ffffff
+$dropdown-border-color:             #ededed;
+$dropdown-border-radius:            $surface-rounder-md;       // 8px
+$dropdown-box-shadow:               0 3px 6px rgba(0, 0, 0, 0.16);
+$dropdown-link-color:               $govbr-gray-80;            // #333333
+$dropdown-link-hover-color:         $govbr-blue-warm-vivid-70; // #1351b4
+$dropdown-link-hover-bg:            $govbr-gray-2;             // #f8f8f8
+$dropdown-link-active-color:        $govbr-pure-0;             // #ffffff
+$dropdown-link-active-bg:           $govbr-blue-warm-vivid-70; // #1351b4
+$dropdown-item-padding-y:           0.5rem;
+$dropdown-item-padding-x:           1rem;
+
+// =============================================================================
+// Moodle Drawer & Offcanvas Navigation Variables
+// =============================================================================
+$drawer-shadow-color:               rgba(0, 0, 0, 0.16);
+$courseindex-item-padding-y:        0.5rem;
+$courseindex-item-padding-x:        0.75rem;
+$courseindex-item-radius:           $surface-rounder-sm;       // 4px
+$courseindex-link-color:            $govbr-gray-80;            // #333333
+$courseindex-link-hover-color:      $govbr-blue-warm-vivid-70; // #1351b4
+$courseindex-item-hover-bg:         $govbr-gray-2;             // #f8f8f8
+$courseindex-item-active-bg:        #edf5ff;
+$courseindex-item-active-border:    transparent;
+$courseindex-item-page-bg:          #edf5ff;
+$courseindex-link-color-selected:   $govbr-blue-warm-vivid-70; // #1351b4
+
+// =============================================================================
+// Secondary Navigation / Nav Tabs Variables
+// =============================================================================
+$nav-tabs-border-color:             #ededed;
+$nav-tabs-link-active-color:        $govbr-blue-warm-vivid-70; // #1351b4
+$nav-tabs-link-active-bg:           transparent;
+$nav-tabs-link-active-border-color: transparent transparent $govbr-blue-warm-vivid-70;
+
+
 
 
 

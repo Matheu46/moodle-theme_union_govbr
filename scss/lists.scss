@@ -196,21 +196,25 @@
     }
 }
 
-// 3. Standard Typographic Lists (ul, ol in content, courses, forums)
-.content,
+// 3. Standard Typographic Lists (for user-generated rich text and editorial content only)
+.text_to_html,
 .activity-description,
 .user-description,
-.format-topics,
-.format-weeks {
+.post-content-container,
+.editor_atto_content,
+.editor_tiny_content,
+.qtext,
+.section-summary,
+.course-description-item {
     ul,
     ol {
-        padding-left: 1.5rem;
         margin-bottom: 1rem;
+        padding-left: 1.5rem;
 
         li {
-            margin-bottom: 0.25rem;
-            line-height: 1.45;
             color: var(--color-secondary-08, #333333);
+            line-height: 1.45;
+            margin-bottom: 0.25rem;
 
             &::marker {
                 color: var(--color-primary-default, #1351b4);
@@ -218,4 +222,3 @@
         }
     }
 }
-
