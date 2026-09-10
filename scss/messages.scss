@@ -164,10 +164,14 @@
     margin-bottom: 1.25rem;
     padding-bottom: 1rem;
     padding-left: 3.25rem; // Space for official Gov.br SVG status icon
-    padding-right: 2.75rem;
+    padding-right: 1.25rem;
     padding-top: 1rem;
     position: relative;
     word-wrap: break-word;
+
+    &.alert-dismissible {
+        padding-right: 2.75rem;
+    }
 
     // Status Icon injected via pseudo-element
     &::before {
@@ -180,6 +184,17 @@
         position: absolute;
         top: 1.15rem;
         width: 20px;
+    }
+
+    // Disable ::before icon on compact alerts that use Bootstrap padding utilities
+    &.px-1,
+    &.px-2,
+    &.p-1,
+    &.p-2 {
+        &::before {
+            content: none !important;
+            display: none !important;
+        }
     }
 
     // Alert headings
@@ -287,6 +302,21 @@
         &::before {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23888888'%3e%3cpath d='M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z'/%3e%3c/svg%3e");
         }
+    }
+}
+
+// When alert is applied directly to a paragraph (<p class="alert ...">)
+// or nested inside paragraphs / tables (e.g. environment checks during database upgrade).
+p.alert,
+p .alert,
+table .alert,
+.generaltable .alert {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+
+    &::before {
+        content: none !important;
+        display: none !important;
     }
 }
 
