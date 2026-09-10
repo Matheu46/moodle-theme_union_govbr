@@ -380,3 +380,114 @@
         }
     }
 }
+
+// -----------------------------------------------------------------------------
+// 5. Moodle Course & Block Creation Buttons (.btn-add-content, .btn.add-content)
+// -----------------------------------------------------------------------------
+// Add section / Add block callout button
+.btn-add-content {
+    align-items: center;
+    background-color: var(--color-secondary-01, #ffffff);
+    border: 2px dashed var(--interactive, #1351b4);
+    border-radius: var(--surface-rounder-md, 8px);
+    color: var(--interactive, #1351b4) !important;
+    display: inline-flex;
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-semi-bold, 600);
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+    transition: all 0.15s ease-in-out;
+
+    .icon,
+    i {
+        color: var(--interactive, #1351b4);
+        font-size: 1rem;
+        margin-right: 0.35rem;
+        transition: color 0.15s ease-in-out;
+    }
+
+    &:hover {
+        background-color: var(--color-primary-pastel-02, #dbe8fb);
+        border-color: var(--color-primary-darken-01, #0c326f);
+        border-style: solid;
+        color: var(--color-primary-darken-01, #0c326f) !important;
+
+        .icon,
+        i {
+            color: var(--color-primary-darken-01, #0c326f);
+        }
+    }
+
+    &:focus,
+    &:focus-visible {
+        box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+        outline: none !important;
+    }
+
+    &:active,
+    &.active {
+        background-color: var(--color-primary-pastel-01, #c5d4eb);
+        border-color: var(--color-primary-darken-02, #071d41);
+        color: var(--color-primary-darken-02, #071d41) !important;
+    }
+}
+
+// Add activity or resource button between course sections / dividers
+.btn.add-content,
+.course-content .divider .btn.add-content,
+.section-modchooser-link.btn.add-content {
+    align-items: center;
+    background-color: var(--color-primary-pastel-02, #dbe8fb);
+    border: 1px solid var(--interactive, #1351b4);
+    border-radius: var(--surface-rounder-pill, 999em);
+    color: var(--interactive, #1351b4) !important;
+    display: inline-flex;
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-semi-bold, 600);
+    justify-content: center;
+    min-height: 28px;
+    min-width: 28px;
+    padding: 0.25rem 0.75rem;
+    transition: all 0.15s ease-in-out;
+
+    .icon,
+    i {
+        color: var(--interactive, #1351b4);
+        font-size: 0.8125rem;
+        margin: 0;
+        transition: color 0.15s ease-in-out;
+    }
+
+    .activity-add-text {
+        margin-left: 0.35rem;
+    }
+
+    &:hover {
+        background-color: var(--interactive, #1351b4);
+        border-color: var(--interactive, #1351b4);
+        color: #ffffff !important;
+
+        .icon,
+        i {
+            color: #ffffff !important;
+        }
+    }
+
+    &:focus,
+    &:focus-visible {
+        box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+        outline: none !important;
+    }
+
+    &:active,
+    &.active {
+        background-color: var(--color-primary-darken-01, #0c326f);
+        border-color: var(--color-primary-darken-01, #0c326f);
+        color: #ffffff !important;
+    }
+}
+
