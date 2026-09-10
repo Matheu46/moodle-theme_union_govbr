@@ -1,0 +1,547 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Gov.br Design System - Header Component (br-header & Moodle navbar/page-header)
+ * Reference: https://www.gov.br/ds/components/header?tab=visao-geral
+ *
+ * @package    theme_union_govbr
+ * @copyright  2024 Matheus Mathias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+// --------------------------------------------------------------------------
+// 1. Gov.br Design System Custom Header (.br-header)
+// --------------------------------------------------------------------------
+.br-header {
+    --header-padding-small:   var(--spacing-scale-base, 8px);
+    --header-padding-medium:  var(--spacing-scale-2x, 16px);
+    --header-padding-large:   var(--spacing-scale-3x, 24px);
+    --header-padding:         var(--header-padding-medium);
+    --header-logo-size:       40px;
+    --header-title-size:      var(--font-size-scale-up-02, 1.25rem);
+    --header-subtitle-size:   var(--font-size-scale-base, 0.875rem);
+
+    background-color: var(--background-light, #ffffff);
+    box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.16));
+    display: flex;
+    flex-direction: column;
+    padding: var(--header-padding) 0;
+    position: relative;
+    width: 100%;
+
+    // Structure rows
+    .header-top,
+    .header-bottom {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .header-top {
+        justify-content: space-between;
+    }
+
+    .header-bottom {
+        justify-content: space-between;
+        margin-top: var(--header-padding-small);
+    }
+
+    // Logo & Sign
+    .header-logo {
+        align-items: center;
+        display: flex;
+        gap: var(--spacing-scale-2x, 16px);
+
+        img,
+        svg {
+            max-height: var(--header-logo-size);
+            width: auto;
+            object-fit: contain;
+        }
+
+        .br-divider.vertical {
+            height: 28px;
+            border-right: 1px solid var(--color-secondary-04, #ccc);
+            margin: 0 0.5rem;
+        }
+
+        .header-sign {
+            color: var(--color-light, #333333);
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-size: var(--font-size-scale-base, 0.875rem);
+            font-weight: var(--font-weight-medium, 500);
+            line-height: 1.25;
+            display: inline-block;
+        }
+    }
+
+    // Header Actions (links, functions, login)
+    .header-actions {
+        align-items: center;
+        display: flex;
+        gap: var(--spacing-scale-base, 8px);
+
+        .header-links {
+            display: flex;
+            align-items: center;
+
+            a {
+                color: var(--interactive, #1351b4);
+                font-family: var(--font-family-base, 'Rawline', sans-serif);
+                font-size: var(--font-size-scale-base, 0.875rem);
+                font-weight: var(--font-weight-medium, 500);
+                text-decoration: none;
+                padding: 0.25rem 0.5rem;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: var(--color-primary-darken-01, #0c326f);
+                }
+            }
+        }
+
+        .header-functions {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+
+            .br-button {
+                color: var(--interactive, #1351b4);
+            }
+        }
+
+        .header-login {
+            margin-left: var(--spacing-scale-base, 8px);
+        }
+    }
+
+    // Header Menu & System Info
+    .header-menu {
+        align-items: center;
+        display: flex;
+        flex: 1;
+
+        .header-menu-trigger {
+            margin-right: var(--spacing-scale-2x, 16px);
+        }
+
+        .header-info {
+            display: flex;
+            flex-direction: column;
+
+            .header-title {
+                color: var(--color-light, #333333);
+                font-family: var(--font-family-base, 'Rawline', sans-serif);
+                font-size: var(--header-title-size);
+                font-weight: var(--font-weight-bold, 700);
+                line-height: 1.2;
+                margin: 0;
+            }
+
+            .header-subtitle {
+                color: var(--color-secondary-07, #555555);
+                font-family: var(--font-family-base, 'Rawline', sans-serif);
+                font-size: var(--header-subtitle-size);
+                font-weight: var(--font-weight-regular, 400);
+                margin-top: 2px;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // Header Search
+    .header-search {
+        align-items: center;
+        display: flex;
+        position: relative;
+        max-width: 385px;
+        width: 100%;
+
+        .br-input {
+            width: 100%;
+
+            input {
+                border-radius: var(--surface-rounder-pill, 999em);
+                padding-right: 2.75rem;
+                background-color: var(--color-secondary-02, #f8f8f8);
+                border-color: transparent;
+
+                &:focus {
+                    background-color: var(--background-light, #ffffff);
+                    border-color: var(--focus, #ffcd07) !important;
+                    box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+                }
+            }
+
+            .br-button.circle {
+                position: absolute;
+                right: 4px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    // Compact Variation
+    &.compact {
+        padding: var(--header-padding-small) 0;
+
+        .header-logo {
+            --header-logo-size: 32px;
+        }
+
+        .header-bottom {
+            margin-top: 0;
+        }
+    }
+
+    // Densities
+    &.small {
+        --header-padding: var(--header-padding-small);
+    }
+
+    &.large {
+        --header-padding: var(--header-padding-large);
+    }
+}
+
+// --------------------------------------------------------------------------
+// 2. Moodle Top Navbar Integration (.navbar.fixed-top)
+// --------------------------------------------------------------------------
+.navbar.fixed-top {
+    background-color: var(--background-light, #ffffff) !important;
+    border-bottom: 1px solid var(--color-secondary-03, #ededed);
+    box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.16));
+    min-height: 72px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: box-shadow 0.2s ease-in-out;
+
+    // Brand / Logo & Site Name
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--color-light, #333333);
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        text-decoration: none;
+
+        .logo {
+            max-height: 44px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .sitename {
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--color-light, #333333);
+            letter-spacing: -0.01em;
+        }
+
+        &:focus,
+        &:focus-visible {
+            outline: 2px dashed var(--focus-color, #c2850c);
+            outline-offset: 4px;
+        }
+    }
+
+    // Primary Navigation (.primary-navigation / .moremenu)
+    .primary-navigation {
+        .navigation {
+            height: 100%;
+        }
+
+        .nav-link {
+            color: var(--color-light, #333333) !important;
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-size: var(--font-size-scale-base, 0.875rem);
+            font-weight: var(--font-weight-medium, 500);
+            padding: 0.75rem 1rem;
+            border-radius: var(--surface-rounder-sm, 4px);
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+            position: relative;
+
+            &:hover {
+                color: var(--interactive, #1351b4) !important;
+                background-color: var(--color-secondary-02, #f8f8f8);
+            }
+
+            // Gov.br active indicator (bottom border accent)
+            &.active {
+                color: var(--interactive, #1351b4) !important;
+                font-weight: var(--font-weight-semi-bold, 600);
+                background-color: transparent;
+                border-bottom: 0;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0.75rem;
+                    right: 0.75rem;
+                    height: 3px;
+                    background-color: var(--interactive, #1351b4);
+                    border-radius: 2px 2px 0 0;
+                }
+            }
+
+            &:focus,
+            &:focus-visible {
+                outline: 2px solid var(--focus, #ffcd07) !important;
+                outline-offset: 2px;
+            }
+        }
+    }
+
+    // User Navigation Zone (#usernavigation)
+    #usernavigation {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        // Popover notification & messaging toggles
+        .popover-region {
+            .popover-region-toggle {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                color: var(--interactive, #1351b4);
+                transition: background-color 0.15s ease-in-out;
+                position: relative;
+
+                &:hover {
+                    background-color: var(--color-secondary-02, #f8f8f8);
+                }
+
+                &:focus,
+                &:focus-visible {
+                    outline: 2px solid var(--focus, #ffcd07) !important;
+                    outline-offset: 2px;
+                }
+
+                .icon {
+                    font-size: 1.125rem;
+                    margin: 0;
+                    color: var(--interactive, #1351b4);
+                }
+            }
+
+            .count-container {
+                background-color: var(--danger, #e52207);
+                color: #ffffff;
+                font-family: var(--font-family-base, 'Rawline', sans-serif);
+                font-size: 0.6875rem;
+                font-weight: 700;
+                border-radius: var(--surface-rounder-pill, 999em);
+                padding: 0.15rem 0.4rem;
+                top: 2px;
+                right: 2px;
+            }
+        }
+
+        // Dividers
+        .divider {
+            border-color: var(--color-secondary-03, #ededed) !important;
+            height: 28px !important;
+            margin: 0 0.5rem;
+        }
+
+        // Offcanvas drawer button
+        .drawer-offcanvas-toggle button,
+        #theme_boost_union-offcanvas-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--interactive, #1351b4);
+            border: none;
+            background: transparent;
+
+            &:hover {
+                background-color: var(--color-secondary-02, #f8f8f8);
+            }
+
+            &:focus,
+            &:focus-visible {
+                outline: 2px solid var(--focus, #ffcd07) !important;
+                outline-offset: 2px;
+            }
+        }
+    }
+
+    // User Menu (.usermenu-container)
+    .usermenu-container {
+        .userbutton {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            // padding: 0.25rem 0.5rem;
+            border-radius: var(--surface-rounder-sm, 4px);
+            text-decoration: none;
+            transition: background-color 0.15s ease-in-out;
+
+            &:hover {
+                background-color: var(--color-secondary-02, #f8f8f8);
+            }
+
+            &:focus,
+            &:focus-visible {
+                outline: 2px solid var(--focus, #ffcd07) !important;
+                outline-offset: 2px;
+            }
+
+            .userpicture {
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+                object-fit: cover;
+                border: 2px solid var(--color-secondary-03, #ededed);
+                margin: 0;
+            }
+
+            .usertext {
+                font-family: var(--font-family-base, 'Rawline', sans-serif);
+                font-size: var(--font-size-scale-base, 0.875rem);
+                font-weight: var(--font-weight-medium, 500);
+                color: var(--color-light, #333333);
+            }
+        }
+
+        // User dropdown menu
+        .dropdown-menu {
+            border-radius: var(--surface-rounder-md, 8px);
+            border: 1px solid var(--color-secondary-03, #ededed);
+            box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+
+            .dropdown-item {
+                font-family: var(--font-family-base, 'Rawline', sans-serif);
+                font-size: var(--font-size-scale-base, 0.875rem);
+                font-weight: var(--font-weight-regular, 400);
+                color: var(--color-light, #333333);
+                padding: 0.5rem 1.25rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+
+                .icon {
+                    color: var(--interactive, #1351b4);
+                }
+
+                &:hover,
+                &:focus {
+                    background-color: var(--color-secondary-02, #f8f8f8);
+                    color: var(--interactive, #1351b4);
+                }
+
+                &.active {
+                    background-color: var(--color-primary-pastel-02, #dbe8fb);
+                    color: var(--color-primary-darken-01, #0c326f);
+                    font-weight: var(--font-weight-semi-bold, 600);
+                }
+            }
+        }
+    }
+
+    // Top Search Input
+    .simplesearchform {
+        .input-group {
+            .form-control {
+                border-radius: var(--surface-rounder-pill, 999em) 0 0 var(--surface-rounder-pill, 999em);
+                background-color: var(--color-secondary-02, #f8f8f8);
+                border-color: transparent;
+                height: 38px;
+                min-height: 38px;
+                font-size: 0.875rem;
+
+                &:focus {
+                    background-color: var(--background-light, #ffffff);
+                    border-color: var(--focus, #ffcd07) !important;
+                    box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+                }
+            }
+
+            .btn {
+                border-radius: 0 var(--surface-rounder-pill, 999em) var(--surface-rounder-pill, 999em) 0;
+                height: 38px;
+                padding-left: 0.85rem;
+                padding-right: 0.85rem;
+            }
+        }
+    }
+
+    // Mobile Navbar Toggler
+    .navbar-toggler {
+        color: var(--interactive, #1351b4);
+        border-radius: var(--surface-rounder-sm, 4px);
+        padding: 0.5rem;
+
+        &:focus,
+        &:focus-visible {
+            outline: 2px solid var(--focus, #ffcd07) !important;
+            outline-offset: 2px;
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 3. Moodle Page Context Header (#page-header & .header-maxwidth)
+// --------------------------------------------------------------------------
+#page-header {
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-secondary-03, #ededed);
+
+    .page-header-headings h1,
+    .page-header-headings .h2,
+    h1.h2 {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: var(--font-size-scale-up-03, 1.5rem);
+        font-weight: var(--font-weight-bold, 700);
+        color: var(--color-light, #333333);
+        line-height: 1.25;
+        margin-bottom: 0.25rem;
+    }
+
+    .header-actions-container {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .btn {
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-weight: var(--font-weight-medium, 500);
+        }
+    }
+
+    // Welcome message
+    .welcome-message {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        color: var(--color-secondary-07, #555555);
+        font-size: var(--font-size-scale-base, 0.875rem);
+    }
+}
+

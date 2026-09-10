@@ -204,5 +204,13 @@
     --checkbox-size-sm: 20px;
     --checkbox-padding: var(--spacing-scale-base, 8px);
 
+    --header-padding:         var(--header-padding-medium);
+    --header-padding-small:   var(--spacing-scale-base, 8px);
+    --header-padding-medium:  var(--spacing-scale-2x, 16px);
+    --header-padding-large:   var(--spacing-scale-3x, 24px);
+    --header-logo-height:     40px;
+    --header-logo-compact:    32px;
+    --header-shadow:          var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.16));
+
     --z-index-layer-2: 200;
 }

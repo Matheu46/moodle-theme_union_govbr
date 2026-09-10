@@ -150,10 +150,14 @@ $link-hover-decoration: underline;
 $border-color:  $govbr-gray-20;            // #cccccc
 
 // =============================================================================
-// Navbar & Navigation Heights (Synchronized to prevent moremenu autoCollapse bug)
+// Navbar & Navigation Variables (Synchronized to prevent moremenu autoCollapse bug)
 // =============================================================================
 $navbar-height: 72px;
 $moremenu-height: $navbar-height;
+$navbar-bg: $govbr-pure-0;             // #ffffff
+$navbar-color: $govbr-gray-80;          // #333333
+$navbar-border-color: $govbr-gray-10;   // #e6e6e6
+
 
 // =============================================================================
 // Gov.br DS - Surface Tokens (SCSS Variables)

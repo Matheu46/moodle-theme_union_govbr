@@ -117,6 +117,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($checkboxesfile);
     }
 
+    // Append header.scss if it exists.
+    $headerfile = __DIR__ . '/scss/header.scss';
+    if (file_exists($headerfile)) {
+        $scss .= "\n" . file_get_contents($headerfile);
+    }
+
     return $scss;
 }
 
