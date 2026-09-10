@@ -200,5 +200,9 @@
     --input-large:     48px;
     --input-highlight: 56px;
 
+    --checkbox-size:    24px;
+    --checkbox-size-sm: 20px;
+    --checkbox-padding: var(--spacing-scale-base, 8px);
+
     --z-index-layer-2: 200;
 }

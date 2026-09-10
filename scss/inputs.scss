@@ -435,24 +435,12 @@ label,
     }
 }
 
-// 7. Checkbox & Radio Buttons (.form-check-input)
-.form-check-input {
+// 7. Radio Buttons (temporary placeholder until radio component is built)
+.form-check-input[type="radio"] {
     width: 1.125rem;
     height: 1.125rem;
-    margin-top: 0.15rem;
-    vertical-align: top;
-    background-color: var(--background-light, #ffffff);
-    border: 1px solid var(--border-color-alternative, #888888);
+    border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-
-    &[type="checkbox"] {
-        border-radius: 2px;
-    }
-
-    &[type="radio"] {
-        border-radius: 50%;
-    }
 
     &:checked {
         background-color: var(--interactive, #1351b4);
@@ -469,14 +457,6 @@ label,
         opacity: var(--disabled, 0.45);
         cursor: not-allowed;
     }
-}
-
-.form-check-label {
-    font-family: var(--font-family-base, 'Rawline', sans-serif);
-    font-size: 0.875rem;
-    color: var(--color-secondary-08, #333333);
-    cursor: pointer;
-    margin-left: 0.35rem;
 }
 
 // 8. Moodle Specific Form Adjustments (.mform, .fitem, autocomplete)

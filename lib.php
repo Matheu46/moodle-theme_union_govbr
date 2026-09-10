@@ -111,6 +111,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($selectsfile);
     }
 
+    // Append checkboxes.scss if it exists.
+    $checkboxesfile = __DIR__ . '/scss/checkboxes.scss';
+    if (file_exists($checkboxesfile)) {
+        $scss .= "\n" . file_get_contents($checkboxesfile);
+    }
+
     return $scss;
 }
 

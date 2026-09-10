@@ -274,4 +274,22 @@ $form-select-focus-border-color: $govbr-yellow-vivid-20;    // #ffcd07
 $form-select-focus-box-shadow:   0 0 0 2px $govbr-yellow-vivid-20;
 $form-select-disabled-bg:        $govbr-gray-2;             // #f8f8f8
 
+// =============================================================================
+// Bootstrap Checkbox & Form Check Variables
+// =============================================================================
+$form-check-input-width:                  1.5rem;                    // 24px
+$form-check-min-height:                   1.5rem;                    // 24px
+$form-check-padding-start:                2rem;
+$form-check-input-border-radius:          $surface-rounder-sm;       // 4px
+$form-check-input-bg:                     $govbr-pure-0;             // #ffffff
+$form-check-input-border:                 1px solid $govbr-gray-40;  // #888888
+$form-check-input-focus-border:           $govbr-yellow-vivid-20;    // #ffcd07
+$form-check-input-focus-box-shadow:       0 0 0 2px $govbr-yellow-vivid-20;
+$form-check-input-checked-bg-color:       $govbr-pure-0;             // #ffffff (Gov.br checkbox stays white)
+$form-check-input-checked-border-color:   $govbr-gray-40;            // #888888
+$form-check-input-checked-color:          $govbr-blue-warm-vivid-70; // #1351b4 (Checkmark color)
+$form-check-input-indeterminate-bg-color: $govbr-blue-warm-vivid-70; // #1351b4
+$form-check-input-disabled-opacity:       0.45;
+
+
 
