@@ -110,12 +110,20 @@
     --border-color:           #cccccc;
 
     // Feedback Tokens
-    --success:     #168821;
-    --info:        #155bcb;
-    --warning:     #ffcd07;
-    --danger:      #e52207;
-    --focus-color: #c2850c;
-    --focus:       #c2850c;
+    --success:             #168821;
+    --success-rgb:         22, 136, 33;
+    --success-alternative: #e3f5e1;
+    --info:                #155bcb;
+    --info-rgb:            21, 91, 203;
+    --info-alternative:    #dbe8fb;
+    --warning:             #ffcd07;
+    --warning-rgb:         255, 205, 7;
+    --warning-alternative: #fff5c2;
+    --danger:              #e52207;
+    --danger-rgb:          229, 34, 7;
+    --danger-alternative:  #fde0db;
+    --focus-color:         #c2850c;
+    --focus:               #c2850c;
 
     // Highlight Token (Gov.br Green)
     --color-highlight: #268744;

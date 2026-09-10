@@ -1,0 +1,362 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Gov.br Design System - Message & Notification Feedback Component
+ * Reference: https://www.gov.br/ds/components/message?tab=visao-geral
+ *
+ * @package    theme_union_govbr
+ * @copyright  2024 Matheus Mathias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+// --------------------------------------------------------------------------
+// 1. Gov.br Design System Custom Message (.br-message)
+// --------------------------------------------------------------------------
+.br-message {
+    --message-background:   var(--background-light, #ffffff);
+    --message-color-icon:   var(--color-light, #333333);
+    --message-text:         var(--color-light, #333333);
+    --message-border-color: var(--color-secondary-04, #cccccc);
+
+    align-items: flex-start;
+    background-color: var(--message-background);
+    border: 1px solid var(--message-border-color);
+    border-left: 4px solid var(--message-color-icon);
+    border-radius: var(--surface-rounder-sm, 4px);
+    box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
+    display: flex;
+    margin-bottom: var(--spacing-scale-2x, 16px);
+    position: relative;
+    width: 100%;
+
+    // Message status icon container
+    .icon {
+        align-items: center;
+        color: var(--message-color-icon);
+        display: flex;
+        flex-shrink: 0;
+        font-size: 1.25rem;
+        justify-content: center;
+        padding: var(--spacing-scale-2x, 16px) 0 var(--spacing-scale-2x, 16px) var(--spacing-scale-2x, 16px);
+    }
+
+    // Message textual content
+    .content {
+        color: var(--message-text);
+        flex: 1;
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: var(--font-size-scale-up-01, 1rem);
+        line-height: 1.5;
+        padding: var(--spacing-scale-2x, 16px);
+
+        .message-title {
+            color: var(--color-light, #333333);
+            display: block;
+            font-weight: var(--font-weight-semi-bold, 600);
+            margin-bottom: 0.25rem;
+        }
+
+        .message-body {
+            font-weight: var(--font-weight-regular, 400);
+            margin-bottom: 0;
+        }
+
+        a {
+            color: inherit;
+            font-weight: var(--font-weight-bold, 700);
+            text-decoration: underline;
+
+            &:hover {
+                color: var(--interactive, #1351b4);
+            }
+        }
+
+        *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // Close button
+    .close {
+        background: transparent;
+        border: none;
+        color: var(--color-secondary-07, #555555);
+        cursor: pointer;
+        margin-right: var(--spacing-scale-base, 8px);
+        margin-top: var(--spacing-scale-base, 8px);
+        opacity: 0.8;
+        padding: var(--spacing-scale-base, 8px);
+        transition: opacity 0.15s ease-in-out;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:focus,
+        &:focus-visible {
+            outline: 2px solid var(--focus, #ffcd07);
+        }
+    }
+
+    // Status: Success
+    &.is-success,
+    &.success,
+    &[success] {
+        --message-background:   var(--success-alternative, #e3f5e1);
+        --message-color-icon:   var(--success, #168821);
+        --message-border-color: rgba(var(--success-rgb, 22, 136, 33), 0.25);
+    }
+
+    // Status: Danger / Error
+    &.is-danger,
+    &.danger,
+    &.is-error,
+    &.error,
+    &[danger] {
+        --message-background:   var(--danger-alternative, #fde0db);
+        --message-color-icon:   var(--danger, #e52207);
+        --message-border-color: rgba(var(--danger-rgb, 229, 34, 7), 0.25);
+    }
+
+    // Status: Warning
+    &.is-warning,
+    &.warning,
+    &[warning] {
+        --message-background:   var(--warning-alternative, #fff5c2);
+        --message-color-icon:   #c2850c;
+        --message-border-color: rgba(var(--warning-rgb, 255, 205, 7), 0.4);
+    }
+
+    // Status: Info
+    &.is-info,
+    &.info,
+    &[info] {
+        --message-background:   var(--info-alternative, #dbe8fb);
+        --message-color-icon:   var(--info, #155bcb);
+        --message-border-color: rgba(var(--info-rgb, 21, 91, 203), 0.25);
+    }
+}
+
+// --------------------------------------------------------------------------
+// 2. Moodle Native Alerts & Notifications (.alert, .alert-*)
+// --------------------------------------------------------------------------
+.alert {
+    border-radius: var(--surface-rounder-sm, 4px);
+    border-style: solid;
+    border-width: 1px 1px 1px 4px;
+    box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: var(--font-size-scale-up-01, 1rem);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    padding-left: 3.25rem; // Space for official Gov.br SVG status icon
+    padding-right: 2.75rem;
+    padding-top: 1rem;
+    position: relative;
+    word-wrap: break-word;
+
+    // Status Icon injected via pseudo-element
+    &::before {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+        height: 20px;
+        left: 1.125rem;
+        position: absolute;
+        top: 1.15rem;
+        width: 20px;
+    }
+
+    // Alert headings
+    .alert-heading,
+    h1, h2, h3, h4, h5, h6 {
+        color: inherit;
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-weight: var(--font-weight-semi-bold, 600);
+        margin-bottom: 0.35rem;
+    }
+
+    // Links inside alerts
+    a,
+    .alert-link {
+        color: inherit;
+        font-weight: var(--font-weight-bold, 700);
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--interactive, #1351b4);
+        }
+    }
+
+    // Close button (.btn-close, .close)
+    .btn-close,
+    .close {
+        background-size: 0.85rem;
+        margin-bottom: 0;
+        margin-right: 0;
+        margin-top: 0;
+        opacity: 0.75;
+        padding: 1.15rem 1rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: opacity 0.15s ease-in-out;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:focus,
+        &:focus-visible {
+            box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+            outline: none !important;
+        }
+    }
+
+    // Success Alert (.alert-success)
+    &.alert-success {
+        background-color: var(--success-alternative, #e3f5e1) !important;
+        border-color: rgba(var(--success-rgb, 22, 136, 33), 0.25) !important;
+        border-left-color: var(--success, #168821) !important;
+        color: var(--color-light, #333333) !important;
+
+        &::before {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23168821'%3e%3cpath d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z'/%3e%3c/svg%3e");
+        }
+    }
+
+    // Danger / Error Alert (.alert-danger, .alert-error)
+    &.alert-danger,
+    &.alert-error {
+        background-color: var(--danger-alternative, #fde0db) !important;
+        border-color: rgba(var(--danger-rgb, 229, 34, 7), 0.25) !important;
+        border-left-color: var(--danger, #e52207) !important;
+        color: var(--color-light, #333333) !important;
+
+        &::before {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e52207'%3e%3cpath d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z'/%3e%3c/svg%3e");
+        }
+    }
+
+    // Warning Alert (.alert-warning)
+    &.alert-warning {
+        background-color: var(--warning-alternative, #fff5c2) !important;
+        border-color: rgba(var(--warning-rgb, 255, 205, 7), 0.4) !important;
+        border-left-color: #c2850c !important;
+        color: var(--color-light, #333333) !important;
+
+        &::before {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c2850c'%3e%3cpath d='M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z'/%3e%3c/svg%3e");
+        }
+    }
+
+    // Info Alert (.alert-info)
+    &.alert-info {
+        background-color: var(--info-alternative, #dbe8fb) !important;
+        border-color: rgba(var(--info-rgb, 21, 91, 203), 0.25) !important;
+        border-left-color: var(--info, #155bcb) !important;
+        color: var(--color-light, #333333) !important;
+
+        &::before {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23155bcb'%3e%3cpath d='M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z'/%3e%3c/svg%3e");
+        }
+    }
+
+    // Secondary Alert (.alert-secondary)
+    &.alert-secondary {
+        background-color: var(--color-secondary-02, #f8f8f8) !important;
+        border-color: var(--color-secondary-03, #ededed) !important;
+        border-left-color: var(--color-secondary-06, #888888) !important;
+        color: var(--color-light, #333333) !important;
+
+        &::before {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23888888'%3e%3cpath d='M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z'/%3e%3c/svg%3e");
+        }
+    }
+}
+
+// Moodle Page Notifications Region (#user-notifications)
+#user-notifications {
+    margin-bottom: 1.5rem;
+
+    .alert {
+        margin-bottom: 0.75rem;
+    }
+}
+
+// --------------------------------------------------------------------------
+// 3. Moodle Toast Notifications (.toast, core/toast)
+// --------------------------------------------------------------------------
+.toast {
+    background-color: var(--background-light, #ffffff);
+    border: 1px solid var(--color-secondary-03, #ededed);
+    border-radius: var(--surface-rounder-md, 8px);
+    box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: var(--font-size-scale-base, 0.875rem);
+
+    .toast-header {
+        background-color: transparent;
+        border-bottom: 1px solid var(--color-secondary-03, #ededed);
+        color: var(--color-light, #333333);
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-weight: var(--font-weight-semi-bold, 600);
+        padding: 0.75rem 1rem;
+    }
+
+    .toast-body {
+        padding: 1rem;
+        color: var(--color-light, #333333);
+    }
+}
+
+// --------------------------------------------------------------------------
+// 4. Gov.br Inline Field Feedback (.feedback)
+// --------------------------------------------------------------------------
+.feedback {
+    align-items: center;
+    display: inline-flex;
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-medium, 500);
+    gap: 0.35rem;
+    margin-top: 0.25rem;
+
+    &.is-success,
+    &.success {
+        color: var(--success, #168821);
+    }
+
+    &.is-danger,
+    &.danger,
+    &.is-error,
+    &.error {
+        color: var(--danger, #e52207);
+    }
+
+    &.is-warning,
+    &.warning {
+        color: #c2850c;
+    }
+
+    &.is-info,
+    &.info {
+        color: var(--info, #155bcb);
+    }
+}
+

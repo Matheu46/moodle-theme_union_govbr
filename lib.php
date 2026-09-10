@@ -123,6 +123,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($headerfile);
     }
 
+    // Append messages.scss if it exists.
+    $messagesfile = __DIR__ . '/scss/messages.scss';
+    if (file_exists($messagesfile)) {
+        $scss .= "\n" . file_get_contents($messagesfile);
+    }
+
     return $scss;
 }
 
