@@ -1,0 +1,309 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Gov.br Design System - Tooltip & Popover Component
+ * Reference: https://www.gov.br/ds/components/tooltip?tab=visao-geral
+ *
+ * @package    theme_union_govbr
+ * @copyright  2026 Matheus Mathias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+// --------------------------------------------------------------------------
+// 1. Gov.br Design System Custom Tooltip & Popover (.br-tooltip)
+// --------------------------------------------------------------------------
+.br-tooltip {
+    align-items: flex-start;
+    background-color: var(--interactive, #1351b4);
+    border-radius: var(--surface-rounder-sm, 4px);
+    box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-medium, 500);
+    justify-content: flex-start;
+    max-width: 260px;
+    padding: var(--spacing-scale-base, 8px) var(--spacing-scale-baseh, 12px);
+    position: absolute;
+    z-index: 1070;
+
+    .text,
+    .subtext,
+    .link {
+        display: block;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .text {
+        font-weight: var(--font-weight-semi-bold, 600);
+    }
+
+    .link {
+        color: inherit;
+        text-align: right;
+        text-decoration: underline;
+        width: 100%;
+    }
+
+    // Status Variants
+    &[success] {
+        background-color: var(--success, #168821);
+        .arrow { border-color: var(--success, #168821); }
+    }
+
+    &[error] {
+        background-color: var(--danger, #e52207);
+        .arrow { border-color: var(--danger, #e52207); }
+    }
+
+    &[warning] {
+        background-color: var(--warning, #ffcd07);
+        color: var(--color-light, #333333);
+        .arrow { border-color: var(--warning, #ffcd07); }
+    }
+
+    &[info] {
+        background-color: var(--info, #155bcb);
+        .arrow { border-color: var(--info, #155bcb); }
+    }
+
+    // Popover variant in Gov.br DS (.br-tooltip[popover])
+    &[popover] {
+        background-color: var(--background-light, #ffffff);
+        border: 1px solid var(--color-secondary-03, #ededed);
+        border-radius: var(--surface-rounder-md, 8px);
+        color: var(--color-light, #333333);
+        max-width: 320px;
+        min-width: 240px;
+        padding: var(--spacing-scale-2x, 16px);
+        width: auto;
+
+        .popover-header {
+            border-bottom: 1px solid var(--color-secondary-03, #ededed);
+            color: var(--color-light, #333333);
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-size: var(--font-size-scale-base, 0.875rem);
+            font-weight: var(--font-weight-semi-bold, 600);
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            text-align: left;
+            width: 100%;
+        }
+
+        .popover-body {
+            color: var(--color-light, #333333);
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-size: var(--font-size-scale-base, 0.875rem);
+            font-weight: var(--font-weight-regular, 400);
+            line-height: 1.5;
+            margin-bottom: 0;
+            width: 100%;
+        }
+
+        .close {
+            background: transparent;
+            border: 0;
+            color: var(--color-secondary-07, #555555);
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+
+            &:hover {
+                color: var(--color-light, #333333);
+            }
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 2. Moodle Native Tooltips (.tooltip, .tooltip-inner)
+// --------------------------------------------------------------------------
+.tooltip {
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: 0.75rem;
+    line-height: 1.4;
+    z-index: 1070;
+
+    .tooltip-inner {
+        background-color: var(--interactive, #1351b4);
+        border-radius: var(--surface-rounder-sm, 4px);
+        box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
+        color: #ffffff;
+        font-weight: var(--font-weight-medium, 500);
+        max-width: 240px;
+        padding: 0.4rem 0.75rem;
+        text-align: center;
+    }
+
+    // Tooltip Arrow pointers
+    &.bs-tooltip-top .tooltip-arrow::before,
+    &.bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before {
+        border-top-color: var(--interactive, #1351b4);
+    }
+
+    &.bs-tooltip-bottom .tooltip-arrow::before,
+    &.bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before {
+        border-bottom-color: var(--interactive, #1351b4);
+    }
+
+    &.bs-tooltip-start .tooltip-arrow::before,
+    &.bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before {
+        border-left-color: var(--interactive, #1351b4);
+    }
+
+    &.bs-tooltip-end .tooltip-arrow::before,
+    &.bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before {
+        border-right-color: var(--interactive, #1351b4);
+    }
+}
+
+// --------------------------------------------------------------------------
+// 3. Moodle Help Icons & Help Popovers (.popover, .popover-header, .popover-body)
+// --------------------------------------------------------------------------
+// Help trigger icon button in Moodle forms
+a[data-toggle="popover"],
+a[data-bs-toggle="popover"],
+.btn-link[data-toggle="popover"],
+.btn-link[data-bs-toggle="popover"] {
+    align-items: center;
+    border-radius: var(--surface-rounder-pill, 999em);
+    color: var(--interactive, #1351b4) !important;
+    display: inline-flex;
+    justify-content: center;
+    padding: 0.15rem;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+    .icon,
+    i {
+        color: var(--interactive, #1351b4) !important;
+        font-size: 0.9375rem;
+        margin: 0 0.15rem;
+        transition: color 0.15s ease-in-out;
+    }
+
+    &:hover {
+        background-color: var(--color-secondary-02, #f8f8f8);
+        color: var(--color-primary-darken-01, #0c326f) !important;
+
+        .icon,
+        i {
+            color: var(--color-primary-darken-01, #0c326f) !important;
+        }
+    }
+
+    &:focus,
+    &:focus-visible {
+        box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+        outline: none !important;
+    }
+}
+
+// Moodle Popover Container
+.popover {
+    background-color: var(--background-light, #ffffff);
+    border: 1px solid var(--color-secondary-03, #ededed);
+    border-radius: var(--surface-rounder-md, 8px);
+    box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    max-width: 340px;
+    min-width: 240px;
+    z-index: 1060;
+
+    // Popover Header
+    .popover-header {
+        background-color: var(--background-light, #ffffff);
+        border-bottom: 1px solid var(--color-secondary-03, #ededed);
+        border-radius: var(--surface-rounder-md, 8px) var(--surface-rounder-md, 8px) 0 0;
+        color: var(--color-light, #333333);
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: var(--font-size-scale-base, 0.875rem);
+        font-weight: var(--font-weight-semi-bold, 600);
+        line-height: 1.35;
+        margin: 0;
+        padding: 0.75rem 1rem;
+    }
+
+    // Popover Body
+    .popover-body {
+        color: var(--color-light, #333333);
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: var(--font-size-scale-base, 0.875rem);
+        font-weight: var(--font-weight-regular, 400);
+        line-height: 1.5;
+        padding: 0.85rem 1rem;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: var(--interactive, #1351b4);
+            font-weight: var(--font-weight-semi-bold, 600);
+            text-decoration: underline;
+
+            &:hover {
+                color: var(--color-primary-darken-01, #0c326f);
+            }
+        }
+    }
+
+    // Popover Arrow pointers
+    .popover-arrow::before {
+        border-color: transparent;
+    }
+
+    &.bs-popover-top .popover-arrow::before,
+    &.bs-popover-auto[data-popper-placement^="top"] .popover-arrow::before {
+        border-top-color: var(--color-secondary-03, #ededed);
+    }
+    &.bs-popover-top .popover-arrow::after,
+    &.bs-popover-auto[data-popper-placement^="top"] .popover-arrow::after {
+        border-top-color: var(--background-light, #ffffff);
+    }
+
+    &.bs-popover-bottom .popover-arrow::before,
+    &.bs-popover-auto[data-popper-placement^="bottom"] .popover-arrow::before {
+        border-bottom-color: var(--color-secondary-03, #ededed);
+    }
+    &.bs-popover-bottom .popover-arrow::after,
+    &.bs-popover-auto[data-popper-placement^="bottom"] .popover-arrow::after {
+        border-bottom-color: var(--background-light, #ffffff);
+    }
+
+    &.bs-popover-start .popover-arrow::before,
+    &.bs-popover-auto[data-popper-placement^="left"] .popover-arrow::before {
+        border-left-color: var(--color-secondary-03, #ededed);
+    }
+    &.bs-popover-start .popover-arrow::after,
+    &.bs-popover-auto[data-popper-placement^="left"] .popover-arrow::after {
+        border-left-color: var(--background-light, #ffffff);
+    }
+
+    &.bs-popover-end .popover-arrow::before,
+    &.bs-popover-auto[data-popper-placement^="right"] .popover-arrow::before {
+        border-right-color: var(--color-secondary-03, #ededed);
+    }
+    &.bs-popover-end .popover-arrow::after,
+    &.bs-popover-auto[data-popper-placement^="right"] .popover-arrow::after {
+        border-right-color: var(--background-light, #ffffff);
+    }
+}
+

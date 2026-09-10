@@ -317,6 +317,25 @@ $filemanager-dnd-upload-over-border-color:   $govbr-blue-warm-vivid-70; // #1351
 $filemanager-picker-bg:                     $govbr-pure-0;             // #ffffff
 $filemanager-picker-active-bg:              $govbr-blue-warm-vivid-10; // #d4e5ff
 
+// =============================================================================
+// Bootstrap Tooltip & Popover Variables
+// =============================================================================
+$tooltip-bg:             $govbr-blue-warm-vivid-70; // #1351b4 (Gov.br primary blue)
+$tooltip-color:          $govbr-pure-0;             // #ffffff
+$tooltip-border-radius:  $surface-rounder-sm;       // 4px
+$tooltip-font-size:      0.75rem;                   // 12px
+$tooltip-padding-y:      0.4rem;
+$tooltip-padding-x:      0.75rem;
+
+$popover-bg:             $govbr-pure-0;             // #ffffff
+$popover-border-color:   $govbr-gray-10;            // #e6e6e6
+$popover-border-radius:  $surface-rounder-md;       // 8px
+$popover-header-bg:      $govbr-pure-0;             // #ffffff
+$popover-header-color:   $govbr-gray-80;            // #333333
+$popover-body-color:     $govbr-gray-80;            // #333333
+$popover-box-shadow:     0 3px 6px rgba(0, 0, 0, 0.16);
+
+
 
 
 

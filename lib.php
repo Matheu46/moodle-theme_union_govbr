@@ -135,6 +135,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($uploadsfile);
     }
 
+    // Append tooltips.scss if it exists.
+    $tooltipsfile = __DIR__ . '/scss/tooltips.scss';
+    if (file_exists($tooltipsfile)) {
+        $scss .= "\n" . file_get_contents($tooltipsfile);
+    }
+
     return $scss;
 }
 
