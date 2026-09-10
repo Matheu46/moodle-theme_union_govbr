@@ -1,0 +1,489 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Gov.br Design System - Tag & Badge Component
+ * Reference: https://www.gov.br/ds/components/tag?tab=visao-geral
+ *
+ * @package    theme_union_govbr
+ * @copyright  2026 Matheus Mathias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+// --------------------------------------------------------------------------
+// 1. Gov.br Design System Custom Tag (.br-tag)
+// --------------------------------------------------------------------------
+.br-tag {
+    align-items: center;
+    background-color: var(--color-secondary-03, #ededed);
+    border: 1px solid transparent;
+    border-radius: var(--surface-rounder-pill, 999em);
+    color: var(--color-light, #333333);
+    display: inline-flex;
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-medium, 500);
+    gap: 0.25rem;
+    line-height: 1.25;
+    padding: 0.25rem 0.65rem;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    // Densities / Sizes
+    &.small,
+    &[small] {
+        font-size: 0.6875rem;
+        padding: 0.15rem 0.5rem;
+    }
+
+    &.large,
+    &[large] {
+        font-size: 0.875rem;
+        padding: 0.35rem 0.85rem;
+    }
+
+    // Square shape variant
+    &.square,
+    &[square] {
+        border-radius: var(--surface-rounder-sm, 4px);
+    }
+
+    // Interactive Tag (Link or Button)
+    &[interaction],
+    &[interaction-select],
+    &[role="button"],
+    a#{&},
+    button#{&} {
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--color-secondary-04, #cccccc);
+            color: var(--color-light, #333333);
+            text-decoration: none;
+        }
+
+        &:focus,
+        &:focus-visible {
+            box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+            outline: none !important;
+        }
+    }
+
+    // Selected state
+    &.selected,
+    &[selected],
+    &[aria-pressed="true"] {
+        background-color: var(--interactive, #1351b4);
+        border-color: var(--interactive, #1351b4);
+        color: #ffffff;
+
+        &:hover {
+            background-color: var(--color-primary-darken-01, #0c326f);
+            color: #ffffff;
+        }
+    }
+
+    // Status / Color Variants
+    &.primary,
+    &[primary] {
+        background-color: var(--interactive, #1351b4);
+        border-color: var(--interactive, #1351b4);
+        color: #ffffff;
+
+        &:hover {
+            background-color: var(--color-primary-darken-01, #0c326f);
+            color: #ffffff;
+        }
+    }
+
+    &.success,
+    &[success] {
+        background-color: var(--success, #168821);
+        border-color: var(--success, #168821);
+        color: #ffffff;
+    }
+
+    &.warning,
+    &[warning] {
+        background-color: var(--warning, #ffcd07);
+        border-color: var(--warning, #ffcd07);
+        color: var(--color-light, #333333);
+    }
+
+    &.danger,
+    &[danger],
+    &.error,
+    &[error] {
+        background-color: var(--danger, #e52207);
+        border-color: var(--danger, #e52207);
+        color: #ffffff;
+    }
+
+    &.info,
+    &[info] {
+        background-color: var(--info, #155bcb);
+        border-color: var(--info, #155bcb);
+        color: #ffffff;
+    }
+
+    // Subtle / Pastel variants
+    &.subtle,
+    &[subtle] {
+        &.primary,
+        &[primary] {
+            background-color: var(--color-primary-pastel-02, #dbe8fb);
+            border-color: rgba(var(--interactive-rgb, 19, 81, 180), 0.25);
+            color: var(--interactive, #1351b4);
+        }
+
+        &.success,
+        &[success] {
+            background-color: var(--success-alternative, #e3f5e1);
+            border-color: rgba(var(--success-rgb, 22, 136, 33), 0.25);
+            color: var(--success, #168821);
+        }
+
+        &.warning,
+        &[warning] {
+            background-color: var(--warning-alternative, #fff5c2);
+            border-color: rgba(var(--warning-rgb, 255, 205, 7), 0.4);
+            color: #c2850c;
+        }
+
+        &.danger,
+        &[danger] {
+            background-color: var(--danger-alternative, #fde0db);
+            border-color: rgba(var(--danger-rgb, 229, 34, 7), 0.25);
+            color: var(--danger, #e52207);
+        }
+
+        &.info,
+        &[info] {
+            background-color: var(--info-alternative, #dbe8fb);
+            border-color: rgba(var(--info-rgb, 21, 91, 203), 0.25);
+            color: var(--info, #155bcb);
+        }
+    }
+
+    // Dismissible / Close button (.close, button, [data-role="remove"])
+    .close,
+    .btn-close,
+    [data-role="remove"],
+    button {
+        align-items: center;
+        background: transparent;
+        border: none;
+        border-radius: 50%;
+        color: inherit;
+        cursor: pointer;
+        display: inline-flex;
+        font-size: 0.8em;
+        justify-content: center;
+        line-height: 1;
+        margin-left: 0.25rem;
+        opacity: 0.75;
+        padding: 0.15rem;
+        transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            opacity: 1;
+        }
+
+        &:focus,
+        &:focus-visible {
+            box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+            outline: none !important;
+        }
+    }
+
+    // Leading icon support
+    i,
+    .icon {
+        font-size: 0.85em;
+        margin-right: 0.25rem;
+    }
+
+    // Count Tag
+    &.count,
+    &[count] {
+        font-weight: var(--font-weight-semi-bold, 600);
+        justify-content: center;
+        min-width: 1.5rem;
+        padding: 0.15rem 0.4rem;
+    }
+}
+
+// --------------------------------------------------------------------------
+// 2. Moodle Native Tags (core_tag: .tag_list, .tag_cloud)
+// --------------------------------------------------------------------------
+.tag_list {
+    margin-bottom: 0.5rem;
+
+    ul.inline-list {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-flex;
+            margin: 0;
+
+            a.badge,
+            span.badge {
+                align-items: center;
+                background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
+                border: 1px solid rgba(var(--interactive-rgb, 19, 81, 180), 0.25);
+                border-radius: var(--surface-rounder-pill, 999em);
+                color: var(--interactive, #1351b4) !important;
+                display: inline-flex;
+                font-family: var(--font-family-base, 'Rawline', sans-serif);
+                font-size: 0.75rem;
+                font-weight: var(--font-weight-medium, 500);
+                line-height: 1.25;
+                padding: 0.25rem 0.65rem;
+                text-decoration: none;
+                transition: all 0.15s ease-in-out;
+
+                &:hover {
+                    background-color: var(--interactive, #1351b4) !important;
+                    border-color: var(--interactive, #1351b4);
+                    color: #ffffff !important;
+                }
+
+                &:focus,
+                &:focus-visible {
+                    box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+                    outline: none !important;
+                }
+            }
+
+            // Standard / Official tags
+            .standardtag {
+                font-weight: var(--font-weight-semi-bold, 600);
+            }
+
+            // Flagged tags
+            .flagged-tag {
+                border-color: var(--danger, #e52207);
+                color: var(--danger, #e52207) !important;
+            }
+        }
+    }
+
+    .tagmorelink,
+    .taglesslink {
+        color: var(--interactive, #1351b4);
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 0.75rem;
+        font-weight: var(--font-weight-semi-bold, 600);
+        margin-left: 0.35rem;
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--color-primary-darken-01, #0c326f);
+        }
+    }
+}
+
+// Tag Cloud in Tag Index (/tag/index.php, /tag/search.php)
+.tag_cloud {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    a {
+        align-items: center;
+        background-color: var(--color-secondary-02, #f8f8f8);
+        border: 1px solid var(--color-secondary-03, #ededed);
+        border-radius: var(--surface-rounder-pill, 999em);
+        color: var(--interactive, #1351b4);
+        display: inline-flex;
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        padding: 0.35rem 0.75rem;
+        text-decoration: none;
+        transition: all 0.15s ease-in-out;
+
+        &:hover {
+            background-color: var(--interactive, #1351b4);
+            border-color: var(--interactive, #1351b4);
+            color: #ffffff;
+        }
+
+        &:focus,
+        &:focus-visible {
+            box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+            outline: none !important;
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 3. Moodle Autocomplete Tags (.form-autocomplete-selection)
+// --------------------------------------------------------------------------
+.form-autocomplete-selection {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+
+    .badge,
+    [data-value] {
+        align-items: center;
+        background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
+        border: 1px solid rgba(var(--interactive-rgb, 19, 81, 180), 0.25);
+        border-radius: var(--surface-rounder-pill, 999em);
+        color: var(--interactive, #1351b4) !important;
+        display: inline-flex;
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 0.8125rem;
+        font-weight: var(--font-weight-medium, 500);
+        line-height: 1.25;
+        padding: 0.25rem 0.45rem 0.25rem 0.75rem;
+        transition: all 0.15s ease-in-out;
+
+        [data-role="remove"],
+        span[role="button"] {
+            align-items: center;
+            border-radius: 50%;
+            color: var(--interactive, #1351b4) !important;
+            cursor: pointer;
+            display: inline-flex;
+            font-size: 0.9em;
+            font-weight: bold;
+            justify-content: center;
+            line-height: 1;
+            margin-left: 0.35rem;
+            opacity: 0.8;
+            padding: 0.15rem 0.25rem;
+            transition: all 0.15s ease-in-out;
+
+            &:hover {
+                background-color: rgba(var(--interactive-rgb, 19, 81, 180), 0.15);
+                color: var(--color-primary-darken-01, #0c326f) !important;
+                opacity: 1;
+            }
+
+            &:focus,
+            &:focus-visible {
+                box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+                outline: none !important;
+            }
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 4. Moodle Native Badges & Status Pills (.badge, .bg-*)
+// --------------------------------------------------------------------------
+.badge {
+    border-radius: var(--surface-rounder-pill, 999em);
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-medium, 500);
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    padding: 0.3em 0.65em;
+    vertical-align: middle;
+
+    // Gov.br DS Palettes for Badges
+    &.bg-primary,
+    &.badge-primary {
+        background-color: var(--interactive, #1351b4);
+        color: #ffffff;
+    }
+
+    &.bg-secondary,
+    &.badge-secondary {
+        background-color: var(--color-secondary-06, #888888) !important;
+        color: #ffffff !important;
+    }
+
+    &.bg-success,
+    &.badge-success {
+        background-color: var(--success, #168821) !important;
+        color: #ffffff !important;
+    }
+
+    &.bg-warning,
+    &.badge-warning {
+        background-color: var(--warning, #ffcd07) !important;
+        color: var(--color-light, #333333) !important;
+    }
+
+    &.bg-danger,
+    &.badge-danger {
+        background-color: var(--danger, #e52207) !important;
+        color: #ffffff !important;
+    }
+
+    &.bg-info,
+    &.badge-info {
+        background-color: var(--info, #155bcb) !important;
+        color: #ffffff !important;
+    }
+
+    &.bg-light,
+    &.badge-light {
+        background-color: var(--color-secondary-02, #f8f8f8) !important;
+        border: 1px solid var(--color-secondary-03, #ededed);
+        color: var(--color-light, #333333) !important;
+    }
+
+    &.bg-dark,
+    &.badge-dark {
+        background-color: var(--blue-warm-vivid-90, #071d41) !important;
+        color: #ffffff !important;
+    }
+
+    // Subtle / Pastel Status Badges
+    &.badge-subtle-success,
+    &.badge-outline-success {
+        background-color: var(--success-alternative, #e3f5e1) !important;
+        border: 1px solid rgba(var(--success-rgb, 22, 136, 33), 0.25);
+        color: var(--success, #168821) !important;
+    }
+
+    &.badge-subtle-warning,
+    &.badge-outline-warning {
+        background-color: var(--warning-alternative, #fff5c2) !important;
+        border: 1px solid rgba(var(--warning-rgb, 255, 205, 7), 0.4);
+        color: #c2850c !important;
+    }
+
+    &.badge-subtle-danger,
+    &.badge-outline-danger {
+        background-color: var(--danger-alternative, #fde0db) !important;
+        border: 1px solid rgba(var(--danger-rgb, 229, 34, 7), 0.25);
+        color: var(--danger, #e52207) !important;
+    }
+
+    &.badge-subtle-info,
+    &.badge-outline-info {
+        background-color: var(--info-alternative, #dbe8fb) !important;
+        border: 1px solid rgba(var(--info-rgb, 21, 91, 203), 0.25);
+        color: var(--info, #155bcb) !important;
+    }
+}
+
