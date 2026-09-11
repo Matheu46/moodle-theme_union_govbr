@@ -440,6 +440,144 @@ label,
     }
 }
 
+// Password visibility toggle in input group (.toggle-sensitive-wrapper)
+.toggle-sensitive-wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    border-radius: var(--surface-rounder-sm, 4px);
+    transition: box-shadow 0.15s ease-in-out;
+
+    .form-control {
+        border-right: none;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: var(--surface-rounder-sm, 4px);
+        border-bottom-left-radius: var(--surface-rounder-sm, 4px);
+        margin-top: 0;
+
+        &:focus,
+        &:focus-visible {
+            box-shadow: none !important; // Suppresses individual shadow so wrapper handles focus ring
+        }
+    }
+
+    // Seamless integrated action button (replaces heavy secondary button)
+    .toggle-sensitive-btn {
+        background-color: var(--background-light, #ffffff);
+        border: 1px solid var(--border-color-alternative, #888888);
+        border-left: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: var(--surface-rounder-sm, 4px);
+        border-bottom-right-radius: var(--surface-rounder-sm, 4px);
+        color: var(--color-secondary-07, #555555) !important; // Overrides .btn-secondary color
+        height: var(--input-medium, 40px);
+        min-height: var(--input-medium, 40px);
+        width: auto;
+        min-width: 44px;
+        padding: 0 var(--spacing-scale-baseh, 12px);
+        margin: 0;
+        box-shadow: none;
+        outline: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.15s ease-in-out,
+                    border-color 0.15s ease-in-out,
+                    color 0.15s ease-in-out;
+
+        .icon,
+        i {
+            color: inherit;
+            font-size: 1rem;
+            margin: 0;
+            line-height: 1;
+        }
+
+        &:hover {
+            background-color: var(--color-secondary-02, #f8f8f8);
+            border-color: var(--color-secondary-07, #555555);
+            border-left: none;
+            color: var(--interactive, #1351b4) !important;
+
+            .icon,
+            i {
+                color: var(--interactive, #1351b4) !important;
+            }
+        }
+
+        &:active {
+            background-color: var(--color-secondary-03, #ededed);
+            color: var(--color-primary-darken-01, #0c326f) !important;
+
+            .icon,
+            i {
+                color: var(--color-primary-darken-01, #0c326f) !important;
+            }
+        }
+
+        &:focus,
+        &:focus-visible {
+            outline: none;
+            box-shadow: none;
+            color: var(--interactive, #1351b4) !important;
+        }
+    }
+
+    // Hover on wrapper when not active
+    &:not(:focus-within):hover {
+        .form-control {
+            border-color: var(--color-secondary-07, #555555);
+            border-right: none;
+        }
+
+        .toggle-sensitive-btn {
+            border-color: var(--color-secondary-07, #555555);
+            border-left: none;
+        }
+    }
+
+    // Unified focus state for the entire composite input
+    &:focus-within {
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07);
+
+        .form-control {
+            border-color: var(--focus, #ffcd07);
+            border-right: none;
+        }
+
+        .toggle-sensitive-btn {
+            border-color: var(--focus, #ffcd07);
+            border-left: none;
+            color: var(--interactive, #1351b4) !important;
+        }
+    }
+
+    // Validation states
+    .form-control.is-invalid ~ .toggle-sensitive-btn {
+        border-color: var(--danger, #e52207);
+        border-left: none;
+    }
+
+    .form-control.is-valid ~ .toggle-sensitive-btn {
+        border-color: var(--success, #168821);
+        border-left: none;
+    }
+
+    // Responsive: restore right border when button is hidden on larger screens
+    &.small-screens-only {
+        @media (min-width: 576px) {
+            .form-control {
+                border-right: 1px solid var(--border-color-alternative, #888888);
+                border-radius: var(--surface-rounder-sm, 4px);
+            }
+        }
+    }
+}
+
 // 7. Radio Buttons (temporary placeholder until radio component is built)
 .form-check-input[type="radio"] {
     width: 1.125rem;

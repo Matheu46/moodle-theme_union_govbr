@@ -1,0 +1,384 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Gov.br Design System Sign-In Component (br-sign-in & Moodle authentication)
+ * Reference: https://www.gov.br/ds/components/signin?tab=visao-geral
+ *
+ * @package    theme_union_govbr
+ * @copyright  2026 Matheus Mathias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+// --------------------------------------------------------------------------
+// 1. Gov.br DS Sign-In Component (.br-sign-in)
+// --------------------------------------------------------------------------
+.br-sign-in {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-scale-base, 8px);
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    font-weight: var(--font-weight-semi-bold, 600);
+    font-size: var(--font-size-scale-base, 0.875rem);
+    line-height: 1;
+    border-radius: var(--surface-rounder-pill, 999em);
+    padding: 0 var(--spacing-scale-2x, 16px);
+    height: var(--sign-in-height-md, 40px);
+    text-decoration: none !important;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    vertical-align: middle;
+    transition: background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out,
+                box-shadow 0.15s ease-in-out,
+                color 0.15s ease-in-out;
+
+    // Focus state (Gov.br yellow solid focus ring)
+    &:focus,
+    &:focus-visible,
+    &.focus-visible {
+        outline: none !important;
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
+    }
+
+    // Disabled state
+    &:disabled,
+    &.disabled {
+        opacity: var(--disabled, 0.45);
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    // Primary Variant (.primary - default Gov.br emphasis)
+    &.primary,
+    &:not(.secondary):not(.tertiary) {
+        background-color: var(--interactive, #1351b4);
+        border-color: var(--interactive, #1351b4);
+        color: #ffffff !important;
+
+        &:hover:not(:disabled) {
+            background-color: var(--color-primary-darken-01, #0c326f);
+            border-color: var(--color-primary-darken-01, #0c326f);
+            color: #ffffff !important;
+        }
+
+        &:active:not(:disabled) {
+            background-color: var(--color-primary-darken-02, #071d41);
+            border-color: var(--color-primary-darken-02, #071d41);
+        }
+    }
+
+    // Secondary Variant (.secondary - outline)
+    &.secondary {
+        background-color: transparent;
+        border-color: var(--interactive, #1351b4);
+        color: var(--interactive, #1351b4) !important;
+
+        &:hover:not(:disabled) {
+            background-color: var(--color-primary-pastel-02, #dbe8fb);
+            border-color: var(--color-primary-darken-01, #0c326f);
+            color: var(--color-primary-darken-01, #0c326f) !important;
+        }
+
+        &:active:not(:disabled) {
+            background-color: var(--color-primary-pastel-01, #c5d4eb);
+        }
+    }
+
+    // Density: Small (.small)
+    &.small {
+        height: var(--sign-in-height-sm, 32px);
+        font-size: var(--font-size-scale-down-01, 0.75rem);
+        padding: 0 var(--spacing-scale-baseh, 12px);
+    }
+
+    // Density: Large (.large)
+    &.large {
+        height: var(--sign-in-height-lg, 48px);
+        font-size: var(--font-size-scale-up-01, 1rem);
+        padding: 0 var(--spacing-scale-3x, 24px);
+    }
+
+    // Circular Variant (.circle)
+    &.circle {
+        border-radius: 50%;
+        padding: 0;
+        width: var(--sign-in-height-md, 40px);
+        height: var(--sign-in-height-md, 40px);
+
+        &.small {
+            width: var(--sign-in-height-sm, 32px);
+            height: var(--sign-in-height-sm, 32px);
+        }
+
+        &.large {
+            width: var(--sign-in-height-lg, 48px);
+            height: var(--sign-in-height-lg, 48px);
+        }
+    }
+
+    // Inverted / Dark Mode Variant (.inverted, .dark-mode)
+    &.inverted,
+    &.dark-mode {
+        &.primary {
+            background-color: var(--color-primary-lighten-01, #2670e8);
+            border-color: var(--color-primary-lighten-01, #2670e8);
+
+            &:hover:not(:disabled) {
+                background-color: var(--interactive, #1351b4);
+                border-color: var(--interactive, #1351b4);
+            }
+        }
+
+        &.secondary {
+            border-color: #ffffff;
+            color: #ffffff !important;
+
+            &:hover:not(:disabled) {
+                background-color: rgba(255, 255, 255, 0.15);
+                color: #ffffff !important;
+            }
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 2. Moodle Navbar Unauthenticated Sign-In Link Mapping (#usernavigation)
+// --------------------------------------------------------------------------
+// When the user is logged out, transform the plain Moodle "Acessar" link
+// into the official Gov.br sign-in button.
+#usernavigation .usermenu {
+    display: flex;
+    align-items: center;
+
+    span.login {
+        display: inline-flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+
+        .divider {
+            height: 20px;
+            margin: 0 var(--spacing-scale-base, 8px);
+            border-color: var(--color-secondary-04, #cccccc);
+        }
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            height: var(--sign-in-height-header, 36px);
+            padding: 0 var(--spacing-scale-2x, 16px);
+            background-color: var(--interactive, #1351b4);
+            color: #ffffff !important;
+            border-radius: var(--surface-rounder-pill, 999em);
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-weight: var(--font-weight-semi-bold, 600);
+            font-size: 0.875rem;
+            line-height: 1;
+            text-decoration: none !important;
+            white-space: nowrap;
+            border: 1px solid var(--interactive, #1351b4);
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out,
+                        border-color 0.15s ease-in-out,
+                        box-shadow 0.15s ease-in-out;
+
+            // User silhouette icon mask
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                background-color: currentColor;
+                mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e%3cpath d='M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3 0 498.7 13.3 512 29.7 512h388.6c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3h-91.4z'/%3e%3c/svg%3e") no-repeat center / contain;
+                -webkit-mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e%3cpath d='M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3 0 498.7 13.3 512 29.7 512h388.6c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3h-91.4z'/%3e%3c/svg%3e") no-repeat center / contain;
+                flex-shrink: 0;
+            }
+
+            // Hover state
+            &:hover {
+                background-color: var(--color-primary-darken-01, #0c326f);
+                border-color: var(--color-primary-darken-01, #0c326f);
+                color: #ffffff !important;
+            }
+
+            // Focus state
+            &:focus,
+            &:focus-visible {
+                outline: none !important;
+                box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+            }
+        }
+    }
+}
+
+// Compact circle sign-in on small screens (Gov.br header mobile guideline)
+@include media-breakpoint-down(sm) {
+    #usernavigation .usermenu span.login a {
+        width: var(--sign-in-height-header, 36px);
+        height: var(--sign-in-height-header, 36px);
+        padding: 0;
+        border-radius: 50%;
+        font-size: 0;
+
+        &::before {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 3. Moodle Login Page Mapping (.pagelayout-login)
+// --------------------------------------------------------------------------
+.pagelayout-login {
+    // Identity Provider / Single Sign-On Buttons ("Entrar com gov.br")
+    .login-identityproviders {
+        .login-identityprovider-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+            min-height: 40px;
+            border-radius: var(--surface-rounder-pill, 999em);
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-weight: var(--font-weight-semi-bold, 600);
+            font-size: 0.875rem;
+            color: var(--interactive, #1351b4) !important;
+            background-color: var(--background-light, #ffffff);
+            border: 1px solid var(--color-secondary-04, #cccccc);
+            box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
+            text-decoration: none !important;
+            transition: background-color 0.15s ease-in-out,
+                        border-color 0.15s ease-in-out,
+                        box-shadow 0.15s ease-in-out,
+                        color 0.15s ease-in-out;
+
+            img {
+                width: 20px;
+                height: 20px;
+                object-fit: contain;
+                flex-shrink: 0;
+            }
+
+            &:hover {
+                background-color: var(--color-primary-pastel-02, #dbe8fb);
+                border-color: var(--interactive, #1351b4);
+                color: var(--color-primary-darken-01, #0c326f) !important;
+                box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.12));
+            }
+
+            &:focus,
+            &:focus-visible {
+                outline: none !important;
+                box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+            }
+        }
+    }
+
+    // Login Form Inputs (.form-control) - Overrides Boost's gray background ($login-input-bg: #f8f9fa)
+    .login-form {
+        .form-control {
+            background-color: var(--background-light, #ffffff);
+            border-color: var(--border-color-alternative, #888888);
+            color: var(--color-light, #333333);
+
+            &:hover {
+                background-color: var(--background-light, #ffffff);
+                border-color: var(--color-secondary-07, #555555);
+            }
+
+            &:focus,
+            &:focus-visible {
+                background-color: var(--background-light, #ffffff);
+                border-color: var(--focus, #ffcd07);
+                box-shadow: 0 0 0 2px var(--focus, #ffcd07);
+                outline: none;
+            }
+        }
+
+        .toggle-sensitive-wrapper {
+            .form-control {
+                border-right: none;
+            }
+
+            .toggle-sensitive-btn {
+                background-color: var(--background-light, #ffffff);
+                border-color: var(--border-color-alternative, #888888);
+                border-left: none;
+
+                &:hover {
+                    background-color: var(--color-secondary-02, #f8f8f8);
+                    border-color: var(--color-secondary-07, #555555);
+                    border-left: none;
+                }
+
+                &:focus,
+                &:focus-visible {
+                    background-color: var(--background-light, #ffffff);
+                    border-color: var(--focus, #ffcd07);
+                    border-left: none;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    // Login Divider Separator ("ou")
+    .login-separator {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: var(--color-secondary-07, #555555);
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-weight: var(--font-weight-medium, 500);
+        font-size: 0.875rem;
+        text-transform: lowercase;
+
+        &::before,
+        &::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid var(--color-secondary-03, #ededed);
+        }
+
+        &::before {
+            margin-right: 1rem;
+        }
+
+        &::after {
+            margin-left: 1rem;
+        }
+    }
+}
+
+// Ensure login inputs are white even when .pagelayout-login is not on the parent
+.login-container .login-form {
+    .form-control {
+        background-color: var(--background-light, #ffffff);
+
+        &:hover,
+        &:focus {
+            background-color: var(--background-light, #ffffff);
+        }
+    }
+}
+

@@ -165,6 +165,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($avatarfile);
     }
 
+    // Append signin.scss if it exists.
+    $signinfile = __DIR__ . '/scss/signin.scss';
+    if (file_exists($signinfile)) {
+        $scss .= "\n" . file_get_contents($signinfile);
+    }
+
     return $scss;
 }
 
