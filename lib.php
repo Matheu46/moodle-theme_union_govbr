@@ -153,6 +153,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($menufile);
     }
 
+    // Append switches.scss if it exists.
+    $switchesfile = __DIR__ . '/scss/switches.scss';
+    if (file_exists($switchesfile)) {
+        $scss .= "\n" . file_get_contents($switchesfile);
+    }
+
     return $scss;
 }
 

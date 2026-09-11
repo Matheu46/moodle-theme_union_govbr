@@ -296,6 +296,15 @@ $form-check-input-indeterminate-bg-color: $govbr-blue-warm-vivid-70; // #1351b4
 $form-check-input-disabled-opacity:       0.45;
 
 // =============================================================================
+// Bootstrap Switch Variables (Gov.br Design System)
+// =============================================================================
+$form-switch-width:                       2.75rem;                   // 44px
+$form-switch-padding-start:               3.25rem;                   // 52px
+$form-switch-border-radius:               999em;
+$form-switch-transition:                  background-position 0.2s ease-in-out, background-color 0.2s ease-in-out;
+$form-switch-focus-color:                 $govbr-yellow-vivid-20;    // #ffcd07
+
+// =============================================================================
 // Bootstrap Alert & Feedback Notification Variables
 // =============================================================================
 $alert-padding-y:        1rem;

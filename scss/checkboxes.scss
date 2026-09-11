@@ -228,7 +228,7 @@
 // --------------------------------------------------------------------------
 // 2. Moodle Native Form Checkbox Mapping (.form-check & .form-check-input)
 // --------------------------------------------------------------------------
-.form-check {
+.form-check:not(.form-switch) {
     min-height: var(--checkbox-size, 24px);
     display: flex;
     gap: .5rem;
@@ -256,9 +256,9 @@
     }
 }
 
-// Standalone and Native Checkbox Input (.form-check-input[type="checkbox"])
-.form-check-input[type="checkbox"],
-input[type="checkbox"].form-check-input,
+// Standalone and Native Checkbox Input (excluding switches)
+:not(.form-switch) > .form-check-input[type="checkbox"],
+:not(.form-switch) > input[type="checkbox"].form-check-input,
 .mform .fcheckbox input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
@@ -346,7 +346,7 @@ input[type="checkbox"].form-check-input,
 }
 
 // Moodle Form Checkbox Density / Small Variant
-.form-check-sm {
+.form-check-sm:not(.form-switch) {
     min-height: var(--checkbox-size-sm, 20px);
     padding-left: calc(var(--checkbox-size-sm, 20px) + var(--spacing-scale-base, 8px));
 

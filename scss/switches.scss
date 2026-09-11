@@ -1,0 +1,442 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Gov.br Design System Switch Component (br-switch & Moodle form-switch)
+ * Reference: https://www.gov.br/ds/components/switch?tab=visao-geral
+ *
+ * @package    theme_union_govbr
+ * @copyright  2026 Matheus Mathias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+// --------------------------------------------------------------------------
+// 1. Shared Switch SVGs & Styling
+// --------------------------------------------------------------------------
+// Standard Knob SVG: 24x24 box with 18px circle (radius 9, centered at 12,12)
+$govbr-switch-knob-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3ccircle cx='12' cy='12' r='9' fill='%23ffffff' stroke='%23000000' stroke-opacity='0.12' stroke-width='1'/%3e%3c/svg%3e";
+
+// Small Knob SVG: 18x18 box with 14px circle (radius 7, centered at 9,9)
+$govbr-switch-knob-sm-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3e%3ccircle cx='9' cy='9' r='7' fill='%23ffffff' stroke='%23000000' stroke-opacity='0.12' stroke-width='1'/%3e%3c/svg%3e";
+
+// Large Knob SVG: 32x32 box with 24px circle (radius 12, centered at 16,16)
+$govbr-switch-knob-lg-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3e%3ccircle cx='16' cy='16' r='12' fill='%23ffffff' stroke='%23000000' stroke-opacity='0.12' stroke-width='1'/%3e%3c/svg%3e";
+
+// Icon Knob SVGs
+$govbr-switch-knob-icon-off-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3ccircle cx='12' cy='12' r='9' fill='%23ffffff' stroke='%23000000' stroke-opacity='0.12' stroke-width='1'/%3e%3cline x1='9' y1='12' x2='15' y2='12' stroke='%23888888' stroke-width='1.5' stroke-linecap='round'/%3e%3c/svg%3e";
+$govbr-switch-knob-icon-on-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3ccircle cx='12' cy='12' r='9' fill='%23ffffff' stroke='%23000000' stroke-opacity='0.12' stroke-width='1'/%3e%3cpath fill='none' stroke='%231351b4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M8.5 12l2.5 2.5 4.5-5'/%3e%3c/svg%3e";
+
+// Base styling applied to switch inputs
+.br-switch input[type="checkbox"],
+.form-switch .form-check-input,
+.form-check.form-switch .form-check-input,
+.form-switch input[type="checkbox"].form-check-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+    float: none;
+
+    // Dimensions: Medium / Default
+    width: var(--switch-width-md, 44px);
+    height: var(--switch-height-md, 24px);
+    min-width: var(--switch-width-md, 44px);
+    min-height: var(--switch-height-md, 24px);
+    border-radius: var(--surface-rounder-pill, 999em);
+
+    // Track Off State
+    background-color: var(--switch-bg-off, #cccccc);
+    background-image: url($govbr-switch-knob-svg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: var(--switch-knob-size-md, 24px) var(--switch-knob-size-md, 24px);
+
+    &:not(:checked) {
+        background-color: var(--switch-bg-off, #cccccc);
+        background-image: url($govbr-switch-knob-svg);
+        background-position: left center;
+    }
+
+    // Smooth sliding and color transition
+    transition: background-position 0.2s ease-in-out,
+                background-color 0.2s ease-in-out,
+                box-shadow 0.2s ease-in-out;
+
+    // Hover when unchecked
+    &:not(:disabled):hover {
+        background-color: var(--switch-bg-off-hover, #9e9d9d);
+    }
+
+    // Checked / Active State
+    &:checked {
+        background-color: var(--switch-bg-on, #1351b4);
+        background-position: right center;
+
+        &:not(:disabled):hover {
+            background-color: var(--switch-bg-on-hover, #0c326f);
+        }
+    }
+
+    // Focus State (Gov.br yellow ring)
+    &:focus,
+    &:focus-visible,
+    &.focus-visible {
+        outline: none !important;
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
+    }
+
+    // Disabled State
+    &:disabled,
+    &.disabled {
+        background-color: var(--switch-bg-disabled, #ededed) !important;
+        cursor: not-allowed !important;
+        opacity: var(--disabled, 0.45);
+        pointer-events: none;
+    }
+
+    // Validation States
+    &.is-invalid,
+    .was-validated &:invalid {
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--danger, #e52207);
+
+        &:focus,
+        &:focus-visible {
+            box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07),
+                        0 0 0 var(--surface-width-lg, 4px) var(--danger, #e52207) !important;
+        }
+    }
+
+    &.is-valid,
+    .was-validated &:valid {
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--success, #168821);
+    }
+}
+
+// --------------------------------------------------------------------------
+// 3. Gov.br Switch Component (.br-switch)
+// --------------------------------------------------------------------------
+.br-switch {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: var(--spacing-scale-base, 8px);
+    gap: var(--spacing-scale-base, 8px);
+    vertical-align: middle;
+
+    // Switch Label
+    label,
+    .form-check-label {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: var(--font-size-scale-up-01, 1rem);
+        font-weight: var(--font-weight-medium, 500);
+        color: var(--color-light, #333333);
+        cursor: pointer;
+        user-select: none;
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+
+    // Position Variant: Label on the left, switch on the right (.right)
+    &.right,
+    &.align-end {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    // Position Variant: Label on top of switch (.top)
+    &.top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-scale-half, 4px);
+    }
+
+    // Inline Layout Variant (.inline, .d-inline-flex)
+    &.inline,
+    &.d-inline-flex {
+        display: inline-flex;
+        margin-right: var(--spacing-scale-2x, 16px);
+        margin-bottom: 0;
+    }
+
+    // Density: Small (.small)
+    &.small {
+        input[type="checkbox"] {
+            width: var(--switch-width-sm, 32px);
+            height: var(--switch-height-sm, 18px);
+            min-width: var(--switch-width-sm, 32px);
+            min-height: var(--switch-height-sm, 18px);
+            background-image: url($govbr-switch-knob-sm-svg);
+            background-size: var(--switch-knob-size-sm, 18px) var(--switch-knob-size-sm, 18px);
+        }
+
+        label,
+        .form-check-label {
+            font-size: var(--font-size-scale-base, 0.875rem);
+        }
+    }
+
+    // Density: Large (.large)
+    &.large {
+        input[type="checkbox"] {
+            width: var(--switch-width-lg, 56px);
+            height: var(--switch-height-lg, 32px);
+            min-width: var(--switch-width-lg, 56px);
+            min-height: var(--switch-height-lg, 32px);
+            background-image: url($govbr-switch-knob-lg-svg);
+            background-size: var(--switch-knob-size-lg, 32px) var(--switch-knob-size-lg, 32px);
+        }
+
+        label,
+        .form-check-label {
+            font-size: var(--font-size-scale-up-02, 1.125rem);
+        }
+    }
+
+    // Icon Variant (.icon): displays an icon inside the sliding knob
+    &.icon {
+        input[type="checkbox"] {
+            background-image: url($govbr-switch-knob-icon-off-svg);
+
+            &:checked {
+                background-image: url($govbr-switch-knob-icon-on-svg);
+            }
+        }
+    }
+
+    // Disabled Component State
+    &.disabled,
+    &[disabled] {
+        opacity: var(--disabled, 0.45);
+        cursor: not-allowed;
+
+        label {
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
+
+    // Inverted / Dark Mode Variant
+    &.inverted,
+    &.dark-mode {
+        label {
+            color: var(--color-dark, #ffffff);
+        }
+
+        input[type="checkbox"] {
+            background-color: var(--color-secondary-07, #555555);
+
+            &:not(:disabled):hover {
+                background-color: var(--color-secondary-06, #888888);
+            }
+
+            &:checked {
+                background-color: var(--color-primary-lighten-01, #2670e8);
+
+                &:not(:disabled):hover {
+                    background-color: var(--interactive, #1351b4);
+                }
+            }
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 4. Moodle Native Form Switch Mapping (.form-check.form-switch & .form-switch)
+// --------------------------------------------------------------------------
+.form-check.form-switch,
+.form-switch {
+    display: flex;
+    align-items: center;
+    min-height: var(--switch-height-md, 24px);
+    padding-left: 0;
+    margin-bottom: var(--spacing-scale-base, 8px);
+    gap: var(--spacing-scale-base, 8px);
+    position: relative;
+
+    .form-check-input {
+        margin-left: 0;
+        margin-top: 0;
+        float: none;
+    }
+
+    .form-check-label {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: var(--font-size-scale-up-01, 1rem);
+        font-weight: var(--font-weight-medium, 500);
+        color: var(--color-light, #333333);
+        cursor: pointer;
+        user-select: none;
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+
+    // Reverse Switch (.form-check-reverse)
+    &.form-check-reverse {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        padding-right: 0;
+
+        .form-check-input {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+
+    // Small Switch Density (.form-switch-sm)
+    &.form-switch-sm {
+        min-height: var(--switch-height-sm, 18px);
+
+        .form-check-input {
+            width: var(--switch-width-sm, 32px);
+            height: var(--switch-height-sm, 18px);
+            min-width: var(--switch-width-sm, 32px);
+            min-height: var(--switch-height-sm, 18px);
+            background-image: url($govbr-switch-knob-sm-svg);
+            background-size: var(--switch-knob-size-sm, 18px) var(--switch-knob-size-sm, 18px);
+        }
+
+        .form-check-label {
+            font-size: var(--font-size-scale-base, 0.875rem);
+        }
+    }
+
+    // Large Switch Density (.form-switch-lg)
+    &.form-switch-lg {
+        min-height: var(--switch-height-lg, 32px);
+
+        .form-check-input {
+            width: var(--switch-width-lg, 56px);
+            height: var(--switch-height-lg, 32px);
+            min-width: var(--switch-width-lg, 56px);
+            min-height: var(--switch-height-lg, 32px);
+            background-image: url($govbr-switch-knob-lg-svg);
+            background-size: var(--switch-knob-size-lg, 32px) var(--switch-knob-size-lg, 32px);
+        }
+
+        .form-check-label {
+            font-size: var(--font-size-scale-up-02, 1.125rem);
+        }
+    }
+}
+
+// --------------------------------------------------------------------------
+// 5. Moodle Navbar Edit Mode Switch (.editmode-switch-form)
+// --------------------------------------------------------------------------
+// Specific Gov.br styling for Moodle's Edit Mode toggle in #usernavigation
+.editmode-switch-form {
+    display: flex;
+    align-items: center;
+    margin: 0 var(--spacing-scale-base, 8px);
+    height: 100%;
+
+    // Reset input-group container inside navbar
+    .input-group {
+        display: inline-flex;
+        align-items: center;
+        width: auto;
+        flex-wrap: nowrap;
+        margin: 0;
+
+        // Ensure child elements inside editmode input-group do not receive rectangular border resets
+        > * {
+            border-radius: var(--surface-rounder-pill, 999em);
+        }
+    }
+
+    // Edit mode label text ("Modo de edição")
+    label.form-check-label {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: var(--font-size-scale-base, 0.875rem);
+        font-weight: var(--font-weight-medium, 500);
+        color: var(--color-light, #333333);
+        margin-right: var(--spacing-scale-base, 8px);
+        margin-bottom: 0;
+        line-height: 1;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: color 0.15s ease-in-out;
+
+        // Highlight label when edit mode is active
+        &.text-primary {
+            color: var(--interactive, #1351b4) !important;
+            font-weight: var(--font-weight-semi-bold, 600);
+        }
+    }
+
+    // Switch container wrapper inside editswitch.mustache
+    .form-check.form-switch {
+        display: inline-flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        min-height: auto;
+        gap: 0;
+
+        // Hide empty space holder span (<span class="form-check-label">&nbsp;</span>)
+        span.form-check-label {
+            display: none !important;
+        }
+
+        .form-check-input {
+            margin: 0;
+            vertical-align: middle;
+            width: var(--switch-width-md, 44px) !important;
+            height: var(--switch-height-md, 24px) !important;
+            min-width: var(--switch-width-md, 44px) !important;
+            min-height: var(--switch-height-md, 24px) !important;
+            border-radius: var(--surface-rounder-pill, 999em) !important;
+            border: none !important;
+
+            &:not(:checked) {
+                background-color: var(--switch-bg-off, #cccccc) !important;
+                background-image: url($govbr-switch-knob-svg) !important;
+                background-position: left center !important;
+                background-size: var(--switch-knob-size-md, 24px) var(--switch-knob-size-md, 24px) !important;
+
+                &:hover {
+                    background-color: var(--switch-bg-off-hover, #9e9d9d) !important;
+                }
+            }
+
+            &:checked {
+                background-color: var(--switch-bg-on, #1351b4) !important;
+                background-image: url($govbr-switch-knob-svg) !important;
+                background-position: right center !important;
+                background-size: var(--switch-knob-size-md, 24px) var(--switch-knob-size-md, 24px) !important;
+
+                &:hover {
+                    background-color: var(--switch-bg-on-hover, #0c326f) !important;
+                }
+            }
+        }
+    }
+}
+
+// Mobile view: hide edit mode label to keep top navbar compact (Boost pattern)
+@include media-breakpoint-down(md) {
+    .editmode-switch-form {
+        label.form-check-label {
+            @include visually-hidden();
+        }
+    }
+}

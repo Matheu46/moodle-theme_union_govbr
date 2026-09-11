@@ -212,6 +212,25 @@
     --checkbox-size-sm: 20px;
     --checkbox-padding: var(--spacing-scale-base, 8px);
 
+    --switch-width-sm:        32px;
+    --switch-height-sm:       18px;
+    --switch-knob-size-sm:    18px;
+
+    --switch-width-md:        44px;
+    --switch-height-md:       24px;
+    --switch-knob-size-md:    24px;
+
+    --switch-width-lg:        56px;
+    --switch-height-lg:       32px;
+    --switch-knob-size-lg:    32px;
+
+    --switch-bg-off:          var(--color-secondary-04, #cccccc);
+    --switch-bg-off-hover:    var(--color-secondary-05, #9e9d9d);
+    --switch-bg-on:           var(--interactive, #1351b4);
+    --switch-bg-on-hover:     var(--color-primary-darken-01, #0c326f);
+    --switch-bg-disabled:     var(--color-secondary-03, #ededed);
+    --switch-knob-bg:         var(--pure-0, #ffffff);
+
     --header-padding:         var(--header-padding-medium);
     --header-padding-small:   var(--spacing-scale-base, 8px);
     --header-padding-medium:  var(--spacing-scale-2x, 16px);

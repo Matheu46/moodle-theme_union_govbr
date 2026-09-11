@@ -420,18 +420,23 @@ label,
         margin-top: var(--spacing-scale-half, 4px);
     }
 
-    > :first-child:not(:last-child) {
-        border-top-left-radius: var(--surface-rounder-sm, 4px) !important;
-        border-bottom-left-radius: var(--surface-rounder-sm, 4px) !important;
-        border-top-right-radius: 0 !important;
-        border-bottom-right-radius: 0 !important;
-    }
+    > .form-control,
+    > .form-select,
+    > .input-group-text,
+    > .btn {
+        &:first-child:not(:last-child) {
+            border-top-left-radius: var(--surface-rounder-sm, 4px);
+            border-bottom-left-radius: var(--surface-rounder-sm, 4px);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
 
-    > :last-child:not(:first-child) {
-        border-top-right-radius: var(--surface-rounder-sm, 4px) !important;
-        border-bottom-right-radius: var(--surface-rounder-sm, 4px) !important;
-        border-top-left-radius: 0 !important;
-        border-bottom-left-radius: 0 !important;
+        &:last-child:not(:first-child) {
+            border-top-right-radius: var(--surface-rounder-sm, 4px);
+            border-bottom-right-radius: var(--surface-rounder-sm, 4px);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
     }
 }
 
