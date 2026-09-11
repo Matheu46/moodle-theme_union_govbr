@@ -14,7 +14,7 @@
     flex-direction: column;
     position: relative;
     word-wrap: break-word;
-    margin-bottom: 1.25rem;
+    margin-bottom: .5rem;
     transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
     // Disabled state
@@ -147,18 +147,12 @@ a.br-card:hover {
 
 // 5. Card Images
 .card-img-top,
-.br-card .card-img-top {
+.card-img-bottom,
+.br-card .card-img-top,
+.br-card .card-img-bottom {
     width: 100%;
     border-top-left-radius: calc(var(--surface-rounder-md, 8px) - 1px);
     border-top-right-radius: calc(var(--surface-rounder-md, 8px) - 1px);
-    object-fit: cover;
-}
-
-.card-img-bottom,
-.br-card .card-img-bottom {
-    width: 100%;
-    border-bottom-left-radius: calc(var(--surface-rounder-md, 8px) - 1px);
-    border-bottom-right-radius: calc(var(--surface-rounder-md, 8px) - 1px);
     object-fit: cover;
 }
 
@@ -199,7 +193,6 @@ a.br-card:hover {
         &:hover {
             box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
             border-color: var(--color-secondary-04, #cccccc);
-            transform: translateY(-2px);
         }
 
         .card-img-top {

@@ -6,14 +6,13 @@
 // 1. Base Pagination Container (.pagination, .br-pagination)
 .pagination,
 .br-pagination ul {
-    // display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 0.35rem;
     list-style: none;
     padding: 0;
-    margin: 1rem 0;
+    margin: .5rem 0;
 
     // Remove default Bootstrap connected border-radius logic
     .page-item {
@@ -61,7 +60,7 @@
             i,
             span[aria-hidden="true"] {
                 font-size: 0.875rem;
-                vertical-align: middle;
+                // vertical-align: middle;
             }
         }
 
@@ -129,6 +128,11 @@
     font-size: 0.875rem;
     color: var(--color-secondary-08, #333333);
 
+    &:empty {
+        display: none;
+        margin: 0;
+    }
+
     a {
         display: inline-flex;
         align-items: center;
@@ -171,7 +175,7 @@
 [data-region="paging-control-container"] {
     align-items: center;
     justify-content: space-between;
-    margin: 1.5rem 0;
+    margin: 0;
 
     [data-region="paging-control-limit-container"] {
         font-family: var(--font-family-base, 'Rawline', sans-serif);

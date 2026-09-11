@@ -1,0 +1,121 @@
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Gov.br Design System Empty State (Dados Ausentes) Component
+ * Reference: https://www.gov.br/ds/fundamentos-visuais/ilustracao
+ *
+ * @package    theme_union_govbr
+ * @copyright  2026 Matheus Mathias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+// --------------------------------------------------------------------------
+// 1. Base Empty State Container (relies on Moodle's native .hidden / .d-none)
+// --------------------------------------------------------------------------
+[data-region="empty-message"]:not(.hidden):not(.d-none),
+[data-region="no-courses-empty-message"]:not(.hidden):not(.d-none),
+[data-region="no-events-empty-message"]:not(.hidden):not(.d-none),
+.empty-placeholder:not(.hidden):not(.d-none),
+.zero-state:not(.hidden):not(.d-none) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-scale-4x, 32px) var(--spacing-scale-2x, 16px);
+    margin: 0 auto;
+}
+
+// --------------------------------------------------------------------------
+// 2. Typography and Visual Elements
+// --------------------------------------------------------------------------
+[data-region="empty-message"],
+[data-region="no-courses-empty-message"],
+[data-region="no-events-empty-message"],
+.empty-placeholder,
+.zero-state {
+    // Illustration sizing (overrides Boost 5rem and timeline inline style)
+    .empty-placeholder-image-lg,
+    img {
+        width: auto !important;
+        height: auto !important;
+        max-height: 160px !important;
+        max-width: 220px !important;
+        object-fit: contain;
+        filter: drop-shadow(0 2px 8px rgba(19, 81, 180, 0.08));
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+
+    // Title (Mandatory semantic text in Gov.br DS)
+    h3,
+    h4,
+    h5,
+    .h3,
+    .h4,
+    .h5 {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-weight: var(--font-weight-semi-bold, 600);
+        font-size: 1.25rem;
+        line-height: 1.4;
+        color: var(--color-secondary-08, #333333);
+        margin-top: 0;
+        margin-bottom: var(--spacing-scale-baseh, 12px);
+    }
+
+    // Supporting message / description
+    p,
+    .text-muted {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: var(--font-size-scale-base, 0.875rem);
+        font-weight: var(--font-weight-regular, 400);
+        line-height: 1.5;
+        color: var(--color-secondary-07, #555555) !important;
+        max-width: 480px;
+        margin-top: 0;
+        margin-bottom: var(--spacing-scale-2x, 16px);
+    }
+
+    // Action button area (e.g. "Explorar cursos", "Criar curso")
+    #action_bar,
+    .action_bar,
+    .empty-action {
+        margin-top: var(--spacing-scale-baseh, 12px);
+        display: flex;
+        gap: var(--spacing-scale-base, 8px);
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .btn {
+            min-height: 40px;
+        }
+    }
+
+    // Link styling when presented without button wrapper
+    .nocourseslink {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-weight: var(--font-weight-semi-bold, 600);
+        color: var(--interactive, #1351b4);
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--color-primary-darken-01, #0c326f);
+        }
+    }
+}

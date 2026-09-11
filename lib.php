@@ -171,6 +171,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($signinfile);
     }
 
+    // Append empty_states.scss if it exists.
+    $emptystatesfile = __DIR__ . '/scss/empty_states.scss';
+    if (file_exists($emptystatesfile)) {
+        $scss .= "\n" . file_get_contents($emptystatesfile);
+    }
+
     return $scss;
 }
 
