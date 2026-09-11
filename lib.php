@@ -177,6 +177,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($emptystatesfile);
     }
 
+    // Append error_pages.scss if it exists.
+    $errorpagesfile = __DIR__ . '/scss/error_pages.scss';
+    if (file_exists($errorpagesfile)) {
+        $scss .= "\n" . file_get_contents($errorpagesfile);
+    }
+
     return $scss;
 }
 

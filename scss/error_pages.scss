@@ -1,0 +1,170 @@
+// =============================================================================
+// Gov.br DS - Error Pages Component (error_pages.scss)
+// Guidelines: https://www.gov.br/ds/fundamentos-visuais/ilustracao
+// =============================================================================
+
+.govbr-error-page {
+    max-width: 680px;
+    margin: 2rem auto;
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+
+    // 1. Error Illustration
+    .govbr-error-illustration {
+        img {
+            max-height: clamp(180px, 25vw, 240px);
+            max-width: 320px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.08));
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+
+    // 2. Badges
+    .govbr-error-badge {
+        .badge {
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-size: 0.8125rem; // 13px
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 0.4rem 1rem;
+            border-radius: var(--surface-rounder-pill, 999em);
+
+            // 404 badge (Blue pastel)
+            &.badge-govbr-404 {
+                background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
+                color: var(--color-primary-darken-01, #0c326f) !important;
+                border: 1px solid var(--color-primary-pastel-01, #c5d4eb);
+            }
+
+            // 403 badge (Gold/Warning pastel)
+            &.badge-govbr-403 {
+                background-color: #fef0c8 !important;
+                color: #7a591a !important;
+                border: 1px solid #ffcd07;
+            }
+
+            // General error badge (Red/Danger pastel)
+            &.badge-govbr-error {
+                background-color: #fde0db !important;
+                color: #8b0a03 !important;
+                border: 1px solid #f2938c;
+            }
+        }
+    }
+
+    // 3. Title & Description
+    .govbr-error-title {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-weight: 700;
+        font-size: 1.75rem;
+        color: var(--color-secondary-08, #333333);
+        line-height: 1.3;
+    }
+
+    .govbr-error-description {
+        font-family: var(--font-family-base, 'Rawline', sans-serif);
+        font-size: 1rem;
+        color: var(--color-secondary-07, #555555);
+        line-height: 1.6;
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .govbr-error-custom-msg {
+            word-break: break-word;
+            border-left: 3px solid var(--interactive, #1351b4) !important;
+            text-align: left;
+        }
+    }
+
+    // 4. Action Buttons
+    .govbr-error-actions {
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0.625rem 1.5rem;
+            font-family: var(--font-family-base, 'Rawline', sans-serif);
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: var(--surface-rounder-pill, 999em);
+            text-decoration: none !important;
+            transition: all 0.2s ease-in-out;
+
+            i {
+                font-size: 0.875rem;
+            }
+
+            // Focus states
+            &:focus-visible,
+            &.focus {
+                outline: 2px dashed var(--focus-color, #c2850c) !important;
+                outline-offset: 2px !important;
+                box-shadow: none !important;
+            }
+        }
+    }
+
+    // 5. Developer / Admin Debug details
+    .govbr-error-debug {
+        max-width: 680px;
+
+        details {
+            border-radius: var(--surface-rounder-md, 8px);
+            overflow: hidden;
+
+            summary {
+                cursor: pointer;
+                transition: background-color 0.15s ease-in-out;
+
+                &:hover {
+                    background-color: var(--color-secondary-03, #ededed) !important;
+                }
+
+                &:focus-visible {
+                    outline: 2px dashed var(--focus-color, #c2850c);
+                    outline-offset: -2px;
+                }
+            }
+
+            pre {
+                font-family: var(--font-family-monospace, 'Consolas', 'Courier New', monospace);
+                font-size: 0.75rem;
+                max-height: 240px;
+                overflow-y: auto;
+                white-space: pre-wrap;
+                word-break: break-all;
+            }
+        }
+    }
+}
+
+// Fallback for native Moodle fatal error box
+.errorbox.alert.alert-danger[data-rel="fatalerror"] {
+    border-radius: var(--surface-rounder-md, 8px);
+    border-left: 4px solid var(--danger, #e52207);
+    background-color: #fff5f2;
+    color: var(--color-secondary-08, #333333);
+    font-family: var(--font-family-base, 'Rawline', sans-serif);
+    padding: 1.25rem;
+    margin: 2rem auto;
+    max-width: 680px;
+
+    .errormessage {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .errorcode a {
+        color: var(--interactive, #1351b4);
+        font-size: 0.875rem;
+    }
+}
