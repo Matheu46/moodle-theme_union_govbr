@@ -231,6 +231,14 @@
     --switch-bg-disabled:     var(--color-secondary-03, #ededed);
     --switch-knob-bg:         var(--pure-0, #ffffff);
 
+    --avatar-size-sm:         32px;
+    --avatar-size-md:         40px;
+    --avatar-size-lg:         64px;
+    --avatar-size-xl:         100px;
+    --avatar-size-header:     36px;
+    --avatar-bg-initials:     var(--color-primary-pastel-02, #dbe8fb);
+    --avatar-color-initials:  var(--color-primary-default, #1351b4);
+
     --header-padding:         var(--header-padding-medium);
     --header-padding-small:   var(--spacing-scale-base, 8px);
     --header-padding-medium:  var(--spacing-scale-2x, 16px);

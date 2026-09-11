@@ -410,15 +410,6 @@
                 outline-offset: 2px;
             }
 
-            .userpicture {
-                border-radius: 50%;
-                width: 36px;
-                height: 36px;
-                object-fit: cover;
-                border: 2px solid var(--color-secondary-03, #ededed);
-                margin: 0;
-            }
-
             .usertext {
                 font-family: var(--font-family-base, 'Rawline', sans-serif);
                 font-size: var(--font-size-scale-base, 0.875rem);

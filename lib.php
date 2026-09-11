@@ -159,6 +159,12 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($switchesfile);
     }
 
+    // Append avatar.scss if it exists.
+    $avatarfile = __DIR__ . '/scss/avatar.scss';
+    if (file_exists($avatarfile)) {
+        $scss .= "\n" . file_get_contents($avatarfile);
+    }
+
     return $scss;
 }
 
