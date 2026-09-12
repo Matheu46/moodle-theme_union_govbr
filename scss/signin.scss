@@ -382,3 +382,30 @@
     }
 }
 
+// --------------------------------------------------------------------------
+// 4. Gov.br DS Login Page Decorative Panel (.login-layout-left)
+// --------------------------------------------------------------------------
+// Apply the Gov.br DS illustration as the default background when the admin
+// has NOT uploaded a custom background image in Boost Union settings.
+body.pagelayout-login:not(.loginbackgroundimage) #page .login-layout-left {
+    background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
+    background-image: url('[[pix:theme|illustrations/login/login]]') !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: clamp(260px, 75%, 520px) !important;
+}
+
+// Suppress Moodle Boost core's AI watermark unconditionally.
+body.pagelayout-login #page .login-layout-left::after {
+    display: none !important;
+    content: none !important;
+}
+
+// When Boost Union's legacy layout is active and no custom image is set, apply the same background cleanly.
+body.pagelayout-login.theme_boost_union-loginarrangement-legacy:not(.loginbackgroundimage) {
+    background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
+    background-image: url('[[pix:theme|illustrations/login/login]]') !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: clamp(320px, 45vw, 600px) !important;
+}
