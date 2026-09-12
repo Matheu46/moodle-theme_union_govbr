@@ -355,6 +355,175 @@
                 top: 2px;
                 right: 2px;
             }
+
+            // Notification / Messaging Popover Container (.popover-region-container)
+            .popover-region-container {
+                background-color: var(--background-light, #ffffff);
+                border: 1px solid var(--color-secondary-03, #ededed);
+                border-radius: var(--surface-rounder-md, 8px);
+                box-shadow: var(--surface-shadow-lg, 0 6px 12px rgba(0, 0, 0, 0.16));
+                font-family: var(--font-family-base, 'Rawline', sans-serif);
+
+                .popover-region-header-container {
+                    align-items: center;
+                    background-color: var(--background-light, #ffffff);
+                    border-bottom: 1px solid var(--color-secondary-03, #ededed);
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0 1rem;
+
+                    .popover-region-header-text {
+                        color: var(--color-light, #333333);
+                        font-family: var(--font-family-base, 'Rawline', sans-serif);
+                        font-size: var(--font-size-scale-base, 0.875rem);
+                        font-weight: var(--font-weight-semi-bold, 600);
+                        letter-spacing: normal;
+                    }
+
+                    .popover-region-header-actions {
+                        align-items: center;
+                        display: flex;
+                        gap: 0.25rem;
+
+                        .btn,
+                        a,
+                        button {
+                            align-items: center;
+                            border-radius: 50%;
+                            color: var(--color-secondary-07, #555555);
+                            display: inline-flex;
+                            height: 28px;
+                            justify-content: center;
+                            padding: 0;
+                            text-decoration: none;
+                            transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+                            width: 28px;
+
+                            &:hover {
+                                background-color: var(--color-secondary-02, #f8f8f8);
+                                color: var(--interactive, #1351b4);
+                            }
+
+                            &:focus,
+                            &:focus-visible {
+                                outline: 2px solid var(--focus, #ffcd07) !important;
+                                outline-offset: 2px;
+                            }
+
+                            .icon {
+                                font-size: 0.875rem;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+
+                .popover-region-content-container {
+                    .popover-region-content {
+                        .content-item-container {
+                            border-bottom: 1px solid var(--color-secondary-03, #ededed);
+                            font-family: var(--font-family-base, 'Rawline', sans-serif);
+                            padding: 0.75rem 1rem;
+                            transition: background-color 0.15s ease-in-out;
+
+                            &:hover {
+                                background-color: var(--color-secondary-02, #f8f8f8);
+                            }
+
+                            &.unread {
+                                background-color: rgba(var(--interactive-rgb, 19, 81, 180), 0.04);
+                                border-left: 3px solid var(--interactive, #1351b4);
+                                padding-left: calc(1rem - 3px);
+
+                                .content-item-body .notification-message {
+                                    font-weight: var(--font-weight-semi-bold, 600);
+                                }
+                            }
+
+                            .content-item-body {
+                                margin-bottom: 0.25rem;
+
+                                .notification-image {
+                                    margin-right: 0.5rem;
+
+                                    img {
+                                        border-radius: 50%;
+                                    }
+                                }
+
+                                .notification-message {
+                                    color: var(--color-light, #333333);
+                                    font-size: 0.8125rem;
+                                    line-height: 1.4;
+                                }
+                            }
+
+                            .content-item-footer {
+                                .timestamp {
+                                    color: var(--color-secondary-07, #555555);
+                                    font-size: 0.6875rem;
+                                }
+                            }
+
+                            .view-more {
+                                color: var(--interactive, #1351b4);
+                                font-size: 0.75rem;
+                                font-weight: var(--font-weight-medium, 500);
+                                text-decoration: underline;
+
+                                &:hover {
+                                    color: var(--color-primary-darken-01, #0c326f);
+                                }
+                            }
+                        }
+
+                        .empty-message {
+                            color: var(--color-secondary-07, #555555);
+                            font-family: var(--font-family-base, 'Rawline', sans-serif);
+                            font-size: var(--font-size-scale-base, 0.875rem);
+                            padding: 2.5rem 1rem;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .see-all-link {
+                    display: block;
+                    text-decoration: none;
+
+                    .popover-region-footer-container {
+                        align-items: center;
+                        background-color: var(--color-secondary-02, #f8f8f8);
+                        border-top: 1px solid var(--color-secondary-03, #ededed);
+                        display: flex;
+                        justify-content: center;
+                        padding: 0 1rem;
+                        transition: background-color 0.15s ease-in-out;
+
+                        .popover-region-seeall-text {
+                            color: var(--interactive, #1351b4);
+                            font-family: var(--font-family-base, 'Rawline', sans-serif);
+                            font-size: 0.8125rem;
+                            font-weight: var(--font-weight-semi-bold, 600);
+                            text-decoration: underline;
+                        }
+
+                        &:hover {
+                            background-color: var(--color-secondary-03, #ededed);
+
+                            .popover-region-seeall-text {
+                                color: var(--color-primary-darken-01, #0c326f);
+                            }
+                        }
+                    }
+
+                    &:focus,
+                    &:focus-visible {
+                        outline: 2px solid var(--focus, #ffcd07) !important;
+                        outline-offset: -2px;
+                    }
+                }
+            }
         }
 
         // Dividers
