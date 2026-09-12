@@ -342,6 +342,16 @@
                     margin: 0;
                     color: var(--interactive, #1351b4);
                 }
+
+                &::before {
+                    right: 10px;
+                    border-bottom-color: var(--color-secondary-03, #ededed);
+                }
+
+                &::after {
+                    right: 11px;
+                    border-bottom-color: var(--background-light, #ffffff);
+                }
             }
 
             .count-container {
@@ -358,6 +368,8 @@
 
             // Notification / Messaging Popover Container (.popover-region-container)
             .popover-region-container {
+                top: 100%;
+                margin-top: 0;
                 background-color: var(--background-light, #ffffff);
                 border: 1px solid var(--color-secondary-03, #ededed);
                 border-radius: var(--surface-rounder-md, 8px);
