@@ -48,3 +48,87 @@ $string['error_debug_title'] = 'Informações técnicas para administradores (De
 $string['error_debug_code'] = 'Código do erro';
 $string['error_debug_moreinfo'] = 'Mais informações sobre este erro';
 
+// Configurações do Tema e Rodapé (Gov.br DS).
+$string['footer_heading'] = 'Configurações do Rodapé';
+$string['footer_heading_desc'] = 'Personalize o rodapé no padrão Gov.br Design System (.br-footer), incluindo tipo de assinatura institucional, categorias e redes sociais.';
+
+$string['footer_signature_type'] = 'Tipo de assinatura no rodapé';
+$string['footer_signature_type_desc'] = 'Selecione o modelo de assinatura exibido no rodapé.<br><strong>Atenção:</strong> O uso da marca do Governo Federal é privativo de órgãos da administração pública federal brasileira (Portarias SECOM/PR). Para prefeituras, estados, instituições de ensino ou empresas privadas que utilizam o Design System sob licença aberta, selecione "Logo Institucional Próprio" ou "Nenhum / Modo Neutro".';
+$string['footer_signature_type_govbr'] = 'Governo Federal (Gov.br) — Exclusivo para órgãos federais';
+$string['footer_signature_type_custom'] = 'Logo Institucional Próprio — Estados, municípios, instituições privadas/educacionais';
+$string['footer_signature_type_none'] = 'Nenhum / Ocultar assinatura — Modo Neutro';
+
+$string['footer_custom_signature_logo'] = 'Logotipo institucional para assinatura';
+$string['footer_custom_signature_logo_desc'] = 'Envie a imagem do logotipo da sua instituição (preferencialmente SVG ou PNG com fundo transparente) para ser exibida no espaço de assinatura do rodapé caso o tipo "Logo Institucional Próprio" esteja selecionado.';
+
+$string['footer_title'] = 'Título institucional do rodapé';
+$string['footer_title_desc'] = 'Nome da instituição ou órgão que acompanha o logotipo no topo do rodapé. Se deixado em branco, utiliza o nome completo do site.';
+
+$string['footer_show_categories'] = 'Exibir categorias de navegação';
+$string['footer_show_categories_desc'] = 'Exibe as colunas com links do mapa do site no rodapé (Acesso à Informação, Serviços e Suporte, Navegação, etc.).';
+
+$string['footer_show_social'] = 'Exibir redes sociais';
+$string['footer_show_social_desc'] = 'Exibe a seção de redes sociais no topo do rodapé.';
+
+$string['footer_social_title'] = 'Redes Sociais';
+$string['footer_social_twitter'] = 'URL do X (antigo Twitter)';
+$string['footer_social_twitter_desc'] = 'Link para o perfil institucional no X / Twitter.';
+$string['footer_social_youtube'] = 'URL do YouTube';
+$string['footer_social_youtube_desc'] = 'Link para o canal institucional no YouTube.';
+$string['footer_social_facebook'] = 'URL do Facebook';
+$string['footer_social_facebook_desc'] = 'Link para a página institucional no Facebook.';
+$string['footer_social_instagram'] = 'URL do Instagram';
+$string['footer_social_instagram_desc'] = 'Link para o perfil institucional no Instagram.';
+$string['footer_social_linkedin'] = 'URL do LinkedIn';
+$string['footer_social_linkedin_desc'] = 'Link para o perfil institucional no LinkedIn.';
+$string['footer_social_tiktok'] = 'URL do TikTok';
+$string['footer_social_tiktok_desc'] = 'Link para o perfil institucional no TikTok.';
+$string['footer_social_whatsapp'] = 'URL do WhatsApp';
+$string['footer_social_whatsapp_desc'] = 'Link para o canal ou atendimento institucional no WhatsApp.';
+
+$string['footer_show_license'] = 'Exibir texto de licença / direitos autorais';
+$string['footer_show_license_desc'] = 'Exibe o texto de licença de conteúdo no canto inferior esquerdo do rodapé.';
+$string['footer_license_custom'] = 'Texto de licença personalizado';
+$string['footer_license_custom_desc'] = 'Insira um texto personalizado para a licença ou aviso de direitos autorais. Se deixado em branco, utiliza o texto padrão da licença Creative Commons 3.0.';
+$string['footer_license_default'] = 'Todo o conteúdo deste site está publicado sob a licença Creative Commons Atribuição-SemDerivações 3.0 Não Adaptada.';
+
+// Categorias e links do rodapé.
+$string['footer_cat_info'] = 'Acesso à Informação';
+$string['footer_cat_services'] = 'Serviços e Suporte';
+$string['footer_cat_navigation'] = 'Navegação e Acessibilidade';
+$string['footer_cat_social'] = 'Canais Oficiais';
+
+$string['footer_link_institutional'] = 'Institucional';
+$string['footer_link_programs'] = 'Ações e Programas';
+$string['footer_link_social_participation'] = 'Participação Social';
+$string['footer_link_faq'] = 'Perguntas Frequentes';
+$string['footer_link_services'] = 'Central de Serviços';
+$string['footer_link_support'] = 'Suporte ao Usuário';
+$string['footer_link_documentation'] = 'Documentação do Moodle';
+$string['footer_link_terms'] = 'Termos de Uso e Privacidade';
+$string['footer_link_home'] = 'Página Inicial';
+$string['footer_link_mycourses'] = 'Meus Cursos';
+$string['footer_link_accessibility_statement'] = 'Declaração de Acessibilidade';
+
+$string['footer_brasil_logo_alt'] = 'Governo Federal do Brasil — União e Reconstrução';
+$string['footer_custom_logo_alt'] = 'Assinatura institucional';
+
+
+
+$string['footer_col1_links'] = 'Links da Coluna 1 (Acesso à Informação)';
+$string['footer_col1_links_desc'] = 'Lista de links a serem exibidos na primeira coluna. Digite um link por linha, no formato: Título|URL. Por exemplo: Institucional|https://gov.br/';
+$string['footer_col2_links'] = 'Links da Coluna 2 (Serviços e Suporte)';
+$string['footer_col2_links_desc'] = 'Lista de links a serem exibidos na segunda coluna. Digite um link por linha, no formato: Título|URL.';
+$string['footer_col3_links'] = 'Links da Coluna 3 (Navegação e Acessibilidade)';
+$string['footer_col3_links_desc'] = 'Lista de links a serem exibidos na terceira coluna. Digite um link por linha, no formato: Título|URL.';
+$string['footer_col4_links'] = 'Links da Coluna 4 (Canais Oficiais / Comunicação)';
+$string['footer_col4_links_desc'] = 'Lista de links a serem exibidos na quarta coluna. Digite um link por linha, no formato: Título|URL.';
+
+$string['footer_col1_title'] = 'Título da Coluna 1';
+$string['footer_col1_title_desc'] = 'Título da primeira coluna. Exemplo: Acesso à Informação';
+$string['footer_col2_title'] = 'Título da Coluna 2';
+$string['footer_col2_title_desc'] = 'Título da segunda coluna. Exemplo: Serviços e Suporte';
+$string['footer_col3_title'] = 'Título da Coluna 3';
+$string['footer_col3_title_desc'] = 'Título da terceira coluna. Exemplo: Navegação e Acessibilidade';
+$string['footer_col4_title'] = 'Título da Coluna 4';
+$string['footer_col4_title_desc'] = 'Título da quarta coluna. Exemplo: Canais Oficiais';

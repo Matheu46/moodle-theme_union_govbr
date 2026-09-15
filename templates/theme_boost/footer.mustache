@@ -1,0 +1,352 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_boost/footer
+
+    Official Gov.br Design System footer (.br-footer) for theme_union_govbr.
+}}
+
+<footer id="page-footer" class="br-footer">
+    <div class="container-lg">
+        <div class="logo">
+            <a href="{{{ config.wwwroot }}}/" aria-label="{{#str}}footer_link_home, theme_union_govbr{{/str}}">
+                {{#output.footer_has_custom_logo}}
+                    <img src="{{{ output.footer_custom_logo_url }}}" alt="{{{ output.footer_title }}}" />
+                {{/output.footer_has_custom_logo}}
+                {{^output.footer_has_custom_logo}}
+                    <h2 class="footer-title">{{{ output.footer_title }}}</h2>
+                {{/output.footer_has_custom_logo}}
+            </a>
+        </div>
+
+        {{#output.footer_show_categories}}
+            <div class="br-list horizontal" data-toggle="data-toggle" data-sub="data-sub">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <a class="br-item header" href="javascript:void(0)">
+                        <div class="content text-down-01 text-bold text-uppercase">{{{ output.footer_col1_title }}}</div>
+                        <div class="support"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+                    </a>
+                    <div class="br-list">
+                        <span class="br-divider d-md-none"></span>
+                        {{#output.footer_col1_links}}
+                            <a class="br-item" href="{{{ url }}}">
+                                <div class="content">{{{ title }}}</div>
+                            </a>
+                        {{/output.footer_col1_links}}
+                        <span class="br-divider d-md-none"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <a class="br-item header" href="javascript:void(0)">
+                        <div class="content text-down-01 text-bold text-uppercase">{{{ output.footer_col2_title }}}</div>
+                        <div class="support"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+                    </a>
+                    <div class="br-list">
+                        <span class="br-divider d-md-none"></span>
+                        {{#output.footer_col2_links}}
+                            <a class="br-item" href="{{{ url }}}">
+                                <div class="content">{{{ title }}}</div>
+                            </a>
+                        {{/output.footer_col2_links}}
+                        <span class="br-divider d-md-none"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <a class="br-item header" href="javascript:void(0)">
+                        <div class="content text-down-01 text-bold text-uppercase">{{{ output.footer_col3_title }}}</div>
+                        <div class="support"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+                    </a>
+                    <div class="br-list">
+                        <span class="br-divider d-md-none"></span>
+                        {{#output.footer_col3_links}}
+                            <a class="br-item" href="{{{ url }}}">
+                                <div class="content">{{{ title }}}</div>
+                            </a>
+                        {{/output.footer_col3_links}}
+                        <span class="br-divider d-md-none"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <a class="br-item header" href="javascript:void(0)">
+                        <div class="content text-down-01 text-bold text-uppercase">{{{ output.footer_col4_title }}}</div>
+                        <div class="support"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+                    </a>
+                    <div class="br-list">
+                        <span class="br-divider d-md-none"></span>
+                        {{#output.footer_col4_links}}
+                            <a class="br-item" href="{{{ url }}}">
+                                <div class="content">{{{ title }}}</div>
+                            </a>
+                        {{/output.footer_col4_links}}
+                        <span class="br-divider d-md-none"></span>
+                    </div>
+                </div>
+            </div>
+        {{/output.footer_show_categories}}
+
+        <div class="d-block">
+            <div class="row align-items-end justify-content-between py-3 py-md-4">
+                <div class="col-12 col-sm-auto mb-3 mb-sm-0">
+                    {{#output.footer_has_social}}
+                        <div class="social-network">
+                            <div class="social-network-title">{{#str}}footer_social_title, theme_union_govbr{{/str}}</div>
+                            <div class="d-flex flex-wrap gap-2">
+                                {{#output.footer_social_networks}}
+                                    <a class="br-button circle" href="{{{ url }}}" target="_blank" rel="noopener noreferrer" aria-label="{{{ name }}}" title="{{{ name }}}">
+                                        <i class="{{{ icon }}}" aria-hidden="true"></i>
+                                    </a>
+                                {{/output.footer_social_networks}}
+                            </div>
+                        </div>
+                    {{/output.footer_has_social}}
+                </div>
+                <div class="col-12 col-sm-auto assigns text-start text-sm-end">
+                    {{#output.footer_has_signature}}
+                        {{#output.footer_signature_is_govbr}}
+                            <a href="https://www.gov.br" target="_blank" rel="noopener noreferrer" aria-label="{{#str}}footer_brasil_logo_alt, theme_union_govbr{{/str}}">
+                                <img class="ml-sm-4 brasil-logo" src="{{{ output.footer_signature_govbr_url }}}" alt="{{#str}}footer_brasil_logo_alt, theme_union_govbr{{/str}}">
+                            </a>
+                        {{/output.footer_signature_is_govbr}}
+                        {{#output.footer_signature_is_custom}}
+                            <img class="ml-sm-4 custom-signature-logo" src="{{{ output.footer_signature_custom_url }}}" alt="{{#str}}footer_custom_logo_alt, theme_union_govbr{{/str}}">
+                        {{/output.footer_signature_is_custom}}
+                    {{/output.footer_has_signature}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <span class="br-divider my-3"></span>
+
+    <div class="container-lg">
+        <div class="info">
+            {{#output.footer_show_license}}
+                <div class="text-down-01 text-medium pb-3">
+                    {{{ output.footer_license_text }}}
+                </div>
+            {{/output.footer_show_license}}
+
+            <div class="moodle-technical-info pb-3">
+                {{#footershowlogininfo}}
+                    <div class="logininfo pb-1">
+                        {{{ output.login_info }}}
+                    </div>
+                {{/footershowlogininfo}}
+
+                <div class="tool_usertours-resettourcontainer"></div>
+                {{^footershowusertour}}<style>.tool_usertours-resettourcontainer{display:none;}</style>{{/footershowusertour}}
+
+                {{#footershowtelemetrytraceid}}
+                    {{# output.telemetry_traceid }}
+                        <div class="telemetry-info pb-1">
+                            <span id="telemetry_traceid" class="d-none">{{{ output.telemetry_traceid }}}</span>
+                            <a href="#" data-action="copytoclipboard" data-clipboard-target="#telemetry_traceid" data-clipboard-success-message="{{#str}}telemetrytraceidfooterlinkcopied, core{{/str}}">
+                                {{#str}}telemetrytraceidfooterlink, core{{/str}}
+                            </a>
+                        </div>
+                    {{/ output.telemetry_traceid }}
+                {{/footershowtelemetrytraceid}}
+
+                <div class="core-footer-links d-flex justify-content-center flex-wrap gap-3">
+                    {{# output.standard_footer_html }}
+                        {{{ output.standard_footer_html }}}
+                    {{/ output.standard_footer_html }}
+                    {{#footershowpowered}}
+                        <span class="poweredbymoodle">
+                            {{#str}}poweredbymoodle, core{{/str}}
+                            {{#output.moodle_release}}
+                                ({{{ output.moodle_release }}})
+                            {{/output.moodle_release}}
+                        </span>
+                    {{/footershowpowered}}
+                </div>
+
+                {{{ output.standard_end_of_body_html_additionalhtmlfooter }}}
+                {{{ output.standard_end_of_body_html_endtoken }}}
+            </div>
+        </div>
+
+        <!-- Moodle developer debug info -->
+        <div class="footer-content-debugging footer-dark bg-dark text-light">
+            <div class="container-fluid footer-dark-inner">
+                {{{ output.debug_footer_html }}}
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Buttons & Popover from Boost Union -->
+    <div data-region="footer-container-popover">
+        {{#output.has_communication_links}}
+            <button onclick="window.open('{{output.communication_url}}', '_blank', 'noreferrer')" class="btn btn-icon rounded-circle bg-primary text-white btn-footer-communication" aria-label="{{#str}}communicationroomlink, course{{/str}}">
+                {{#pix}}t/messages-o, core{{/pix}}
+            </button>
+        {{/output.has_communication_links}}
+        {{#footerbutton }}
+            <button class="btn btn-icon rounded-circle bg-secondary btn-footer-popover" data-action="footer-popover" aria-label="{{#str}}showfooter, theme_boost{{/str}}">
+                {{#pix}}e/question, core{{/pix}}
+            </button>
+        {{/footerbutton }}
+        <div id="boost-union-footer-buttons">
+            {{#accessibilitybutton}}
+                <a id="btn-accessibility-support" class="btn btn-icon rounded-circle bg-secondary d-print-none" href="{{accessibilitybuttonlink}}" aria-label="{{accessibilitybuttonsrlinktitle}}">
+                    <i class="icon fa fa-universal-access fa-fw" aria-hidden="true"></i>
+                </a>
+            {{/accessibilitybutton}}
+        </div>
+    </div>
+
+    {{#footerbutton }}
+        <div class="footer-content-popover container" data-region="footer-content-popover">
+            {{#footershowchat}}
+                {{#output.has_communication_links}}
+                    <div class="footer-section p-3 border-bottom footer-link-communication">
+                        <div class="footer-support-link">{{{ output.communication_link }}}</div>
+                    </div>
+                {{/output.has_communication_links}}
+            {{/footershowchat}}
+            {{#footershowpopoverlinks}}
+                {{# output.has_popover_links }}
+                    <div class="footer-section p-3 border-bottom">
+                        {{#footershowhelp}}
+                            {{# output.page_doc_link }}
+                                <div class="footer-support-link">{{{ output.page_doc_link }}}</div>
+                            {{/ output.page_doc_link }}
+                        {{/footershowhelp}}
+
+                        {{#footershowservices}}
+                            {{# output.services_support_link }}
+                                <div class="footer-support-link">{{{ output.services_support_link }}}</div>
+                            {{/ output.services_support_link }}
+                        {{/footershowservices}}
+
+                        {{#footershowcontact}}
+                            {{# output.supportemail }}
+                                <div class="footer-support-link">{{{ output.supportemail }}}</div>
+                            {{/ output.supportemail }}
+                        {{/footershowcontact}}
+                    </div>
+                {{/ output.has_popover_links }}
+            {{/footershowpopoverlinks}}
+            {{#anystaticpagelinkedfromfooter}}
+                <div class="footer-section p-3 border-bottom">
+                    {{# aboutuslinkpositionfooter }}
+                        <div class="footer-support-link theme_boost_union_footer_aboutuslink">
+                            <a href="{{ aboutuslink }}">{{^ suppressfooterlinkicons }}<i class="icon fa fa-circle-info fa-fw " aria-hidden="true"></i>{{/ suppressfooterlinkicons }}{{ aboutuspagetitle }}</a>
+                        </div>
+                    {{/ aboutuslinkpositionfooter }}
+
+                    {{# offerslinkpositionfooter }}
+                        <div class="footer-support-link theme_boost_union_footer_offerslink">
+                            <a href="{{ offerslink }}">{{^ suppressfooterlinkicons }}<i class="icon fa fa-briefcase fa-fw " aria-hidden="true"></i>{{/ suppressfooterlinkicons }}{{ offerspagetitle }}</a>
+                        </div>
+                    {{/ offerslinkpositionfooter }}
+
+                    {{# imprintlinkpositionfooter }}
+                        <div class="footer-support-link theme_boost_union_footer_imprintlink">
+                            <a href="{{ imprintlink }}">{{^ suppressfooterlinkicons }}<i class="icon fa fa-building-o fa-fw " aria-hidden="true"></i>{{/ suppressfooterlinkicons }}{{ imprintpagetitle }}</a>
+                        </div>
+                    {{/ imprintlinkpositionfooter }}
+
+                    {{# contactlinkpositionfooter }}
+                        <div class="footer-support-link theme_boost_union_footer_contactlink">
+                            <a href="{{ contactlink }}">{{^ suppressfooterlinkicons }}<i class="icon fa fa-address-card fa-fw " aria-hidden="true"></i>{{/ suppressfooterlinkicons }}{{ contactpagetitle }}</a>
+                        </div>
+                    {{/ contactlinkpositionfooter }}
+
+                    {{# helplinkpositionfooter }}
+                        <div class="footer-support-link theme_boost_union_footer_helplink">
+                            <a href="{{ helplink }}">{{^ suppressfooterlinkicons }}<i class="icon fa fa-question-circle-o fa-fw " aria-hidden="true"></i>{{/ suppressfooterlinkicons }}{{ helppagetitle }}</a>
+                        </div>
+                    {{/ helplinkpositionfooter }}
+
+                    {{# maintenancelinkpositionfooter }}
+                        <div class="footer-support-link theme_boost_union_footer_maintenancelink">
+                            <a href="{{ maintenancelink }}">{{^ suppressfooterlinkicons }}<i class="icon fa fa-wrench fa-fw " aria-hidden="true"></i>{{/ suppressfooterlinkicons }}{{ maintenancepagetitle }}</a>
+                        </div>
+                    {{/ maintenancelinkpositionfooter }}
+
+                    {{# page1linkpositionfooter }}
+                        <div class="footer-support-link theme_boost_union_footer_page1link">
+                            <a href="{{ page1link }}">{{^ suppressfooterlinkicons }}<i class="icon fa fa-arrow-circle-o-right fa-fw " aria-hidden="true"></i>{{/ suppressfooterlinkicons }}{{ page1pagetitle }}</a>
+                        </div>
+                    {{/ page1linkpositionfooter }}
+
+                    {{# page2linkpositionfooter }}
+                        <div class="footer-support-link theme_boost_union_footer_page2link">
+                            <a href="{{ page2link }}">{{^ suppressfooterlinkicons }}<i class="icon fa fa-arrow-circle-o-right fa-fw " aria-hidden="true"></i>{{/ suppressfooterlinkicons }}{{ page2pagetitle }}</a>
+                        </div>
+                    {{/ page2linkpositionfooter }}
+
+                    {{# page3linkpositionfooter }}
+                        <div class="footer-support-link theme_boost_union_footer_page3link">
+                            <a href="{{ page3link }}">{{^ suppressfooterlinkicons }}<i class="icon fa fa-arrow-circle-o-right fa-fw " aria-hidden="true"></i>{{/ suppressfooterlinkicons }}{{ page3pagetitle }}</a>
+                        </div>
+                    {{/ page3linkpositionfooter }}
+                </div>
+            {{/anystaticpagelinkedfromfooter}}
+            {{#anyaccessibilitypagelinkedfromfooter}}
+                <div class="footer-section p-3 border-bottom">
+                    {{# accessibilitydeclarationlinkpositionfooter }}
+                        <div class="footer-support-link theme_boost_union_footer_accessibilitydeclarationlink">
+                            <a href="{{ accessibilitydeclarationlink }}"><i class="icon fa fa-universal-access fa-fw " aria-hidden="true"></i>{{ accessibilitydeclarationpagetitle }}</a>
+                        </div>
+                    {{/ accessibilitydeclarationlinkpositionfooter }}
+
+                     {{# accessibilitysupportlinkpositionfooter }}
+                        <div class="footer-support-link theme_boost_union_footer_accessibilitysupportlink">
+                            <a href="{{ accessibilitysupportlink }}"><i class="icon fa fa-universal-access fa-fw " aria-hidden="true"></i>{{ accessibilitysupportpagetitle }}</a>
+                        </div>
+                    {{/ accessibilitysupportlinkpositionfooter }}
+                </div>
+            {{/anyaccessibilitypagelinkedfromfooter}}
+        </div>
+    {{/footerbutton }}
+
+    <!-- Mobile bottom navigation bar drawer -->
+    {{#bottombar.drawer}}
+        {{#bottombar}}
+        <nav class="navbar fixed-bottom navbar-light bg-white navbar-expand boost-union-bottom-menu d-block d-md-none" aria-label="{{#str}}sitemenubar, admin{{/str}}">
+            <div class="bottom-navigation">
+                {{> core/moremenu}}
+            </div>
+        </nav>
+        {{/bottombar}}
+    {{/bottombar.drawer}}
+</footer>
+
+{{#js}}
+  {{#footerbutton}}
+  require([
+      'theme_boost/footer-popover',
+      'core/copy_to_clipboard',
+  ], function(FooterPopover) {
+      FooterPopover.init();
+  });
+  {{/footerbutton}}
+  document.querySelectorAll('#page-footer .br-list.horizontal .br-item.header').forEach(function(header) {
+      header.addEventListener('click', function(e) {
+          if (window.innerWidth < 992) {
+              e.preventDefault();
+              this.classList.toggle('active');
+          }
+      });
+  });
+{{/js}}
+

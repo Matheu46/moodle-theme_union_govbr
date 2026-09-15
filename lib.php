@@ -183,7 +183,38 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($errorpagesfile);
     }
 
+    // Append footer.scss if it exists.
+    $footerfile = __DIR__ . '/scss/footer.scss';
+    if (file_exists($footerfile)) {
+        $scss .= "\n" . file_get_contents($footerfile);
+    }
+
     return $scss;
+}
+
+/**
+ * Serves theme files (e.g. custom signature logo).
+ *
+ * @param stdClass $course Course object
+ * @param stdClass $cm Course module object
+ * @param context $context Context object
+ * @param string $filearea File area
+ * @param array $args Extra arguments
+ * @param bool $forcedownload Whether or not to force download
+ * @param array $options Additional options affecting the file serving
+ * @return bool False if file not found, does not return if found - just exits
+ */
+function theme_union_govbr_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = []) {
+    if ($context->contextlevel != CONTEXT_SYSTEM) {
+        send_file_not_found();
+    }
+
+    if ($filearea === 'footer_custom_signature_logo') {
+        $theme = theme_config::load('union_govbr');
+        return $theme->setting_file_serve('footer_custom_signature_logo', $args, $forcedownload, $options);
+    }
+
+    send_file_not_found();
 }
 
 /**

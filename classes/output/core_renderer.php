@@ -325,5 +325,249 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
 
         return $context;
     }
-}
 
+    /**
+     * Get footer signature type ('govbr', 'custom', or 'none').
+     *
+     * @return string
+     */
+    public function footer_signature_type(): string {
+        $type = get_config('theme_union_govbr', 'footer_signature_type');
+        return !empty($type) ? $type : 'govbr';
+    }
+
+    /**
+     * Whether the Federal Government Brasil signature should be shown.
+     *
+     * @return bool
+     */
+    public function footer_signature_is_govbr(): bool {
+        return $this->footer_signature_type() === 'govbr';
+    }
+
+    /**
+     * Get the URL for the Brasil Gov.br signature logo (white version for dark footer).
+     *
+     * @return string
+     */
+    public function footer_signature_govbr_url(): string {
+        return $this->image_url('brasil_logo_white', 'theme_union_govbr')->out();
+    }
+
+    /**
+     * Whether a custom institutional signature should be shown.
+     *
+     * @return bool
+     */
+    public function footer_signature_is_custom(): bool {
+        if ($this->footer_signature_type() !== 'custom') {
+            return false;
+        }
+        return !empty($this->footer_signature_custom_url());
+    }
+
+    /**
+     * Get the URL for the custom signature logo if uploaded.
+     *
+     * @return string|null
+     */
+    public function footer_signature_custom_url(): ?string {
+        $theme = \core\output\theme_config::load('union_govbr');
+        $url = $theme->setting_file_url('footer_custom_signature_logo', 'footer_custom_signature_logo');
+        return $url ? $url->out() : null;
+    }
+
+    /**
+     * Whether any signature (Gov.br or custom) is active.
+     *
+     * @return bool
+     */
+    public function footer_has_signature(): bool {
+        return $this->footer_signature_is_govbr() || $this->footer_signature_is_custom();
+    }
+
+    /**
+     * Get institutional footer title.
+     *
+     * @return string
+     */
+    public function footer_title(): string {
+        global $SITE;
+        $title = get_config('theme_union_govbr', 'footer_title');
+        return !empty($title) ? format_string($title) : format_string($SITE->fullname);
+    }
+
+    /**
+     * Whether a custom site logo is configured.
+     *
+     * @return bool
+     */
+    public function footer_has_custom_logo(): bool {
+        return !empty($this->get_logo_url());
+    }
+
+    /**
+     * URL of the custom site logo if configured.
+     *
+     * @return string|null
+     */
+    public function footer_custom_logo_url(): ?string {
+        $logo = $this->get_logo_url();
+        return $logo ? $logo->out() : null;
+    }
+
+    /**
+     * Whether footer navigation categories should be displayed.
+     *
+     * @return bool
+     */
+    public function footer_show_categories(): bool {
+        $setting = get_config('theme_union_govbr', 'footer_show_categories');
+        return ($setting === false) ? true : (bool)$setting;
+    }
+
+    /**
+     * Whether social media icons section should be displayed.
+     *
+     * @return bool
+     */
+    public function footer_show_social(): bool {
+        $setting = get_config('theme_union_govbr', 'footer_show_social');
+        return ($setting === false) ? true : (bool)$setting;
+    }
+
+    /**
+     * Whether social networks block should be shown (must be enabled AND have networks).
+     *
+     * @return bool
+     */
+    public function footer_has_social(): bool {
+        return $this->footer_show_social() && !empty($this->footer_social_networks());
+    }
+
+    /**
+     * Get active social media networks list for the footer.
+     *
+     * @return array
+     */
+    public function footer_social_networks(): array {
+        $networks = [
+            'twitter' => ['name' => 'X (Twitter)', 'icon' => 'fa-brands fa-x-twitter', 'default' => 'https://twitter.com/govbr'],
+            'youtube' => ['name' => 'YouTube', 'icon' => 'fa-brands fa-youtube', 'default' => 'https://youtube.com/governodobrasil'],
+            'facebook' => ['name' => 'Facebook', 'icon' => 'fa-brands fa-facebook-f', 'default' => 'https://facebook.com/governodobrasil'],
+            'instagram' => ['name' => 'Instagram', 'icon' => 'fa-brands fa-instagram', 'default' => 'https://instagram.com/governodobrasil'],
+            'linkedin' => ['name' => 'LinkedIn', 'icon' => 'fa-brands fa-linkedin-in', 'default' => ''],
+            'tiktok' => ['name' => 'TikTok', 'icon' => 'fa-brands fa-tiktok', 'default' => ''],
+            'whatsapp' => ['name' => 'WhatsApp', 'icon' => 'fa-brands fa-whatsapp', 'default' => ''],
+        ];
+
+        $results = [];
+
+        foreach ($networks as $key => $net) {
+            $url = get_config('theme_union_govbr', 'footer_social_' . $key);
+            if (!empty($url)) {
+                $results[] = [
+                    'key' => $key,
+                    'name' => $net['name'],
+                    'icon' => $net['icon'],
+                    'url' => s($url),
+                ];
+            }
+        }
+
+        return $results;
+    }
+
+    /**
+     * Whether content license text should be displayed.
+     *
+     * @return bool
+     */
+    public function footer_show_license(): bool {
+        $setting = get_config('theme_union_govbr', 'footer_show_license');
+        return ($setting === false) ? true : (bool)$setting;
+    }
+
+    /**
+     * Get content license text.
+     *
+     * @return string
+     */
+    public function footer_license_text(): string {
+        $custom = get_config('theme_union_govbr', 'footer_license_custom');
+        if (!empty($custom)) {
+            return format_text($custom, FORMAT_HTML);
+        }
+        return get_string('footer_license_default', 'theme_union_govbr');
+    }
+
+
+
+    /**
+     * Parse footer column links.
+     *
+     * @param string $configkey
+     * @return array
+     */
+    public function footer_column_links(string $configkey): array {
+        $raw = get_config('theme_union_govbr', $configkey);
+        if (empty($raw)) {
+            return [];
+        }
+        
+        $links = [];
+        $lines = explode("\n", $raw);
+        foreach ($lines as $line) {
+            $line = trim($line);
+            if (empty($line)) {
+                continue;
+            }
+            $parts = explode('|', $line, 2);
+            $title = trim($parts[0]);
+            $url = isset($parts[1]) ? trim($parts[1]) : '';
+            if (!empty($title)) {
+                $links[] = [
+                    'title' => $title,
+                    'url' => $url
+                ];
+            }
+        }
+        return $links;
+    }
+
+    public function footer_col1_title(): string {
+        return get_config('theme_union_govbr', 'footer_col1_title') ?: "";
+    }
+
+
+    public function footer_col1_links(): array {
+        return $this->footer_column_links('footer_col1_links');
+    }
+
+    public function footer_col2_title(): string {
+        return get_config('theme_union_govbr', 'footer_col2_title') ?: "";
+    }
+
+
+    public function footer_col2_links(): array {
+        return $this->footer_column_links('footer_col2_links');
+    }
+
+    public function footer_col3_title(): string {
+        return get_config('theme_union_govbr', 'footer_col3_title') ?: "";
+    }
+
+
+    public function footer_col3_links(): array {
+        return $this->footer_column_links('footer_col3_links');
+    }
+
+    public function footer_col4_title(): string {
+        return get_config('theme_union_govbr', 'footer_col4_title') ?: "";
+    }
+
+
+    public function footer_col4_links(): array {
+        return $this->footer_column_links('footer_col4_links');
+    }
+}
