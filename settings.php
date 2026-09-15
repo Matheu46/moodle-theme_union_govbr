@@ -72,67 +72,10 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
-    // Setting: Show Categories.
-    $name = 'theme_union_govbr/footer_col1_title';
-    $title = get_string('footer_col1_title', 'theme_union_govbr');
-    $description = get_string('footer_col1_title_desc', 'theme_union_govbr');
-    $default = "Acesso à Informação";
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
-
-    $name = 'theme_union_govbr/footer_col1_links';
-    $title = get_string('footer_col1_links', 'theme_union_govbr');
-    $description = get_string('footer_col1_links_desc', 'theme_union_govbr');
-    $default = "Institucional|https://gov.br/\nProgramas e Ações|https://gov.br/";
-    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
-
-    $name = 'theme_union_govbr/footer_col2_title';
-    $title = get_string('footer_col2_title', 'theme_union_govbr');
-    $description = get_string('footer_col2_title_desc', 'theme_union_govbr');
-    $default = "Serviços e Suporte";
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
-
-    $name = 'theme_union_govbr/footer_col2_links';
-    $title = get_string('footer_col2_links', 'theme_union_govbr');
-    $description = get_string('footer_col2_links_desc', 'theme_union_govbr');
-    $default = "Serviços|https://gov.br/pt-br/servicos";
-    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
-
-    $name = 'theme_union_govbr/footer_col3_title';
-    $title = get_string('footer_col3_title', 'theme_union_govbr');
-    $description = get_string('footer_col3_title_desc', 'theme_union_govbr');
-    $default = "Navegação e Acessibilidade";
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
-
-    $name = 'theme_union_govbr/footer_col3_links';
-    $title = get_string('footer_col3_links', 'theme_union_govbr');
-    $description = get_string('footer_col3_links_desc', 'theme_union_govbr');
-    $default = "Declaração de Acessibilidade|https://gov.br/";
-    $setting = new admin_setting_configtextarea($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
-
-    $name = 'theme_union_govbr/footer_col4_title';
-    $title = get_string('footer_col4_title', 'theme_union_govbr');
-    $description = get_string('footer_col4_title_desc', 'theme_union_govbr');
-    $default = "Canais Oficiais";
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
-
-    $name = 'theme_union_govbr/footer_col4_links';
-    $title = get_string('footer_col4_links', 'theme_union_govbr');
-    $description = get_string('footer_col4_links_desc', 'theme_union_govbr');
-    $default = "Termos de Uso|https://gov.br/";
+    $name = 'theme_union_govbr/footer_columns';
+    $title = get_string('footer_columns', 'theme_union_govbr');
+    $description = get_string('footer_columns_desc', 'theme_union_govbr');
+    $default = "# Acesso à Informação\nInstitucional|https://gov.br/\nProgramas e Ações|https://gov.br/\n# Serviços e Suporte\nServiços|https://gov.br/pt-br/servicos\n# Navegação e Acessibilidade\nDeclaração de Acessibilidade|https://gov.br/\n# Canais Oficiais\nTermos de Uso|https://gov.br/";
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);

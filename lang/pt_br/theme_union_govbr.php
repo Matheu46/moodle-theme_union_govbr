@@ -115,20 +115,5 @@ $string['footer_custom_logo_alt'] = 'Assinatura institucional';
 
 
 
-$string['footer_col1_links'] = 'Links da Coluna 1 (Acesso à Informação)';
-$string['footer_col1_links_desc'] = 'Lista de links a serem exibidos na primeira coluna. Digite um link por linha, no formato: Título|URL. Por exemplo: Institucional|https://gov.br/';
-$string['footer_col2_links'] = 'Links da Coluna 2 (Serviços e Suporte)';
-$string['footer_col2_links_desc'] = 'Lista de links a serem exibidos na segunda coluna. Digite um link por linha, no formato: Título|URL.';
-$string['footer_col3_links'] = 'Links da Coluna 3 (Navegação e Acessibilidade)';
-$string['footer_col3_links_desc'] = 'Lista de links a serem exibidos na terceira coluna. Digite um link por linha, no formato: Título|URL.';
-$string['footer_col4_links'] = 'Links da Coluna 4 (Canais Oficiais / Comunicação)';
-$string['footer_col4_links_desc'] = 'Lista de links a serem exibidos na quarta coluna. Digite um link por linha, no formato: Título|URL.';
-
-$string['footer_col1_title'] = 'Título da Coluna 1';
-$string['footer_col1_title_desc'] = 'Título da primeira coluna. Exemplo: Acesso à Informação';
-$string['footer_col2_title'] = 'Título da Coluna 2';
-$string['footer_col2_title_desc'] = 'Título da segunda coluna. Exemplo: Serviços e Suporte';
-$string['footer_col3_title'] = 'Título da Coluna 3';
-$string['footer_col3_title_desc'] = 'Título da terceira coluna. Exemplo: Navegação e Acessibilidade';
-$string['footer_col4_title'] = 'Título da Coluna 4';
-$string['footer_col4_title_desc'] = 'Título da quarta coluna. Exemplo: Canais Oficiais';
+$string['footer_columns'] = 'Colunas de Navegação';
+$string['footer_columns_desc'] = 'Configure as colunas do rodapé. Use "#" no início da linha para criar o título de uma coluna e, nas linhas seguintes, adicione os links no formato "Título|URL". Exemplo:<br># Título da Coluna<br>Link 1|https://exemplo.com<br>Link 2|https://exemplo.com';

@@ -504,70 +504,52 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
 
 
     /**
-     * Parse footer column links.
+     * Parse dynamic footer columns.
      *
-     * @param string $configkey
      * @return array
      */
-    public function footer_column_links(string $configkey): array {
-        $raw = get_config('theme_union_govbr', $configkey);
+    public function footer_columns(): array {
+        $raw = get_config('theme_union_govbr', 'footer_columns');
         if (empty($raw)) {
             return [];
         }
-        
-        $links = [];
+
+        $columns = [];
+        $current_col = null;
         $lines = explode("\n", $raw);
+        
         foreach ($lines as $line) {
             $line = trim($line);
             if (empty($line)) {
                 continue;
             }
-            $parts = explode('|', $line, 2);
-            $title = trim($parts[0]);
-            $url = isset($parts[1]) ? trim($parts[1]) : '';
-            if (!empty($title)) {
-                $links[] = [
-                    'title' => $title,
-                    'url' => $url
+            
+            if (strpos($line, '#') === 0) {
+                if ($current_col !== null) {
+                    $columns[] = $current_col;
+                }
+                $current_col = [
+                    'title' => trim(substr($line, 1)),
+                    'links' => []
                 ];
+            } else {
+                $parts = explode('|', $line, 2);
+                $title = trim($parts[0]);
+                $url = isset($parts[1]) ? trim($parts[1]) : '';
+                
+                if (!empty($title) && $current_col !== null) {
+                    $current_col['links'][] = [
+                        'title' => $title,
+                        'url' => $url
+                    ];
+                }
             }
         }
-        return $links;
-    }
+        
+        if ($current_col !== null) {
+            $columns[] = $current_col;
+        }
 
-    public function footer_col1_title(): string {
-        return get_config('theme_union_govbr', 'footer_col1_title') ?: "";
-    }
-
-
-    public function footer_col1_links(): array {
-        return $this->footer_column_links('footer_col1_links');
-    }
-
-    public function footer_col2_title(): string {
-        return get_config('theme_union_govbr', 'footer_col2_title') ?: "";
-    }
-
-
-    public function footer_col2_links(): array {
-        return $this->footer_column_links('footer_col2_links');
-    }
-
-    public function footer_col3_title(): string {
-        return get_config('theme_union_govbr', 'footer_col3_title') ?: "";
-    }
-
-
-    public function footer_col3_links(): array {
-        return $this->footer_column_links('footer_col3_links');
-    }
-
-    public function footer_col4_title(): string {
-        return get_config('theme_union_govbr', 'footer_col4_title') ?: "";
-    }
-
-
-    public function footer_col4_links(): array {
-        return $this->footer_column_links('footer_col4_links');
+        return $columns;
     }
 }

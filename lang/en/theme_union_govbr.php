@@ -115,20 +115,5 @@ $string['footer_custom_logo_alt'] = 'Institutional signature';
 
 
 
-$string['footer_col1_links'] = 'Column 1 Links (Access to Information)';
-$string['footer_col1_links_desc'] = 'List of links to display in the first column. Enter one link per line, in the format: Title|URL. For example: Institutional|https://gov.br/';
-$string['footer_col2_links'] = 'Column 2 Links (Services and Support)';
-$string['footer_col2_links_desc'] = 'List of links to display in the second column. Enter one link per line, in the format: Title|URL.';
-$string['footer_col3_links'] = 'Column 3 Links (Navigation and Accessibility)';
-$string['footer_col3_links_desc'] = 'List of links to display in the third column. Enter one link per line, in the format: Title|URL.';
-$string['footer_col4_links'] = 'Column 4 Links (Official Channels)';
-$string['footer_col4_links_desc'] = 'List of links to display in the fourth column. Enter one link per line, in the format: Title|URL.';
-
-$string['footer_col1_title'] = 'Column 1 Title';
-$string['footer_col1_title_desc'] = 'Title for the first column. Example: Access to Information';
-$string['footer_col2_title'] = 'Column 2 Title';
-$string['footer_col2_title_desc'] = 'Title for the second column. Example: Services and Support';
-$string['footer_col3_title'] = 'Column 3 Title';
-$string['footer_col3_title_desc'] = 'Title for the third column. Example: Navigation and Accessibility';
-$string['footer_col4_title'] = 'Column 4 Title';
-$string['footer_col4_title_desc'] = 'Title for the fourth column. Example: Official Channels';
+$string['footer_columns'] = 'Navigation Columns';
+$string['footer_columns_desc'] = 'Configure the footer columns. Use "#" at the beginning of the line to create a column title, and on the following lines, add the links in the format "Title|URL". Example:<br># Column Title<br>Link 1|https://example.com<br>Link 2|https://example.com';
