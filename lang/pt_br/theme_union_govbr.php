@@ -52,14 +52,8 @@ $string['error_debug_moreinfo'] = 'Mais informações sobre este erro';
 $string['footer_heading'] = 'Configurações do Rodapé';
 $string['footer_heading_desc'] = 'Personalize o rodapé no padrão Gov.br Design System (.br-footer), incluindo tipo de assinatura institucional, categorias e redes sociais.';
 
-$string['footer_signature_type'] = 'Tipo de assinatura no rodapé';
-$string['footer_signature_type_desc'] = 'Selecione o modelo de assinatura exibido no rodapé.<br><strong>Atenção:</strong> O uso da marca do Governo Federal é privativo de órgãos da administração pública federal brasileira (Portarias SECOM/PR). Para prefeituras, estados, instituições de ensino ou empresas privadas que utilizam o Design System sob licença aberta, selecione "Logo Institucional Próprio" ou "Nenhum / Modo Neutro".';
-$string['footer_signature_type_govbr'] = 'Governo Federal (Gov.br) — Exclusivo para órgãos federais';
-$string['footer_signature_type_custom'] = 'Logo Institucional Próprio — Estados, municípios, instituições privadas/educacionais';
-$string['footer_signature_type_none'] = 'Nenhum / Ocultar assinatura — Modo Neutro';
-
 $string['footer_custom_signature_logo'] = 'Logotipo institucional para assinatura';
-$string['footer_custom_signature_logo_desc'] = 'Envie até duas imagens de logotipo da sua instituição (preferencialmente SVG ou PNG com fundo transparente) para serem exibidas lado a lado no espaço de assinatura do rodapé, caso o tipo "Logo Institucional Próprio" esteja selecionado.';
+$string['footer_custom_signature_logo_desc'] = 'Envie até duas imagens de logotipo da sua instituição (preferencialmente SVG ou PNG com fundo transparente) para serem exibidas lado a lado no espaço de assinatura do rodapé.';
 
 $string['footer_title'] = 'Título institucional do rodapé';
 $string['footer_title_desc'] = 'Nome da instituição ou órgão que acompanha o logotipo no topo do rodapé. Se deixado em branco, utiliza o nome completo do site.';
@@ -110,7 +104,6 @@ $string['footer_link_home'] = 'Página Inicial';
 $string['footer_link_mycourses'] = 'Meus Cursos';
 $string['footer_link_accessibility_statement'] = 'Declaração de Acessibilidade';
 
-$string['footer_brasil_logo_alt'] = 'Governo Federal do Brasil — União e Reconstrução';
 $string['footer_custom_logo_alt'] = 'Assinatura institucional';
 
 

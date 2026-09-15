@@ -327,46 +327,6 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     }
 
     /**
-     * Get footer signature type ('govbr', 'custom', or 'none').
-     *
-     * @return string
-     */
-    public function footer_signature_type(): string {
-        $type = get_config('theme_union_govbr', 'footer_signature_type');
-        return !empty($type) ? $type : 'govbr';
-    }
-
-    /**
-     * Whether the Federal Government Brasil signature should be shown.
-     *
-     * @return bool
-     */
-    public function footer_signature_is_govbr(): bool {
-        return $this->footer_signature_type() === 'govbr';
-    }
-
-    /**
-     * Get the URL for the Brasil Gov.br signature logo (white version for dark footer).
-     *
-     * @return string
-     */
-    public function footer_signature_govbr_url(): string {
-        return $this->image_url('brasil_logo_white', 'theme_union_govbr')->out();
-    }
-
-    /**
-     * Whether a custom institutional signature should be shown.
-     *
-     * @return bool
-     */
-    public function footer_signature_is_custom(): bool {
-        if ($this->footer_signature_type() !== 'custom') {
-            return false;
-        }
-        return !empty($this->footer_signature_custom_urls());
-    }
-
-    /**
      * Get the URLs for the custom signature logos if uploaded.
      *
      * @return array
@@ -394,12 +354,12 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     }
 
     /**
-     * Whether any signature (Gov.br or custom) is active.
+     * Whether a custom institutional signature should be shown.
      *
      * @return bool
      */
     public function footer_has_signature(): bool {
-        return $this->footer_signature_is_govbr() || $this->footer_signature_is_custom();
+        return !empty($this->footer_signature_custom_urls());
     }
 
     /**

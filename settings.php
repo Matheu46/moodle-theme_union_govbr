@@ -34,19 +34,6 @@ if ($ADMIN->fulltree) {
         get_string('footer_heading_desc', 'theme_union_govbr')
     ));
 
-    // Setting: Footer Signature Type (govbr, custom, none).
-    $name = 'theme_union_govbr/footer_signature_type';
-    $title = get_string('footer_signature_type', 'theme_union_govbr');
-    $description = get_string('footer_signature_type_desc', 'theme_union_govbr');
-    $default = 'govbr';
-    $choices = [
-        'govbr' => get_string('footer_signature_type_govbr', 'theme_union_govbr'),
-        'custom' => get_string('footer_signature_type_custom', 'theme_union_govbr'),
-        'none' => get_string('footer_signature_type_none', 'theme_union_govbr'),
-    ];
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $settings->add($setting);
 
     // Setting: Custom Signature Logo (stored file).
     $name = 'theme_union_govbr/footer_custom_signature_logo';

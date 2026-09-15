@@ -52,14 +52,8 @@ $string['error_debug_moreinfo'] = 'More information about this error';
 $string['footer_heading'] = 'Footer Settings';
 $string['footer_heading_desc'] = 'Customize the footer following the Gov.br Design System (.br-footer) standard, including signature model, categories, and social media links.';
 
-$string['footer_signature_type'] = 'Footer signature type';
-$string['footer_signature_type_desc'] = 'Select the signature model displayed in the footer.<br><strong>Important:</strong> The Federal Government brand is restricted to Brazilian federal public administration entities (SECOM/PR regulations). For state/municipal entities, private/educational institutions, or international users using this design system under its open license, select "Custom Institutional Logo" or "None / Neutral Mode".';
-$string['footer_signature_type_govbr'] = 'Federal Government (Gov.br) — Federal public entities only';
-$string['footer_signature_type_custom'] = 'Custom Institutional Logo — States, municipalities, private/educational entities';
-$string['footer_signature_type_none'] = 'None / Hide signature — Neutral Mode';
-
 $string['footer_custom_signature_logo'] = 'Custom institutional signature logo';
-$string['footer_custom_signature_logo_desc'] = 'Upload up to two institution logo images (preferably SVG or transparent PNG) to be displayed side-by-side in the footer signature area when "Custom Institutional Logo" is selected.';
+$string['footer_custom_signature_logo_desc'] = 'Upload up to two institution logo images (preferably SVG or transparent PNG) to be displayed side-by-side in the footer signature area.';
 
 $string['footer_title'] = 'Footer institutional title';
 $string['footer_title_desc'] = 'Name of the institution or organization displayed alongside the logo in the footer header. If left blank, defaults to the site full name.';
@@ -110,7 +104,6 @@ $string['footer_link_home'] = 'Home';
 $string['footer_link_mycourses'] = 'My Courses';
 $string['footer_link_accessibility_statement'] = 'Accessibility Statement';
 
-$string['footer_brasil_logo_alt'] = 'Federal Government of Brazil — Union and Reconstruction';
 $string['footer_custom_logo_alt'] = 'Institutional signature';
 
 

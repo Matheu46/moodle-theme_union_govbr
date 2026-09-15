@@ -73,16 +73,9 @@
                 </div>
                 <div class="col-12 col-sm-auto assigns text-start text-sm-end">
                     {{#output.footer_has_signature}}
-                        {{#output.footer_signature_is_govbr}}
-                            <a href="https://www.gov.br" target="_blank" rel="noopener noreferrer" aria-label="{{#str}}footer_brasil_logo_alt, theme_union_govbr{{/str}}">
-                                <img class="ml-sm-4 brasil-logo" src="{{{ output.footer_signature_govbr_url }}}" alt="{{#str}}footer_brasil_logo_alt, theme_union_govbr{{/str}}">
-                            </a>
-                        {{/output.footer_signature_is_govbr}}
-                        {{#output.footer_signature_is_custom}}
-                            {{#output.footer_signature_custom_urls}}
-                                <img class="ml-3 ml-sm-4 custom-signature-logo" src="{{{ url }}}" alt="{{#str}}footer_custom_logo_alt, theme_union_govbr{{/str}}">
-                            {{/output.footer_signature_custom_urls}}
-                        {{/output.footer_signature_is_custom}}
+                        {{#output.footer_signature_custom_urls}}
+                            <img class="ml-3 ml-sm-4 custom-signature-logo" src="{{{ url }}}" alt="{{#str}}footer_custom_logo_alt, theme_union_govbr{{/str}}">
+                        {{/output.footer_signature_custom_urls}}
                     {{/output.footer_has_signature}}
                 </div>
             </div>
