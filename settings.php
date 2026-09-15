@@ -58,7 +58,7 @@ if ($ADMIN->fulltree) {
         $description,
         'footer_custom_signature_logo',
         0,
-        ['maxfiles' => 1, 'accepted_types' => ['web_image', '.svg']]
+        ['maxfiles' => 2, 'accepted_types' => ['web_image', '.svg']]
     );
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);

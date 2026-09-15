@@ -79,7 +79,9 @@
                             </a>
                         {{/output.footer_signature_is_govbr}}
                         {{#output.footer_signature_is_custom}}
-                            <img class="ml-sm-4 custom-signature-logo" src="{{{ output.footer_signature_custom_url }}}" alt="{{#str}}footer_custom_logo_alt, theme_union_govbr{{/str}}">
+                            {{#output.footer_signature_custom_urls}}
+                                <img class="ml-3 ml-sm-4 custom-signature-logo" src="{{{ url }}}" alt="{{#str}}footer_custom_logo_alt, theme_union_govbr{{/str}}">
+                            {{/output.footer_signature_custom_urls}}
                         {{/output.footer_signature_is_custom}}
                     {{/output.footer_has_signature}}
                 </div>

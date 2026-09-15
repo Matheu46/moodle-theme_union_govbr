@@ -59,7 +59,7 @@ $string['footer_signature_type_custom'] = 'Custom Institutional Logo — States,
 $string['footer_signature_type_none'] = 'None / Hide signature — Neutral Mode';
 
 $string['footer_custom_signature_logo'] = 'Custom institutional signature logo';
-$string['footer_custom_signature_logo_desc'] = 'Upload your institution\'s logo image (preferably SVG or transparent PNG) to be displayed in the footer signature area when "Custom Institutional Logo" is selected.';
+$string['footer_custom_signature_logo_desc'] = 'Upload up to two institution logo images (preferably SVG or transparent PNG) to be displayed side-by-side in the footer signature area when "Custom Institutional Logo" is selected.';
 
 $string['footer_title'] = 'Footer institutional title';
 $string['footer_title_desc'] = 'Name of the institution or organization displayed alongside the logo in the footer header. If left blank, defaults to the site full name.';

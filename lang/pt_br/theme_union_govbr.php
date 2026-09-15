@@ -59,7 +59,7 @@ $string['footer_signature_type_custom'] = 'Logo Institucional Próprio — Estad
 $string['footer_signature_type_none'] = 'Nenhum / Ocultar assinatura — Modo Neutro';
 
 $string['footer_custom_signature_logo'] = 'Logotipo institucional para assinatura';
-$string['footer_custom_signature_logo_desc'] = 'Envie a imagem do logotipo da sua instituição (preferencialmente SVG ou PNG com fundo transparente) para ser exibida no espaço de assinatura do rodapé caso o tipo "Logo Institucional Próprio" esteja selecionado.';
+$string['footer_custom_signature_logo_desc'] = 'Envie até duas imagens de logotipo da sua instituição (preferencialmente SVG ou PNG com fundo transparente) para serem exibidas lado a lado no espaço de assinatura do rodapé, caso o tipo "Logo Institucional Próprio" esteja selecionado.';
 
 $string['footer_title'] = 'Título institucional do rodapé';
 $string['footer_title_desc'] = 'Nome da instituição ou órgão que acompanha o logotipo no topo do rodapé. Se deixado em branco, utiliza o nome completo do site.';

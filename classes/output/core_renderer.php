@@ -363,18 +363,34 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
         if ($this->footer_signature_type() !== 'custom') {
             return false;
         }
-        return !empty($this->footer_signature_custom_url());
+        return !empty($this->footer_signature_custom_urls());
     }
 
     /**
-     * Get the URL for the custom signature logo if uploaded.
+     * Get the URLs for the custom signature logos if uploaded.
      *
-     * @return string|null
+     * @return array
      */
-    public function footer_signature_custom_url(): ?string {
-        $theme = \core\output\theme_config::load('union_govbr');
-        $url = $theme->setting_file_url('footer_custom_signature_logo', 'footer_custom_signature_logo');
-        return $url ? $url->out() : null;
+    public function footer_signature_custom_urls(): array {
+        $urls = [];
+        $syscontext = \context_system::instance();
+        $fs = get_file_storage();
+        
+        $files = $fs->get_area_files($syscontext->id, 'theme_union_govbr', 'footer_custom_signature_logo', 0, 'sortorder, itemid, filepath, filename', false);
+        
+        foreach ($files as $file) {
+            $url = \moodle_url::make_pluginfile_url(
+                $syscontext->id,
+                'theme_union_govbr',
+                'footer_custom_signature_logo',
+                0,
+                $file->get_filepath(),
+                $file->get_filename()
+            );
+            $urls[] = ['url' => $url->out()];
+        }
+        
+        return $urls;
     }
 
     /**
