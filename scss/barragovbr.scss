@@ -1,0 +1,80 @@
+// Styles for the Gov.br Identity Bar (br-header -> header-top)
+
+$govbr-bar-height: 40px;
+
+// The Gov.br bar sits absolutely at the top of the viewport.
+.govbr-identity-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: $govbr-bar-height;
+    z-index: 1000;
+    
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.25rem 1.5rem;
+        min-height: $govbr-bar-height;
+    }
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+        
+        img {
+            height: 24px;
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
+        .header-sign {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #333;
+            margin-left: 0.5rem;
+        }
+    }
+
+    .br-divider.vertical {
+        width: 1px;
+        height: 1.5rem;
+        background-color: #ccc;
+        display: block;
+        margin: 0 0.5rem;
+    }
+}
+
+// Moodle's navbar remains fixed, but we push it down via JS offset.
+// We use a CSS transition so that when JS loads and shows the bar, it slides down smoothly
+// instead of causing a sudden jump.
+.navbar.fixed-top {
+    top: var(--govbr-offset, 0px) !important;
+}
+
+// Body padding must statically account for both the navbar and the govbr bar,
+// so that page content doesn't shift when JS loads.
+body {
+    padding-top: calc(#{$navbar-height} + #{$govbr-bar-height}) !important;
+}
+
+// Push drawers and secondary sticky elements down dynamically.
+.drawer {
+    top: calc(#{$navbar-height} + var(--govbr-offset, 0px)) !important;
+    transition: top 0.2s ease-in-out;
+}
+
+.drawer-toggler {
+    top: calc(#{$navbar-height} + var(--govbr-offset, 0px) + 1rem) !important;
+    transition: top 0.2s ease-in-out;
+}
+
+.sticky-top,
+.secondary-navigation {
+    top: calc(#{$navbar-height} + var(--govbr-offset, 0px)) !important;
+    transition: top 0.2s ease-in-out;
+}

@@ -183,6 +183,15 @@ function theme_union_govbr_get_main_scss_content($theme) {
         $scss .= "\n" . file_get_contents($errorpagesfile);
     }
 
+    // Append barragovbr.scss if it exists.
+    $barragovbrfile = __DIR__ . '/scss/barragovbr.scss';
+    if (file_exists($barragovbrfile)) {
+        $enabled = get_config('theme_union_govbr', 'enablebarragovbr');
+        if ($enabled === false || !empty($enabled)) {
+            $scss .= "\n" . file_get_contents($barragovbrfile);
+        }
+    }
+
     // Append footer.scss if it exists.
     $footerfile = __DIR__ . '/scss/footer.scss';
     if (file_exists($footerfile)) {

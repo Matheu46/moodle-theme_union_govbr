@@ -420,13 +420,6 @@
 
 #page-footer {
     [data-region="footer-container-popover"] {
-        position: fixed;
-        bottom: 1.25rem;
-        right: 1.25rem;
-        z-index: 1040;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
 
         .btn-footer-popover,
         .btn-footer-communication,

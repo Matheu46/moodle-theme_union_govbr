@@ -110,3 +110,8 @@ $string['footer_custom_logo_alt'] = 'Assinatura institucional';
 
 $string['footer_columns'] = 'Colunas de Navegação';
 $string['footer_columns_desc'] = 'Configure as colunas do rodapé. Use "#" no início da linha para criar o título de uma coluna e, nas linhas seguintes, adicione os links no formato "Título|URL". Exemplo:<br># Título da Coluna<br>Link 1|https://exemplo.com<br>Link 2|https://exemplo.com';
+
+$string['enablebarragovbr'] = 'Exibir Barra Gov.br';
+$string['enablebarragovbr_desc'] = 'Quando ativado, exibe a barra de identidade oficial do Governo Federal (Barra Gov.br) no topo absoluto da página.';
+$string['govbr_header_sign'] = 'Texto de assinatura da Barra Gov.br';
+$string['govbr_header_sign_desc'] = 'Texto exibido ao lado do logo na barra superior (ex: Governo Federal, Ministério da Educação, etc).';

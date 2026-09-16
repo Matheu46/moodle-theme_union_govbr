@@ -27,6 +27,24 @@ defined('MOODLE_INTERNAL') || die();
 $settings = new admin_settingpage('themesettingunion_govbr', get_string('pluginname', 'theme_union_govbr'));
 
 if ($ADMIN->fulltree) {
+    // Gov.br Bar setting
+    $name = 'theme_union_govbr/enablebarragovbr';
+    $title = get_string('enablebarragovbr', 'theme_union_govbr');
+    $description = get_string('enablebarragovbr_desc', 'theme_union_govbr');
+    $default = 1;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+    
+    // Header sign text setting
+    $name = 'theme_union_govbr/govbr_header_sign';
+    $title = get_string('govbr_header_sign', 'theme_union_govbr');
+    $description = get_string('govbr_header_sign_desc', 'theme_union_govbr');
+    $default = 'Governo Federal';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
     // Heading: Footer Settings.
     $settings->add(new admin_setting_heading(
         'theme_union_govbr_footer_heading',

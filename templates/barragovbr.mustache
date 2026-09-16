@@ -1,0 +1,32 @@
+<div id="govbr-identity-bar" class="br-header govbr-identity-bar d-none" data-sticky="false">
+    <div class="container-fluid">
+        <div class="header-top">
+            <div class="header-logo">
+                <img src="{{{ brasil_logo_url }}}" alt="Logo do Governo Federal"/>
+                {{#has_govbr_header_sign}}
+                <span class="br-divider vertical"></span>
+                <div class="header-sign">{{{ govbr_header_sign }}}</div>
+                {{/has_govbr_header_sign}}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#js}}
+require(['jquery'], function($) {
+    var bar = $('#govbr-identity-bar');
+    
+    var updateScroll = function() {
+        var scrollY = window.scrollY || $(window).scrollTop();
+        var offset = Math.max(0, 40 - scrollY);
+        
+        // Show the bar now that JS has loaded
+        bar.removeClass('d-none');
+        
+        document.documentElement.style.setProperty('--govbr-offset', offset + 'px');
+    };
+
+    $(window).on('scroll', updateScroll);
+    updateScroll();
+});
+{{/js}}

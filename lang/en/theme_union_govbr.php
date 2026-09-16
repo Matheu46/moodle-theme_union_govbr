@@ -110,3 +110,8 @@ $string['footer_custom_logo_alt'] = 'Institutional signature';
 
 $string['footer_columns'] = 'Navigation Columns';
 $string['footer_columns_desc'] = 'Configure the footer columns. Use "#" at the beginning of the line to create a column title, and on the following lines, add the links in the format "Title|URL". Example:<br># Column Title<br>Link 1|https://example.com<br>Link 2|https://example.com';
+
+$string['enablebarragovbr'] = 'Enable Barra Gov.br';
+$string['enablebarragovbr_desc'] = 'When enabled, the official Federal Government identity bar (Barra Gov.br) is displayed at the very top of the page.';
+$string['govbr_header_sign'] = 'Barra Gov.br signature text';
+$string['govbr_header_sign_desc'] = 'Text displayed next to the logo on the top bar (e.g. Governo Federal, Ministério da Educação, etc).';

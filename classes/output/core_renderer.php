@@ -363,6 +363,34 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     }
 
     /**
+     * Return the standard string that says whether you are logged in (etc).
+     * We override this to inject the Barra Gov.br at the very top of the body.
+     *
+     * @return string HTML fragment.
+     */
+    public function standard_top_of_body_html() {
+        $html = parent::standard_top_of_body_html();
+
+        $enabled = get_config('theme_union_govbr', 'enablebarragovbr');
+        if ($enabled === false || !empty($enabled)) {
+            $headersign = get_config('theme_union_govbr', 'govbr_header_sign');
+            if ($headersign === false) {
+                $headersign = 'Governo Federal';
+            }
+            $headersign = trim((string)$headersign);
+            
+            $context = [
+                'brasil_logo_url' => $this->image_url('brasil_logo', 'theme_union_govbr')->out(),
+                'govbr_header_sign' => $headersign,
+                'has_govbr_header_sign' => !empty($headersign)
+            ];
+            $html = $this->render_from_template('theme_union_govbr/barragovbr', $context) . $html;
+        }
+
+        return $html;
+    }
+
+    /**
      * Get institutional footer title.
      *
      * @return string
