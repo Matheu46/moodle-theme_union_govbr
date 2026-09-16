@@ -22,8 +22,5 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
 /* This file is empty by purpose.
    You can add your local theme helper functions here. */
-

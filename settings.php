@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 $settings = new admin_settingpage('themesettingunion_govbr', get_string('pluginname', 'theme_union_govbr'));
 
 if ($ADMIN->fulltree) {
-    // Gov.br Bar setting
+    // Gov.br Bar setting.
     $name = 'theme_union_govbr/enablebarragovbr';
     $title = get_string('enablebarragovbr', 'theme_union_govbr');
     $description = get_string('enablebarragovbr_desc', 'theme_union_govbr');
@@ -35,8 +35,8 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
-    
-    // Header sign text setting
+
+    // Header sign text setting.
     $name = 'theme_union_govbr/govbr_header_sign';
     $title = get_string('govbr_header_sign', 'theme_union_govbr');
     $description = get_string('govbr_header_sign_desc', 'theme_union_govbr');
@@ -80,7 +80,11 @@ if ($ADMIN->fulltree) {
     $name = 'theme_union_govbr/footer_columns';
     $title = get_string('footer_columns', 'theme_union_govbr');
     $description = get_string('footer_columns_desc', 'theme_union_govbr');
-    $default = "# Acesso à Informação\nInstitucional|https://gov.br/\nProgramas e Ações|https://gov.br/\n# Serviços e Suporte\nServiços|https://gov.br/pt-br/servicos\n# Navegação e Acessibilidade\nDeclaração de Acessibilidade|https://gov.br/\n# Canais Oficiais\nTermos de Uso|https://gov.br/";
+    $default = "# Acesso à Informação\nInstitucional|https://gov.br/\n" .
+               "Programas e Ações|https://gov.br/\n" .
+               "# Serviços e Suporte\nServiços|https://gov.br/pt-br/servicos\n" .
+               "# Navegação e Acessibilidade\nDeclaração de Acessibilidade|https://gov.br/\n" .
+               "# Canais Oficiais\nTermos de Uso|https://gov.br/";
     $setting = new admin_setting_configtextarea($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
@@ -139,4 +143,3 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 }
-

@@ -28,8 +28,6 @@ use core_useragent;
 use moodle_url;
 use Throwable;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Extending the core_renderer interface for Gov.br DS.
  *
@@ -38,7 +36,6 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class core_renderer extends \theme_boost_union\output\core_renderer {
-
     /**
      * The method that displays fatal error messages following Gov.br DS visual standards.
      *
@@ -124,10 +121,10 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
             if ($CFG->debugdeveloper) {
                 $labelsep = get_string('labelsep', 'langconfig');
                 if (!empty($debuginfo)) {
-                    $debuginfo_clean = s($debuginfo);
-                    $debuginfo_clean = str_replace("\n", '<br />', $debuginfo_clean);
+                    $debuginfoclean = s($debuginfo);
+                    $debuginfoclean = str_replace("\n", '<br />', $debuginfoclean);
                     $label = get_string('debuginfo', 'debug') . $labelsep;
-                    $output .= $this->notification("<strong>$label</strong> " . $debuginfo_clean, 'notifytiny');
+                    $output .= $this->notification("<strong>$label</strong> " . $debuginfoclean, 'notifytiny');
                 }
                 if (!empty($backtrace)) {
                     $label = get_string('stacktrace', 'debug') . $labelsep;
@@ -170,24 +167,28 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
             $exceptionclass = strtolower($backtrace[0]['exception']);
 
             // 403 Forbidden / Access Denied classes.
-            if (str_contains($exceptionclass, 'access_denied') ||
+            if (
+                str_contains($exceptionclass, 'access_denied') ||
                 str_contains($exceptionclass, 'required_capability') ||
                 str_contains($exceptionclass, 'require_login') ||
-                str_contains($exceptionclass, 'restricted_context')) {
+                str_contains($exceptionclass, 'restricted_context')
+            ) {
                 return '403';
             }
 
             // 404 Not Found / Missing Record classes.
-            if (str_contains($exceptionclass, 'not_found') ||
+            if (
+                str_contains($exceptionclass, 'not_found') ||
                 str_contains($exceptionclass, 'missing_record') ||
                 str_contains($exceptionclass, 'file_serving') ||
-                str_contains($exceptionclass, 'file_access')) {
+                str_contains($exceptionclass, 'file_access')
+            ) {
                 return '404';
             }
         }
 
         // 2. 403 Forbidden / Unauthorized programmatic error codes.
-        $forbidden_codes = [
+        $forbiddencodes = [
             'nopermissions',
             'requireloginerror',
             'accessdenied',
@@ -201,19 +202,21 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
             'mustbeloggedin',
         ];
 
-        if (in_array($code, $forbidden_codes, true)) {
+        if (in_array($code, $forbiddencodes, true)) {
             return '403';
         }
 
-        if (str_starts_with($code, 'nopermission') ||
+        if (
+            str_starts_with($code, 'nopermission') ||
             str_starts_with($code, 'cannot') ||
             str_starts_with($code, 'notallowed') ||
-            str_contains($code, 'accessdenied')) {
+            str_contains($code, 'accessdenied')
+        ) {
             return '403';
         }
 
         // 3. 404 Not Found / Missing Record programmatic error codes.
-        $notfound_codes = [
+        $notfoundcodes = [
             'coursenotfound',
             'invalidcourseid',
             'invalidcoursemodule',
@@ -235,13 +238,15 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
             'itemnotfound',
         ];
 
-        if (in_array($code, $notfound_codes, true)) {
+        if (in_array($code, $notfoundcodes, true)) {
             return '404';
         }
 
-        if (str_contains($code, 'notfound') ||
+        if (
+            str_contains($code, 'notfound') ||
             str_contains($code, 'missing') ||
-            (str_starts_with($code, 'invalid') && (str_contains($code, 'id') || str_contains($code, 'record')))) {
+            (str_starts_with($code, 'invalid') && (str_contains($code, 'id') || str_contains($code, 'record')))
+        ) {
             return '404';
         }
 
@@ -335,9 +340,16 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
         $urls = [];
         $syscontext = \context_system::instance();
         $fs = get_file_storage();
-        
-        $files = $fs->get_area_files($syscontext->id, 'theme_union_govbr', 'footer_custom_signature_logo', 0, 'sortorder, itemid, filepath, filename', false);
-        
+
+        $files = $fs->get_area_files(
+            $syscontext->id,
+            'theme_union_govbr',
+            'footer_custom_signature_logo',
+            0,
+            'sortorder, itemid, filepath, filename',
+            false
+        );
+
         foreach ($files as $file) {
             $url = \moodle_url::make_pluginfile_url(
                 $syscontext->id,
@@ -349,7 +361,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
             );
             $urls[] = ['url' => $url->out()];
         }
-        
+
         return $urls;
     }
 
@@ -378,11 +390,11 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                 $headersign = 'Governo Federal';
             }
             $headersign = trim((string)$headersign);
-            
+
             $context = [
                 'brasil_logo_url' => $this->image_url('brasil_logo', 'theme_union_govbr')->out(),
                 'govbr_header_sign' => $headersign,
-                'has_govbr_header_sign' => !empty($headersign)
+                'has_govbr_header_sign' => !empty($headersign),
             ];
             $html = $this->render_from_template('theme_union_govbr/barragovbr', $context) . $html;
         }
@@ -456,10 +468,26 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      */
     public function footer_social_networks(): array {
         $networks = [
-            'twitter' => ['name' => 'X (Twitter)', 'icon' => 'fa-brands fa-x-twitter', 'default' => 'https://twitter.com/govbr'],
-            'youtube' => ['name' => 'YouTube', 'icon' => 'fa-brands fa-youtube', 'default' => 'https://youtube.com/governodobrasil'],
-            'facebook' => ['name' => 'Facebook', 'icon' => 'fa-brands fa-facebook-f', 'default' => 'https://facebook.com/governodobrasil'],
-            'instagram' => ['name' => 'Instagram', 'icon' => 'fa-brands fa-instagram', 'default' => 'https://instagram.com/governodobrasil'],
+            'twitter' => [
+                'name' => 'X (Twitter)',
+                'icon' => 'fa-brands fa-x-twitter',
+                'default' => 'https://twitter.com/govbr',
+            ],
+            'youtube' => [
+                'name' => 'YouTube',
+                'icon' => 'fa-brands fa-youtube',
+                'default' => 'https://youtube.com/governodobrasil',
+            ],
+            'facebook' => [
+                'name' => 'Facebook',
+                'icon' => 'fa-brands fa-facebook-f',
+                'default' => 'https://facebook.com/governodobrasil',
+            ],
+            'instagram' => [
+                'name' => 'Instagram',
+                'icon' => 'fa-brands fa-instagram',
+                'default' => 'https://instagram.com/governodobrasil',
+            ],
             'linkedin' => ['name' => 'LinkedIn', 'icon' => 'fa-brands fa-linkedin-in', 'default' => ''],
             'tiktok' => ['name' => 'TikTok', 'icon' => 'fa-brands fa-tiktok', 'default' => ''],
             'whatsapp' => ['name' => 'WhatsApp', 'icon' => 'fa-brands fa-whatsapp', 'default' => ''],
@@ -519,39 +547,39 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
         }
 
         $columns = [];
-        $current_col = null;
+        $currentcol = null;
         $lines = explode("\n", $raw);
-        
+
         foreach ($lines as $line) {
             $line = trim($line);
             if (empty($line)) {
                 continue;
             }
-            
+
             if (strpos($line, '#') === 0) {
-                if ($current_col !== null) {
-                    $columns[] = $current_col;
+                if ($currentcol !== null) {
+                    $columns[] = $currentcol;
                 }
-                $current_col = [
+                $currentcol = [
                     'title' => trim(substr($line, 1)),
-                    'links' => []
+                    'links' => [],
                 ];
             } else {
                 $parts = explode('|', $line, 2);
                 $title = trim($parts[0]);
                 $url = isset($parts[1]) ? trim($parts[1]) : '';
-                
-                if (!empty($title) && $current_col !== null) {
-                    $current_col['links'][] = [
+
+                if (!empty($title) && $currentcol !== null) {
+                    $currentcol['links'][] = [
                         'title' => $title,
-                        'url' => $url
+                        'url' => $url,
                     ];
                 }
             }
         }
-        
-        if ($current_col !== null) {
-            $columns[] = $current_col;
+
+        if ($currentcol !== null) {
+            $columns[] = $currentcol;
         }
 
         return $columns;
