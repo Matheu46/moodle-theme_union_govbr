@@ -22,27 +22,16 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// --------------------------------------------------------------------------
-// 1. Moodle Native User Picture (.userpicture)
-// --------------------------------------------------------------------------
+// Moodle Native User Picture (.userpicture)
 img.userpicture,
 .userpicture {
     border-radius: var(--surface-rounder-pill, 999em);
     object-fit: cover;
-    vertical-align: middle;
-    display: inline-block;
-    flex-shrink: 0;
 }
 
-// --------------------------------------------------------------------------
-// 2. Moodle Native User Initials (.userinitials) - Avatar Letra
-// --------------------------------------------------------------------------
+// Moodle Native User Initials (.userinitials)
 .userinitials {
     border-radius: var(--surface-rounder-pill, 999em);
-    vertical-align: middle;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-weight: var(--font-weight-semi-bold, 600);
     background-color: var(--avatar-bg-initials, #dbe8fb);
@@ -52,53 +41,9 @@ img.userpicture,
     text-transform: uppercase;
     flex-shrink: 0;
     transition: opacity 0.15s ease-in-out;
-
-    // Sizing Variants (Moodle native classes)
-    &.size-16,
-    &.size-30 {
-        width: 30px;
-        height: 30px;
-        min-width: 30px;
-        min-height: 30px;
-        font-size: 0.75rem;
-    }
-
-    &.size-35 {
-        width: 35px;
-        height: 35px;
-        min-width: 35px;
-        min-height: 35px;
-        font-size: 0.875rem;
-    }
-
-    &.size-50 {
-        width: 50px;
-        height: 50px;
-        min-width: 50px;
-        min-height: 50px;
-        font-size: 1.125rem;
-    }
-
-    &.size-64 {
-        width: 64px;
-        height: 64px;
-        min-width: 64px;
-        min-height: 64px;
-        font-size: 1.375rem;
-    }
-
-    &.size-100 {
-        width: 100px;
-        height: 100px;
-        min-width: 100px;
-        min-height: 100px;
-        font-size: 2rem;
-    }
 }
 
-// --------------------------------------------------------------------------
-// 3. Gov.br Design System Avatar Component (.br-avatar)
-// --------------------------------------------------------------------------
+// Gov.br Design System Avatar Component (.br-avatar)
 .br-avatar {
     border-radius: var(--surface-rounder-pill, 999em);
     display: inline-flex;
@@ -214,18 +159,11 @@ img.userpicture,
     }
 }
 
-// --------------------------------------------------------------------------
-// 4. Contextual Moodle Integrations
-// --------------------------------------------------------------------------
-
+// Contextual Moodle Integrations
 // Navbar User Navigation Menu (#usernavigation .usermenu)
 #usernavigation .usermenu .userbutton {
     .userpicture,
     .userinitials {
-        width: var(--avatar-size-header, 36px);
-        height: var(--avatar-size-header, 36px);
-        min-width: var(--avatar-size-header, 36px);
-        min-height: var(--avatar-size-header, 36px);
         border: 2px solid var(--color-secondary-03, #ededed);
         margin: 0;
         flex-shrink: 0;
@@ -239,16 +177,5 @@ img.userpicture,
     .userinitials {
         border: 3px solid var(--color-secondary-03, #ededed);
         box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.16));
-    }
-}
-
-// Linked Avatars Focus State
-a.d-inline-block.aabtn {
-    border-radius: var(--surface-rounder-pill, 999em);
-
-    &:focus,
-    &:focus-visible {
-        outline: 2px solid var(--focus, #ffcd07) !important;
-        outline-offset: 2px;
     }
 }

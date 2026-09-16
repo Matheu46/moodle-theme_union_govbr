@@ -1,4 +1,25 @@
-// Styles for the Gov.br Identity Bar (br-header -> header-top)
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Styles for the Gov.br Identity Bar (br-header -> header-top)
+ *
+ * @package    theme_union_govbr
+ * @copyright  2026 Matheus Mathias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 $govbr-bar-height: 40px;
 
@@ -50,31 +71,19 @@ $govbr-bar-height: 40px;
 }
 
 // Moodle's navbar remains fixed, but we push it down via JS offset.
-// We use a CSS transition so that when JS loads and shows the bar, it slides down smoothly
-// instead of causing a sudden jump.
 .navbar.fixed-top {
-    top: var(--govbr-offset, 0px) !important;
+    top: var(--govbr-offset, 0px);
 }
 
-// Body padding must statically account for both the navbar and the govbr bar,
-// so that page content doesn't shift when JS loads.
 body {
-    padding-top: calc(#{$navbar-height} + #{$govbr-bar-height}) !important;
+    padding-top: #{$govbr-bar-height};
 }
 
-// Push drawers and secondary sticky elements down dynamically.
-.drawer {
-    top: calc(#{$navbar-height} + var(--govbr-offset, 0px)) !important;
-    transition: top 0.2s ease-in-out;
+// Push drawers elements down dynamically.
+.drawer-right, .drawer-left {
+    top: calc(#{$navbar-height} + var(--govbr-offset, 0px));
 }
 
-.drawer-toggler {
-    top: calc(#{$navbar-height} + var(--govbr-offset, 0px) + 1rem) !important;
-    transition: top 0.2s ease-in-out;
-}
-
-.sticky-top,
-.secondary-navigation {
-    top: calc(#{$navbar-height} + var(--govbr-offset, 0px)) !important;
-    transition: top 0.2s ease-in-out;
+.drawer-toggles .drawer-toggler{
+    top: calc(#{$navbar-height} + var(--govbr-offset, 0px) + 1rem);
 }

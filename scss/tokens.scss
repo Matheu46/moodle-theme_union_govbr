@@ -1,27 +1,46 @@
-// =============================================================================
-// Gov.br DS - Design Tokens (tokens.scss)
-// Guidelines: https://www.gov.br/ds/fundamentos-visuais/superficie?tab=visao-geral
-// =============================================================================
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Gov.br DS - Design Tokens (tokens.scss)
+ * Reference: https://www.gov.br/ds/fundamentos-visuais/superficie?tab=visao-geral
+ *
+ * @package    theme_union_govbr
+ * @copyright  2026 Matheus Mathias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 :root {
     // -------------------------------------------------------------------------
     // 1. Surface Tokens (Superfície)
     // -------------------------------------------------------------------------
 
-    // Border Width (Espessura)
+    // Border Width
     --surface-width-none: 0;
     --surface-width-sm:   1px;
     --surface-width-md:   2px;
     --surface-width-lg:   4px;
 
-    // Border Radius / Rounder (Arredondamento)
+    // Border Radius / Rounder
     --surface-rounder-none: 0;
     --surface-rounder-sm:   4px;
     --surface-rounder-md:   8px;
     --surface-rounder-lg:   16px;
     --surface-rounder-pill: 999em;
 
-    // Opacity (Opacidade)
+    // Opacity
     --surface-opacity-none:    0;
     --surface-opacity-xs:      0.16;
     --surface-opacity-sm:      0.3;
@@ -30,7 +49,7 @@
     --surface-opacity-xl:      0.85;
     --surface-opacity-default: 1;
 
-    // Shadows / Elevation (Sombras e Elevação)
+    // Shadows / Elevation
     --surface-shadow-none: none;
     --surface-shadow-sm:   0 1px 6px rgba(0, 0, 0, 0.16);
     --surface-shadow-md:   0 3px 6px rgba(0, 0, 0, 0.16);
@@ -62,7 +81,7 @@
     --surface-border-solid-lg:   4px solid var(--color-secondary-04, #cccccc);
 
     // -------------------------------------------------------------------------
-    // 2. Color Tokens (Cores)
+    // 2. Color Tokens
     // -------------------------------------------------------------------------
 
     // Primary Colors (Blue Warm Vivid)
@@ -129,7 +148,7 @@
     --color-highlight: #268744;
 
     // -------------------------------------------------------------------------
-    // 3. Spacing Tokens (Espaçamento)
+    // 3. Spacing Tokens
     // -------------------------------------------------------------------------
     --spacing-scale-default: 0;
     --spacing-scale-half:    4px;
@@ -149,7 +168,7 @@
     --spacing-scale-10x:     80px;
 
     // -------------------------------------------------------------------------
-    // 4. Typography Tokens (Tipografia)
+    // 4. Typography Tokens
     // -------------------------------------------------------------------------
     --font-family-base: 'Rawline', 'Raleway', sans-serif;
 

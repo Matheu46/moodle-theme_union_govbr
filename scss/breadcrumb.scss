@@ -1,7 +1,26 @@
-// =============================================================================
-// Gov.br DS - Breadcrumb Component (breadcrumb.scss)
-// Guidelines: https://www.gov.br/ds/components/breadcrumb?tab=visao-geral
-// =============================================================================
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * Gov.br DS - Breadcrumb Component (breadcrumb.scss)
+ * Reference: https://www.gov.br/ds/components/breadcrumb?tab=visao-geral
+ *
+ * @package    theme_union_govbr
+ * @copyright  2026 Matheus Mathias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 // 1. Moodle Native Breadcrumb Styling (.breadcrumb)
 #page-navbar .breadcrumb {
@@ -10,8 +29,8 @@
     background-color: transparent;
     padding: 0.5rem 0;
     margin-bottom: 0.75rem;
-    font-size: 0.8125rem; // ~13px (Gov.br font-size-scale-down-01)
-    font-weight: 500;
+    font-size: var(--font-size-scale-down-01); // ~13px
+    font-weight: var(--font-weight-medium);
     list-style: none;
     overflow-x: auto;
     white-space: nowrap;
@@ -24,17 +43,15 @@
     }
     &::-webkit-scrollbar-thumb {
         background-color: var(--color-secondary-04, #cccccc);
-        border-radius: 4px;
+        border-radius: var(--surface-rounder-sm);
     }
 
-    // Individual item
     .breadcrumb-item {
         display: inline-flex;
         align-items: center;
         color: var(--color-secondary-08, #333333);
         line-height: 1.5;
 
-        // Links
         a:not([aria-current="page"]) {
             color: var(--interactive, #1351b4);
             text-decoration: none;
@@ -53,37 +70,33 @@
             }
         }
 
-        // Active / Current page (last item, aria-current="page", or text span)
         &.active,
         &:last-child,
         [aria-current="page"],
         > span {
-            color: var(--color-secondary-08, #333333);
             font-weight: 600;
         }
 
         // Specifically ensure current page link does not look interactive
         [aria-current="page"] {
-            color: var(--color-secondary-08, #333333);
             pointer-events: none;
             cursor: default;
-            text-decoration: none !important;
+            text-decoration: none;
 
             &:hover {
                 color: var(--color-secondary-08, #333333);
-                text-decoration: none !important;
+                text-decoration: none;
             }
         }
 
         // Chevron-right separator between crumbs (Gov.br DS standard)
         + .breadcrumb-item::before {
-            content: "\f054" !important; // fa-chevron-right
-            font-family: 'Font Awesome 6 Free', 'FontAwesome' !important;
-            font-weight: 900 !important;
-            font-size: 0.5625rem; // 9px
+            content: "\f054"; // fa-chevron-right
+            font-family: 'Font Awesome 6 Free', 'FontAwesome';
+            font-weight: 900;
+            font-size: var(--font-size-scale-down-02);
             color: var(--color-secondary-04, #cccccc);
-            padding: 0 0.5rem;
-            display: inline-block;
+            line-height: 0;
         }
 
         // Home crumb icon on the first item
@@ -92,9 +105,8 @@
             content: "\f015"; // fa-house / fa-home
             font-family: 'Font Awesome 6 Free', 'FontAwesome';
             font-weight: 900;
-            font-size: 0.8125rem;
-            margin-right: 0.35rem;
-            vertical-align: -1px;
+            font-size: var(--font-size-scale-down-01);
+            margin-right: 0.2rem;
         }
 
     }
@@ -158,6 +170,6 @@
 [dir="rtl"] {
     .breadcrumb .breadcrumb-item + .breadcrumb-item::before,
     .br-breadcrumb .crumb + .crumb::before {
-        content: "\f053" !important; // fa-chevron-left
+        content: "\f053"; // fa-chevron-left
     }
 }
