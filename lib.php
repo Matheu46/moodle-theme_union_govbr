@@ -216,9 +216,9 @@ function theme_union_govbr_pluginfile($course, $cm, $context, $filearea, $args, 
         send_file_not_found();
     }
 
-    if ($filearea === 'footer_custom_signature_logo') {
+    if ($filearea === 'footer_custom_signature_logo' || $filearea === 'footer_logo') {
         $theme = theme_config::load('union_govbr');
-        return $theme->setting_file_serve('footer_custom_signature_logo', $args, $forcedownload, $options);
+        return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
     }
 
     send_file_not_found();

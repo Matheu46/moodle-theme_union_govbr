@@ -424,7 +424,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     }
 
     public function footer_has_custom_logo(): bool {
-        return !empty($this->get_logo_url());
+        return !empty($this->footer_custom_logo_url());
     }
 
     /**
@@ -433,6 +433,30 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
      * @return string|null
      */
     public function footer_custom_logo_url(): ?string {
+        $syscontext = \context_system::instance();
+        $fs = get_file_storage();
+
+        $files = $fs->get_area_files(
+            $syscontext->id,
+            'theme_union_govbr',
+            'footer_logo',
+            0,
+            'sortorder, itemid, filepath, filename',
+            false
+        );
+
+        foreach ($files as $file) {
+            $url = \moodle_url::make_pluginfile_url(
+                $syscontext->id,
+                'theme_union_govbr',
+                'footer_logo',
+                0,
+                $file->get_filepath(),
+                $file->get_filename()
+            );
+            return $url->out();
+        }
+
         $logo = $this->get_logo_url();
         return $logo ? $logo->out() : null;
     }

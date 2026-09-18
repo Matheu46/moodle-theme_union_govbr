@@ -65,6 +65,14 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
+    // Setting: Footer Specific Logo (stored file).
+    $name = 'theme_union_govbr/footer_logo';
+    $title = get_string('footer_logo', 'theme_union_govbr');
+    $description = get_string('footer_logo_desc', 'theme_union_govbr');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'footer_logo', 0, ['maxfiles' => 1, 'accepted_types' => 'web_image']);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
     // Setting: Custom Signature Logo (stored file).
     $name = 'theme_union_govbr/footer_custom_signature_logo';
     $title = get_string('footer_custom_signature_logo', 'theme_union_govbr');
