@@ -51,6 +51,11 @@ $string['error_debug_moreinfo'] = 'More information about this error';
 // Theme and Footer Settings (Gov.br DS).
 $string['footer_heading'] = 'Footer Settings';
 $string['footer_heading_desc'] = 'Customize the footer following the Gov.br Design System (.br-footer) standard, including signature model, categories, and social media links.';
+$string['footer_background'] = 'Background Color';
+$string['footer_background_desc'] = 'Choose between the default dark background and the white background.';
+$string['footer_background_dark'] = 'Dark Background';
+$string['footer_background_light'] = 'White Background';
+
 
 $string['footer_custom_signature_logo'] = 'Custom institutional signature logo';
 $string['footer_custom_signature_logo_desc'] = 'Upload up to two institution logo images (preferably SVG or transparent PNG) to be displayed side-by-side in the footer signature area.';

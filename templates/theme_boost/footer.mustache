@@ -20,7 +20,7 @@
     Official Gov.br Design System footer (.br-footer) for theme_union_govbr.
 }}
 
-<footer id="page-footer" class="br-footer">
+<footer id="page-footer" class="br-footer {{output.footer_background_class}}">
     <div class="container-lg">
         <div class="logo">
             <a href="{{{ config.wwwroot }}}/" aria-label="{{#str}}footer_link_home, theme_union_govbr{{/str}}">
@@ -38,7 +38,7 @@
                 {{#output.footer_columns}}
                 <div class="col-12 col-md-6 col-lg">
                     <a class="br-item header" href="javascript:void(0)">
-                        <div class="content text-down-01 text-bold text-uppercase">{{{ title }}}</div>
+                        <div class="content">{{{ title }}}</div>
                         <div class="support"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
                     </a>
                     <div class="br-list">
@@ -74,7 +74,7 @@
                 <div class="col-12 col-sm-auto assigns text-start text-sm-end">
                     {{#output.footer_has_signature}}
                         {{#output.footer_signature_custom_urls}}
-                            <img class="ml-3 ml-sm-4 custom-signature-logo" src="{{{ url }}}" alt="{{#str}}footer_custom_logo_alt, theme_union_govbr{{/str}}">
+                            <img class="ms-3 ms-sm-4 custom-signature-logo" src="{{{ url }}}" alt="{{#str}}footer_custom_logo_alt, theme_union_govbr{{/str}}">
                         {{/output.footer_signature_custom_urls}}
                     {{/output.footer_has_signature}}
                 </div>
@@ -87,7 +87,7 @@
     <div class="container-lg">
         <div class="info">
             {{#output.footer_show_license}}
-                <div class="text-down-01 text-medium pb-3">
+                <div class="text-license pb-3">
                     {{{ output.footer_license_text }}}
                 </div>
             {{/output.footer_show_license}}

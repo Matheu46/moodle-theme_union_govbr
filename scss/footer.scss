@@ -32,6 +32,21 @@
 #page.drawers #page-footer.br-footer {
     margin-left: -3rem;
     margin-right: -3rem;
+
+    /* Reset margins on mobile */
+    @media (max-width: 767.98px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Reset margins when drawer is open */
+#page.drawers.show-drawer-left #page-footer.br-footer {
+    margin-left: -1rem;
+}
+
+#page.drawers.show-drawer-right #page-footer.br-footer {
+    margin-right: -1rem;
 }
 
 .br-footer {
@@ -55,7 +70,7 @@
     --background-light: #ffffff;
     --color-light: #333333;
     --color-light-rgb: 51, 51, 51;
-    --interactive-light: #1351b4;
+    --interactive-light: var(--blue-warm-vivid-70, #1351b4);
     --interactive-light-rgb: 19, 81, 180;
     --visited-light: #555555;
     --hover-light: 0.16;
@@ -75,6 +90,17 @@
     --focus: var(--focus-color-dark);
     --border-color: rgba(255, 255, 255, 0.15);
 
+    --hover-text-color: #ffffff;
+    --item-hover-bg: rgba(255, 255, 255, 0.1);
+    --item-hover-color: #ffffff;
+    --social-title-color: #ffffff;
+    --social-bg: transparent;
+    --social-color: var(--interactive-dark);
+    --social-hover-bg: rgba(255, 255, 255, 0.15);
+    --social-hover-color: #ffffff;
+    --info-color: #ffffff;
+    --technical-info-color: rgba(255, 255, 255, 0.85);
+
     background: var(--background);
     border-top: 3px solid var(--blue-warm-vivid-70, #1351b4);
     color: var(--color);
@@ -92,7 +118,7 @@
 
         &:hover,
         &:focus {
-            color: #ffffff;
+            color: var(--hover-text-color);
             text-decoration: underline;
         }
     }
@@ -117,21 +143,22 @@
         --focus: var(--focus-color-light);
         --border-color: rgba(0, 0, 0, 0.12);
 
+        --hover-text-color: var(--interactive-light);
+        --item-hover-bg: rgba(0, 0, 0, 0.06);
+        --item-hover-color: var(--interactive-light);
+        --social-title-color: var(--color-light);
+        --social-bg: transparent;
+        --social-color: var(--interactive-light);
+        --social-hover-bg: rgba(0, 0, 0, 0.08);
+        --social-hover-color: var(--interactive-light);
+        --info-color: var(--color-light);
+        --technical-info-color: var(--color-secondary-07, #555555);
+
         border-top: 1px solid var(--border-color);
-
-        .br-item:not(:disabled):hover,
-        .br-item:hover {
-            background-color: rgba(0, 0, 0, 0.06);
-            color: var(--interactive);
-
-            .content {
-                color: var(--interactive);
-            }
-        }
     }
 
     .logo {
-        padding: 0 0 var(--spacing-scale-2xh, 1.25rem) 0;
+        padding: 0 0 var(--spacing-scale-6x, 3rem) 0;
         margin-top: 0;
 
         a {
@@ -170,7 +197,7 @@
     .br-list.horizontal {
         display: flex;
         flex-wrap: wrap;
-        padding: 0 0 var(--spacing-scale-2x, 1rem) 0;
+        padding: 0 0 var(--spacing-scale-6x, 3rem) 0;
         list-style: none;
         background: transparent;
         background-color: transparent;
@@ -217,15 +244,17 @@
             height: auto;
             line-height: 1.4;
             padding: 0 var(--spacing-scale-base, 0.5rem);
-            font-size: 0.875rem;
-            color: var(--color) ;
+            font-size: var(--font-size-scale-base, 0.875rem);
+            font-weight: var(--font-weight-regular, 400);
+            color: var(--interactive);
         }
+
     }
 
     .br-list .br-item {
         align-items: center;
         display: flex;
-        color: var(--color);
+        color: var(--interactive);
         text-decoration: none;
         border-radius: 4px;
         border: none;
@@ -235,17 +264,17 @@
 
         .content {
             flex: 1;
-            color: var(--color);
+            color: var(--interactive);
         }
 
         &:not(:disabled):hover,
         &:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--item-hover-bg);
             background-image: none;
-            color: #ffffff;
+            color: var(--item-hover-color);
 
             .content {
-                color: #ffffff;
+                color: var(--item-hover-color);
             }
         }
 
@@ -256,11 +285,13 @@
         }
 
         &.header {
-            font-weight: 700;
             border-bottom: 1px solid transparent;
             padding: var(--spacing-scale-base, 0.5rem);
 
             .content {
+                font-size: var(--font-size-scale-down-01, 0.75rem);
+                font-weight: var(--font-weight-semi-bold, 600);
+                text-transform: uppercase;
                 letter-spacing: 0.6px;
                 color: var(--color);
             }
@@ -275,13 +306,13 @@
         border: 0;
 
         .social-network-title {
-            font-size: 1rem;
-            font-weight: 800;
-            margin-bottom: var(--spacing-scale-baseh, 0.75rem);
-            text-transform: uppercase;
+            font-size: var(--font-size-scale-up-01, 1rem);
+            font-weight: var(--font-weight-bold, 700);
+            margin-bottom: var(--spacing-scale-3x, 1.5rem);
             letter-spacing: 0.5px;
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--social-title-color);
         }
+
 
         .br-button.circle {
             border-radius: 50%;
@@ -291,8 +322,8 @@
             align-items: center;
             justify-content: center;
             padding: 0;
-            background-color: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
+            background-color: var(--social-bg);
+            color: var(--social-color);
             border: none;
             font-size: 1rem;
             transition: background-color 0.2s ease, transform 0.2s ease;
@@ -300,8 +331,8 @@
 
             &:hover,
             &:focus {
-                background-color: rgba(255, 255, 255, 0.25);
-                color: #ffffff;
+                background-color: var(--social-hover-bg);
+                color: var(--social-hover-color);
                 transform: translateY(-2px);
                 text-decoration: none;
             }
@@ -350,22 +381,20 @@
     .info {
         text-align: center;
 
-        .text-license,
-        .text-down-01 {
-            font-size: 0.8125rem;
+        .text-license {
+            font-size: var(--font-size-scale-down-01, 0.75rem);
+            font-weight: var(--font-weight-medium, 500);
             line-height: 1.55;
-            color: rgba(255, 255, 255, 0.85);
+            color: var(--info-color);
 
             a {
-                font-weight: 600;
+                font-weight: var(--font-weight-extra-bold, 800);
                 text-decoration: underline;
             }
         }
 
         .moodle-technical-info {
             font-size: 0.75rem;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.7);
 
             .logininfo a {
                 color: var(--interactive);
@@ -390,10 +419,6 @@
     }
 }
 
-.text-down-01 { font-size: 0.8125rem; }
-.text-bold { font-weight: 700; }
-.text-medium { font-weight: 500; }
-.text-uppercase { text-transform: uppercase; }
 
 @media (max-width: 991.98px) {
     .br-footer {

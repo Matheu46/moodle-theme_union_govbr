@@ -414,10 +414,15 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
     }
 
     /**
-     * Whether a custom site logo is configured.
+     * Get the footer background class (e.g. inverted for light mode).
      *
-     * @return bool
+     * @return string
      */
+    public function footer_background_class(): string {
+        $setting = get_config('theme_union_govbr', 'footer_background');
+        return ($setting === 'light') ? 'inverted' : '';
+    }
+
     public function footer_has_custom_logo(): bool {
         return !empty($this->get_logo_url());
     }

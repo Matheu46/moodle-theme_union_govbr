@@ -51,6 +51,11 @@ $string['error_debug_moreinfo'] = 'Mais informações sobre este erro';
 // Configurações do Tema e Rodapé (Gov.br DS).
 $string['footer_heading'] = 'Configurações do Rodapé';
 $string['footer_heading_desc'] = 'Personalize o rodapé no padrão Gov.br Design System (.br-footer), incluindo tipo de assinatura institucional, categorias e redes sociais.';
+$string['footer_background'] = 'Cor de fundo';
+$string['footer_background_desc'] = 'Escolha entre o fundo escuro padrão e o fundo branco.';
+$string['footer_background_dark'] = 'Fundo Escuro';
+$string['footer_background_light'] = 'Fundo Branco';
+
 
 $string['footer_custom_signature_logo'] = 'Logotipo institucional para assinatura';
 $string['footer_custom_signature_logo_desc'] = 'Envie até duas imagens de logotipo da sua instituição (preferencialmente SVG ou PNG com fundo transparente) para serem exibidas lado a lado no espaço de assinatura do rodapé.';

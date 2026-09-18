@@ -52,6 +52,18 @@ if ($ADMIN->fulltree) {
         get_string('footer_heading_desc', 'theme_union_govbr')
     ));
 
+    // Setting: Footer Background Color.
+    $name = 'theme_union_govbr/footer_background';
+    $title = get_string('footer_background', 'theme_union_govbr');
+    $description = get_string('footer_background_desc', 'theme_union_govbr');
+    $default = 'dark';
+    $choices = [
+        'dark' => get_string('footer_background_dark', 'theme_union_govbr'),
+        'light' => get_string('footer_background_light', 'theme_union_govbr'),
+    ];
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
 
     // Setting: Custom Signature Logo (stored file).
     $name = 'theme_union_govbr/footer_custom_signature_logo';
