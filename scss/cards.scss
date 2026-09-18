@@ -22,27 +22,23 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// 1. Base Card Container (.card and .br-card)
+// Base Card Container (.card and .br-card)
 .card,
 .br-card {
     background-color: var(--background-light, #ffffff);
     border: 1px solid var(--color-secondary-03, #ededed);
     border-radius: var(--surface-rounder-md, 8px);
     box-shadow: var(--surface-shadow-sm, 0 1px 6px rgba(0, 0, 0, 0.16));
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    word-wrap: break-word;
-    margin-bottom: .5rem;
+    margin-bottom: var(--spacing-scale-base, 0.5rem);
     transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
     // Disabled state
     &.disabled,
     &[aria-disabled="true"] {
-        opacity: var(--disabled, 0.45) !important;
-        pointer-events: none !important;
-        cursor: not-allowed !important;
-        box-shadow: none !important;
+        opacity: var(--disabled, 0.45);
+        pointer-events: none;
+        cursor: not-allowed;
+        box-shadow: none;
     }
 
     // Interactive / Hoverable card states
@@ -58,8 +54,8 @@
 
     // Focus state for interactive card
     &:focus-visible {
-        outline: 2px dashed var(--focus-color, #c2850c) !important;
-        outline-offset: 2px !important;
+        outline: 2px dashed var(--focus-color, #c2850c);
+        outline-offset: 2px;
     }
 }
 
@@ -72,15 +68,12 @@ a.br-card:hover {
     text-decoration: none;
 }
 
-// 2. Card Header (.card-header and .card-header inside .br-card)
+// Card Header (.card-header and .card-header inside .br-card)
 .card-header,
 .br-card .card-header {
     background-color: transparent;
     border-bottom: 1px solid var(--color-secondary-03, #ededed);
-    padding: 1rem 1.25rem;
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;
+    padding: var(--spacing-scale-2x, 1rem) var(--spacing-scale-2xh, 1.25rem);
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
 
@@ -104,12 +97,12 @@ a.br-card:hover {
     }
 }
 
-// 3. Card Content / Body (.card-body and .card-content)
+// Card Content / Body (.card-body and .card-content)
 .card-body,
 .card-content,
 .br-card .card-content {
     flex: 1 1 auto;
-    padding: 1.25rem;
+    padding: var(--spacing-scale-2xh, 1.25rem);
     color: var(--color-secondary-08, #333333);
     font-size: 0.875rem; // 14px
     line-height: 1.5;
@@ -117,54 +110,49 @@ a.br-card:hover {
     // Card text
     .card-text {
         color: var(--color-secondary-08, #333333);
-        margin-bottom: 0.75rem;
+        margin-bottom: var(--spacing-scale-baseh, 0.75rem);
 
         &:last-child {
             margin-bottom: 0;
         }
     }
 
-    // Muted text inside card
     .text-muted {
-        color: var(--color-secondary-06, #888888) !important;
+        color: var(--color-secondary-06, #888888);
     }
 
-    // Card titles directly in body
     .card-title {
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-weight: 600;
         font-size: 1.125rem;
         color: var(--color-secondary-08, #333333);
-        margin-bottom: 0.5rem;
+        margin-bottom: var(--spacing-scale-base, 0.5rem);
     }
 
     .card-subtitle {
         font-size: 0.8125rem;
         color: var(--color-secondary-06, #888888);
-        margin-bottom: 0.75rem;
+        margin-bottom: var(--spacing-scale-baseh, 0.75rem);
     }
 }
 
-// 4. Card Footer (.card-footer and .card-footer inside .br-card)
 .card-footer,
 .br-card .card-footer {
     background-color: transparent;
     border-top: 1px solid var(--color-secondary-03, #ededed);
-    padding: 0.75rem 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: var(--spacing-scale-baseh, 0.75rem) var(--spacing-scale-2xh, 1.25rem);
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
 
-    // Buttons inside card footer
     .btn,
     .br-button {
         margin: 0;
     }
 }
 
-// 5. Card Images
 .card-img-top,
 .card-img-bottom,
 .br-card .card-img-top,
@@ -175,7 +163,6 @@ a.br-card:hover {
     object-fit: cover;
 }
 
-// 6. Fixed Height Card with Scroll (.card-fixed-height, .br-card.fixed-height)
 .card-fixed-height,
 .br-card.fixed-height {
     max-height: 400px;
@@ -195,7 +182,7 @@ a.br-card:hover {
     }
 }
 
-// 7. Moodle Specific Card Integrations
+// Moodle Specific Card Integrations
 
 // Dashboard Course Cards (myoverview, recentlyaccessedcourses, starredcourses)
 .dashboard-card-deck,

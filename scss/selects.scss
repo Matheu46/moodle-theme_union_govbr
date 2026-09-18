@@ -22,9 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// --------------------------------------------------------------------------
-// 1. Gov.br Design System Custom Select (.br-select)
-// --------------------------------------------------------------------------
+// Gov.br Design System Custom Select (.br-select)
 .br-select {
     --select-divider: 1px solid var(--color-secondary-03, #ededed);
     --select-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
@@ -163,9 +161,7 @@
     }
 }
 
-// --------------------------------------------------------------------------
-// 2. Moodle Native Form Select Mapping (.form-select, select.form-control)
-// --------------------------------------------------------------------------
+// Moodle Native Form Select Mapping (.form-select, select.form-control)
 .form-select,
 select.form-control,
 select.custom-select,
@@ -209,38 +205,36 @@ select.singleselect {
     &:focus,
     &:focus-visible,
     &.focus-visible {
-        border-color: var(--focus, #ffcd07) !important;
-        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
-        outline: none !important;
+        border-color: var(--focus, #ffcd07);
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07);
+        outline: none;
     }
 
     // Disabled state
     &:disabled,
     &.disabled {
-        background-color: var(--color-secondary-02, #f8f8f8) !important;
-        border-color: var(--color-secondary-03, #ededed) !important;
-        color: var(--color-secondary-05, #9e9d9d) !important;
-        cursor: not-allowed !important;
+        background-color: var(--color-secondary-02, #f8f8f8);
+        border-color: var(--color-secondary-03, #ededed);
+        color: var(--color-secondary-05, #9e9d9d);
+        cursor: not-allowed;
         opacity: var(--disabled, 0.45);
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%239e9d9d' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%239e9d9d' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
     }
 }
 
-// --------------------------------------------------------------------------
-// 3. Select Density / Size Variants
-// --------------------------------------------------------------------------
+// Select Density / Size Variants
 // Small (32px)
 .form-select-sm,
 select.form-control-sm,
 .br-select.small .form-select,
 .br-select.small select.form-control {
-    height: var(--input-small, 32px) !important;
-    min-height: var(--input-small, 32px) !important;
-    padding-left: var(--spacing-scale-baseh, 12px) !important;
-    padding-right: 2rem !important;
-    font-size: var(--font-size-scale-base, 0.875rem) !important;
-    background-position: right 0.75rem center !important;
-    background-size: 14px 10px !important;
+    height: var(--input-small, 32px);
+    min-height: var(--input-small, 32px);
+    padding-left: var(--spacing-scale-baseh, 12px);
+    padding-right: 2rem;
+    font-size: var(--font-size-scale-base, 0.875rem);
+    background-position: right 0.75rem center;
+    background-size: 14px 10px;
 }
 
 // Large (48px)
@@ -248,33 +242,31 @@ select.form-control-sm,
 select.form-control-lg,
 .br-select.large .form-select,
 .br-select.large select.form-control {
-    height: var(--input-large, 48px) !important;
-    min-height: var(--input-large, 48px) !important;
-    padding-left: var(--spacing-scale-3x, 24px) !important;
-    padding-right: 3rem !important;
-    font-size: var(--font-size-scale-up-01, 1rem) !important;
-    border-radius: var(--surface-rounder-md, 8px) !important;
-    background-position: right 1.25rem center !important;
-    background-size: 18px 14px !important;
+    height: var(--input-large, 48px);
+    min-height: var(--input-large, 48px);
+    padding-left: var(--spacing-scale-3x, 24px);
+    padding-right: 3rem;
+    font-size: var(--font-size-scale-up-01, 1rem);
+    border-radius: var(--surface-rounder-md, 8px);
+    background-position: right 1.25rem center;
+    background-size: 18px 14px;
 }
 
-// --------------------------------------------------------------------------
-// 4. Validation Feedback States
-// --------------------------------------------------------------------------
+// Validation Feedback States
 // Invalid state
 .form-select.is-invalid,
 select.form-control.is-invalid,
 .was-validated .form-select:invalid,
 .was-validated select.form-control:invalid {
-    border-color: var(--danger, #e52207) !important;
-    border-width: 2px !important;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e52207' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+    border-color: var(--danger, #e52207);
+    border-width: 2px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e52207' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 
     &:focus,
     &:focus-visible {
-        border-color: var(--danger, #e52207) !important;
-        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--danger, #e52207) !important;
-        outline: none !important;
+        border-color: var(--danger, #e52207);
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--danger, #e52207);
+        outline: none;
     }
 }
 
@@ -283,27 +275,25 @@ select.form-control.is-invalid,
 select.form-control.is-valid,
 .was-validated .form-select:valid,
 .was-validated select.form-control:valid {
-    border-color: var(--success, #168821) !important;
-    border-width: 2px !important;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23168821' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+    border-color: var(--success, #168821);
+    border-width: 2px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23168821' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 
     &:focus,
     &:focus-visible {
-        border-color: var(--success, #168821) !important;
-        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--success, #168821) !important;
-        outline: none !important;
+        border-color: var(--success, #168821);
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--success, #168821);
+        outline: none;
     }
 }
 
-// --------------------------------------------------------------------------
-// 5. Multiple Native Select (select[multiple])
-// --------------------------------------------------------------------------
+// Multiple Native Select (select[multiple])
 select[multiple],
 select[size]:not([size="1"]) {
-    height: auto !important;
-    min-height: 120px !important;
-    background-image: none !important;
-    padding: var(--spacing-scale-base, 8px) !important;
+    height: auto;
+    min-height: 120px;
+    background-image: none;
+    padding: var(--spacing-scale-base, 8px);
 
     option {
         padding: 0.5rem 0.75rem;
@@ -319,31 +309,29 @@ select[size]:not([size="1"]) {
         }
 
         &:checked {
-            background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
-            color: var(--color-primary-darken-01, #0c326f) !important;
+            background-color: var(--color-primary-pastel-02, #dbe8fb);
+            color: var(--color-primary-darken-01, #0c326f);
             font-weight: var(--font-weight-semi-bold, 600);
         }
     }
 }
 
-// --------------------------------------------------------------------------
-// 6. Moodle Autocomplete / Multi-Select Tags & Suggestions
-// --------------------------------------------------------------------------
+// Moodle Autocomplete / Multi-Select Tags & Suggestions
 .form-autocomplete-selection {
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-scale-base, 0.5rem);
 
     .badge {
         font-family: var(--font-family-base, 'Rawline', sans-serif);
-        font-size: 0.8125rem;
-        font-weight: 500;
+        font-size: var(--font-size-scale-down-01, 0.75rem);
+        font-weight: var(--font-weight-medium, 500);
         border-radius: var(--surface-rounder-pill, 999em);
         background-color: var(--color-primary-pastel-02, #dbe8fb);
         color: var(--color-primary-darken-01, #0c326f);
         border: 1px solid var(--interactive, #1351b4);
-        padding: 0.35rem 0.75rem;
+        padding: 0.35rem var(--spacing-scale-baseh, 0.75rem);
         display: inline-flex;
         align-items: center;
 
@@ -366,15 +354,15 @@ select[size]:not([size="1"]) {
     box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
     border: 1px solid var(--color-secondary-03, #ededed);
     background-color: var(--background-light, #ffffff);
-    padding: 0.5rem 0;
+    padding: var(--spacing-scale-base, 0.5rem) 0;
     max-height: 260px;
     overflow-y: auto;
     z-index: var(--z-index-layer-1, 1000);
 
     li {
-        padding: 0.5rem 1rem;
+        padding: var(--spacing-scale-base, 0.5rem) var(--spacing-scale-2x, 1rem);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
-        font-size: 0.875rem;
+        font-size: var(--font-size-scale-base, 0.875rem);
         color: var(--color-secondary-08, #333333);
         cursor: pointer;
         transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
@@ -392,9 +380,7 @@ select[size]:not([size="1"]) {
     cursor: pointer;
 }
 
-// --------------------------------------------------------------------------
-// 7. Dark Mode / Inverted Select (.br-select.inverted, .br-select.dark-mode)
-// --------------------------------------------------------------------------
+// Dark Mode / Inverted Select (.br-select.inverted, .br-select.dark-mode)
 .br-select.inverted,
 .br-select.dark-mode {
     .form-select,

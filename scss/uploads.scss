@@ -22,9 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// --------------------------------------------------------------------------
-// 1. Gov.br Design System Custom Upload (.br-upload)
-// --------------------------------------------------------------------------
+// Gov.br Design System Custom Upload (.br-upload)
 .br-upload {
     position: relative;
     width: 100%;
@@ -55,7 +53,7 @@
 
         .icon,
         i {
-            font-size: 1.5rem;
+            font-size: var(--font-size-scale-up-03, 1.5rem);
             margin-right: var(--spacing-scale-base, 8px);
         }
 
@@ -66,7 +64,7 @@
 
         &:focus,
         &:focus-visible {
-            outline: 2px dashed var(--focus, #ffcd07) !important;
+            outline: 2px dashed var(--focus, #ffcd07);
             outline-offset: 2px;
         }
 
@@ -81,10 +79,10 @@
     // Dragging over state
     &.dragging .upload-button,
     &.is-dragging .upload-button {
-        background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
-        border-color: var(--interactive, #1351b4) !important;
-        border-style: dashed !important;
-        box-shadow: 0 0 0 4px rgba(19, 81, 180, 0.15) !important;
+        background-color: var(--color-primary-pastel-02, #dbe8fb);
+        border-color: var(--interactive, #1351b4);
+        border-style: dashed;
+        box-shadow: 0 0 0 4px rgba(19, 81, 180, 0.15);
     }
 
     // Uploaded Items List
@@ -101,13 +99,13 @@
             border-radius: var(--surface-rounder-sm, 4px);
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.5rem;
-            padding: 0.75rem 1rem;
+            margin-bottom: var(--spacing-scale-base, 0.5rem);
+            padding: var(--spacing-scale-baseh, 0.75rem) var(--spacing-scale-2x, 1rem);
 
             .content {
                 display: flex;
                 align-items: center;
-                gap: 0.5rem;
+                gap: var(--spacing-scale-base, 0.5rem);
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
@@ -121,27 +119,25 @@
                 }
 
                 .size {
-                    font-size: 0.75rem;
+                    font-size: var(--font-size-scale-down-01, 0.75rem);
                     color: var(--color-secondary-06, #888888);
                 }
             }
 
             .action {
-                margin-left: 0.5rem;
+                margin-left: var(--spacing-scale-base, 0.5rem);
             }
         }
     }
 }
 
-// --------------------------------------------------------------------------
-// 2. Moodle Filemanager & Filepicker Layout Integration
-// --------------------------------------------------------------------------
+// Moodle Filemanager & Filepicker Layout Integration
 // Main container border and surface
 .filemanager-container,
 .filepicker-filelist {
-    background-color: var(--background-light, #ffffff) !important;
-    border: 1px solid var(--color-secondary-03, #ededed) !important;
-    border-radius: 0 0 var(--surface-rounder-md, 8px) var(--surface-rounder-md, 8px) !important;
+    background-color: var(--background-light, #ffffff);
+    border: 1px solid var(--color-secondary-03, #ededed);
+    border-radius: 0 0 var(--surface-rounder-md, 8px) var(--surface-rounder-md, 8px);
     box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
     min-height: 150px;
     position: relative;
@@ -154,7 +150,7 @@
     border: 1px solid var(--color-secondary-03, #ededed);
     border-bottom: 0;
     border-radius: var(--surface-rounder-md, 8px) var(--surface-rounder-md, 8px) 0 0;
-    padding: 0.5rem 0.75rem;
+    padding: var(--spacing-scale-base, 0.5rem) var(--spacing-scale-baseh, 0.75rem);
 
     // Action buttons inside toolbar (Add file, Create folder, Download)
     .fp-btn-add a,
@@ -212,24 +208,22 @@
             }
 
             &.checked {
-                background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
-                border-color: var(--interactive, #1351b4) !important;
-                color: var(--color-primary-darken-01, #0c326f) !important;
+                background-color: var(--color-primary-pastel-02, #dbe8fb);
+                border-color: var(--interactive, #1351b4);
+                color: var(--color-primary-darken-01, #0c326f);
             }
         }
     }
 }
 
-// --------------------------------------------------------------------------
-// 3. Drag and Drop Upload Area (.dndupload-target, .fm-empty-container)
-// --------------------------------------------------------------------------
+// Drag and Drop Upload Area (.dndupload-target, .fm-empty-container)
 .filepicker-filelist .filepicker-container,
 .filemanager.fm-noitems .fm-empty-container,
 .filepicker-filelist .dndupload-target,
 .filemanager-container .dndupload-target {
     background-color: var(--background-light, #ffffff);
-    border: 2px dashed var(--interactive, #1351b4) !important;
-    border-radius: var(--surface-rounder-md, 8px) !important;
+    border: 2px dashed var(--interactive, #1351b4);
+    border-radius: var(--surface-rounder-md, 8px);
     bottom: 12px;
     left: 12px;
     position: absolute;
@@ -243,10 +237,10 @@
 .filepicker-filelist.dndupload-over .dndupload-target,
 .filemanager-container.dndupload-over .dndupload-target,
 .filemanager-container.dndupload-over {
-    background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
-    border-color: var(--interactive, #1351b4) !important;
-    border-style: dashed !important;
-    box-shadow: 0 0 0 4px rgba(19, 81, 180, 0.15) !important;
+    background-color: var(--color-primary-pastel-02, #dbe8fb);
+    border-color: var(--interactive, #1351b4);
+    border-style: dashed;
+    box-shadow: 0 0 0 4px rgba(19, 81, 180, 0.15);
 }
 
 // Drag & drop instructional text
@@ -259,7 +253,7 @@
 
 // Arrow indicator icon
 .dndupload-arrow {
-    color: var(--interactive, #1351b4) !important;
+    color: var(--interactive, #1351b4);
     height: 70px;
     position: absolute;
     top: 10px;
@@ -280,13 +274,11 @@
 .filemanager .fp-restrictions {
     color: var(--color-secondary-06, #888888);
     font-family: var(--font-family-base, 'Rawline', sans-serif);
-    font-size: 0.75rem;
+    font-size: var(--font-size-scale-down-01, 0.75rem);
     margin-top: 0.35rem;
 }
 
-// --------------------------------------------------------------------------
-// 4. File Items & Thumbnails inside Filemanager
-// --------------------------------------------------------------------------
+// File Items & Thumbnails inside Filemanager
 .fp-iconview {
     .fp-thumbnail {
         background-color: var(--background-light, #ffffff);
@@ -309,14 +301,12 @@
         background-color: var(--background-light, #ffffff);
         color: var(--color-light, #333333);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
-        font-size: 0.8125rem;
+        font-size: var(--font-size-scale-down-01, 0.75rem);
         font-weight: var(--font-weight-medium, 500);
     }
 }
 
-// --------------------------------------------------------------------------
-// 5. Native Single File Upload Input (input[type="file"])
-// --------------------------------------------------------------------------
+// Native Single File Upload Input (input[type="file"])
 input[type="file"].form-control,
 .form-file input[type="file"],
 .mform input[type="file"] {
@@ -340,7 +330,7 @@ input[type="file"].form-control,
         color: #ffffff;
         cursor: pointer;
         font-family: var(--font-family-base, 'Rawline', sans-serif);
-        font-size: 0.8125rem;
+        font-size: var(--font-size-scale-down-01, 0.75rem);
         font-weight: var(--font-weight-medium, 500);
         margin-right: 0.75rem;
         padding: 0.35rem 0.85rem;
@@ -353,15 +343,13 @@ input[type="file"].form-control,
 
     &:focus,
     &:focus-visible {
-        border-color: var(--focus, #ffcd07) !important;
-        box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
-        outline: none !important;
+        border-color: var(--focus, #ffcd07);
+        box-shadow: 0 0 0 2px var(--focus, #ffcd07);
+        outline: none;
     }
 }
 
-// --------------------------------------------------------------------------
-// 6. Moodle Filepicker Dialogue / Modal Integration
-// --------------------------------------------------------------------------
+// Moodle Filepicker Dialogue / Modal Integration
 .filepicker .moodle-dialogue-bd {
     background-color: var(--background-light, #ffffff);
     border-radius: var(--surface-rounder-md, 8px);
@@ -388,14 +376,13 @@ input[type="file"].form-control,
     }
 
     .fp-list .fp-repo.active {
-        background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
+        background-color: var(--color-primary-pastel-02, #dbe8fb);
 
         a {
             border-left: 4px solid var(--interactive, #1351b4);
-            color: var(--color-primary-darken-01, #0c326f) !important;
+            color: var(--color-primary-darken-01, #0c326f);
             font-weight: var(--font-weight-semi-bold, 600);
             padding-left: calc(1rem - 4px);
         }
     }
 }
-

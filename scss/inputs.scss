@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// 1. Official Gov.br DS .br-input Component Styles
+// Official Gov.br DS .br-input Component Styles
 .br-input {
     --input-button-margin: var(--spacing-scale-half, 4px);
     --input-padding: 0 var(--spacing-scale-2x, 16px);
@@ -87,18 +87,18 @@
         &:focus,
         &:focus-visible,
         &.focus-visible {
-            border-color: var(--focus, #ffcd07) !important;
-            box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
-            outline: none !important;
+            border-color: var(--focus, #ffcd07);
+            box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07);
+            outline: none;
         }
 
         &:disabled,
         &.disabled,
         &[readonly] {
-            background-color: var(--color-secondary-02, #f8f8f8) !important;
-            border-color: var(--color-secondary-03, #ededed) !important;
-            color: var(--color-secondary-05, #9e9d9d) !important;
-            cursor: not-allowed !important;
+            background-color: var(--color-secondary-02, #f8f8f8);
+            border-color: var(--color-secondary-03, #ededed);
+            color: var(--color-secondary-05, #9e9d9d);
+            cursor: not-allowed;
             opacity: var(--disabled, 0.45);
         }
     }
@@ -210,26 +210,26 @@
     // Validation States
     &.success input,
     &[data-success] input {
-        border-color: var(--success, #168821) !important;
-        border-width: 2px !important;
+        border-color: var(--success, #168821);
+        border-width: 2px;
     }
 
     &.danger input,
     &[data-danger] input {
-        border-color: var(--danger, #e52207) !important;
-        border-width: 2px !important;
+        border-color: var(--danger, #e52207);
+        border-width: 2px;
     }
 
     &.warning input,
     &[data-warning] input {
-        border-color: var(--warning, #ffcd07) !important;
-        border-width: 2px !important;
+        border-color: var(--warning, #ffcd07);
+        border-width: 2px;
     }
 
     &.info input,
     &[data-info] input {
-        border-color: var(--info, #155bcb) !important;
-        border-width: 2px !important;
+        border-color: var(--info, #155bcb);
+        border-width: 2px;
     }
 
     .feedback {
@@ -261,7 +261,7 @@
     }
 }
 
-// 2. Moodle Form Controls Mapping (.form-control, text inputs)
+// Moodle Form Controls Mapping (.form-control, text inputs)
 .form-control,
 input[type="text"],
 input[type="password"],
@@ -307,19 +307,19 @@ input[type="date"] {
     &:focus,
     &:focus-visible,
     &.focus-visible {
-        border-color: var(--focus, #ffcd07) !important;
-        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
-        outline: none !important;
+        border-color: var(--focus, #ffcd07);
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07);
+        outline: none;
     }
 
     // Disabled state
     &:disabled,
     &.disabled,
     &[readonly] {
-        background-color: var(--color-secondary-02, #f8f8f8) !important;
-        border-color: var(--color-secondary-03, #ededed) !important;
-        color: var(--color-secondary-05, #9e9d9d) !important;
-        cursor: not-allowed !important;
+        background-color: var(--color-secondary-02, #f8f8f8);
+        border-color: var(--color-secondary-03, #ededed);
+        color: var(--color-secondary-05, #9e9d9d);
+        cursor: not-allowed;
         opacity: var(--disabled, 0.45);
     }
 }
@@ -328,38 +328,38 @@ input[type="date"] {
 textarea.form-control {
     min-height: 90px;
     height: auto;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding-top: var(--spacing-scale-baseh, 0.75rem);
+    padding-bottom: var(--spacing-scale-baseh, 0.75rem);
     resize: vertical;
 }
 
-// 3. Moodle Form Density Variants
+// Moodle Form Density Variants
 .form-control-sm {
-    height: var(--input-small, 32px) !important;
-    min-height: var(--input-small, 32px) !important;
-    padding-left: var(--spacing-scale-baseh, 12px) !important;
-    padding-right: var(--spacing-scale-baseh, 12px) !important;
-    font-size: var(--font-size-scale-base, 0.875rem) !important;
+    height: var(--input-small, 32px);
+    min-height: var(--input-small, 32px);
+    padding-left: var(--spacing-scale-baseh, 12px);
+    padding-right: var(--spacing-scale-baseh, 12px);
+    font-size: var(--font-size-scale-base, 0.875rem);
 }
 
 .form-control-lg {
-    height: var(--input-large, 48px) !important;
-    min-height: var(--input-large, 48px) !important;
-    padding-left: var(--spacing-scale-3x, 24px) !important;
-    padding-right: var(--spacing-scale-3x, 24px) !important;
-    font-size: var(--font-size-scale-up-01, 1rem) !important;
-    border-radius: var(--surface-rounder-md, 8px) !important;
+    height: var(--input-large, 48px);
+    min-height: var(--input-large, 48px);
+    padding-left: var(--spacing-scale-3x, 24px);
+    padding-right: var(--spacing-scale-3x, 24px);
+    font-size: var(--font-size-scale-up-01, 1rem);
+    border-radius: var(--surface-rounder-md, 8px);
 }
 
-// 4. Form Labels & Helper Text
+// Form Labels & Helper Text
 label,
 .form-label,
 .col-form-label {
     font-family: var(--font-family-base, 'Rawline', sans-serif);
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: var(--font-size-scale-base, 0.875rem);
+    font-weight: var(--font-weight-medium, 500);
     color: var(--color-secondary-08, #333333);
-    margin-bottom: 0.25rem;
+    margin-bottom: var(--spacing-scale-half, 0.25rem);
     display: inline-block;
 
     // Required asterisk
@@ -368,7 +368,7 @@ label,
     abbr.initialism[title="Required"] {
         color: var(--danger, #e52207);
         text-decoration: none;
-        font-weight: 700;
+        font-weight: var(--font-weight-bold, 700);
         margin-left: 0.2rem;
     }
 }
@@ -376,64 +376,62 @@ label,
 .form-text,
 .text-muted,
 .help-block {
-    font-size: 0.75rem;
-    color: var(--color-secondary-06, #888888) !important;
-    margin-top: 0.25rem;
+    font-size: var(--font-size-scale-down-01, 0.75rem);
+    color: var(--color-secondary-06, #888888);
+    margin-top: var(--spacing-scale-half, 0.25rem);
     display: block;
 }
 
-// 5. Validation Feedback States
+// Validation Feedback States
 .form-control.is-invalid,
 .was-validated .form-control:invalid {
-    border-color: var(--danger, #e52207) !important;
-    border-width: 2px !important;
+    border-color: var(--danger, #e52207);
+    border-width: 2px;
 
     &:focus,
     &:focus-visible {
-        border-color: var(--danger, #e52207) !important;
-        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--danger, #e52207) !important;
-        outline: none !important;
+        border-color: var(--danger, #e52207);
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--danger, #e52207);
+        outline: none;
     }
 }
 
 .invalid-feedback {
     color: var(--danger, #e52207);
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-top: 0.25rem;
-    display: flex;
+    font-size: var(--font-size-scale-down-01, 0.75rem);
+    font-weight: var(--font-weight-medium, 500);
+    margin-top: var(--spacing-scale-half, 0.25rem);
     align-items: center;
-    gap: 0.35rem;
 }
 
 .form-control.is-valid,
 .was-validated .form-control:valid {
-    border-color: var(--success, #168821) !important;
-    border-width: 2px !important;
+    border-color: var(--success, #168821);
+    border-width: 2px;
 
     &:focus,
     &:focus-visible {
-        border-color: var(--success, #168821) !important;
-        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--success, #168821) !important;
-        outline: none !important;
+        border-color: var(--success, #168821);
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--success, #168821);
+        outline: none;
     }
 }
 
 .valid-feedback {
     color: var(--success, #168821);
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-top: 0.25rem;
+    font-size: var(--font-size-scale-down-01, 0.75rem);
+    font-weight: var(--font-weight-medium, 500);
+    margin-top: var(--spacing-scale-half, 0.25rem);
 }
 
-// 6. Input Groups (.input-group)
+// Input Groups (.input-group)
 .input-group {
     .input-group-text {
         background-color: var(--color-secondary-02, #f8f8f8);
         border: 1px solid var(--border-color-alternative, #888888);
         color: var(--color-secondary-07, #555555);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
-        font-size: 0.875rem;
+        font-size: var(--font-size-scale-base, 0.875rem);
         padding: 0 0.875rem;
         height: var(--input-medium, 40px);
         margin-top: var(--spacing-scale-half, 4px);
@@ -478,7 +476,7 @@ label,
 
         &:focus,
         &:focus-visible {
-            box-shadow: none !important; // Suppresses individual shadow so wrapper handles focus ring
+            box-shadow: none; // Suppresses individual shadow so wrapper handles focus ring
         }
     }
 
@@ -491,7 +489,7 @@ label,
         border-bottom-left-radius: 0;
         border-top-right-radius: var(--surface-rounder-sm, 4px);
         border-bottom-right-radius: var(--surface-rounder-sm, 4px);
-        color: var(--color-secondary-07, #555555) !important; // Overrides .btn-secondary color
+        color: var(--color-secondary-07, #555555); // Overrides .btn-secondary color
         height: var(--input-medium, 40px);
         min-height: var(--input-medium, 40px);
         width: auto;
@@ -520,21 +518,21 @@ label,
             background-color: var(--color-secondary-02, #f8f8f8);
             border-color: var(--color-secondary-07, #555555);
             border-left: none;
-            color: var(--interactive, #1351b4) !important;
+            color: var(--interactive, #1351b4);
 
             .icon,
             i {
-                color: var(--interactive, #1351b4) !important;
+                color: var(--interactive, #1351b4);
             }
         }
 
         &:active {
             background-color: var(--color-secondary-03, #ededed);
-            color: var(--color-primary-darken-01, #0c326f) !important;
+            color: var(--color-primary-darken-01, #0c326f);
 
             .icon,
             i {
-                color: var(--color-primary-darken-01, #0c326f) !important;
+                color: var(--color-primary-darken-01, #0c326f);
             }
         }
 
@@ -542,7 +540,7 @@ label,
         &:focus-visible {
             outline: none;
             box-shadow: none;
-            color: var(--interactive, #1351b4) !important;
+            color: var(--interactive, #1351b4);
         }
     }
 
@@ -571,7 +569,7 @@ label,
         .toggle-sensitive-btn {
             border-color: var(--focus, #ffcd07);
             border-left: none;
-            color: var(--interactive, #1351b4) !important;
+            color: var(--interactive, #1351b4);
         }
     }
 
@@ -597,7 +595,7 @@ label,
     }
 }
 
-// 7. Radio Buttons (temporary placeholder until radio component is built)
+// Radio Buttons (temporary placeholder until radio component is built)
 .form-check-input[type="radio"] {
     width: 1.125rem;
     height: 1.125rem;
@@ -610,9 +608,9 @@ label,
     }
 
     &:focus {
-        border-color: var(--focus, #ffcd07) !important;
-        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
-        outline: none !important;
+        border-color: var(--focus, #ffcd07);
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07);
+        outline: none;
     }
 
     &:disabled {
@@ -621,21 +619,19 @@ label,
     }
 }
 
-// 8. Moodle Specific Form Adjustments (.mform, .fitem, autocomplete)
+// Moodle Specific Form Adjustments (.mform, .fitem, autocomplete)
 .mform {
     .fitem {
-        margin-bottom: 1.25rem;
+        margin-bottom: var(--spacing-scale-3x, 1.25rem);
     }
 
     legend {
         font-family: var(--font-family-base, 'Rawline', sans-serif);
-        font-size: 1.125rem;
-        font-weight: 600;
+        font-size: var(--font-size-scale-up-02, 1.125rem);
+        font-weight: var(--font-weight-semi-bold, 600);
         color: var(--color-secondary-08, #333333);
         border-bottom: 1px solid var(--color-secondary-03, #ededed);
-        padding-bottom: 0.5rem;
-        margin-bottom: 1rem;
+        padding-bottom: var(--spacing-scale-base, 0.5rem);
+        margin-bottom: var(--spacing-scale-2x, 1rem);
     }
 }
-
-

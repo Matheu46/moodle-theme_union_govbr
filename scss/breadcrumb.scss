@@ -22,13 +22,13 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// 1. Moodle Native Breadcrumb Styling (.breadcrumb)
+// Moodle Native Breadcrumb Styling (.breadcrumb)
 #page-navbar .breadcrumb {
     display: flex;
     align-items: center;
     background-color: transparent;
-    padding: 0.5rem 0;
-    margin-bottom: 0.75rem;
+    padding: var(--spacing-scale-base, 0.5rem) 0;
+    margin-bottom: var(--spacing-scale-baseh, 0.75rem);
     font-size: var(--font-size-scale-down-01); // ~13px
     font-weight: var(--font-weight-medium);
     list-style: none;
@@ -55,7 +55,7 @@
         a:not([aria-current="page"]) {
             color: var(--interactive, #1351b4);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: var(--font-weight-medium, 500);
             transition: color 0.15s ease-in-out;
 
             &:hover {
@@ -74,7 +74,7 @@
         &:last-child,
         [aria-current="page"],
         > span {
-            font-weight: 600;
+            font-weight: var(--font-weight-semi-bold, 600);
         }
 
         // Specifically ensure current page link does not look interactive
@@ -112,11 +112,11 @@
     }
 }
 
-// 2. Official Gov.br DS Breadcrumb Utility Classes (.br-breadcrumb)
+// Official Gov.br DS Breadcrumb Utility Classes (.br-breadcrumb)
 .br-breadcrumb {
     display: inline-grid;
-    font-size: 0.8125rem;
-    font-weight: 500;
+    font-size: var(--font-size-scale-down-01, 0.75rem);
+    font-weight: var(--font-weight-medium, 500);
     min-height: 28px;
     position: relative;
 
@@ -155,13 +155,13 @@
             font-weight: 900;
             font-size: 0.5625rem;
             color: var(--color-secondary-04, #cccccc);
-            padding: 0 0.5rem;
+            padding: 0 var(--spacing-scale-base, 0.5rem);
         }
 
         &[active],
         &:last-child span {
             color: var(--color-secondary-08, #333333);
-            font-weight: 600;
+            font-weight: var(--font-weight-semi-bold, 600);
         }
     }
 }

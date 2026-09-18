@@ -22,9 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// --------------------------------------------------------------------------
-// 1. Gov.br Design System Custom Tooltip & Popover (.br-tooltip)
-// --------------------------------------------------------------------------
+// Gov.br Design System Custom Tooltip & Popover (.br-tooltip)
 .br-tooltip {
     align-items: flex-start;
     background-color: var(--interactive, #1351b4);
@@ -34,7 +32,7 @@
     display: flex;
     flex-wrap: wrap;
     font-family: var(--font-family-base, 'Rawline', sans-serif);
-    font-size: 0.75rem;
+    font-size: var(--font-size-scale-down-01, 0.75rem);
     font-weight: var(--font-weight-medium, 500);
     justify-content: flex-start;
     max-width: 260px;
@@ -100,8 +98,8 @@
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-size: var(--font-size-scale-base, 0.875rem);
             font-weight: var(--font-weight-semi-bold, 600);
-            margin-bottom: 0.5rem;
-            padding-bottom: 0.5rem;
+            margin-bottom: var(--spacing-scale-base, 0.5rem);
+            padding-bottom: var(--spacing-scale-base, 0.5rem);
             text-align: left;
             width: 100%;
         }
@@ -132,12 +130,10 @@
     }
 }
 
-// --------------------------------------------------------------------------
-// 2. Moodle Native Tooltips (.tooltip, .tooltip-inner)
-// --------------------------------------------------------------------------
+// Moodle Native Tooltips (.tooltip, .tooltip-inner)
 .tooltip {
     font-family: var(--font-family-base, 'Rawline', sans-serif);
-    font-size: 0.75rem;
+    font-size: var(--font-size-scale-down-01, 0.75rem);
     line-height: 1.4;
     z-index: 1070;
 
@@ -148,7 +144,7 @@
         color: #ffffff;
         font-weight: var(--font-weight-medium, 500);
         max-width: 240px;
-        padding: 0.4rem 0.75rem;
+        padding: 0.4rem var(--spacing-scale-baseh, 0.75rem);
         text-align: center;
     }
 
@@ -174,17 +170,14 @@
     }
 }
 
-// --------------------------------------------------------------------------
-// 3. Moodle Help Icons & Help Popovers (.popover, .popover-header, .popover-body)
-// --------------------------------------------------------------------------
-// Help trigger icon button in Moodle forms
+// Moodle Help Icons & Help Popovers (.popover, .popover-header, .popover-body)
 a[data-toggle="popover"],
 a[data-bs-toggle="popover"],
 .btn-link[data-toggle="popover"],
 .btn-link[data-bs-toggle="popover"] {
     align-items: center;
     border-radius: var(--surface-rounder-pill, 999em);
-    color: var(--interactive, #1351b4) !important;
+    color: var(--interactive, #1351b4);
     display: inline-flex;
     justify-content: center;
     padding: 0.15rem;
@@ -193,26 +186,26 @@ a[data-bs-toggle="popover"],
 
     .icon,
     i {
-        color: var(--interactive, #1351b4) !important;
-        font-size: 0.9375rem;
+        color: var(--interactive, #1351b4);
+        font-size: var(--font-size-scale-base, 0.9375rem);
         margin: 0 0.15rem;
         transition: color 0.15s ease-in-out;
     }
 
     &:hover {
         background-color: var(--color-secondary-02, #f8f8f8);
-        color: var(--color-primary-darken-01, #0c326f) !important;
+        color: var(--color-primary-darken-01, #0c326f);
 
         .icon,
         i {
-            color: var(--color-primary-darken-01, #0c326f) !important;
+            color: var(--color-primary-darken-01, #0c326f);
         }
     }
 
     &:focus,
     &:focus-visible {
-        box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
-        outline: none !important;
+        box-shadow: 0 0 0 2px var(--focus, #ffcd07);
+        outline: none;
     }
 }
 
@@ -238,7 +231,7 @@ a[data-bs-toggle="popover"],
         font-weight: var(--font-weight-semi-bold, 600);
         line-height: 1.35;
         margin: 0;
-        padding: 0.75rem 1rem;
+        padding: var(--spacing-scale-baseh, 0.75rem) var(--spacing-scale-2x, 1rem);
     }
 
     // Popover Body
@@ -248,7 +241,7 @@ a[data-bs-toggle="popover"],
         font-size: var(--font-size-scale-base, 0.875rem);
         font-weight: var(--font-weight-regular, 400);
         line-height: 1.5;
-        padding: 0.85rem 1rem;
+        padding: 0.85rem var(--spacing-scale-2x, 1rem);
 
         p:last-child {
             margin-bottom: 0;
@@ -306,4 +299,3 @@ a[data-bs-toggle="popover"],
         border-right-color: var(--background-light, #ffffff);
     }
 }
-

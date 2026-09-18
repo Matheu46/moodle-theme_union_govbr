@@ -22,44 +22,38 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// 1. Base Button Styles (.btn and .br-button)
+// Base Button Styles
 .btn,
 .br-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: var(--spacing-scale-base, 0.5rem);
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: 0.875rem; // 14px (Gov.br font-size-scale-base)
     font-weight: 600;
     line-height: 1.5;
-    min-height: 40px;
-    padding: 0 1.25rem;
+    min-height: var(--button-medium, 40px);
+    padding: 0 var(--spacing-scale-2xh, 1.25rem);
     border-radius: var(--surface-rounder-pill, 999em);
-    border: 1px solid transparent;
-    text-align: center;
-    text-decoration: none !important;
-    vertical-align: middle;
     cursor: pointer;
-    user-select: none;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
     // Focus state (Gov.br DS standard: dashed gold focus ring)
     &:focus-visible,
     &.focus {
-        outline: 2px dashed var(--focus-color, #c2850c) !important;
-        outline-offset: 2px !important;
-        box-shadow: none !important;
+        outline: 2px dashed var(--focus-color, #c2850c);
+        outline-offset: 2px;
+        box-shadow: none;
     }
 
     // Disabled state
     &:disabled,
     &.disabled,
     fieldset:disabled & {
-        opacity: var(--disabled, 0.45) !important;
-        cursor: not-allowed !important;
-        pointer-events: none !important;
-        box-shadow: none !important;
+        opacity: var(--disabled, 0.45);
+        cursor: not-allowed;
+        pointer-events: none;
+        box-shadow: none;
     }
 
     // Ensure icons inside buttons maintain proper size and alignment
@@ -67,16 +61,16 @@
     i {
         font-size: 1rem;
         margin: 0;
-        vertical-align: middle;
+        // vertical-align: middle;
     }
 }
 
-// 2. Button Sizes / Densities
+// Button Sizes / Densities
 .btn-sm,
 .br-button.small,
 .br-button[density="small"] {
-    min-height: 32px;
-    padding: 0 0.75rem;
+    min-height: var(--button-small, 32px);
+    padding: 0 var(--spacing-scale-baseh, 0.75rem);
     font-size: 0.75rem; // 12px
     border-radius: var(--surface-rounder-pill, 999em);
 
@@ -89,8 +83,8 @@
 .btn-lg,
 .br-button.large,
 .br-button[density="large"] {
-    min-height: 48px;
-    padding: 0 1.75rem;
+    min-height: var(--button-large, 48px);
+    padding: 0 var(--spacing-scale-3xh, 1.75rem);
     font-size: 1rem; // 16px
     border-radius: var(--surface-rounder-pill, 999em);
 
@@ -100,17 +94,16 @@
     }
 }
 
-// 3. Button Shapes
 // Circular button (icon-only)
 .btn-icon,
 .btn.circle,
 .br-button.circle,
 .br-button[shape="circle"] {
     border-radius: 50%;
-    width: 40px;
-    min-width: 40px;
-    height: 40px;
-    min-height: 40px;
+    width: var(--button-medium, 40px);
+    min-width: var(--button-medium, 40px);
+    height: var(--button-medium, 40px);
+    min-height: var(--button-medium, 40px);
     padding: 0;
     line-height: 0;
     gap: 0;
@@ -118,19 +111,19 @@
     &.btn-sm,
     &.small,
     &[density="small"] {
-        width: 32px;
-        min-width: 32px;
-        height: 32px;
-        min-height: 32px;
+        width: var(--button-small, 32px);
+        min-width: var(--button-small, 32px);
+        height: var(--button-small, 32px);
+        min-height: var(--button-small, 32px);
     }
 
     &.btn-lg,
     &.large,
     &[density="large"] {
-        width: 48px;
-        min-width: 48px;
-        height: 48px;
-        min-height: 48px;
+        width: var(--button-large, 48px);
+        min-width: var(--button-large, 48px);
+        height: var(--button-large, 48px);
+        min-height: var(--button-large, 48px);
     }
 }
 
@@ -143,40 +136,25 @@
     width: 100%;
 }
 
-// Button groups
-.btn-group {
-    > .btn:not(:first-child) {
-        border-top-left-radius: 0 !important;
-        border-bottom-left-radius: 0 !important;
-    }
-
-    > .btn:not(:last-child):not(.dropdown-toggle) {
-        border-top-right-radius: 0 !important;
-        border-bottom-right-radius: 0 !important;
-    }
-}
-
-// 4. Emphasis & Color Variants
-
 // Primary: Solid blue background with white text
 .btn-primary,
 .br-button.primary,
 .br-button[emphasis="primary"] {
     background-color: var(--interactive, #1351b4);
     border-color: var(--interactive, #1351b4);
-    color: var(--color-secondary-01, #ffffff) !important;
+    color: #ffffff;
 
     &:hover {
         background-color: var(--color-primary-darken-01, #0c326f);
         border-color: var(--color-primary-darken-01, #0c326f);
-        color: var(--color-secondary-01, #ffffff) !important;
+        color: #ffffff;
     }
 
     &:active,
     &.active {
         background-color: var(--color-primary-darken-02, #071d41);
         border-color: var(--color-primary-darken-02, #071d41);
-        color: var(--color-secondary-01, #ffffff) !important;
+        color: #ffffff;
     }
 }
 
@@ -187,19 +165,19 @@
 .br-button[emphasis="secondary"] {
     background-color: var(--color-secondary-01, #ffffff);
     border-color: var(--interactive, #1351b4);
-    color: var(--interactive, #1351b4) !important;
+    color: var(--interactive, #1351b4);
 
     &:hover {
         background-color: var(--color-primary-pastel-02, #dbe8fb);
         border-color: var(--color-primary-darken-01, #0c326f);
-        color: var(--color-primary-darken-01, #0c326f) !important;
+        color: var(--color-primary-darken-01, #0c326f);
     }
 
     &:active,
     &.active {
         background-color: var(--color-primary-pastel-01, #c5d4eb);
         border-color: var(--color-primary-darken-02, #071d41);
-        color: var(--color-primary-darken-02, #071d41) !important;
+        color: var(--color-primary-darken-02, #071d41);
     }
 }
 
@@ -210,125 +188,121 @@
 .br-button[emphasis="tertiary"] {
     background-color: transparent;
     border-color: transparent;
-    color: var(--interactive, #1351b4) !important;
+    color: var(--interactive, #1351b4);
 
     &:hover {
         background-color: var(--color-primary-pastel-02, #dbe8fb);
         border-color: transparent;
-        color: var(--color-primary-darken-01, #0c326f) !important;
-        text-decoration: underline !important;
+        color: var(--color-primary-darken-01, #0c326f);
+        text-decoration: underline;
     }
 
     &:active,
     &.active {
         background-color: var(--color-primary-pastel-01, #c5d4eb);
         border-color: transparent;
-        color: var(--color-primary-darken-02, #071d41) !important;
+        color: var(--color-primary-darken-02, #071d41);
     }
 }
 
 // Neutral Outline: Neutral gray border and text
 .btn-outline-secondary {
-    background-color: var(--color-secondary-01, #ffffff);
     border-color: var(--border-color, #cccccc);
-    color: var(--color-secondary-08, #333333) !important;
+    color: var(--color-secondary-08, #333333);
 
     &:hover {
         background-color: var(--color-secondary-02, #f8f8f8);
         border-color: var(--color-secondary-06, #888888);
-        color: var(--color-secondary-08, #333333) !important;
+        color: var(--color-secondary-08, #333333);
     }
 
     &:active,
     &.active {
         background-color: var(--color-secondary-03, #ededed);
         border-color: var(--color-secondary-07, #555555);
-        color: var(--color-secondary-09, #000000) !important;
+        color: var(--color-secondary-09, #000000);
     }
 }
 
-// Danger / Destructive
 .btn-danger,
 .br-button.danger,
 .br-button[emphasis="danger"] {
     background-color: var(--danger, #e52207);
     border-color: var(--danger, #e52207);
-    color: #ffffff !important;
+    color: #ffffff;
 
     &:hover {
         background-color: var(--red-vivid-60, #b50909);
         border-color: var(--red-vivid-60, #b50909);
-        color: #ffffff !important;
+        color: #ffffff;
     }
 
     &:active,
     &.active {
         background-color: var(--red-vivid-70, #8b0a03);
         border-color: var(--red-vivid-70, #8b0a03);
-        color: #ffffff !important;
+        color: #ffffff;
     }
 }
 
 .btn-outline-danger {
     background-color: var(--color-secondary-01, #ffffff);
     border-color: var(--danger, #e52207);
-    color: var(--danger, #e52207) !important;
+    color: var(--danger, #e52207);
 
     &:hover {
         background-color: var(--red-vivid-10, #fde0db);
         border-color: var(--red-vivid-60, #b50909);
-        color: var(--red-vivid-60, #b50909) !important;
+        color: var(--red-vivid-60, #b50909);
     }
 
     &:active,
     &.active {
         background-color: var(--red-vivid-20, #fdb8ae);
         border-color: var(--red-vivid-70, #8b0a03);
-        color: var(--red-vivid-70, #8b0a03) !important;
+        color: var(--red-vivid-70, #8b0a03);
     }
 }
 
-// Success
 .btn-success,
 .br-button.success,
 .br-button[emphasis="success"] {
     background-color: var(--success, #168821);
     border-color: var(--success, #168821);
-    color: #ffffff !important;
+    color: #ffffff;
 
     &:hover {
         background-color: var(--green-cool-vivid-60, #216e1f);
         border-color: var(--green-cool-vivid-60, #216e1f);
-        color: #ffffff !important;
+        color: #ffffff;
     }
 
     &:active,
     &.active {
         background-color: var(--green-cool-vivid-70, #154c21);
         border-color: var(--green-cool-vivid-70, #154c21);
-        color: #ffffff !important;
+        color: #ffffff;
     }
 }
 
-// Warning
 .btn-warning,
 .br-button.warning,
 .br-button[emphasis="warning"] {
     background-color: var(--warning, #ffcd07);
     border-color: var(--warning, #ffcd07);
-    color: var(--color-secondary-08, #333333) !important;
+    color: var(--color-secondary-08, #333333);
 
     &:hover {
         background-color: var(--yellow-vivid-30, #ddaa01);
         border-color: var(--yellow-vivid-30, #ddaa01);
-        color: var(--color-secondary-08, #333333) !important;
+        color: var(--color-secondary-08, #333333);
     }
 
     &:active,
     &.active {
         background-color: var(--yellow-vivid-40, #b38c00);
         border-color: var(--yellow-vivid-40, #b38c00);
-        color: var(--color-secondary-08, #333333) !important;
+        color: var(--color-secondary-08, #333333);
     }
 }
 
@@ -336,12 +310,12 @@
 .btn-info {
     background-color: var(--info, #155bcb);
     border-color: var(--info, #155bcb);
-    color: #ffffff !important;
+    color: #ffffff;
 
     &:hover {
         background-color: var(--blue-warm-vivid-70, #1351b4);
         border-color: var(--blue-warm-vivid-70, #1351b4);
-        color: #ffffff !important;
+        color: #ffffff;
     }
 }
 
@@ -349,24 +323,24 @@
 .btn-light {
     background-color: var(--color-secondary-02, #f8f8f8);
     border-color: var(--border-color, #cccccc);
-    color: var(--color-secondary-08, #333333) !important;
+    color: var(--color-secondary-08, #333333);
 
     &:hover {
         background-color: var(--color-secondary-03, #ededed);
         border-color: var(--color-secondary-05, #9e9d9d);
-        color: var(--color-secondary-08, #333333) !important;
+        color: var(--color-secondary-08, #333333);
     }
 }
 
 .btn-dark {
     background-color: var(--color-primary-darken-02, #071d41);
     border-color: var(--color-primary-darken-02, #071d41);
-    color: #ffffff !important;
+    color: #ffffff;
 
     &:hover {
         background-color: var(--color-secondary-09, #000000);
         border-color: var(--color-secondary-09, #000000);
-        color: #ffffff !important;
+        color: #ffffff;
     }
 }
 
@@ -374,13 +348,13 @@
 .br-button.inverted,
 .inverted .br-button {
     --interactive: var(--pure-0, #ffffff);
-    color: #ffffff !important;
+    color: #ffffff;
     border-color: #ffffff;
 
     &.primary,
     &[emphasis="primary"] {
         background-color: #ffffff;
-        color: var(--color-primary-default, #1351b4) !important;
+        color: var(--color-primary-default, #1351b4);
         border-color: #ffffff;
 
         &:hover {
@@ -391,7 +365,7 @@
     &.secondary,
     &[emphasis="secondary"] {
         background-color: transparent;
-        color: #ffffff !important;
+        color: #ffffff;
         border-color: #ffffff;
 
         &:hover {
@@ -400,16 +374,14 @@
     }
 }
 
-// -----------------------------------------------------------------------------
-// 5. Moodle Course & Block Creation Buttons (.btn-add-content, .btn.add-content)
-// -----------------------------------------------------------------------------
-// Add section / Add block callout button
+
+// Moodle Course & Block Creation Buttons
 .btn-add-content {
     align-items: center;
     background-color: var(--color-secondary-01, #ffffff);
     border: 2px dashed var(--interactive, #1351b4);
     border-radius: var(--surface-rounder-md, 8px);
-    color: var(--interactive, #1351b4) !important;
+    color: var(--interactive, #1351b4);
     display: inline-flex;
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: 0.875rem;
@@ -432,7 +404,7 @@
         background-color: var(--color-primary-pastel-02, #dbe8fb);
         border-color: var(--color-primary-darken-01, #0c326f);
         border-style: solid;
-        color: var(--color-primary-darken-01, #0c326f) !important;
+        color: var(--color-primary-darken-01, #0c326f);
 
         .icon,
         i {
@@ -442,15 +414,15 @@
 
     &:focus,
     &:focus-visible {
-        box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
-        outline: none !important;
+        box-shadow: 0 0 0 2px var(--focus, #ffcd07);
+        outline: none;
     }
 
     &:active,
     &.active {
         background-color: var(--color-primary-pastel-01, #c5d4eb);
         border-color: var(--color-primary-darken-02, #071d41);
-        color: var(--color-primary-darken-02, #071d41) !important;
+        color: var(--color-primary-darken-02, #071d41);
     }
 }
 
@@ -462,7 +434,7 @@
     background-color: var(--color-primary-pastel-02, #dbe8fb);
     border: 1px solid var(--interactive, #1351b4);
     border-radius: var(--surface-rounder-pill, 999em);
-    color: var(--interactive, #1351b4) !important;
+    color: var(--interactive, #1351b4);
     display: inline-flex;
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: 0.75rem;
@@ -488,25 +460,25 @@
     &:hover {
         background-color: var(--interactive, #1351b4);
         border-color: var(--interactive, #1351b4);
-        color: #ffffff !important;
+        color: #ffffff;
 
         .icon,
         i {
-            color: #ffffff !important;
+            color: #ffffff;
         }
     }
 
     &:focus,
     &:focus-visible {
-        box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
-        outline: none !important;
+        box-shadow: 0 0 0 2px var(--focus, #ffcd07);
+        outline: none;
     }
 
     &:active,
     &.active {
         background-color: var(--color-primary-darken-01, #0c326f);
         border-color: var(--color-primary-darken-01, #0c326f);
-        color: #ffffff !important;
+        color: #ffffff;
     }
 }
 

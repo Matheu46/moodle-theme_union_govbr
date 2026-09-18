@@ -22,17 +22,17 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// 1. Base Table Styles (.table, .generaltable, .flexible, .br-table)
+// Base Table Styles (.table, .generaltable, .flexible, .br-table)
 .table,
 .generaltable,
 .flexible,
 .br-table table,
 table.br-table {
     width: 100%;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-scale-4x, 1.5rem);
     color: var(--color-secondary-08, #333333);
     font-family: var(--font-family-base, 'Rawline', sans-serif);
-    font-size: 0.875rem; // 14px
+    font-size: var(--font-size-scale-base, 0.875rem);
     border-collapse: collapse;
     background-color: var(--background-light, #ffffff);
 
@@ -40,10 +40,10 @@ table.br-table {
     caption {
         caption-side: top;
         font-family: var(--font-family-base, 'Rawline', sans-serif);
-        font-size: 1.125rem; // 18px
-        font-weight: 600;
+        font-size: var(--font-size-scale-up-02, 1.125rem);
+        font-weight: var(--font-weight-semi-bold, 600);
         color: var(--color-secondary-08, #333333);
-        padding: 0.75rem 0;
+        padding: var(--spacing-scale-baseh, 0.75rem) 0;
         text-align: left;
     }
 
@@ -52,10 +52,10 @@ table.br-table {
     th.header {
         background-color: var(--color-secondary-02, #f8f8f8);
         color: var(--color-secondary-08, #333333);
-        font-weight: 600;
-        font-size: 0.875rem;
+        font-weight: var(--font-weight-semi-bold, 600);
+        font-size: var(--font-size-scale-base, 0.875rem);
         line-height: 1.45;
-        padding: 0.75rem 1rem;
+        padding: var(--spacing-scale-baseh, 0.75rem) var(--spacing-scale-2x, 1rem);
         border-top: none;
         border-bottom: 2px solid var(--color-secondary-04, #cccccc);
         vertical-align: middle;
@@ -67,7 +67,7 @@ table.br-table {
         a {
             color: var(--interactive, #1351b4);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: var(--font-weight-semi-bold, 600);
             display: inline-flex;
             align-items: center;
             gap: 0.35rem;
@@ -81,7 +81,7 @@ table.br-table {
             // Sorting icons
             .icon,
             i {
-                font-size: 0.75rem;
+                font-size: var(--font-size-scale-down-01, 0.75rem);
                 color: var(--interactive, #1351b4);
             }
         }
@@ -91,7 +91,7 @@ table.br-table {
     tbody {
         td,
         th {
-            padding: 0.75rem 1rem;
+            padding: var(--spacing-scale-baseh, 0.75rem) var(--spacing-scale-2x, 1rem);
             vertical-align: middle;
             border-top: none;
             border-bottom: 1px solid var(--color-secondary-03, #ededed);
@@ -100,7 +100,7 @@ table.br-table {
         }
 
         th {
-            font-weight: 600;
+            font-weight: var(--font-weight-semi-bold, 600);
         }
     }
 
@@ -108,8 +108,8 @@ table.br-table {
     tfoot {
         td,
         th {
-            padding: 0.75rem 1rem;
-            font-weight: 600;
+            padding: var(--spacing-scale-baseh, 0.75rem) var(--spacing-scale-2x, 1rem);
+            font-weight: var(--font-weight-semi-bold, 600);
             border-top: 2px solid var(--color-secondary-04, #cccccc);
             background-color: var(--color-secondary-02, #f8f8f8);
             color: var(--color-secondary-08, #333333);
@@ -117,7 +117,7 @@ table.br-table {
     }
 }
 
-// 2. Zebra Striping (.table-striped)
+// Zebra Striping (.table-striped)
 .table-striped,
 .generaltable.table-striped,
 .br-table.striped table {
@@ -130,7 +130,7 @@ table.br-table {
     }
 }
 
-// 3. Hoverable Rows (.table-hover)
+// Hoverable Rows (.table-hover)
 .table-hover,
 .generaltable,
 .br-table.hover table {
@@ -138,12 +138,12 @@ table.br-table {
         transition: background-color 0.15s ease-in-out;
 
         &:hover {
-            background-color: var(--blue-warm-vivid-5, #edf5ff) !important;
+            background-color: var(--blue-warm-vivid-5, #edf5ff);
         }
     }
 }
 
-// 4. Selected / Active Row State
+// Selected / Active Row State
 .table,
 .generaltable,
 .br-table {
@@ -151,13 +151,13 @@ table.br-table {
         &.selected,
         &.active,
         &[aria-selected="true"] {
-            background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
+            background-color: var(--color-primary-pastel-02, #dbe8fb);
             border-left: 4px solid var(--interactive, #1351b4);
         }
     }
 }
 
-// 5. Densities / Sizing
+// Densities / Sizing
 // Small / Compact density
 .table-sm,
 .generaltable.table-sm,
@@ -170,7 +170,7 @@ table.br-table {
     tfoot td,
     tfoot th {
         padding: 0.375rem 0.75rem;
-        font-size: 0.8125rem; // 13px
+        font-size: var(--font-size-scale-down-01, 0.75rem);
     }
 }
 
@@ -185,12 +185,12 @@ table.br-table {
     tbody th,
     tfoot td,
     tfoot th {
-        padding: 1rem 1.25rem;
-        font-size: 0.9375rem; // 15px
+        padding: var(--spacing-scale-2x, 1rem) var(--spacing-scale-3x, 1.25rem);
+        font-size: var(--font-size-scale-base, 0.9375rem);
     }
 }
 
-// 6. Border Variants
+// Border Variants
 // Bordered table
 .table-bordered,
 .generaltable.table-bordered {
@@ -219,7 +219,7 @@ table.br-table {
     }
 }
 
-// 7. Responsive Table Container (.table-responsive and .br-table wrapper)
+// Responsive Table Container (.table-responsive and .br-table wrapper)
 .table-responsive,
 .br-table {
     display: block;
@@ -229,7 +229,7 @@ table.br-table {
     border-radius: var(--surface-rounder-md, 8px);
     border: 1px solid var(--color-secondary-03, #ededed);
     background-color: var(--background-light, #ffffff);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-scale-4x, 1.5rem);
 
     .table,
     .generaltable {
@@ -251,7 +251,7 @@ table.br-table {
     }
 }
 
-// 8. Official Gov.br DS Table Container (.br-table)
+// Official Gov.br DS Table Container (.br-table)
 .br-table {
     // Header title and actions bar
     .table-header,
@@ -259,13 +259,13 @@ table.br-table {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1rem 1.25rem;
+        padding: var(--spacing-scale-2x, 1rem) var(--spacing-scale-3x, 1.25rem);
         border-bottom: 1px solid var(--color-secondary-03, #ededed);
 
         .top-bar-title,
         .table-title {
-            font-size: 1.125rem;
-            font-weight: 600;
+            font-size: var(--font-size-scale-up-02, 1.125rem);
+            font-weight: var(--font-weight-semi-bold, 600);
             color: var(--color-secondary-08, #333333);
             margin: 0;
         }
@@ -282,14 +282,14 @@ table.br-table {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0.75rem 1.25rem;
+        padding: var(--spacing-scale-baseh, 0.75rem) var(--spacing-scale-3x, 1.25rem);
         border-top: 1px solid var(--color-secondary-03, #ededed);
         background-color: var(--color-secondary-02, #f8f8f8);
-        font-size: 0.8125rem;
+        font-size: var(--font-size-scale-down-01, 0.75rem);
     }
 }
 
-// 9. Moodle Specific Table Refinements
+// Moodle Specific Table Refinements
 
 // Action icons inside table cells
 .generaltable,
@@ -328,11 +328,11 @@ table.br-table {
     border-radius: var(--surface-rounder-md, 8px);
 
     th.header {
-        font-size: 0.8125rem;
+        font-size: var(--font-size-scale-down-01, 0.75rem);
     }
 
     // Range / feedback columns
     td.item {
-        font-size: 0.8125rem;
+        font-size: var(--font-size-scale-down-01, 0.75rem);
     }
 }

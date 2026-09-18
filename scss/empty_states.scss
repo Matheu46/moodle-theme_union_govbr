@@ -22,9 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// --------------------------------------------------------------------------
-// 1. Base Empty State Container (relies on Moodle's native .hidden / .d-none)
-// --------------------------------------------------------------------------
+// Base Empty State Container (relies on Moodle's native .hidden / .d-none)
 [data-region="empty-message"]:not(.hidden):not(.d-none),
 [data-region="no-courses-empty-message"]:not(.hidden):not(.d-none),
 [data-region="no-events-empty-message"]:not(.hidden):not(.d-none),
@@ -35,9 +33,7 @@
     margin: 0 auto;
 }
 
-// --------------------------------------------------------------------------
-// 2. Typography and Visual Elements
-// --------------------------------------------------------------------------
+// Typography and Visual Elements
 [data-region="empty-message"],
 [data-region="no-courses-empty-message"],
 [data-region="no-events-empty-message"],
@@ -46,10 +42,10 @@
     // Illustration sizing (overrides Boost 5rem and timeline inline style)
     .empty-placeholder-image-lg,
     img {
-        width: auto !important;
-        height: auto !important;
-        max-height: 160px !important;
-        max-width: 220px !important;
+        width: auto;
+        height: auto;
+        max-height: 160px;
+        max-width: 220px;
         object-fit: contain;
         filter: drop-shadow(0 2px 8px rgba(19, 81, 180, 0.08));
         transition: transform 0.2s ease-in-out;
@@ -68,7 +64,7 @@
     .h5 {
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-weight: var(--font-weight-semi-bold, 600);
-        font-size: 1.25rem;
+        font-size: var(--font-size-scale-up-03, 1.25rem);
         line-height: 1.4;
         color: var(--color-secondary-08, #333333);
         margin-top: 0;
@@ -82,7 +78,7 @@
         font-size: var(--font-size-scale-base, 0.875rem);
         font-weight: var(--font-weight-regular, 400);
         line-height: 1.5;
-        color: var(--color-secondary-07, #555555) !important;
+        color: var(--color-secondary-07, #555555);
         margin-bottom: var(--spacing-scale-2x, 16px);
     }
 

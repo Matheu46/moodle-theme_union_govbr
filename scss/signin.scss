@@ -23,7 +23,7 @@
  */
 
 // --------------------------------------------------------------------------
-// 1. Gov.br DS Sign-In Component (.br-sign-in)
+// Gov.br DS Sign-In Component (.br-sign-in)
 // --------------------------------------------------------------------------
 .br-sign-in {
     display: inline-flex;
@@ -37,7 +37,7 @@
     border-radius: var(--surface-rounder-pill, 999em);
     padding: 0 var(--spacing-scale-2x, 16px);
     height: var(--sign-in-height-md, 40px);
-    text-decoration: none !important;
+    text-decoration: none;
     cursor: pointer;
     border: 1px solid transparent;
     white-space: nowrap;
@@ -51,8 +51,8 @@
     &:focus,
     &:focus-visible,
     &.focus-visible {
-        outline: none !important;
-        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
+        outline: none;
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07);
     }
 
     // Disabled state
@@ -68,12 +68,12 @@
     &:not(.secondary):not(.tertiary) {
         background-color: var(--interactive, #1351b4);
         border-color: var(--interactive, #1351b4);
-        color: #ffffff !important;
+        color: #ffffff;
 
         &:hover:not(:disabled) {
             background-color: var(--color-primary-darken-01, #0c326f);
             border-color: var(--color-primary-darken-01, #0c326f);
-            color: #ffffff !important;
+            color: #ffffff;
         }
 
         &:active:not(:disabled) {
@@ -86,12 +86,12 @@
     &.secondary {
         background-color: transparent;
         border-color: var(--interactive, #1351b4);
-        color: var(--interactive, #1351b4) !important;
+        color: var(--interactive, #1351b4);
 
         &:hover:not(:disabled) {
             background-color: var(--color-primary-pastel-02, #dbe8fb);
             border-color: var(--color-primary-darken-01, #0c326f);
-            color: var(--color-primary-darken-01, #0c326f) !important;
+            color: var(--color-primary-darken-01, #0c326f);
         }
 
         &:active:not(:disabled) {
@@ -146,18 +146,18 @@
 
         &.secondary {
             border-color: #ffffff;
-            color: #ffffff !important;
+            color: #ffffff;
 
             &:hover:not(:disabled) {
                 background-color: rgba(255, 255, 255, 0.15);
-                color: #ffffff !important;
+                color: #ffffff;
             }
         }
     }
 }
 
 // --------------------------------------------------------------------------
-// 2. Moodle Navbar Unauthenticated Sign-In Link Mapping (#usernavigation)
+// Moodle Navbar Unauthenticated Sign-In Link Mapping (#usernavigation)
 // --------------------------------------------------------------------------
 // When the user is logged out, transform the plain Moodle "Acessar" link
 // into the official Gov.br sign-in button.
@@ -181,17 +181,17 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: var(--spacing-scale-base, 0.5rem);
             height: var(--sign-in-height-header, 36px);
             padding: 0 var(--spacing-scale-2x, 16px);
             background-color: var(--interactive, #1351b4);
-            color: #ffffff !important;
+            color: #ffffff;
             border-radius: var(--surface-rounder-pill, 999em);
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-weight: var(--font-weight-semi-bold, 600);
-            font-size: 0.875rem;
+            font-size: var(--font-size-scale-base, 0.875rem);
             line-height: 1;
-            text-decoration: none !important;
+            text-decoration: none;
             white-space: nowrap;
             border: 1px solid var(--interactive, #1351b4);
             cursor: pointer;
@@ -215,14 +215,14 @@
             &:hover {
                 background-color: var(--color-primary-darken-01, #0c326f);
                 border-color: var(--color-primary-darken-01, #0c326f);
-                color: #ffffff !important;
+                color: #ffffff;
             }
 
             // Focus state
             &:focus,
             &:focus-visible {
-                outline: none !important;
-                box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+                outline: none;
+                box-shadow: 0 0 0 2px var(--focus, #ffcd07);
             }
         }
     }
@@ -246,7 +246,7 @@
 }
 
 // --------------------------------------------------------------------------
-// 3. Moodle Login Page Mapping (.pagelayout-login)
+// Moodle Login Page Mapping (.pagelayout-login)
 // --------------------------------------------------------------------------
 .pagelayout-login {
     // Identity Provider / Single Sign-On Buttons ("Entrar com gov.br")
@@ -255,18 +255,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.75rem;
+            gap: var(--spacing-scale-baseh, 0.75rem);
             width: 100%;
             min-height: 40px;
             border-radius: var(--surface-rounder-pill, 999em);
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-weight: var(--font-weight-semi-bold, 600);
-            font-size: 0.875rem;
-            color: var(--interactive, #1351b4) !important;
+            font-size: var(--font-size-scale-base, 0.875rem);
+            color: var(--interactive, #1351b4);
             background-color: var(--background-light, #ffffff);
             border: 1px solid var(--color-secondary-04, #cccccc);
             box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
-            text-decoration: none !important;
+            text-decoration: none;
             transition: background-color 0.15s ease-in-out,
                         border-color 0.15s ease-in-out,
                         box-shadow 0.15s ease-in-out,
@@ -282,14 +282,14 @@
             &:hover {
                 background-color: var(--color-primary-pastel-02, #dbe8fb);
                 border-color: var(--interactive, #1351b4);
-                color: var(--color-primary-darken-01, #0c326f) !important;
+                color: var(--color-primary-darken-01, #0c326f);
                 box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.12));
             }
 
             &:focus,
             &:focus-visible {
-                outline: none !important;
-                box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
+                outline: none;
+                box-shadow: 0 0 0 2px var(--focus, #ffcd07);
             }
         }
     }
@@ -350,7 +350,7 @@
         color: var(--color-secondary-07, #555555);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-weight: var(--font-weight-medium, 500);
-        font-size: 0.875rem;
+        font-size: var(--font-size-scale-base, 0.875rem);
         text-transform: lowercase;
 
         &::before,
@@ -361,11 +361,11 @@
         }
 
         &::before {
-            margin-right: 1rem;
+            margin-right: var(--spacing-scale-2x, 1rem);
         }
 
         &::after {
-            margin-left: 1rem;
+            margin-left: var(--spacing-scale-2x, 1rem);
         }
     }
 }
@@ -383,29 +383,29 @@
 }
 
 // --------------------------------------------------------------------------
-// 4. Gov.br DS Login Page Decorative Panel (.login-layout-left)
+// Gov.br DS Login Page Decorative Panel (.login-layout-left)
 // --------------------------------------------------------------------------
 // Apply the Gov.br DS illustration as the default background when the admin
 // has NOT uploaded a custom background image in Boost Union settings.
 body.pagelayout-login:not(.loginbackgroundimage) #page .login-layout-left {
-    background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
-    background-image: url('[[pix:theme|illustrations/login/login]]') !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    background-size: clamp(260px, 75%, 520px) !important;
+    background-color: var(--color-primary-pastel-02, #dbe8fb);
+    background-image: url('[[pix:theme|illustrations/login/login]]');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: clamp(260px, 75%, 520px);
 }
 
 // Suppress Moodle Boost core's AI watermark unconditionally.
 body.pagelayout-login #page .login-layout-left::after {
-    display: none !important;
-    content: none !important;
+    display: none;
+    content: none;
 }
 
 // When Boost Union's legacy layout is active and no custom image is set, apply the same background cleanly.
 body.pagelayout-login.theme_boost_union-loginarrangement-legacy:not(.loginbackgroundimage) {
-    background-color: var(--color-primary-pastel-02, #dbe8fb) !important;
-    background-image: url('[[pix:theme|illustrations/login/login]]') !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    background-size: clamp(320px, 45vw, 600px) !important;
+    background-color: var(--color-primary-pastel-02, #dbe8fb);
+    background-image: url('[[pix:theme|illustrations/login/login]]');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: clamp(320px, 45vw, 600px);
 }

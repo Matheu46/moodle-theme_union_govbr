@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// 1. Standard Gov.br DS Component (.br-list & .br-item)
+// Standard Gov.br DS Component (.br-list & .br-item)
 .br-list {
     display: flex;
     flex-direction: column;
@@ -153,7 +153,7 @@
     }
 }
 
-// 2. Moodle & Bootstrap Integration (.list-group)
+// Moodle & Bootstrap Integration (.list-group)
 // Applies Gov.br DS patterns to all Moodle list-group elements (drawers, activity index, settings, etc.)
 .list-group {
     border-radius: 4px;
@@ -215,7 +215,7 @@
     }
 }
 
-// 3. Standard Typographic Lists (for user-generated rich text and editorial content only)
+// Standard Typographic Lists (for user-generated rich text and editorial content only)
 .text_to_html,
 .activity-description,
 .user-description,

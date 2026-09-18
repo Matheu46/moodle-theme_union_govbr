@@ -128,7 +128,7 @@ $govbr-highlight: #268744;
 // Bootstrap / Moodle Variables Mapping
 // =============================================================================
 $primary:       $govbr-blue-warm-vivid-70; // #1351b4
-$secondary:     $govbr-gray-70;            // #555555
+$secondary:     $govbr-gray-20;            // #cccccc (Moodle expects a light gray here)
 $success:       $govbr-green-cool-vivid-50;// #168821
 $info:          $govbr-blue-warm-vivid-60; // #155bcb
 $warning:       $govbr-yellow-vivid-20;    // #ffcd07

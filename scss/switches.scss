@@ -23,7 +23,7 @@
  */
 
 // --------------------------------------------------------------------------
-// 1. Shared Switch SVGs & Styling
+// Shared Switch SVGs & Styling
 // --------------------------------------------------------------------------
 // Standard Knob SVG: 24x24 box with 18px circle (radius 9, centered at 12,12)
 $govbr-switch-knob-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3ccircle cx='12' cy='12' r='9' fill='%23ffffff' stroke='%23000000' stroke-opacity='0.12' stroke-width='1'/%3e%3c/svg%3e";
@@ -101,15 +101,15 @@ $govbr-switch-knob-icon-on-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.
     &:focus,
     &:focus-visible,
     &.focus-visible {
-        outline: none !important;
-        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
+        outline: none;
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07);
     }
 
     // Disabled State
     &:disabled,
     &.disabled {
-        background-color: var(--switch-bg-disabled, #ededed) !important;
-        cursor: not-allowed !important;
+        background-color: var(--switch-bg-disabled, #ededed);
+        cursor: not-allowed;
         opacity: var(--disabled, 0.45);
         pointer-events: none;
     }
@@ -122,7 +122,7 @@ $govbr-switch-knob-icon-on-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.
         &:focus,
         &:focus-visible {
             box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07),
-                        0 0 0 var(--surface-width-lg, 4px) var(--danger, #e52207) !important;
+                        0 0 0 var(--surface-width-lg, 4px) var(--danger, #e52207);
         }
     }
 
@@ -133,7 +133,7 @@ $govbr-switch-knob-icon-on-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.
 }
 
 // --------------------------------------------------------------------------
-// 3. Gov.br Switch Component (.br-switch)
+// Gov.br Switch Component (.br-switch)
 // --------------------------------------------------------------------------
 .br-switch {
     display: inline-flex;
@@ -261,12 +261,13 @@ $govbr-switch-knob-icon-on-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.
 }
 
 // --------------------------------------------------------------------------
-// 4. Moodle Native Form Switch Mapping (.form-check.form-switch & .form-switch)
+// Moodle Native Form Switch Mapping (.form-check.form-switch & .form-switch)
 // --------------------------------------------------------------------------
 .form-check.form-switch,
 .form-switch {
     display: flex;
     align-items: center;
+    justify-content: center;
     min-height: var(--switch-height-md, 24px);
     padding-left: 0;
     margin-bottom: var(--spacing-scale-base, 8px);
@@ -340,7 +341,7 @@ $govbr-switch-knob-icon-on-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.
 }
 
 // --------------------------------------------------------------------------
-// 5. Moodle Navbar Edit Mode Switch (.editmode-switch-form)
+// Moodle Navbar Edit Mode Switch (.editmode-switch-form)
 // --------------------------------------------------------------------------
 // Specific Gov.br styling for Moodle's Edit Mode toggle in #usernavigation
 .editmode-switch-form {
@@ -378,7 +379,7 @@ $govbr-switch-knob-icon-on-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.
 
         // Highlight label when edit mode is active
         &.text-primary {
-            color: var(--interactive, #1351b4) !important;
+            color: var(--interactive, #1351b4);
             font-weight: var(--font-weight-semi-bold, 600);
         }
     }
@@ -394,38 +395,38 @@ $govbr-switch-knob-icon-on-svg: "data:image/svg+xml,%3csvg xmlns='http://www.w3.
 
         // Hide empty space holder span (<span class="form-check-label">&nbsp;</span>)
         span.form-check-label {
-            display: none !important;
+            display: none;
         }
 
         .form-check-input {
             margin: 0;
             vertical-align: middle;
-            width: var(--switch-width-md, 44px) !important;
-            height: var(--switch-height-md, 24px) !important;
-            min-width: var(--switch-width-md, 44px) !important;
-            min-height: var(--switch-height-md, 24px) !important;
-            border-radius: var(--surface-rounder-pill, 999em) !important;
-            border: none !important;
+            width: var(--switch-width-md, 44px);
+            height: var(--switch-height-md, 24px);
+            min-width: var(--switch-width-md, 44px);
+            min-height: var(--switch-height-md, 24px);
+            border-radius: var(--surface-rounder-pill, 999em);
+            border: none;
 
             &:not(:checked) {
-                background-color: var(--switch-bg-off, #cccccc) !important;
-                background-image: url($govbr-switch-knob-svg) !important;
-                background-position: left center !important;
-                background-size: var(--switch-knob-size-md, 24px) var(--switch-knob-size-md, 24px) !important;
+                background-color: var(--switch-bg-off, #cccccc);
+                background-image: url($govbr-switch-knob-svg);
+                background-position: left center;
+                background-size: var(--switch-knob-size-md, 24px) var(--switch-knob-size-md, 24px);
 
                 &:hover {
-                    background-color: var(--switch-bg-off-hover, #9e9d9d) !important;
+                    background-color: var(--switch-bg-off-hover, #9e9d9d);
                 }
             }
 
             &:checked {
-                background-color: var(--switch-bg-on, #1351b4) !important;
-                background-image: url($govbr-switch-knob-svg) !important;
-                background-position: right center !important;
-                background-size: var(--switch-knob-size-md, 24px) var(--switch-knob-size-md, 24px) !important;
+                background-color: var(--switch-bg-on, #1351b4);
+                background-image: url($govbr-switch-knob-svg);
+                background-position: right center;
+                background-size: var(--switch-knob-size-md, 24px) var(--switch-knob-size-md, 24px);
 
                 &:hover {
-                    background-color: var(--switch-bg-on-hover, #0c326f) !important;
+                    background-color: var(--switch-bg-on-hover, #0c326f);
                 }
             }
         }

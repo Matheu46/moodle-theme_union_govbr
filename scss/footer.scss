@@ -23,21 +23,22 @@
  */
 
 #page-footer.br-footer {
-    padding-top: 1rem;
+    padding-top: var(--spacing-scale-2x, 1rem);
     clear: both;
-    width: 100vw;
+    width: auto;
     position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+}
+
+#page.drawers #page-footer.br-footer {
+    margin-left: -3rem;
+    margin-right: -3rem;
 }
 
 .br-footer {
     --footer-logo-height: 48px;
     --footer-logo-width: 180px;
     --footer-padding: 0;
-    --footer-padding-bottom: 0 0 1.25rem;
+    --footer-padding-bottom: 0 0 var(--spacing-scale-2xh, 1.25rem);
     --footer-assigns-height: 46px;
     --footer-assigns-width: 180px;
 
@@ -130,7 +131,7 @@
     }
 
     .logo {
-        padding: 0 0 1.25rem 0;
+        padding: 0 0 var(--spacing-scale-2xh, 1.25rem) 0;
         margin-top: 0;
 
         a {
@@ -169,7 +170,7 @@
     .br-list.horizontal {
         display: flex;
         flex-wrap: wrap;
-        padding: 0 0 1rem 0;
+        padding: 0 0 var(--spacing-scale-2x, 1rem) 0;
         list-style: none;
         background: transparent;
         background-color: transparent;
@@ -186,7 +187,7 @@
         .col,
         [class*="col-"] {
             flex-grow: 1;
-            padding: 0 0.75rem 1rem;
+            padding: 0 var(--spacing-scale-baseh, 0.75rem) var(--spacing-scale-2x, 1rem);
             background: transparent;
             background-color: transparent;
         }
@@ -206,7 +207,7 @@
             border: none;
             border-right: none;
             border-bottom: none;
-            padding: 0.35rem 0.5rem;
+            padding: 0.35rem var(--spacing-scale-base, 0.5rem);
             background: transparent;
             background-color: transparent;
         }
@@ -215,7 +216,7 @@
         .br-list .br-item .content {
             height: auto;
             line-height: 1.4;
-            padding: 0 0.5rem;
+            padding: 0 var(--spacing-scale-base, 0.5rem);
             font-size: 0.875rem;
             color: var(--color) ;
         }
@@ -257,7 +258,7 @@
         &.header {
             font-weight: 700;
             border-bottom: 1px solid transparent;
-            padding: 0.5rem;
+            padding: var(--spacing-scale-base, 0.5rem);
 
             .content {
                 letter-spacing: 0.6px;
@@ -276,7 +277,7 @@
         .social-network-title {
             font-size: 1rem;
             font-weight: 800;
-            margin-bottom: 0.75rem;
+            margin-bottom: var(--spacing-scale-baseh, 0.75rem);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: rgba(255, 255, 255, 0.9);
@@ -306,7 +307,7 @@
             }
 
             &:not(:last-of-type) {
-                margin-right: 0.5rem;
+                margin-right: var(--spacing-scale-base, 0.5rem);
             }
         }
     }
@@ -381,9 +382,9 @@
     .footer-content-debugging {
         background-color: #1b1b1b;
         color: #e0e0e0;
-        margin-top: 1.5rem;
+        margin-top: var(--spacing-scale-3x, 1.5rem);
         border-radius: 4px;
-        padding: 1rem;
+        padding: var(--spacing-scale-2x, 1rem);
         font-size: 0.8125rem;
         text-align: left;
     }
@@ -404,7 +405,7 @@
         }
 
         .br-list.horizontal .br-item.header {
-            padding: 0.75rem 0.5rem;
+            padding: var(--spacing-scale-baseh, 0.75rem) var(--spacing-scale-base, 0.5rem);
             border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.15));
 
             .support {
@@ -423,7 +424,7 @@
 
             &.active + .br-list {
                 display: block;
-                padding-left: 1rem;
+                padding-left: var(--spacing-scale-2x, 1rem);
             }
         }
     }
@@ -444,6 +445,12 @@
 
 #page-footer {
     [data-region="footer-container-popover"] {
+        position: absolute;
+        right: var(--spacing-scale-2x, 1rem);
+        top: -3.5rem;
+        z-index: 1040;
+        display: flex;
+        gap: var(--spacing-scale-base, 0.5rem);
 
         .btn-footer-popover,
         .btn-footer-communication,

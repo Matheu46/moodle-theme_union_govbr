@@ -80,7 +80,7 @@ body {
 }
 
 // Push drawers elements down dynamically.
-.drawer-right, .drawer-left {
+.drawer-right, .drawer-left, [data-region=right-hand-drawer].drawer {
     top: calc(#{$navbar-height} + var(--govbr-offset, 0px));
 }
 

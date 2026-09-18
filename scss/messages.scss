@@ -23,7 +23,7 @@
  */
 
 // --------------------------------------------------------------------------
-// 1. Gov.br Design System Custom Message (.br-message)
+// Gov.br Design System Custom Message (.br-message)
 // --------------------------------------------------------------------------
 .br-message {
     --message-background:   var(--background-light, #ffffff);
@@ -48,7 +48,7 @@
         color: var(--message-color-icon);
         display: flex;
         flex-shrink: 0;
-        font-size: 1.25rem;
+        font-size: var(--font-size-scale-up-03, 1.25rem);
         justify-content: center;
         padding: var(--spacing-scale-2x, 16px) 0 var(--spacing-scale-2x, 16px) var(--spacing-scale-2x, 16px);
     }
@@ -66,7 +66,7 @@
             color: var(--color-light, #333333);
             display: block;
             font-weight: var(--font-weight-semi-bold, 600);
-            margin-bottom: 0.25rem;
+            margin-bottom: var(--spacing-scale-half, 0.25rem);
         }
 
         .message-body {
@@ -151,7 +151,7 @@
 }
 
 // --------------------------------------------------------------------------
-// 2. Moodle Native Alerts & Notifications (.alert, .alert-*)
+// Moodle Native Alerts & Notifications (.alert, .alert-*)
 // --------------------------------------------------------------------------
 .alert {
     border-radius: var(--surface-rounder-sm, 4px);
@@ -161,7 +161,7 @@
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: var(--font-size-scale-up-01, 1rem);
     line-height: 1.5;
-    margin-bottom: 1.25rem;
+    margin-bottom: var(--spacing-scale-3x, 1.25rem);
     padding-bottom: 1rem;
     padding-left: 3.25rem; // Space for official Gov.br SVG status icon
     padding-right: 1.25rem;
@@ -192,8 +192,8 @@
     &.p-1,
     &.p-2 {
         &::before {
-            content: none !important;
-            display: none !important;
+            content: none;
+            display: none;
         }
     }
 
@@ -238,17 +238,17 @@
 
         &:focus,
         &:focus-visible {
-            box-shadow: 0 0 0 2px var(--focus, #ffcd07) !important;
-            outline: none !important;
+            box-shadow: 0 0 0 2px var(--focus, #ffcd07);
+            outline: none;
         }
     }
 
     // Success Alert (.alert-success)
     &.alert-success {
-        background-color: var(--success-alternative, #e3f5e1) !important;
-        border-color: rgba(var(--success-rgb, 22, 136, 33), 0.25) !important;
-        border-left-color: var(--success, #168821) !important;
-        color: var(--color-light, #333333) !important;
+        background-color: var(--success-alternative, #e3f5e1);
+        border-color: rgba(var(--success-rgb, 22, 136, 33), 0.25);
+        border-left-color: var(--success, #168821);
+        color: var(--color-light, #333333);
 
         &::before {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23168821'%3e%3cpath d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z'/%3e%3c/svg%3e");
@@ -258,10 +258,10 @@
     // Danger / Error Alert (.alert-danger, .alert-error)
     &.alert-danger,
     &.alert-error {
-        background-color: var(--danger-alternative, #fde0db) !important;
-        border-color: rgba(var(--danger-rgb, 229, 34, 7), 0.25) !important;
-        border-left-color: var(--danger, #e52207) !important;
-        color: var(--color-light, #333333) !important;
+        background-color: var(--danger-alternative, #fde0db);
+        border-color: rgba(var(--danger-rgb, 229, 34, 7), 0.25);
+        border-left-color: var(--danger, #e52207);
+        color: var(--color-light, #333333);
 
         &::before {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e52207'%3e%3cpath d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z'/%3e%3c/svg%3e");
@@ -270,10 +270,10 @@
 
     // Warning Alert (.alert-warning)
     &.alert-warning {
-        background-color: var(--warning-alternative, #fff5c2) !important;
-        border-color: rgba(var(--warning-rgb, 255, 205, 7), 0.4) !important;
-        border-left-color: #c2850c !important;
-        color: var(--color-light, #333333) !important;
+        background-color: var(--warning-alternative, #fff5c2);
+        border-color: rgba(var(--warning-rgb, 255, 205, 7), 0.4);
+        border-left-color: #c2850c;
+        color: var(--color-light, #333333);
 
         &::before {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c2850c'%3e%3cpath d='M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z'/%3e%3c/svg%3e");
@@ -282,10 +282,10 @@
 
     // Info Alert (.alert-info)
     &.alert-info {
-        background-color: var(--info-alternative, #dbe8fb) !important;
-        border-color: rgba(var(--info-rgb, 21, 91, 203), 0.25) !important;
-        border-left-color: var(--info, #155bcb) !important;
-        color: var(--color-light, #333333) !important;
+        background-color: var(--info-alternative, #dbe8fb);
+        border-color: rgba(var(--info-rgb, 21, 91, 203), 0.25);
+        border-left-color: var(--info, #155bcb);
+        color: var(--color-light, #333333);
 
         &::before {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23155bcb'%3e%3cpath d='M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z'/%3e%3c/svg%3e");
@@ -294,10 +294,10 @@
 
     // Secondary Alert (.alert-secondary)
     &.alert-secondary {
-        background-color: var(--color-secondary-02, #f8f8f8) !important;
-        border-color: var(--color-secondary-03, #ededed) !important;
-        border-left-color: var(--color-secondary-06, #888888) !important;
-        color: var(--color-light, #333333) !important;
+        background-color: var(--color-secondary-02, #f8f8f8);
+        border-color: var(--color-secondary-03, #ededed);
+        border-left-color: var(--color-secondary-06, #888888);
+        color: var(--color-light, #333333);
 
         &::before {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23888888'%3e%3cpath d='M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z'/%3e%3c/svg%3e");
@@ -315,14 +315,14 @@ table .alert,
     padding-right: 0.75rem;
 
     &::before {
-        content: none !important;
-        display: none !important;
+        content: none;
+        display: none;
     }
 }
 
 // Moodle Page Notifications Region (#user-notifications)
 #user-notifications {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-scale-4x, 1.5rem);
 
     .alert {
         margin-bottom: 0.75rem;
@@ -330,16 +330,16 @@ table .alert,
 }
 
 // --------------------------------------------------------------------------
-// 3. Moodle Toast Notifications (.toast, core/toast) & Gov.br Notification (.br-notification)
+// Moodle Toast Notifications (.toast, core/toast) & Gov.br Notification (.br-notification)
 // Reference: https://www.gov.br/ds/components/notification?tab=visao-geral
 // --------------------------------------------------------------------------
 .toast {
-    background-color: var(--background-light, #ffffff) !important;
-    border: 1px solid var(--color-secondary-03, #ededed) !important;
-    border-left: 4px solid var(--notification-border-color, var(--interactive, #1351b4)) !important;
-    border-radius: var(--surface-rounder-md, 8px) !important;
-    box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16)) !important;
-    color: var(--color-light, #333333) !important;
+    background-color: var(--background-light, #ffffff);
+    border: 1px solid var(--color-secondary-03, #ededed);
+    border-left: 4px solid var(--notification-border-color, var(--interactive, #1351b4));
+    border-radius: var(--surface-rounder-md, 8px);
+    box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
+    color: var(--color-light, #333333);
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: var(--font-size-scale-base, 0.875rem);
     max-width: 420px;
@@ -350,10 +350,10 @@ table .alert,
     &.toast-success {
         --notification-border-color: var(--success, #168821);
         --notification-icon-color:   var(--success, #168821);
-        border-left-color: var(--success, #168821) !important;
+        border-left-color: var(--success, #168821);
 
         .toast-body:before {
-            color: var(--success, #168821) !important;
+            color: var(--success, #168821);
         }
     }
 
@@ -361,37 +361,37 @@ table .alert,
     &.toast-error {
         --notification-border-color: var(--danger, #e52207);
         --notification-icon-color:   var(--danger, #e52207);
-        border-left-color: var(--danger, #e52207) !important;
+        border-left-color: var(--danger, #e52207);
 
         .toast-body:before {
-            color: var(--danger, #e52207) !important;
+            color: var(--danger, #e52207);
         }
     }
 
     &.toast-warning {
         --notification-border-color: var(--warning, #ffcd07);
         --notification-icon-color:   #c2850c; // High contrast yellow/gold for icons on white
-        border-left-color: var(--warning, #ffcd07) !important;
+        border-left-color: var(--warning, #ffcd07);
 
         .toast-body:before {
-            color: #c2850c !important;
+            color: #c2850c;
         }
     }
 
     &.toast-info {
         --notification-border-color: var(--info, #155bcb);
         --notification-icon-color:   var(--info, #155bcb);
-        border-left-color: var(--info, #155bcb) !important;
+        border-left-color: var(--info, #155bcb);
 
         .toast-body:before {
-            color: var(--info, #155bcb) !important;
+            color: var(--info, #155bcb);
         }
     }
 
     .toast-header {
-        background-color: transparent !important;
+        background-color: transparent;
         border-bottom: 1px solid var(--color-secondary-03, #ededed);
-        color: var(--color-light, #333333) !important;
+        color: var(--color-light, #333333);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         padding: 0.75rem 1rem 0.5rem 1rem;
 
@@ -404,14 +404,14 @@ table .alert,
 
         .toast-subtitle {
             color: var(--color-secondary-07, #555555);
-            font-size: 0.75rem;
+            font-size: var(--font-size-scale-down-01, 0.75rem);
             font-weight: var(--font-weight-regular, 400);
         }
     }
 
     .toast-body {
         align-items: flex-start;
-        color: var(--color-light, #333333) !important;
+        color: var(--color-light, #333333);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-base, 0.875rem);
         line-height: 1.45;
@@ -421,7 +421,7 @@ table .alert,
             align-items: center;
             color: var(--notification-icon-color, var(--interactive, #1351b4));
             display: inline-flex;
-            font-size: 1.125rem;
+            font-size: var(--font-size-scale-up-02, 1.125rem);
             line-height: 1;
             margin: 2px 0.625rem 0 0;
             flex-shrink: 0;
@@ -465,7 +465,7 @@ table .alert,
         &:focus-visible {
             box-shadow: none;
             opacity: 1;
-            outline: 2px solid var(--focus-color, #ffcd07) !important;
+            outline: 2px solid var(--focus-color, #ffcd07);
             outline-offset: 2px;
         }
     }
@@ -500,7 +500,7 @@ table .alert,
         color: var(--color-light, #333333);
         display: block;
         font-weight: var(--font-weight-semi-bold, 600);
-        margin-bottom: 0.25rem;
+        margin-bottom: var(--spacing-scale-half, 0.25rem);
     }
 
     .close {
@@ -512,23 +512,23 @@ table .alert,
 
         &:hover { opacity: 1; }
         &:focus, &:focus-visible {
-            outline: 2px solid var(--focus-color, #ffcd07) !important;
+            outline: 2px solid var(--focus-color, #ffcd07);
             outline-offset: 2px;
         }
     }
 }
 
 // --------------------------------------------------------------------------
-// 4. Gov.br Inline Field Feedback (.feedback)
+// Gov.br Inline Field Feedback (.feedback)
 // --------------------------------------------------------------------------
 .feedback {
     align-items: center;
     display: inline-flex;
     font-family: var(--font-family-base, 'Rawline', sans-serif);
-    font-size: 0.75rem;
+    font-size: var(--font-size-scale-down-01, 0.75rem);
     font-weight: var(--font-weight-medium, 500);
     gap: 0.35rem;
-    margin-top: 0.25rem;
+    margin-top: var(--spacing-scale-half, 0.25rem);
 
     &.is-success,
     &.success {

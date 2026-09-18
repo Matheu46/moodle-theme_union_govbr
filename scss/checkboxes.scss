@@ -22,9 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// --------------------------------------------------------------------------
-// 1. Gov.br Design System Custom Checkbox (.br-checkbox)
-// --------------------------------------------------------------------------
+// Gov.br Design System Custom Checkbox (.br-checkbox)
 .br-checkbox {
     --checkbox-size:    24px;
     --checkbox-size-sm: 20px;
@@ -88,9 +86,9 @@
     // Focus state (Gov.br DS solid yellow/gold focus ring)
     input:focus-visible + label::before,
     input.focus-visible + label::before {
-        border-color: var(--focus, #ffcd07) !important;
-        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
-        outline: none !important;
+        border-color: var(--focus, #ffcd07);
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07);
+        outline: none;
     }
 
     // Checked state: White background, Gov.br blue checkmark
@@ -142,8 +140,8 @@
     }
 
     input:disabled + label::before {
-        background-color: var(--color-secondary-02, #f8f8f8) !important;
-        border-color: var(--color-secondary-03, #ededed) !important;
+        background-color: var(--color-secondary-02, #f8f8f8);
+        border-color: var(--color-secondary-03, #ededed);
     }
 
     input:disabled:checked + label::after {
@@ -174,14 +172,14 @@
     &.invalid input + label::before,
     &[invalid] input + label::before,
     input:invalid + label::before {
-        border-color: var(--danger, #e52207) !important;
+        border-color: var(--danger, #e52207);
         border-width: 2px;
     }
 
     &.is-valid input + label::before,
     &.valid input + label::before,
     &[valid] input + label::before {
-        border-color: var(--success, #168821) !important;
+        border-color: var(--success, #168821);
         border-width: 2px;
     }
 
@@ -225,9 +223,7 @@
     }
 }
 
-// --------------------------------------------------------------------------
-// 2. Moodle Native Form Checkbox Mapping (.form-check & .form-check-input)
-// --------------------------------------------------------------------------
+// Moodle Native Form Checkbox Mapping (.form-check & .form-check-input)
 .form-check:not(.form-switch) {
     min-height: var(--checkbox-size, 24px);
     display: flex;
@@ -291,9 +287,9 @@
     &:focus,
     &:focus-visible,
     &.focus-visible {
-        border-color: var(--focus, #ffcd07) !important;
-        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07) !important;
-        outline: none !important;
+        border-color: var(--focus, #ffcd07);
+        box-shadow: 0 0 0 var(--surface-width-md, 2px) var(--focus, #ffcd07);
+        outline: none;
     }
 
     // Checked state: White background, Gov.br interactive blue checkmark (#1351b4)
@@ -313,9 +309,9 @@
     // Disabled state
     &:disabled,
     &.disabled {
-        background-color: var(--color-secondary-02, #f8f8f8) !important;
-        border-color: var(--color-secondary-03, #ededed) !important;
-        cursor: not-allowed !important;
+        background-color: var(--color-secondary-02, #f8f8f8);
+        border-color: var(--color-secondary-03, #ededed);
+        cursor: not-allowed;
         opacity: var(--disabled, 0.45);
 
         &:checked {
@@ -326,8 +322,8 @@
     // Validation States
     &.is-invalid,
     .was-validated &:invalid {
-        border-color: var(--danger, #e52207) !important;
-        border-width: 2px !important;
+        border-color: var(--danger, #e52207);
+        border-width: 2px;
 
         &:checked {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e52207' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M3.5 8.5l3 3 6-7'/%3e%3c/svg%3e");
@@ -336,8 +332,8 @@
 
     &.is-valid,
     .was-validated &:valid {
-        border-color: var(--success, #168821) !important;
-        border-width: 2px !important;
+        border-color: var(--success, #168821);
+        border-width: 2px;
 
         &:checked {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23168821' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M3.5 8.5l3 3 6-7'/%3e%3c/svg%3e");
@@ -366,16 +362,12 @@
 
 // Moodle Inline Form Checkbox
 .form-check-inline {
-    display: inline-flex;
-    align-items: center;
     margin-right: var(--spacing-scale-2x, 16px);
     margin-bottom: 0;
     vertical-align: middle;
 }
 
-// --------------------------------------------------------------------------
-// 3. Moodle Contextual Placements (Tables, Lists, Mforms)
-// --------------------------------------------------------------------------
+// Moodle Contextual Placements (Tables, Lists, Mforms)
 // Table checkboxes (Bulk actions, Select all row)
 table,
 .generaltable,
@@ -398,13 +390,11 @@ table,
 // Moodle Form Items (.fitem)
 .fitem.fcheckbox {
     .form-check {
-        padding-top: 0.25rem;
+        padding-top: var(--spacing-scale-half, 4px);
     }
 }
 
-// --------------------------------------------------------------------------
-// 4. Dark Mode / Inverted Checkbox (.br-checkbox.inverted, .br-checkbox.dark-mode)
-// --------------------------------------------------------------------------
+// Dark Mode / Inverted Checkbox (.br-checkbox.inverted, .br-checkbox.dark-mode)
 .br-checkbox.inverted,
 .br-checkbox.dark-mode {
     color: var(--color-dark, #ffffff);
@@ -427,4 +417,3 @@ table,
         border-color: var(--color-primary-lighten-01, #2670e8);
     }
 }
-

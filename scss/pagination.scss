@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// 1. Base Pagination Container (.pagination, .br-pagination)
+// Base Pagination Container (.pagination, .br-pagination)
 .pagination,
 .br-pagination ul {
     flex-wrap: wrap;
@@ -31,7 +31,7 @@
     gap: 0.35rem;
     list-style: none;
     padding: 0;
-    margin: .5rem 0;
+    margin: var(--spacing-scale-base, 0.5rem) 0;
 
     // Remove default Bootstrap connected border-radius logic
     .page-item {
@@ -48,15 +48,15 @@
             justify-content: center;
             min-width: 36px;
             height: 36px;
-            padding: 0 0.5rem;
+            padding: 0 var(--spacing-scale-base, 0.5rem);
             border-radius: var(--surface-rounder-pill, 999em);
             border: 1px solid transparent;
             background-color: transparent;
             color: var(--color-secondary-08, #333333);
             font-family: var(--font-family-base, 'Rawline', sans-serif);
-            font-size: 0.875rem; // 14px
-            font-weight: 500;
-            text-decoration: none !important;
+            font-size: var(--font-size-scale-base, 0.875rem); // 14px
+            font-weight: var(--font-weight-medium, 500);
+            text-decoration: none;
             transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 
             // Hover state
@@ -69,16 +69,16 @@
             // Focus state (Gov.br DS standard: dashed gold focus ring)
             &:focus-visible,
             &.focus {
-                outline: 2px dashed var(--focus-color, #c2850c) !important;
-                outline-offset: 2px !important;
-                box-shadow: none !important;
+                outline: 2px dashed var(--focus-color, #c2850c);
+                outline-offset: 2px;
+                box-shadow: none;
             }
 
             // Navigation icons / chevrons inside page link
             .icon,
             i,
             span[aria-hidden="true"] {
-                font-size: 0.875rem;
+                font-size: var(--font-size-scale-base, 0.875rem);
                 // vertical-align: middle;
             }
         }
@@ -87,10 +87,10 @@
         &.active .page-link,
         .page-link.active,
         .page-link[aria-current="page"] {
-            background-color: var(--interactive, #1351b4) !important;
-            border-color: var(--interactive, #1351b4) !important;
-            color: var(--color-secondary-01, #ffffff) !important;
-            font-weight: 600;
+            background-color: var(--interactive, #1351b4);
+            border-color: var(--interactive, #1351b4);
+            color: var(--color-secondary-01, #ffffff);
+            font-weight: var(--font-weight-semi-bold, 600);
             pointer-events: none;
             cursor: default;
         }
@@ -98,53 +98,53 @@
         // Disabled page item
         &.disabled .page-link,
         .page-link.disabled {
-            opacity: var(--disabled, 0.45) !important;
-            pointer-events: none !important;
-            cursor: not-allowed !important;
-            background-color: transparent !important;
-            border-color: transparent !important;
-            color: var(--color-secondary-05, #9e9d9d) !important;
+            opacity: var(--disabled, 0.45);
+            pointer-events: none;
+            cursor: not-allowed;
+            background-color: transparent;
+            border-color: transparent;
+            color: var(--color-secondary-05, #9e9d9d);
         }
     }
 }
 
-// 2. Pagination Sizing / Densities
+// Pagination Sizing / Densities
 // Small density (.pagination-sm, .small)
 .pagination-sm,
 .br-pagination.small ul {
-    gap: 0.25rem;
+    gap: var(--spacing-scale-half, 0.25rem);
 
     .page-item .page-link {
         min-width: 28px;
         height: 28px;
         padding: 0 0.35rem;
-        font-size: 0.75rem; // 12px
+        font-size: var(--font-size-scale-down-01, 0.75rem); // 12px
     }
 }
 
 // Large density (.pagination-lg, .large)
 .pagination-lg,
 .br-pagination.large ul {
-    gap: 0.5rem;
+    gap: var(--spacing-scale-base, 0.5rem);
 
     .page-item .page-link {
         min-width: 44px;
         height: 44px;
-        padding: 0 0.75rem;
-        font-size: 1rem; // 16px
+        padding: 0 var(--spacing-scale-baseh, 0.75rem);
+        font-size: var(--font-size-scale-up-01, 1rem); // 16px
     }
 }
 
-// 3. Moodle Legacy Paging Bar (.paging)
+// Moodle Legacy Paging Bar (.paging)
 .paging {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 0.25rem;
-    margin: 1.5rem 0;
+    gap: var(--spacing-scale-half, 0.25rem);
+    margin: var(--spacing-scale-4x, 1.5rem) 0;
     font-family: var(--font-family-base, 'Rawline', sans-serif);
-    font-size: 0.875rem;
+    font-size: var(--font-size-scale-base, 0.875rem);
     color: var(--color-secondary-08, #333333);
 
     &:empty {
@@ -158,10 +158,10 @@
         justify-content: center;
         min-width: 32px;
         height: 32px;
-        padding: 0 0.5rem;
+        padding: 0 var(--spacing-scale-base, 0.5rem);
         border-radius: var(--surface-rounder-pill, 999em);
         color: var(--interactive, #1351b4);
-        text-decoration: none !important;
+        text-decoration: none;
         transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 
         &:hover {
@@ -182,15 +182,15 @@
         justify-content: center;
         min-width: 32px;
         height: 32px;
-        padding: 0 0.5rem;
+        padding: 0 var(--spacing-scale-base, 0.5rem);
         border-radius: var(--surface-rounder-pill, 999em);
         background-color: var(--interactive, #1351b4);
         color: var(--color-secondary-01, #ffffff);
-        font-weight: 600;
+        font-weight: var(--font-weight-semi-bold, 600);
     }
 }
 
-// 4. Moodle Paged Content Controls
+// Moodle Paged Content Controls
 [data-region="paging-control-container"] {
     align-items: center;
     justify-content: space-between;
@@ -198,13 +198,13 @@
 
     [data-region="paging-control-limit-container"] {
         font-family: var(--font-family-base, 'Rawline', sans-serif);
-        font-size: 0.875rem;
+        font-size: var(--font-size-scale-base, 0.875rem);
         color: var(--color-secondary-08, #333333);
 
         .btn {
-            font-size: 0.8125rem;
+            font-size: var(--font-size-scale-down-01, 0.75rem);
             min-height: 32px;
-            padding: 0 0.75rem;
+            padding: 0 var(--spacing-scale-baseh, 0.75rem);
         }
     }
 }
