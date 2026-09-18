@@ -8,6 +8,26 @@
                 <div class="header-sign">{{{ govbr_header_sign }}}</div>
                 {{/has_govbr_header_sign}}
             </div>
+            {{#has_header_links}}
+            <!-- Desktop Links -->
+            <div class="header-links d-none d-lg-flex">
+                {{#header_links}}
+                <a href="{{{ url }}}" class="br-item" target="_blank" rel="noopener noreferrer">{{{ title }}}</a>
+                {{/header_links}}
+            </div>
+
+            <!-- Mobile Dropdown -->
+            <div class="dropdown d-lg-none ms-auto ms-auto">
+                <button class="btn btn-sm btn-link text-dark p-1" type="button" id="govbr-mobile-links" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Menu">
+                    <i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-end" aria-labelledby="govbr-mobile-links">
+                    {{#header_links}}
+                    <a class="dropdown-item" href="{{{ url }}}" target="_blank" rel="noopener noreferrer">{{{ title }}}</a>
+                    {{/header_links}}
+                </div>
+            </div>
+            {{/has_header_links}}
         </div>
     </div>
 </div>

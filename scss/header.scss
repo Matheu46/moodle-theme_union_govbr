@@ -72,12 +72,6 @@
             object-fit: contain;
         }
 
-        .br-divider.vertical {
-            height: 28px;
-            border-right: 1px solid var(--color-secondary-04, #ccc);
-            margin: 0 var(--spacing-scale-base, 0.5rem);
-        }
-
         .header-sign {
             color: var(--color-light, #333333);
             font-family: var(--font-family-base, 'Rawline', sans-serif);

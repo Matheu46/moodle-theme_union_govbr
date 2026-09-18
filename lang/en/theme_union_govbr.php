@@ -98,5 +98,8 @@ $string['footer_title'] = 'Footer institutional title';
 $string['footer_title_desc'] = 'Name of the institution or organization displayed alongside the logo in the footer header. If left blank, defaults to the site full name.';
 $string['govbr_header_sign'] = 'Barra Gov.br signature text';
 $string['govbr_header_sign_desc'] = 'Text displayed next to the logo on the top bar (e.g. Governo Federal, Ministério da Educação, etc).';
+$string['govbr_header_links'] = 'Barra Gov.br Links';
+$string['govbr_header_links_desc'] = 'List of links displayed on the right side of the Gov.br bar at the top of the page. Enter one per line in the format "Title|URL".';
+
 $string['pluginname'] = 'Union Gov.br';
 $string['region-side-pre'] = 'Right';

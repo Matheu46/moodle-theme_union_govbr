@@ -45,6 +45,15 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
+    // Setting: Barra Gov.br Links.
+    $name = 'theme_union_govbr/govbr_header_links';
+    $title = get_string('govbr_header_links', 'theme_union_govbr');
+    $description = get_string('govbr_header_links_desc', 'theme_union_govbr');
+    $default = "Acesso à informação|http://www.gov.br/acessoainformacao/\nParticipe|https://www.gov.br/pt-br/participacao-social/\nLegislação|http://www4.planalto.gov.br/legislacao/\nÓrgãos do Governo|http://www.gov.br/pt-br/orgaos-do-governo";
+    $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_RAW);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
     // Heading: Footer Settings.
     $settings->add(new admin_setting_heading(
         'theme_union_govbr_footer_heading',
