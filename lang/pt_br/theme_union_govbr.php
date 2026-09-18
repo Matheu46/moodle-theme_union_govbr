@@ -96,10 +96,13 @@ $string['footer_social_youtube'] = 'URL do YouTube';
 $string['footer_social_youtube_desc'] = 'Link para o canal institucional no YouTube.';
 $string['footer_title'] = 'Título institucional do rodapé';
 $string['footer_title_desc'] = 'Nome da instituição ou órgão que acompanha o logotipo no topo do rodapé. Se deixado em branco, utiliza o nome completo do site.';
-$string['govbr_header_sign'] = 'Texto de assinatura da Barra Gov.br';
-$string['govbr_header_sign_desc'] = 'Texto exibido ao lado do logo na barra superior (ex: Governo Federal, Ministério da Educação, etc).';
+$string['govbr_header_background'] = 'Cor de Fundo da Barra Gov.br';
+$string['govbr_header_background_dark'] = 'Fundo Escuro';
+$string['govbr_header_background_desc'] = 'Escolha entre o fundo claro padrão ou fundo escuro para a barra superior do Governo.';
+$string['govbr_header_background_light'] = 'Fundo Claro';
 $string['govbr_header_links'] = 'Links da Barra Gov.br';
 $string['govbr_header_links_desc'] = 'Lista de links exibidos ao lado direito da barra Gov.br no topo da página. Insira um por linha no formato "Título|URL".';
-
+$string['govbr_header_sign'] = 'Texto de assinatura da Barra Gov.br';
+$string['govbr_header_sign_desc'] = 'Texto exibido ao lado do logo na barra superior (ex: Governo Federal, Ministério da Educação, etc).';
 $string['pluginname'] = 'Union Gov.br';
 $string['region-side-pre'] = 'Direita';

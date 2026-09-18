@@ -1,4 +1,50 @@
-<div id="govbr-identity-bar" class="br-header govbr-identity-bar d-none" data-sticky="false">
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+    @template theme_union_govbr/barragovbr
+    @copyright 2026 Matheus Mathias
+    @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+
+    Template for the Gov.br Identity Bar.
+
+    Context variables required for this template:
+    * brasil_logo_url
+    * govbr_header_sign
+    * has_govbr_header_sign
+    * govbr_header_class
+    * header_links
+    * has_header_links
+
+    Example context (json):
+    {
+        "brasil_logo_url": "#",
+        "govbr_header_sign": "Governo Federal",
+        "has_govbr_header_sign": true,
+        "govbr_header_class": "dark-mode",
+        "has_header_links": true,
+        "header_links": [
+            {
+                "title": "Acesso à informação",
+                "url": "#"
+            }
+        ]
+    }
+}}
+
+<div id="govbr-identity-bar" class="br-header govbr-identity-bar {{govbr_header_class}} d-none" data-sticky="false">
     <div class="container-fluid">
         <div class="header-top">
             <div class="header-logo">
@@ -18,7 +64,7 @@
 
             <!-- Mobile Dropdown -->
             <div class="dropdown d-lg-none ms-auto ms-auto">
-                <button class="btn btn-sm btn-link text-dark p-1" type="button" id="govbr-mobile-links" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Menu">
+                <button class="btn btn-sm btn-link btn-header-mobile p-1" type="button" id="govbr-mobile-links" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Menu">
                     <i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-end" aria-labelledby="govbr-mobile-links">

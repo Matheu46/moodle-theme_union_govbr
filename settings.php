@@ -54,6 +54,19 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 
+    // Setting: Barra Gov.br Background Color.
+    $name = 'theme_union_govbr/govbr_header_background';
+    $title = get_string('govbr_header_background', 'theme_union_govbr');
+    $description = get_string('govbr_header_background_desc', 'theme_union_govbr');
+    $default = 'light';
+    $choices = [
+        'light' => get_string('govbr_header_background_light', 'theme_union_govbr'),
+        'dark' => get_string('govbr_header_background_dark', 'theme_union_govbr'),
+    ];
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
     // Heading: Footer Settings.
     $settings->add(new admin_setting_heading(
         'theme_union_govbr_footer_heading',

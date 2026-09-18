@@ -408,12 +408,17 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                 }
             }
 
+            $headerbg = get_config('theme_union_govbr', 'govbr_header_background');
+            $headerclass = ($headerbg === 'dark') ? 'dark-mode' : '';
+            $logoname = ($headerbg === 'dark') ? 'brasil_logo_white' : 'brasil_logo';
+
             $context = [
-                'brasil_logo_url' => $this->image_url('brasil_logo', 'theme_union_govbr')->out(),
+                'brasil_logo_url' => $this->image_url($logoname, 'theme_union_govbr')->out(),
                 'govbr_header_sign' => $headersign,
                 'has_govbr_header_sign' => !empty($headersign),
                 'header_links' => $header_links,
                 'has_header_links' => !empty($header_links),
+                'govbr_header_class' => $headerclass,
             ];
             $html = $this->render_from_template('theme_union_govbr/barragovbr', $context) . $html;
         }
