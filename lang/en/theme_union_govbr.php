@@ -104,5 +104,6 @@ $string['govbr_header_links'] = 'Barra Gov.br Links';
 $string['govbr_header_links_desc'] = 'List of links displayed on the right side of the Gov.br bar at the top of the page. Enter one per line in the format "Title|URL".';
 $string['govbr_header_sign'] = 'Barra Gov.br signature text';
 $string['govbr_header_sign_desc'] = 'Text displayed next to the logo on the top bar (e.g. Governo Federal, Ministério da Educação, etc).';
+$string['govbr_logo_alt'] = 'Federal Government of Brazil Logo';
 $string['pluginname'] = 'Union Gov.br';
 $string['region-side-pre'] = 'Right';

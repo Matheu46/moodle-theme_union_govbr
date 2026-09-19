@@ -525,6 +525,7 @@
             outline: none;
         }
 
+        /* stylelint-disable declaration-no-important */
         // Destructive / Status items in dropdowns (overrides Boost's text-color: #fff)
         &.text-danger,
         &.editing_delete {
@@ -588,6 +589,7 @@
                 }
             }
         }
+        /* stylelint-enable declaration-no-important */
 
         &.active,
         &:active {

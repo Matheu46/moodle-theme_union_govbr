@@ -198,7 +198,12 @@
     }
 
     .alert-heading,
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         color: inherit;
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-weight: var(--font-weight-semi-bold, 600);
@@ -481,10 +486,22 @@ table .alert,
     position: relative;
     width: 100%;
 
-    &.success { border-left-color: var(--success, #168821); }
-    &.danger, &.error { border-left-color: var(--danger, #e52207); }
-    &.warning { border-left-color: var(--warning, #ffcd07); }
-    &.info { border-left-color: var(--info, #155bcb); }
+    &.success {
+        border-left-color: var(--success, #168821);
+    }
+
+    &.danger,
+    &.error {
+        border-left-color: var(--danger, #e52207);
+    }
+
+    &.warning {
+        border-left-color: var(--warning, #ffcd07);
+    }
+
+    &.info {
+        border-left-color: var(--info, #155bcb);
+    }
 
     .notification-content {
         flex: 1;
@@ -504,8 +521,12 @@ table .alert,
         cursor: pointer;
         opacity: 0.7;
 
-        &:hover { opacity: 1; }
-        &:focus, &:focus-visible {
+        &:hover {
+            opacity: 1;
+        }
+
+        &:focus,
+        &:focus-visible {
             outline: 2px solid var(--focus-color, #ffcd07);
             outline-offset: 2px;
         }

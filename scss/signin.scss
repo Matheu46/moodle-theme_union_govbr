@@ -42,10 +42,11 @@
     border: 1px solid transparent;
     white-space: nowrap;
     vertical-align: middle;
-    transition: background-color 0.15s ease-in-out,
-                border-color 0.15s ease-in-out,
-                box-shadow 0.15s ease-in-out,
-                color 0.15s ease-in-out;
+    transition:
+        background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out,
+        color 0.15s ease-in-out;
 
     // Focus state (Gov.br yellow solid focus ring)
     &:focus,
@@ -195,9 +196,10 @@
             white-space: nowrap;
             border: 1px solid var(--interactive, #1351b4);
             cursor: pointer;
-            transition: background-color 0.15s ease-in-out,
-                        border-color 0.15s ease-in-out,
-                        box-shadow 0.15s ease-in-out;
+            transition:
+                background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out,
+                box-shadow 0.15s ease-in-out;
 
             // User silhouette icon mask
             &::before {
@@ -269,10 +271,11 @@
             border: 1px solid var(--color-secondary-04, #ccc);
             box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
             text-decoration: none;
-            transition: background-color 0.15s ease-in-out,
-                        border-color 0.15s ease-in-out,
-                        box-shadow 0.15s ease-in-out,
-                        color 0.15s ease-in-out;
+            transition:
+                background-color 0.15s ease-in-out,
+                border-color 0.15s ease-in-out,
+                box-shadow 0.15s ease-in-out,
+                color 0.15s ease-in-out;
 
             img {
                 width: 20px;
@@ -394,7 +397,7 @@ body.pagelayout-login:not(.loginbackgroundimage) #page .login-layout-left {
     background-image: url('[[pix:theme|illustrations/login/login]]');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: clamp(260px, 75%, 520px);
+    background-size: contain;
 }
 
 // Suppress Moodle Boost core's AI watermark unconditionally.
@@ -409,5 +412,5 @@ body.pagelayout-login.theme_boost_union-loginarrangement-legacy:not(.loginbackgr
     background-image: url('[[pix:theme|illustrations/login/login]]');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: clamp(320px, 45vw, 600px);
+    background-size: contain;
 }

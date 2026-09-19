@@ -48,7 +48,7 @@
     <div class="container-fluid">
         <div class="header-top">
             <div class="header-logo">
-                <img src="{{{ brasil_logo_url }}}" alt="Logo do Governo Federal">
+                <img src="{{{ brasil_logo_url }}}" alt="{{#str}} govbr_logo_alt, theme_union_govbr {{/str}}">
                 {{#has_govbr_header_sign}}
                 <span class="br-divider vertical"></span>
                 <div class="header-sign">{{{ govbr_header_sign }}}</div>
@@ -64,7 +64,7 @@
 
             <!-- Mobile Dropdown -->
             <div class="dropdown d-lg-none ms-auto ms-auto">
-                <button class="btn btn-sm btn-link btn-header-mobile p-1" type="button" id="govbr-mobile-links" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Menu">
+                <button class="btn btn-sm btn-link btn-header-mobile p-1" type="button" id="govbr-mobile-links" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="{{#str}} menu, core {{/str}}">
                     <i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-end" aria-labelledby="govbr-mobile-links">
