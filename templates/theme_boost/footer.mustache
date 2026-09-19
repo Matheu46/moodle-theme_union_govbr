@@ -13,11 +13,20 @@
 
     You should have received a copy of the GNU General Public License
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-}}
-{{!
+
     @template theme_boost/footer
+    @copyright 2026 Matheus Mathias
+    @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
 
     Official Gov.br Design System footer (.br-footer) for theme_union_govbr.
+
+    Example context (json):
+    {
+        "output": {
+            "footer_title": "Ministério da Educação",
+            "footer_background_class": "inverted"
+        }
+    }
 }}
 
 <footer id="page-footer" class="br-footer {{output.footer_background_class}}">
@@ -28,7 +37,7 @@
                     <img src="{{{ output.footer_custom_logo_url }}}" alt="{{{ output.footer_title }}}" />
                 {{/output.footer_has_custom_logo}}
                 {{^output.footer_has_custom_logo}}
-                    <h2 class="footer-title">{{{ output.footer_title }}}</h2>
+                    {{#output.footer_title}}<h2 class="footer-title">{{{ output.footer_title }}}</h2>{{/output.footer_title}}
                 {{/output.footer_has_custom_logo}}
             </a>
         </div>
@@ -99,8 +108,7 @@
                     </div>
                 {{/footershowlogininfo}}
 
-                <div class="tool_usertours-resettourcontainer"></div>
-                {{^footershowusertour}}<style>.tool_usertours-resettourcontainer{display:none;}</style>{{/footershowusertour}}
+                <div class="tool_usertours-resettourcontainer {{^footershowusertour}}d-none{{/footershowusertour}}"></div>
 
                 {{#footershowtelemetrytraceid}}
                     {{# output.telemetry_traceid }}

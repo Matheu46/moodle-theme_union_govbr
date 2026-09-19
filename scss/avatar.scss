@@ -153,9 +153,9 @@ img.userpicture,
     // Inverted / Dark Mode Variant (.inverted, .dark-mode)
     &.inverted,
     &.dark-mode {
-        background-color: var(--color-secondary-08, #333333);
-        color: var(--color-dark, #ffffff);
-        border: 1px solid var(--color-secondary-06, #888888);
+        background-color: var(--color-secondary-08, #333);
+        color: var(--color-dark, #fff);
+        border: 1px solid var(--color-secondary-06, #888);
     }
 }
 

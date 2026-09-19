@@ -49,7 +49,10 @@ if ($ADMIN->fulltree) {
     $name = 'theme_union_govbr/govbr_header_links';
     $title = get_string('govbr_header_links', 'theme_union_govbr');
     $description = get_string('govbr_header_links_desc', 'theme_union_govbr');
-    $default = "Acesso à informação|http://www.gov.br/acessoainformacao/\nParticipe|https://www.gov.br/pt-br/participacao-social/\nLegislação|http://www4.planalto.gov.br/legislacao/\nÓrgãos do Governo|http://www.gov.br/pt-br/orgaos-do-governo";
+    $default = "Acesso à informação|http://www.gov.br/acessoainformacao/\n" .
+        "Participe|https://www.gov.br/pt-br/participacao-social/\n" .
+        "Legislação|http://www4.planalto.gov.br/legislacao/\n" .
+        "Órgãos do Governo|http://www.gov.br/pt-br/orgaos-do-governo";
     $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_RAW);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
@@ -91,7 +94,14 @@ if ($ADMIN->fulltree) {
     $name = 'theme_union_govbr/footer_logo';
     $title = get_string('footer_logo', 'theme_union_govbr');
     $description = get_string('footer_logo_desc', 'theme_union_govbr');
-    $setting = new admin_setting_configstoredfile($name, $title, $description, 'footer_logo', 0, ['maxfiles' => 1, 'accepted_types' => 'web_image']);
+    $setting = new admin_setting_configstoredfile(
+        $name,
+        $title,
+        $description,
+        'footer_logo',
+        0,
+        ['maxfiles' => 1, 'accepted_types' => 'web_image']
+    );
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
 

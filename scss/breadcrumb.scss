@@ -42,14 +42,14 @@
         height: 4px;
     }
     &::-webkit-scrollbar-thumb {
-        background-color: var(--color-secondary-04, #cccccc);
+        background-color: var(--color-secondary-04, #ccc);
         border-radius: var(--surface-rounder-sm);
     }
 
     .breadcrumb-item {
         display: inline-flex;
         align-items: center;
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
         line-height: 1.5;
 
         a:not([aria-current="page"]) {
@@ -84,7 +84,7 @@
             text-decoration: none;
 
             &:hover {
-                color: var(--color-secondary-08, #333333);
+                color: var(--color-secondary-08, #333);
                 text-decoration: none;
             }
         }
@@ -95,7 +95,7 @@
             font-family: 'Font Awesome 6 Free', 'FontAwesome';
             font-weight: 900;
             font-size: var(--font-size-scale-down-02);
-            color: var(--color-secondary-04, #cccccc);
+            color: var(--color-secondary-04, #ccc);
             line-height: 0;
         }
 
@@ -154,13 +154,13 @@
             font-family: 'Font Awesome 6 Free', 'FontAwesome';
             font-weight: 900;
             font-size: 0.5625rem;
-            color: var(--color-secondary-04, #cccccc);
+            color: var(--color-secondary-04, #ccc);
             padding: 0 var(--spacing-scale-base, 0.5rem);
         }
 
         &[active],
         &:last-child span {
-            color: var(--color-secondary-08, #333333);
+            color: var(--color-secondary-08, #333);
             font-weight: var(--font-weight-semi-bold, 600);
         }
     }

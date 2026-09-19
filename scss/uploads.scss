@@ -69,7 +69,7 @@
         }
 
         &:disabled {
-            border-color: var(--color-secondary-04, #cccccc);
+            border-color: var(--color-secondary-04, #ccc);
             color: var(--color-secondary-05, #9e9d9d);
             cursor: not-allowed;
             opacity: var(--disabled, 0.45);
@@ -94,7 +94,7 @@
         .upload-item,
         .br-item {
             align-items: center;
-            background-color: var(--background-light, #ffffff);
+            background-color: var(--background-light, #fff);
             border: 1px solid var(--color-secondary-03, #ededed);
             border-radius: var(--surface-rounder-sm, 4px);
             display: flex;
@@ -115,12 +115,12 @@
                     font-family: var(--font-family-base, 'Rawline', sans-serif);
                     font-size: var(--font-size-scale-base, 0.875rem);
                     font-weight: var(--font-weight-medium, 500);
-                    color: var(--color-light, #333333);
+                    color: var(--color-light, #333);
                 }
 
                 .size {
                     font-size: var(--font-size-scale-down-01, 0.75rem);
-                    color: var(--color-secondary-06, #888888);
+                    color: var(--color-secondary-06, #888);
                 }
             }
 
@@ -135,7 +135,7 @@
 // Main container border and surface
 .filemanager-container,
 .filepicker-filelist {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     border: 1px solid var(--color-secondary-03, #ededed);
     border-radius: 0 0 var(--surface-rounder-md, 8px) var(--surface-rounder-md, 8px);
     box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
@@ -157,8 +157,8 @@
     .fp-btn-mkdir a,
     .fp-btn-download a {
         align-items: center;
-        background-color: var(--background-light, #ffffff);
-        border: 1px solid var(--color-secondary-04, #cccccc);
+        background-color: var(--background-light, #fff);
+        border: 1px solid var(--color-secondary-04, #ccc);
         border-radius: var(--surface-rounder-sm, 4px);
         color: var(--interactive, #1351b4);
         display: inline-flex;
@@ -193,10 +193,10 @@
         float: right;
 
         a {
-            background-color: var(--background-light, #ffffff);
-            border: 1px solid var(--color-secondary-04, #cccccc);
+            background-color: var(--background-light, #fff);
+            border: 1px solid var(--color-secondary-04, #ccc);
             border-radius: var(--surface-rounder-sm, 4px);
-            color: var(--color-secondary-07, #555555);
+            color: var(--color-secondary-07, #555);
             display: inline-block;
             margin-left: 2px;
             padding: 0.35rem 0.6rem;
@@ -221,7 +221,7 @@
 .filemanager.fm-noitems .fm-empty-container,
 .filepicker-filelist .dndupload-target,
 .filemanager-container .dndupload-target {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     border: 2px dashed var(--interactive, #1351b4);
     border-radius: var(--surface-rounder-md, 8px);
     bottom: 12px;
@@ -245,7 +245,7 @@
 
 // Drag & drop instructional text
 .dndupload-message {
-    color: var(--color-light, #333333);
+    color: var(--color-light, #333);
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: var(--font-size-scale-up-01, 1rem);
     font-weight: var(--font-weight-medium, 500);
@@ -272,7 +272,7 @@
 
 // Restrictions label (file size, allowed extensions)
 .filemanager .fp-restrictions {
-    color: var(--color-secondary-06, #888888);
+    color: var(--color-secondary-06, #888);
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: var(--font-size-scale-down-01, 0.75rem);
     margin-top: 0.35rem;
@@ -281,7 +281,7 @@
 // File Items & Thumbnails inside Filemanager
 .fp-iconview {
     .fp-thumbnail {
-        background-color: var(--background-light, #ffffff);
+        background-color: var(--background-light, #fff);
         border: 1px solid var(--color-secondary-03, #ededed);
         border-radius: var(--surface-rounder-sm, 4px);
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -298,8 +298,8 @@
     }
 
     .fp-filename-field .fp-filename {
-        background-color: var(--background-light, #ffffff);
-        color: var(--color-light, #333333);
+        background-color: var(--background-light, #fff);
+        color: var(--color-light, #333);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-down-01, 0.75rem);
         font-weight: var(--font-weight-medium, 500);
@@ -310,10 +310,10 @@
 input[type="file"].form-control,
 .form-file input[type="file"],
 .mform input[type="file"] {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     border: 1px dashed var(--interactive, #1351b4);
     border-radius: var(--surface-rounder-sm, 4px);
-    color: var(--color-light, #333333);
+    color: var(--color-light, #333);
     cursor: pointer;
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: var(--font-size-scale-base, 0.875rem);
@@ -327,7 +327,7 @@ input[type="file"].form-control,
         background-color: var(--interactive, #1351b4);
         border: none;
         border-radius: var(--surface-rounder-sm, 4px);
-        color: #ffffff;
+        color: #fff;
         cursor: pointer;
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-down-01, 0.75rem);
@@ -351,7 +351,7 @@ input[type="file"].form-control,
 
 // Moodle Filepicker Dialogue / Modal Integration
 .filepicker .moodle-dialogue-bd {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     border-radius: var(--surface-rounder-md, 8px);
     font-family: var(--font-family-base, 'Rawline', sans-serif);
 }
@@ -361,7 +361,7 @@ input[type="file"].form-control,
     border-right: 1px solid var(--color-secondary-03, #ededed);
 
     .fp-list .fp-repo a {
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-base, 0.875rem);
         font-weight: var(--font-weight-medium, 500);

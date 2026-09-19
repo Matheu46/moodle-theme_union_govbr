@@ -47,7 +47,7 @@
 
     // Menu Side Panel
     .menu-panel {
-        background-color: var(--background-light, #ffffff);
+        background-color: var(--background-light, #fff);
         box-shadow: var(--surface-shadow-lg, 0 6px 6px rgba(0, 0, 0, 0.16));
         display: flex;
         flex-direction: column;
@@ -68,7 +68,7 @@
         padding: var(--spacing-scale-2x, 1rem) var(--spacing-scale-3x, 1.25rem);
 
         .menu-title {
-            color: var(--color-light, #333333);
+            color: var(--color-light, #333);
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-size: var(--font-size-scale-up-01, 1rem);
             font-weight: var(--font-weight-semi-bold, 600);
@@ -81,7 +81,7 @@
             background: transparent;
             border: none;
             border-radius: var(--surface-rounder-pill, 999em);
-            color: var(--color-secondary-07, #555555);
+            color: var(--color-secondary-07, #555);
             cursor: pointer;
             display: inline-flex;
             height: 2.25rem;
@@ -92,7 +92,7 @@
 
             &:hover {
                 background-color: var(--color-secondary-02, #f8f8f8);
-                color: var(--color-light, #333333);
+                color: var(--color-light, #333);
             }
 
             &:focus,
@@ -129,7 +129,7 @@
         .menu-item {
             align-items: center;
             border-left: 4px solid transparent;
-            color: var(--color-light, #333333);
+            color: var(--color-light, #333);
             display: flex;
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-size: var(--font-size-scale-base, 0.875rem);
@@ -154,7 +154,7 @@
             }
 
             .support {
-                color: var(--color-secondary-06, #888888);
+                color: var(--color-secondary-06, #888);
                 font-size: var(--font-size-scale-down-01, 0.75rem);
                 transition: transform 0.2s ease-in-out;
             }
@@ -193,7 +193,7 @@
     // Menu Footer
     .menu-footer {
         border-top: 1px solid var(--color-secondary-03, #ededed);
-        color: var(--color-secondary-07, #555555);
+        color: var(--color-secondary-07, #555);
         font-size: var(--font-size-scale-down-01, 0.75rem);
         padding: var(--spacing-scale-2x, 1rem) var(--spacing-scale-3x, 1.25rem);
 
@@ -213,14 +213,14 @@
 // Moodle Lateral Drawers (.drawer, .drawer-left, .drawer-right)
 // --------------------------------------------------------------------------
 .drawer {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
     font-family: var(--font-family-base, 'Rawline', sans-serif);
 
     // Drawer Header
     .drawerheader {
         align-items: center;
-        background-color: var(--background-light, #ffffff);
+        background-color: var(--background-light, #fff);
         border-bottom: 1px solid var(--color-secondary-03, #ededed);
         display: flex;
         height: 4rem;
@@ -232,7 +232,7 @@
         h3,
         h4,
         h5 {
-            color: var(--color-light, #333333);
+            color: var(--color-light, #333);
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-size: var(--font-size-scale-base, 0.9375rem);
             font-weight: var(--font-weight-semi-bold, 600);
@@ -249,7 +249,7 @@
             .btn {
                 align-items: center;
                 border-radius: var(--surface-rounder-pill, 999em);
-                color: var(--color-secondary-07, #555555);
+                color: var(--color-secondary-07, #555);
                 display: inline-flex;
                 height: 2.25rem;
                 justify-content: center;
@@ -258,7 +258,7 @@
 
                 &:hover {
                     background-color: var(--color-secondary-02, #f8f8f8);
-                    color: var(--color-light, #333333);
+                    color: var(--color-light, #333);
                 }
 
                 &:focus,
@@ -293,7 +293,7 @@
         border: 1px solid transparent;
         border-left: 3px solid transparent;
         border-radius: var(--surface-rounder-sm, 4px);
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         display: flex;
         font-size: var(--font-size-scale-base, 0.875rem);
         font-weight: var(--font-weight-medium, 500);
@@ -303,7 +303,7 @@
         transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 
         .courseindex-link {
-            color: var(--color-light, #333333);
+            color: var(--color-light, #333);
             font-size: var(--font-size-scale-base, 0.875rem);
             font-weight: inherit;
             text-decoration: none;
@@ -316,7 +316,7 @@
         }
 
         .courseindex-chevron {
-            color: var(--color-secondary-06, #888888);
+            color: var(--color-secondary-06, #888);
             margin-right: 0.25rem;
             transition: color 0.15s ease-in-out, transform 0.15s ease-in-out;
 
@@ -364,7 +364,7 @@
             font-weight: var(--font-weight-semi-bold, 600);
 
             a {
-                color: var(--color-light, #333333);
+                color: var(--color-light, #333);
                 font-weight: var(--font-weight-semi-bold, 600);
             }
         }
@@ -396,7 +396,7 @@
 // Boost Union Offcanvas Drawer (#theme_boost_union-drawers-offcanvas)
 // --------------------------------------------------------------------------
 #theme_boost_union-drawers-offcanvas {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     box-shadow: var(--surface-shadow-lg, 0 6px 6px rgba(0, 0, 0, 0.16));
 
     .drawerheader {
@@ -408,7 +408,7 @@
 // Secondary Navigation / Course Context Tabs (.secondary-navigation)
 // --------------------------------------------------------------------------
 .secondary-navigation {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     border-bottom: 1px solid var(--color-secondary-03, #ededed);
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     padding-bottom: 0;
@@ -433,7 +433,7 @@
                 border: none;
                 border-bottom: 3px solid transparent;
                 border-radius: 0;
-                color: var(--color-light, #333333);
+                color: var(--color-light, #333);
                 font-family: var(--font-family-base, 'Rawline', sans-serif);
                 font-size: var(--font-size-scale-base, 0.875rem);
                 font-weight: var(--font-weight-medium, 500);
@@ -444,7 +444,7 @@
 
                 &:hover {
                     background-color: var(--color-secondary-02, #f8f8f8);
-                    border-bottom-color: var(--color-secondary-04, #cccccc);
+                    border-bottom-color: var(--color-secondary-04, #ccc);
                     color: var(--interactive, #1351b4);
                 }
 
@@ -469,7 +469,7 @@
             .dropdown {
                 .dropdown-toggle {
                     &::after {
-                        color: var(--color-secondary-07, #555555);
+                        color: var(--color-secondary-07, #555);
                     }
                 }
             }
@@ -481,7 +481,7 @@
 // Dropdown & Contextual Action Menus (.dropdown-menu, .moodle-actionmenu)
 // --------------------------------------------------------------------------
 .dropdown-menu {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     border: 1px solid var(--color-secondary-03, #ededed);
     border-radius: var(--surface-rounder-md, 8px);
     box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
@@ -493,7 +493,7 @@
     .dropdown-item {
         align-items: center;
         clear: both;
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         // display: flex;
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-base, 0.875rem);
@@ -605,7 +605,7 @@
     }
 
     .dropdown-header {
-        color: var(--color-secondary-07, #555555);
+        color: var(--color-secondary-07, #555);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-down-01, 0.75rem);
         font-weight: var(--font-weight-semi-bold, 600);

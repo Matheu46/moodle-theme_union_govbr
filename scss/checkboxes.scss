@@ -24,7 +24,7 @@
 
 // Gov.br Design System Custom Checkbox (.br-checkbox)
 .br-checkbox {
-    --checkbox-size:    24px;
+    --checkbox-size: 24px;
     --checkbox-size-sm: 20px;
     --checkbox-padding: var(--spacing-scale-base, 8px);
 
@@ -52,7 +52,7 @@
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-up-01, 1rem);
         font-weight: var(--font-weight-medium, 500);
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         line-height: 1.5;
         margin-bottom: 0;
         min-height: var(--checkbox-size);
@@ -64,8 +64,8 @@
 
     // Checkbox Box surface
     input + label::before {
-        background-color: var(--background-light, #ffffff);
-        border: 1px solid var(--border-color-alternative, #888888);
+        background-color: var(--background-light, #fff);
+        border: 1px solid var(--border-color-alternative, #888);
         border-radius: var(--surface-rounder-sm, 4px);
         content: "";
         height: var(--checkbox-size);
@@ -78,7 +78,7 @@
 
     // Hover state
     input:hover:not(:disabled) + label::before {
-        border-color: var(--color-secondary-07, #555555);
+        border-color: var(--color-secondary-07, #555);
         background-color: #fafafa;
         background-image: linear-gradient(rgba(19, 81, 180, 0.08), rgba(19, 81, 180, 0.08));
     }
@@ -93,8 +93,8 @@
 
     // Checked state: White background, Gov.br blue checkmark
     input:checked + label::before {
-        background-color: var(--background-light, #ffffff);
-        border-color: var(--border-color-alternative, #888888);
+        background-color: var(--background-light, #fff);
+        border-color: var(--border-color-alternative, #888);
     }
 
     input:checked + label::after {
@@ -118,7 +118,7 @@
 
     input:indeterminate + label::after,
     input[indeterminate] + label::after {
-        background-color: var(--background-light, #ffffff);
+        background-color: var(--background-light, #fff);
         content: "";
         height: 3px;
         left: 6px;
@@ -245,7 +245,7 @@
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-up-01, 1rem);
         font-weight: var(--font-weight-medium, 500);
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         margin-bottom: 0;
         line-height: 1.5;
         user-select: none;
@@ -259,11 +259,11 @@
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 14px 14px;
-    border: 1px solid var(--border-color-alternative, #888888);
+    border: 1px solid var(--border-color-alternative, #888);
     border-radius: var(--surface-rounder-sm, 4px);
     cursor: pointer;
     display: inline-block;
@@ -279,7 +279,7 @@
 
     // Hover state
     &:not(:disabled):hover {
-        border-color: var(--color-secondary-07, #555555);
+        border-color: var(--color-secondary-07, #555);
         background-color: #fafafa;
     }
 
@@ -292,10 +292,10 @@
         outline: none;
     }
 
-    // Checked state: White background, Gov.br interactive blue checkmark (#1351b4)
+    /* stylelint-disable function-url-scheme-disallowed-list */
     &:checked {
-        background-color: var(--background-light, #ffffff);
-        border-color: var(--border-color-alternative, #888888);
+        background-color: var(--background-light, #fff);
+        border-color: var(--border-color-alternative, #888);
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%231351b4' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M3.5 8.5l3 3 6-7'/%3e%3c/svg%3e");
     }
 
@@ -303,7 +303,7 @@
     &:indeterminate {
         background-color: var(--interactive, #1351b4);
         border-color: var(--interactive, #1351b4);
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M4 8h8'/%3e%3c/svg%3e");
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M4 8h8'/%3e%3c/svg%3e");
     }
 
     // Disabled state
@@ -339,6 +339,7 @@
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23168821' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M3.5 8.5l3 3 6-7'/%3e%3c/svg%3e");
         }
     }
+    /* stylelint-enable function-url-scheme-disallowed-list */
 }
 
 // Moodle Form Checkbox Density / Small Variant
@@ -397,15 +398,15 @@ table,
 // Dark Mode / Inverted Checkbox (.br-checkbox.inverted, .br-checkbox.dark-mode)
 .br-checkbox.inverted,
 .br-checkbox.dark-mode {
-    color: var(--color-dark, #ffffff);
+    color: var(--color-dark, #fff);
 
     input + label {
-        color: var(--color-dark, #ffffff);
+        color: var(--color-dark, #fff);
     }
 
     input + label::before {
-        background-color: var(--color-secondary-09, #000000);
-        border-color: var(--color-secondary-06, #888888);
+        background-color: var(--color-secondary-09, #000);
+        border-color: var(--color-secondary-06, #888);
     }
 
     input:checked + label::after {

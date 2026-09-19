@@ -50,7 +50,7 @@
 
     // Dropdown list container
     .br-list {
-        background-color: var(--background-light, #ffffff);
+        background-color: var(--background-light, #fff);
         box-shadow: var(--select-shadow);
         border: 1px solid var(--color-secondary-03, #ededed);
         border-radius: var(--surface-rounder-md, 8px);
@@ -96,7 +96,7 @@
         --item-padding-y: var(--spacing-scale-2x, 16px);
         align-items: center;
         background-color: transparent;
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         cursor: pointer;
         display: flex;
         font-family: var(--font-family-base, 'Rawline', sans-serif);
@@ -169,12 +169,12 @@ select.singleselect {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-color: var(--background-light, #ffffff);
-    border-color: var(--border-color-alternative, #888888);
+    background-color: var(--background-light, #fff);
+    border-color: var(--border-color-alternative, #888);
     border-radius: var(--surface-rounder-sm, 4px);
     border-style: solid;
     border-width: 1px;
-    color: var(--color-light, #333333);
+    color: var(--color-light, #333);
     cursor: pointer;
     display: block;
     font-family: var(--font-family-base, 'Rawline', sans-serif);
@@ -189,6 +189,7 @@ select.singleselect {
     padding-top: 0;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, background-color 0.15s ease-in-out;
 
+    /* stylelint-disable function-url-scheme-disallowed-list */
     // Gov.br DS Chevron Down indicator (Gov.br primary interactive blue #1351b4)
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%231351b4' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
@@ -197,7 +198,7 @@ select.singleselect {
 
     // Hover state
     &:not(:disabled):hover {
-        border-color: var(--color-secondary-07, #555555);
+        border-color: var(--color-secondary-07, #555);
         background-color: #fafafa;
     }
 
@@ -220,6 +221,7 @@ select.singleselect {
         opacity: var(--disabled, 0.45);
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%239e9d9d' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
     }
+    /* stylelint-enable function-url-scheme-disallowed-list */
 }
 
 // Select Density / Size Variants
@@ -258,6 +260,7 @@ select.form-control-lg,
 select.form-control.is-invalid,
 .was-validated .form-select:invalid,
 .was-validated select.form-control:invalid {
+    /* stylelint-disable function-url-scheme-disallowed-list */
     border-color: var(--danger, #e52207);
     border-width: 2px;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e52207' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
@@ -278,6 +281,7 @@ select.form-control.is-valid,
     border-color: var(--success, #168821);
     border-width: 2px;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23168821' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    /* stylelint-enable function-url-scheme-disallowed-list */
 
     &:focus,
     &:focus-visible {
@@ -301,7 +305,7 @@ select[size]:not([size="1"]) {
         font-size: var(--font-size-scale-base, 0.875rem);
         border-radius: var(--surface-rounder-sm, 4px);
         margin-bottom: 2px;
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         cursor: pointer;
 
         &:hover {
@@ -353,7 +357,7 @@ select[size]:not([size="1"]) {
     border-radius: var(--surface-rounder-md, 8px);
     box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
     border: 1px solid var(--color-secondary-03, #ededed);
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     padding: var(--spacing-scale-base, 0.5rem) 0;
     max-height: 260px;
     overflow-y: auto;
@@ -363,7 +367,7 @@ select[size]:not([size="1"]) {
         padding: var(--spacing-scale-base, 0.5rem) var(--spacing-scale-2x, 1rem);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-base, 0.875rem);
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
         cursor: pointer;
         transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 
@@ -385,27 +389,28 @@ select[size]:not([size="1"]) {
 .br-select.dark-mode {
     .form-select,
     select.form-control {
-        background-color: var(--color-secondary-09, #000000);
-        border-color: var(--color-secondary-06, #888888);
-        color: var(--color-dark, #ffffff);
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+        background-color: var(--color-secondary-09, #000);
+        border-color: var(--color-secondary-06, #888);
+        color: var(--color-dark, #fff);
+        /* stylelint-disable-next-line function-url-scheme-disallowed-list */
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
     }
 
     .br-list {
-        background-color: var(--color-secondary-08, #333333);
-        border-color: var(--color-secondary-07, #555555);
+        background-color: var(--color-secondary-08, #333);
+        border-color: var(--color-secondary-07, #555);
 
         .br-item {
-            color: var(--color-dark, #ffffff);
+            color: var(--color-dark, #fff);
 
             &:hover:not([disabled]):not(.disabled) {
-                background-color: var(--color-secondary-07, #555555);
+                background-color: var(--color-secondary-07, #555);
             }
 
             &.selected,
             &[selected] {
                 background-color: var(--color-primary-darken-01, #0c326f);
-                color: var(--color-dark, #ffffff);
+                color: var(--color-dark, #fff);
             }
         }
     }

@@ -33,9 +33,9 @@
     --input-medium: 40px;
     --input-large: 48px;
     --input-highlight: 56px;
-    --color: var(--color-light, #333333);
+    --color: var(--color-light, #333);
     --color-rgb: var(--color-light-rgb, 51, 51, 51);
-    --text-color: var(--color-light, #333333);
+    --text-color: var(--color-light, #333);
     --interactive: var(--interactive-light, #1351b4);
     --interactive-rgb: var(--interactive-light-rgb, 19, 81, 180);
     --visited: var(--visited-light, #5992ed);
@@ -47,12 +47,12 @@
     position: relative;
 
     input {
-        background-color: var(--background-light, #ffffff);
-        border-color: var(--border-color-alternative, #888888);
+        background-color: var(--background-light, #fff);
+        border-color: var(--border-color-alternative, #888);
         border-radius: var(--surface-rounder-sm, 4px);
         border-style: var(--border-style, solid);
         border-width: var(--border-width, 1px);
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         display: block;
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-up-01, 1rem); // 16px
@@ -124,7 +124,7 @@
 
     .input-icon {
         align-items: center;
-        color: var(--border-color-alternative, #888888);
+        color: var(--border-color-alternative, #888);
         display: flex;
         height: var(--input-size);
         margin-left: var(--spacing-scale-baseh, 12px);
@@ -139,9 +139,9 @@
     // Button inside input
     .br-button {
         --button-size: var(--button-small, 32px);
-        --color: var(--color-light, #333333);
+        --color: var(--color-light, #333);
         --color-rgb: var(--color-light-rgb, 51, 51, 51);
-        --text-color: var(--color-light, #333333);
+        --text-color: var(--color-light, #333);
         --interactive: var(--interactive-light, #1351b4);
         --interactive-rgb: var(--interactive-light-rgb, 19, 81, 180);
         --visited: var(--visited-light, #5992ed);
@@ -256,7 +256,7 @@
     &.inverted label,
     &.dark-mode,
     &.dark-mode label {
-        --color: var(--color-dark, #ffffff);
+        --color: var(--color-dark, #fff);
         --focus-color: var(--focus-color-dark, #ffcd07);
     }
 }
@@ -271,12 +271,12 @@ input[type="number"],
 input[type="url"],
 input[type="tel"],
 input[type="date"] {
-    background-color: var(--background-light, #ffffff);
-    border-color: var(--border-color-alternative, #888888);
+    background-color: var(--background-light, #fff);
+    border-color: var(--border-color-alternative, #888);
     border-radius: var(--surface-rounder-sm, 4px);
     border-style: solid;
     border-width: 1px;
-    color: var(--color-light, #333333);
+    color: var(--color-light, #333);
     display: block;
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: var(--font-size-scale-up-01, 1rem); // 16px
@@ -299,7 +299,7 @@ input[type="date"] {
 
     // Hover state
     &:not(:disabled):hover {
-        border-color: var(--color-secondary-07, #555555);
+        border-color: var(--color-secondary-07, #555);
         background-image: linear-gradient(rgba(51, 51, 51, 0.04), rgba(51, 51, 51, 0.04));
     }
 
@@ -358,7 +358,7 @@ label,
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: var(--font-size-scale-base, 0.875rem);
     font-weight: var(--font-weight-medium, 500);
-    color: var(--color-secondary-08, #333333);
+    color: var(--color-secondary-08, #333);
     margin-bottom: var(--spacing-scale-half, 0.25rem);
     display: inline-block;
 
@@ -377,7 +377,7 @@ label,
 .text-muted,
 .help-block {
     font-size: var(--font-size-scale-down-01, 0.75rem);
-    color: var(--color-secondary-06, #888888);
+    color: var(--color-secondary-06, #888);
     margin-top: var(--spacing-scale-half, 0.25rem);
     display: block;
 }
@@ -428,8 +428,8 @@ label,
 .input-group {
     .input-group-text {
         background-color: var(--color-secondary-02, #f8f8f8);
-        border: 1px solid var(--border-color-alternative, #888888);
-        color: var(--color-secondary-07, #555555);
+        border: 1px solid var(--border-color-alternative, #888);
+        color: var(--color-secondary-07, #555);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-base, 0.875rem);
         padding: 0 0.875rem;
@@ -482,14 +482,14 @@ label,
 
     // Seamless integrated action button (replaces heavy secondary button)
     .toggle-sensitive-btn {
-        background-color: var(--background-light, #ffffff);
-        border: 1px solid var(--border-color-alternative, #888888);
+        background-color: var(--background-light, #fff);
+        border: 1px solid var(--border-color-alternative, #888);
         border-left: none;
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         border-top-right-radius: var(--surface-rounder-sm, 4px);
         border-bottom-right-radius: var(--surface-rounder-sm, 4px);
-        color: var(--color-secondary-07, #555555); // Overrides .btn-secondary color
+        color: var(--color-secondary-07, #555); // Overrides .btn-secondary color
         height: var(--input-medium, 40px);
         min-height: var(--input-medium, 40px);
         width: auto;
@@ -516,7 +516,7 @@ label,
 
         &:hover {
             background-color: var(--color-secondary-02, #f8f8f8);
-            border-color: var(--color-secondary-07, #555555);
+            border-color: var(--color-secondary-07, #555);
             border-left: none;
             color: var(--interactive, #1351b4);
 
@@ -547,12 +547,12 @@ label,
     // Hover on wrapper when not active
     &:not(:focus-within):hover {
         .form-control {
-            border-color: var(--color-secondary-07, #555555);
+            border-color: var(--color-secondary-07, #555);
             border-right: none;
         }
 
         .toggle-sensitive-btn {
-            border-color: var(--color-secondary-07, #555555);
+            border-color: var(--color-secondary-07, #555);
             border-left: none;
         }
     }
@@ -588,7 +588,7 @@ label,
     &.small-screens-only {
         @media (min-width: 576px) {
             .form-control {
-                border-right: 1px solid var(--border-color-alternative, #888888);
+                border-right: 1px solid var(--border-color-alternative, #888);
                 border-radius: var(--surface-rounder-sm, 4px);
             }
         }
@@ -629,7 +629,7 @@ label,
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-up-02, 1.125rem);
         font-weight: var(--font-weight-semi-bold, 600);
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
         border-bottom: 1px solid var(--color-secondary-03, #ededed);
         padding-bottom: var(--spacing-scale-base, 0.5rem);
         margin-bottom: var(--spacing-scale-2x, 1rem);

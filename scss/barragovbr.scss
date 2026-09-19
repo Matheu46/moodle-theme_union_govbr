@@ -34,7 +34,7 @@ $govbr-bar-height: 40px;
     width: 100%;
     height: $govbr-bar-height;
     z-index: 1040;
-    
+
     .header-top {
         display: flex;
         justify-content: space-between;
@@ -46,7 +46,7 @@ $govbr-bar-height: 40px;
     .header-logo {
         display: flex;
         align-items: center;
-        
+
         img {
             height: 24px;
             width: auto;
@@ -84,7 +84,8 @@ $govbr-bar-height: 40px;
             padding: 0 0.5rem;
             transition: color 0.15s ease-in-out;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 color: var(--interactive, #1351b4);
                 text-decoration: underline;
             }
@@ -96,16 +97,17 @@ $govbr-bar-height: 40px;
             margin-right: 0.25rem;
         }
     }
+
     .btn-header-mobile {
         color: #333;
     }
 
     &.dark-mode {
         background-color: var(--blue-warm-vivid-90, #0a1c36);
-        color: #ffffff;
+        color: #fff;
 
         .header-sign {
-            color: #ffffff;
+            color: #fff;
         }
 
         .br-divider.vertical {
@@ -114,9 +116,10 @@ $govbr-bar-height: 40px;
 
         .header-links {
             a {
-                color: #ffffff;
+                color: #fff;
 
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     color: var(--blue-warm-20, #c5d4eb);
                 }
             }
@@ -127,14 +130,14 @@ $govbr-bar-height: 40px;
         }
 
         .btn-header-mobile {
-            color: #ffffff;
+            color: #fff;
         }
     }
 }
 
 // Moodle's navbar remains fixed, but we push it down via JS offset.
 .navbar.fixed-top {
-    top: var(--govbr-offset, 0px);
+    top: var(--govbr-offset, 0);
 }
 
 body {
@@ -142,10 +145,12 @@ body {
 }
 
 // Push drawers elements down dynamically.
-.drawer-right, .drawer-left, [data-region=right-hand-drawer].drawer {
+.drawer-right,
+.drawer-left,
+[data-region="right-hand-drawer"].drawer {
     top: calc(#{$navbar-height} + var(--govbr-offset, 0px));
 }
 
-.drawer-toggles .drawer-toggler{
+.drawer-toggles .drawer-toggler {
     top: calc(#{$navbar-height} + var(--govbr-offset, 0px) + 1rem);
 }

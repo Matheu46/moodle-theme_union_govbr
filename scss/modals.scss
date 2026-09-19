@@ -48,7 +48,7 @@
     // Modal surface content
     .modal-content,
     &.br-modal {
-        background-color: var(--background-light, #ffffff);
+        background-color: var(--background-light, #fff);
         border: 1px solid var(--color-secondary-03, #ededed);
         border-radius: var(--surface-rounder-md, 8px);
         box-shadow: var(--surface-shadow-xl, 0 10px 30px rgba(0, 0, 0, 0.25));
@@ -59,7 +59,7 @@
 
 // Standalone Gov.br DS Modal (.br-modal)
 .br-modal {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     border: 1px solid var(--color-secondary-03, #ededed);
     border-radius: var(--surface-rounder-md, 8px);
     box-shadow: var(--surface-shadow-xl, 0 10px 30px rgba(0, 0, 0, 0.25));
@@ -76,18 +76,23 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--spacing-scale-3x, 1.25rem) var(--spacing-scale-4x, 1.5rem);
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     border-bottom: 1px solid transparent;
     border-top-left-radius: var(--surface-rounder-md, 8px);
     border-top-right-radius: var(--surface-rounder-md, 8px);
 
     // Modal title
     .modal-title,
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-up-03, 1.25rem); // 20px
         font-weight: var(--font-weight-semi-bold, 600);
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
         margin: 0;
         line-height: 1.4;
     }
@@ -123,7 +128,7 @@
     position: relative;
     flex: 1 1 auto;
     padding: var(--spacing-scale-4x, 1.5rem);
-    color: var(--color-secondary-08, #333333);
+    color: var(--color-secondary-08, #333);
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: var(--font-size-scale-base, 0.875rem); // 14px
     line-height: 1.5;
@@ -137,7 +142,7 @@
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: var(--color-secondary-04, #cccccc);
+            background-color: var(--color-secondary-04, #ccc);
             border-radius: 4px;
         }
     }
@@ -204,7 +209,7 @@
 
 // Legacy Moodle YUI Dialogues (.moodle-dialogue)
 .moodle-dialogue-base .moodle-dialogue-wrap {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     border: 1px solid var(--color-secondary-03, #ededed);
     border-radius: var(--surface-rounder-md, 8px);
     box-shadow: var(--surface-shadow-xl, 0 10px 30px rgba(0, 0, 0, 0.25));
@@ -212,15 +217,15 @@
 
     .moodle-dialogue-hd {
         padding: var(--spacing-scale-2x, 1rem) var(--spacing-scale-3x, 1.25rem);
-        background-color: var(--background-light, #ffffff);
+        background-color: var(--background-light, #fff);
         border-bottom: 1px solid var(--color-secondary-03, #ededed);
         font-weight: var(--font-weight-semi-bold, 600);
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
     }
 
     .moodle-dialogue-bd {
         padding: var(--spacing-scale-3x, 1.25rem);
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
         font-size: var(--font-size-scale-base, 0.875rem);
     }
 }

@@ -391,16 +391,16 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
             }
             $headersign = trim((string)$headersign);
 
-            // Parse header links
-            $links_raw = get_config('theme_union_govbr', 'govbr_header_links');
-            $header_links = [];
-            if (!empty($links_raw)) {
-                $lines = explode("\n", $links_raw);
+            // Parse header links.
+            $linksraw = get_config('theme_union_govbr', 'govbr_header_links');
+            $headerlinks = [];
+            if (!empty($linksraw)) {
+                $lines = explode("\n", $linksraw);
                 foreach ($lines as $line) {
                     $line = trim($line);
                     if (!empty($line) && strpos($line, '|') !== false) {
-                        list($title, $url) = explode('|', $line, 2);
-                        $header_links[] = [
+                        [$title, $url] = explode('|', $line, 2);
+                        $headerlinks[] = [
                             'title' => trim($title),
                             'url' => trim($url),
                         ];
@@ -416,8 +416,8 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
                 'brasil_logo_url' => $this->image_url($logoname, 'theme_union_govbr')->out(),
                 'govbr_header_sign' => $headersign,
                 'has_govbr_header_sign' => !empty($headersign),
-                'header_links' => $header_links,
-                'has_header_links' => !empty($header_links),
+                'header_links' => $headerlinks,
+                'has_header_links' => !empty($headerlinks),
                 'govbr_header_class' => $headerclass,
             ];
             $html = $this->render_from_template('theme_union_govbr/barragovbr', $context) . $html;
@@ -447,6 +447,11 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
         return ($setting === 'light') ? 'inverted' : '';
     }
 
+    /**
+     * Check if a custom logo is configured for the footer.
+     *
+     * @return bool
+     */
     public function footer_has_custom_logo(): bool {
         return !empty($this->footer_custom_logo_url());
     }

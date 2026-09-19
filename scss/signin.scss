@@ -68,12 +68,12 @@
     &:not(.secondary):not(.tertiary) {
         background-color: var(--interactive, #1351b4);
         border-color: var(--interactive, #1351b4);
-        color: #ffffff;
+        color: #fff;
 
         &:hover:not(:disabled) {
             background-color: var(--color-primary-darken-01, #0c326f);
             border-color: var(--color-primary-darken-01, #0c326f);
-            color: #ffffff;
+            color: #fff;
         }
 
         &:active:not(:disabled) {
@@ -145,12 +145,12 @@
         }
 
         &.secondary {
-            border-color: #ffffff;
-            color: #ffffff;
+            border-color: #fff;
+            color: #fff;
 
             &:hover:not(:disabled) {
                 background-color: rgba(255, 255, 255, 0.15);
-                color: #ffffff;
+                color: #fff;
             }
         }
     }
@@ -174,7 +174,7 @@
         .divider {
             height: 20px;
             margin: 0 var(--spacing-scale-base, 8px);
-            border-color: var(--color-secondary-04, #cccccc);
+            border-color: var(--color-secondary-04, #ccc);
         }
 
         a {
@@ -185,7 +185,7 @@
             height: var(--sign-in-height-header, 36px);
             padding: 0 var(--spacing-scale-2x, 16px);
             background-color: var(--interactive, #1351b4);
-            color: #ffffff;
+            color: #fff;
             border-radius: var(--surface-rounder-pill, 999em);
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-weight: var(--font-weight-semi-bold, 600);
@@ -206,8 +206,10 @@
                 width: 14px;
                 height: 14px;
                 background-color: currentColor;
+                /* stylelint-disable function-url-scheme-disallowed-list */
                 mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e%3cpath d='M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3 0 498.7 13.3 512 29.7 512h388.6c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3h-91.4z'/%3e%3c/svg%3e") no-repeat center / contain;
                 -webkit-mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3e%3cpath d='M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3 0 498.7 13.3 512 29.7 512h388.6c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3h-91.4z'/%3e%3c/svg%3e") no-repeat center / contain;
+                /* stylelint-enable function-url-scheme-disallowed-list */
                 flex-shrink: 0;
             }
 
@@ -215,7 +217,7 @@
             &:hover {
                 background-color: var(--color-primary-darken-01, #0c326f);
                 border-color: var(--color-primary-darken-01, #0c326f);
-                color: #ffffff;
+                color: #fff;
             }
 
             // Focus state
@@ -263,8 +265,8 @@
             font-weight: var(--font-weight-semi-bold, 600);
             font-size: var(--font-size-scale-base, 0.875rem);
             color: var(--interactive, #1351b4);
-            background-color: var(--background-light, #ffffff);
-            border: 1px solid var(--color-secondary-04, #cccccc);
+            background-color: var(--background-light, #fff);
+            border: 1px solid var(--color-secondary-04, #ccc);
             box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
             text-decoration: none;
             transition: background-color 0.15s ease-in-out,
@@ -297,18 +299,18 @@
     // Login Form Inputs (.form-control) - Overrides Boost's gray background ($login-input-bg: #f8f9fa)
     .login-form {
         .form-control {
-            background-color: var(--background-light, #ffffff);
-            border-color: var(--border-color-alternative, #888888);
-            color: var(--color-light, #333333);
+            background-color: var(--background-light, #fff);
+            border-color: var(--border-color-alternative, #888);
+            color: var(--color-light, #333);
 
             &:hover {
-                background-color: var(--background-light, #ffffff);
-                border-color: var(--color-secondary-07, #555555);
+                background-color: var(--background-light, #fff);
+                border-color: var(--color-secondary-07, #555);
             }
 
             &:focus,
             &:focus-visible {
-                background-color: var(--background-light, #ffffff);
+                background-color: var(--background-light, #fff);
                 border-color: var(--focus, #ffcd07);
                 box-shadow: 0 0 0 2px var(--focus, #ffcd07);
                 outline: none;
@@ -321,19 +323,19 @@
             }
 
             .toggle-sensitive-btn {
-                background-color: var(--background-light, #ffffff);
-                border-color: var(--border-color-alternative, #888888);
+                background-color: var(--background-light, #fff);
+                border-color: var(--border-color-alternative, #888);
                 border-left: none;
 
                 &:hover {
                     background-color: var(--color-secondary-02, #f8f8f8);
-                    border-color: var(--color-secondary-07, #555555);
+                    border-color: var(--color-secondary-07, #555);
                     border-left: none;
                 }
 
                 &:focus,
                 &:focus-visible {
-                    background-color: var(--background-light, #ffffff);
+                    background-color: var(--background-light, #fff);
                     border-color: var(--focus, #ffcd07);
                     border-left: none;
                     box-shadow: none;
@@ -347,7 +349,7 @@
         display: flex;
         align-items: center;
         text-align: center;
-        color: var(--color-secondary-07, #555555);
+        color: var(--color-secondary-07, #555);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-weight: var(--font-weight-medium, 500);
         font-size: var(--font-size-scale-base, 0.875rem);
@@ -373,11 +375,11 @@
 // Ensure login inputs are white even when .pagelayout-login is not on the parent
 .login-container .login-form {
     .form-control {
-        background-color: var(--background-light, #ffffff);
+        background-color: var(--background-light, #fff);
 
         &:hover,
         &:focus {
-            background-color: var(--background-light, #ffffff);
+            background-color: var(--background-light, #fff);
         }
     }
 }

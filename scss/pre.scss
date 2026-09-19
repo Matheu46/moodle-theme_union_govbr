@@ -5,66 +5,77 @@
     font-weight: 400;
     src: local('Rawline'), url('https://fonts.cdnfonts.com/s/19714/rawline-400.woff') format('woff');
 }
+
 @font-face {
     font-family: 'Rawline';
     font-style: italic;
     font-weight: 400;
     src: local('Rawline'), url('https://fonts.cdnfonts.com/s/19714/rawline-400i.woff') format('woff');
 }
+
 @font-face {
     font-family: 'Rawline';
     font-style: normal;
     font-weight: 300;
     src: local('Rawline'), url('https://fonts.cdnfonts.com/s/19714/rawline-300.woff') format('woff');
 }
+
 @font-face {
     font-family: 'Rawline';
     font-style: italic;
     font-weight: 300;
     src: local('Rawline'), url('https://fonts.cdnfonts.com/s/19714/rawline-300i.woff') format('woff');
 }
+
 @font-face {
     font-family: 'Rawline';
     font-style: normal;
     font-weight: 500;
     src: local('Rawline'), url('https://fonts.cdnfonts.com/s/19714/rawline-500.woff') format('woff');
 }
+
 @font-face {
     font-family: 'Rawline';
     font-style: italic;
     font-weight: 500;
     src: local('Rawline'), url('https://fonts.cdnfonts.com/s/19714/rawline-500i.woff') format('woff');
 }
+
 @font-face {
     font-family: 'Rawline';
     font-style: normal;
     font-weight: 600;
     src: local('Rawline'), url('https://fonts.cdnfonts.com/s/19714/rawline-600.woff') format('woff');
 }
+
 @font-face {
     font-family: 'Rawline';
     font-style: italic;
     font-weight: 600;
     src: local('Rawline'), url('https://fonts.cdnfonts.com/s/19714/rawline-600i.woff') format('woff');
 }
+
 @font-face {
     font-family: 'Rawline';
     font-style: normal;
     font-weight: 700;
     src: local('Rawline'), url('https://fonts.cdnfonts.com/s/19714/rawline-700.woff') format('woff');
 }
+
 @font-face {
     font-family: 'Rawline';
     font-style: italic;
     font-weight: 700;
     src: local('Rawline'), url('https://fonts.cdnfonts.com/s/19714/rawline-700i.woff') format('woff');
 }
+
 @font-face {
     font-family: 'Rawline';
     font-style: normal;
     font-weight: 900;
     src: local('Rawline'), url('https://fonts.cdnfonts.com/s/19714/rawline-900.woff') format('woff');
 }
+
 @font-face {
     font-family: 'Rawline';
     font-style: italic;
@@ -102,18 +113,18 @@ $govbr-blue-warm-vivid-5:  #edf5ff;
 
 // Neutral Colors / Gray Scale
 $govbr-gray-90: #1b1b1b;
-$govbr-gray-80: #333333; // Main text
-$govbr-gray-70: #555555; // Secondary text
+$govbr-gray-80: #333; // Main text
+$govbr-gray-70: #555; // Secondary text
 $govbr-gray-60: #636363;
 $govbr-gray-50: #757575;
-$govbr-gray-40: #888888;
+$govbr-gray-40: #888;
 $govbr-gray-30: #adadad;
-$govbr-gray-20: #cccccc; // Default borders
+$govbr-gray-20: #ccc; // Default borders
 $govbr-gray-10: #e6e6e6; // Dividers
 $govbr-gray-5:  #f0f0f0; // Alternative backgrounds
 $govbr-gray-2:  #f8f8f8;
-$govbr-pure-0:  #ffffff;
-$govbr-pure-100: #000000;
+$govbr-pure-0:  #fff;
+$govbr-pure-100: #000;
 
 // Feedback Colors
 $govbr-green-cool-vivid-50: #168821; // Success
@@ -128,7 +139,7 @@ $govbr-highlight: #268744;
 // Bootstrap / Moodle Variables Mapping
 // =============================================================================
 $primary:       $govbr-blue-warm-vivid-70; // #1351b4
-$secondary:     $govbr-gray-20;            // #cccccc (Moodle expects a light gray here)
+$secondary:     $govbr-gray-20;            // #ccc (Moodle expects a light gray here)
 $success:       $govbr-green-cool-vivid-50;// #168821
 $info:          $govbr-blue-warm-vivid-60; // #155bcb
 $warning:       $govbr-yellow-vivid-20;    // #ffcd07
@@ -137,8 +148,8 @@ $light:         $govbr-gray-2;             // #f8f8f8
 $dark:          $govbr-blue-warm-vivid-90; // #071d41
 
 // Body colors and typography
-$body-bg:       $govbr-pure-0;             // #ffffff
-$body-color:    $govbr-gray-80;            // #333333
+$body-bg:       $govbr-pure-0;             // #fff
+$body-color:    $govbr-gray-80;            // #333
 $text-muted:    $govbr-gray-60;            // #636363
 
 // Links
@@ -147,15 +158,15 @@ $link-hover-color:      $govbr-blue-warm-vivid-80; // #0c326f
 $link-hover-decoration: underline;
 
 // Borders
-$border-color:  $govbr-gray-20;            // #cccccc
+$border-color:  $govbr-gray-20;            // #ccc
 
 // =============================================================================
 // Navbar & Navigation Variables (Synchronized to prevent moremenu autoCollapse bug)
 // =============================================================================
 $navbar-height: 72px;
 $moremenu-height: $navbar-height;
-$navbar-bg: $govbr-pure-0;             // #ffffff
-$navbar-color: $govbr-gray-80;          // #333333
+$navbar-bg: $govbr-pure-0;             // #fff
+$navbar-color: $govbr-gray-80;          // #333
 $navbar-border-color: $govbr-gray-10;   // #e6e6e6
 
 
@@ -251,7 +262,7 @@ $modal-content-border-radius:   $surface-rounder-md;
 $modal-content-border-color:    #ededed;
 $modal-content-box-shadow-xs:   $surface-shadow-lg;
 $modal-content-box-shadow-sm-up: 0 10px 30px rgba(0, 0, 0, 0.25);
-$modal-backdrop-bg:             #000000;
+$modal-backdrop-bg:             #000;
 $modal-backdrop-opacity:        0.45;
 $modal-header-border-color:     transparent;
 $modal-header-padding:          1.25rem 1.5rem;
@@ -265,7 +276,7 @@ $modal-footer-margin-between:   0.75rem;
 $input-border-radius:            $surface-rounder-sm; // 4px (Gov.br default)
 $input-border-radius-sm:         $surface-rounder-sm; // 4px
 $input-border-radius-lg:         $surface-rounder-md; // 8px (Input Destaque)
-$input-border-color:             $govbr-gray-20;      // #cccccc
+$input-border-color:             $govbr-gray-20;      // #ccc
 $input-focus-border-color:       $govbr-blue-warm-vivid-70; // #1351b4
 $input-focus-box-shadow:         none;
 $input-placeholder-color:        $govbr-gray-50;      // #757575
@@ -273,7 +284,7 @@ $input-disabled-bg:              $govbr-gray-2;       // #f8f8f8
 $input-disabled-border-color:    $govbr-gray-10;      // #e6e6e6
 
 $form-select-border-radius:      $surface-rounder-sm;       // 4px
-$form-select-border-color:       $govbr-gray-40;            // #888888
+$form-select-border-color:       $govbr-gray-40;            // #888
 $form-select-focus-border-color: $govbr-yellow-vivid-20;    // #ffcd07
 $form-select-focus-box-shadow:   0 0 0 2px $govbr-yellow-vivid-20;
 $form-select-disabled-bg:        $govbr-gray-2;             // #f8f8f8
@@ -285,12 +296,12 @@ $form-check-input-width:                  1.5rem;                    // 24px
 $form-check-min-height:                   1.5rem;                    // 24px
 $form-check-padding-start:                2rem;
 $form-check-input-border-radius:          $surface-rounder-sm;       // 4px
-$form-check-input-bg:                     $govbr-pure-0;             // #ffffff
-$form-check-input-border:                 1px solid $govbr-gray-40;  // #888888
+$form-check-input-bg:                     $govbr-pure-0;             // #fff
+$form-check-input-border:                 1px solid $govbr-gray-40;  // #888
 $form-check-input-focus-border:           $govbr-yellow-vivid-20;    // #ffcd07
 $form-check-input-focus-box-shadow:       0 0 0 2px $govbr-yellow-vivid-20;
-$form-check-input-checked-bg-color:       $govbr-pure-0;             // #ffffff (Gov.br checkbox stays white)
-$form-check-input-checked-border-color:   $govbr-gray-40;            // #888888
+$form-check-input-checked-bg-color:       $govbr-pure-0;             // #fff (Gov.br checkbox stays white)
+$form-check-input-checked-border-color:   $govbr-gray-40;            // #888
 $form-check-input-checked-color:          $govbr-blue-warm-vivid-70; // #1351b4 (Checkmark color)
 $form-check-input-indeterminate-bg-color: $govbr-blue-warm-vivid-70; // #1351b4
 $form-check-input-disabled-opacity:       0.45;
@@ -318,30 +329,30 @@ $alert-border-width:     1px;
 // Filemanager & Drag-and-Drop Upload Variables
 // =============================================================================
 $filemanager-dnd-border-color:               $govbr-blue-warm-vivid-70; // #1351b4
-$filemanager-dnd-upload-target-bg:           $govbr-pure-0;             // #ffffff
+$filemanager-dnd-upload-target-bg:           $govbr-pure-0;             // #fff
 $filemanager-dnd-upload-target-border-color: $govbr-blue-warm-vivid-70; // #1351b4
 $filemanager-dnd-upload-target-shadow:       $govbr-blue-warm-vivid-10; // #d4e5ff
 $filemanager-dnd-upload-over-bg:             $govbr-blue-warm-vivid-5;  // #eff6fb
 $filemanager-dnd-upload-over-border-color:   $govbr-blue-warm-vivid-70; // #1351b4
-$filemanager-picker-bg:                     $govbr-pure-0;             // #ffffff
+$filemanager-picker-bg:                     $govbr-pure-0;             // #fff
 $filemanager-picker-active-bg:              $govbr-blue-warm-vivid-10; // #d4e5ff
 
 // =============================================================================
 // Bootstrap Tooltip & Popover Variables
 // =============================================================================
 $tooltip-bg:             $govbr-blue-warm-vivid-70; // #1351b4 (Gov.br primary blue)
-$tooltip-color:          $govbr-pure-0;             // #ffffff
+$tooltip-color:          $govbr-pure-0;             // #fff
 $tooltip-border-radius:  $surface-rounder-sm;       // 4px
 $tooltip-font-size:      0.75rem;                   // 12px
 $tooltip-padding-y:      0.4rem;
 $tooltip-padding-x:      0.75rem;
 
-$popover-bg:             $govbr-pure-0;             // #ffffff
+$popover-bg:             $govbr-pure-0;             // #fff
 $popover-border-color:   $govbr-gray-10;            // #e6e6e6
 $popover-border-radius:  $surface-rounder-md;       // 8px
-$popover-header-bg:      $govbr-pure-0;             // #ffffff
-$popover-header-color:   $govbr-gray-80;            // #333333
-$popover-body-color:     $govbr-gray-80;            // #333333
+$popover-header-bg:      $govbr-pure-0;             // #fff
+$popover-header-color:   $govbr-gray-80;            // #333
+$popover-body-color:     $govbr-gray-80;            // #333
 $popover-box-shadow:     0 3px 6px rgba(0, 0, 0, 0.16);
 
 // =============================================================================
@@ -349,7 +360,7 @@ $popover-box-shadow:     0 3px 6px rgba(0, 0, 0, 0.16);
 // =============================================================================
 $badge-font-size:                   0.75rem;                   // 12px
 $badge-font-weight:                 500;                       // Medium
-$badge-color:                       $govbr-pure-0;             // #ffffff
+$badge-color:                       $govbr-pure-0;             // #fff
 $badge-padding-y:                   0.3em;
 $badge-padding-x:                   0.65em;
 $badge-border-radius:               $surface-rounder-pill;     // 999em
@@ -357,14 +368,14 @@ $badge-border-radius:               $surface-rounder-pill;     // 999em
 // =============================================================================
 // Bootstrap Dropdown & Action Menu Variables
 // =============================================================================
-$dropdown-bg:                       $govbr-pure-0;             // #ffffff
+$dropdown-bg:                       $govbr-pure-0;             // #fff
 $dropdown-border-color:             #ededed;
 $dropdown-border-radius:            $surface-rounder-md;       // 8px
 $dropdown-box-shadow:               0 3px 6px rgba(0, 0, 0, 0.16);
-$dropdown-link-color:               $govbr-gray-80;            // #333333
+$dropdown-link-color:               $govbr-gray-80;            // #333
 $dropdown-link-hover-color:         $govbr-blue-warm-vivid-70; // #1351b4
 $dropdown-link-hover-bg:            $govbr-gray-2;             // #f8f8f8
-$dropdown-link-active-color:        $govbr-pure-0;             // #ffffff
+$dropdown-link-active-color:        $govbr-pure-0;             // #fff
 $dropdown-link-active-bg:           $govbr-blue-warm-vivid-70; // #1351b4
 $dropdown-item-padding-y:           0.5rem;
 $dropdown-item-padding-x:           1rem;
@@ -376,7 +387,7 @@ $drawer-shadow-color:               rgba(0, 0, 0, 0.16);
 $courseindex-item-padding-y:        0.5rem;
 $courseindex-item-padding-x:        0.75rem;
 $courseindex-item-radius:           $surface-rounder-sm;       // 4px
-$courseindex-link-color:            $govbr-gray-80;            // #333333
+$courseindex-link-color:            $govbr-gray-80;            // #333
 $courseindex-link-hover-color:      $govbr-blue-warm-vivid-70; // #1351b4
 $courseindex-item-hover-bg:         $govbr-gray-2;             // #f8f8f8
 $courseindex-item-active-bg:        #edf5ff;
@@ -391,11 +402,3 @@ $nav-tabs-border-color:             #ededed;
 $nav-tabs-link-active-color:        $govbr-blue-warm-vivid-70; // #1351b4
 $nav-tabs-link-active-bg:           transparent;
 $nav-tabs-link-active-border-color: transparent transparent $govbr-blue-warm-vivid-70;
-
-
-
-
-
-
-
-

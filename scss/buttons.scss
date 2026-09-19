@@ -142,19 +142,19 @@
 .br-button[emphasis="primary"] {
     background-color: var(--interactive, #1351b4);
     border-color: var(--interactive, #1351b4);
-    color: #ffffff;
+    color: #fff;
 
     &:hover {
         background-color: var(--color-primary-darken-01, #0c326f);
         border-color: var(--color-primary-darken-01, #0c326f);
-        color: #ffffff;
+        color: #fff;
     }
 
     &:active,
     &.active {
         background-color: var(--color-primary-darken-02, #071d41);
         border-color: var(--color-primary-darken-02, #071d41);
-        color: #ffffff;
+        color: #fff;
     }
 }
 
@@ -163,7 +163,7 @@
 .btn-outline-primary,
 .br-button.secondary,
 .br-button[emphasis="secondary"] {
-    background-color: var(--color-secondary-01, #ffffff);
+    background-color: var(--color-secondary-01, #fff);
     border-color: var(--interactive, #1351b4);
     color: var(--interactive, #1351b4);
 
@@ -207,20 +207,20 @@
 
 // Neutral Outline: Neutral gray border and text
 .btn-outline-secondary {
-    border-color: var(--border-color, #cccccc);
-    color: var(--color-secondary-08, #333333);
+    border-color: var(--border-color, #ccc);
+    color: var(--color-secondary-08, #333);
 
     &:hover {
         background-color: var(--color-secondary-02, #f8f8f8);
-        border-color: var(--color-secondary-06, #888888);
-        color: var(--color-secondary-08, #333333);
+        border-color: var(--color-secondary-06, #888);
+        color: var(--color-secondary-08, #333);
     }
 
     &:active,
     &.active {
         background-color: var(--color-secondary-03, #ededed);
-        border-color: var(--color-secondary-07, #555555);
-        color: var(--color-secondary-09, #000000);
+        border-color: var(--color-secondary-07, #555);
+        color: var(--color-secondary-09, #000);
     }
 }
 
@@ -229,24 +229,24 @@
 .br-button[emphasis="danger"] {
     background-color: var(--danger, #e52207);
     border-color: var(--danger, #e52207);
-    color: #ffffff;
+    color: #fff;
 
     &:hover {
         background-color: var(--red-vivid-60, #b50909);
         border-color: var(--red-vivid-60, #b50909);
-        color: #ffffff;
+        color: #fff;
     }
 
     &:active,
     &.active {
         background-color: var(--red-vivid-70, #8b0a03);
         border-color: var(--red-vivid-70, #8b0a03);
-        color: #ffffff;
+        color: #fff;
     }
 }
 
 .btn-outline-danger {
-    background-color: var(--color-secondary-01, #ffffff);
+    background-color: var(--color-secondary-01, #fff);
     border-color: var(--danger, #e52207);
     color: var(--danger, #e52207);
 
@@ -269,19 +269,19 @@
 .br-button[emphasis="success"] {
     background-color: var(--success, #168821);
     border-color: var(--success, #168821);
-    color: #ffffff;
+    color: #fff;
 
     &:hover {
         background-color: var(--green-cool-vivid-60, #216e1f);
         border-color: var(--green-cool-vivid-60, #216e1f);
-        color: #ffffff;
+        color: #fff;
     }
 
     &:active,
     &.active {
         background-color: var(--green-cool-vivid-70, #154c21);
         border-color: var(--green-cool-vivid-70, #154c21);
-        color: #ffffff;
+        color: #fff;
     }
 }
 
@@ -290,19 +290,19 @@
 .br-button[emphasis="warning"] {
     background-color: var(--warning, #ffcd07);
     border-color: var(--warning, #ffcd07);
-    color: var(--color-secondary-08, #333333);
+    color: var(--color-secondary-08, #333);
 
     &:hover {
         background-color: var(--yellow-vivid-30, #ddaa01);
         border-color: var(--yellow-vivid-30, #ddaa01);
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
     }
 
     &:active,
     &.active {
         background-color: var(--yellow-vivid-40, #b38c00);
         border-color: var(--yellow-vivid-40, #b38c00);
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
     }
 }
 
@@ -310,52 +310,52 @@
 .btn-info {
     background-color: var(--info, #155bcb);
     border-color: var(--info, #155bcb);
-    color: #ffffff;
+    color: #fff;
 
     &:hover {
         background-color: var(--blue-warm-vivid-70, #1351b4);
         border-color: var(--blue-warm-vivid-70, #1351b4);
-        color: #ffffff;
+        color: #fff;
     }
 }
 
 // Light & Dark
 .btn-light {
     background-color: var(--color-secondary-02, #f8f8f8);
-    border-color: var(--border-color, #cccccc);
-    color: var(--color-secondary-08, #333333);
+    border-color: var(--border-color, #ccc);
+    color: var(--color-secondary-08, #333);
 
     &:hover {
         background-color: var(--color-secondary-03, #ededed);
         border-color: var(--color-secondary-05, #9e9d9d);
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
     }
 }
 
 .btn-dark {
     background-color: var(--color-primary-darken-02, #071d41);
     border-color: var(--color-primary-darken-02, #071d41);
-    color: #ffffff;
+    color: #fff;
 
     &:hover {
-        background-color: var(--color-secondary-09, #000000);
-        border-color: var(--color-secondary-09, #000000);
-        color: #ffffff;
+        background-color: var(--color-secondary-09, #000);
+        border-color: var(--color-secondary-09, #000);
+        color: #fff;
     }
 }
 
 // Inverted (Dark backgrounds)
 .br-button.inverted,
 .inverted .br-button {
-    --interactive: var(--pure-0, #ffffff);
-    color: #ffffff;
-    border-color: #ffffff;
+    --interactive: var(--pure-0, #fff);
+    color: #fff;
+    border-color: #fff;
 
     &.primary,
     &[emphasis="primary"] {
-        background-color: #ffffff;
+        background-color: #fff;
         color: var(--color-primary-default, #1351b4);
-        border-color: #ffffff;
+        border-color: #fff;
 
         &:hover {
             background-color: var(--color-secondary-02, #f8f8f8);
@@ -365,8 +365,8 @@
     &.secondary,
     &[emphasis="secondary"] {
         background-color: transparent;
-        color: #ffffff;
-        border-color: #ffffff;
+        color: #fff;
+        border-color: #fff;
 
         &:hover {
             background-color: rgba(255, 255, 255, 0.15);
@@ -378,7 +378,7 @@
 // Moodle Course & Block Creation Buttons
 .btn-add-content {
     align-items: center;
-    background-color: var(--color-secondary-01, #ffffff);
+    background-color: var(--color-secondary-01, #fff);
     border: 2px dashed var(--interactive, #1351b4);
     border-radius: var(--surface-rounder-md, 8px);
     color: var(--interactive, #1351b4);
@@ -460,11 +460,11 @@
     &:hover {
         background-color: var(--interactive, #1351b4);
         border-color: var(--interactive, #1351b4);
-        color: #ffffff;
+        color: #fff;
 
         .icon,
         i {
-            color: #ffffff;
+            color: #fff;
         }
     }
 
@@ -478,7 +478,7 @@
     &.active {
         background-color: var(--color-primary-darken-01, #0c326f);
         border-color: var(--color-primary-darken-01, #0c326f);
-        color: #ffffff;
+        color: #fff;
     }
 }
 

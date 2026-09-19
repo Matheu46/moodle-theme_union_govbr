@@ -26,10 +26,10 @@
 // Gov.br Design System Custom Message (.br-message)
 // --------------------------------------------------------------------------
 .br-message {
-    --message-background:   var(--background-light, #ffffff);
-    --message-color-icon:   var(--color-light, #333333);
-    --message-text:         var(--color-light, #333333);
-    --message-border-color: var(--color-secondary-04, #cccccc);
+    --message-background: var(--background-light, #fff);
+    --message-color-icon: var(--color-light, #333);
+    --message-text: var(--color-light, #333);
+    --message-border-color: var(--color-secondary-04, #ccc);
 
     align-items: flex-start;
     background-color: var(--message-background);
@@ -63,7 +63,7 @@
         padding: var(--spacing-scale-2x, 16px);
 
         .message-title {
-            color: var(--color-light, #333333);
+            color: var(--color-light, #333);
             display: block;
             font-weight: var(--font-weight-semi-bold, 600);
             margin-bottom: var(--spacing-scale-half, 0.25rem);
@@ -93,7 +93,7 @@
     .close {
         background: transparent;
         border: none;
-        color: var(--color-secondary-07, #555555);
+        color: var(--color-secondary-07, #555);
         cursor: pointer;
         margin-right: var(--spacing-scale-base, 8px);
         margin-top: var(--spacing-scale-base, 8px);
@@ -115,8 +115,8 @@
     &.is-success,
     &.success,
     &[success] {
-        --message-background:   var(--success-alternative, #e3f5e1);
-        --message-color-icon:   var(--success, #168821);
+        --message-background: var(--success-alternative, #e3f5e1);
+        --message-color-icon: var(--success, #168821);
         --message-border-color: rgba(var(--success-rgb, 22, 136, 33), 0.25);
     }
 
@@ -126,8 +126,8 @@
     &.is-error,
     &.error,
     &[danger] {
-        --message-background:   var(--danger-alternative, #fde0db);
-        --message-color-icon:   var(--danger, #e52207);
+        --message-background: var(--danger-alternative, #fde0db);
+        --message-color-icon: var(--danger, #e52207);
         --message-border-color: rgba(var(--danger-rgb, 229, 34, 7), 0.25);
     }
 
@@ -135,8 +135,8 @@
     &.is-warning,
     &.warning,
     &[warning] {
-        --message-background:   var(--warning-alternative, #fff5c2);
-        --message-color-icon:   #c2850c;
+        --message-background: var(--warning-alternative, #fff5c2);
+        --message-color-icon: #c2850c;
         --message-border-color: rgba(var(--warning-rgb, 255, 205, 7), 0.4);
     }
 
@@ -144,8 +144,8 @@
     &.is-info,
     &.info,
     &[info] {
-        --message-background:   var(--info-alternative, #dbe8fb);
-        --message-color-icon:   var(--info, #155bcb);
+        --message-background: var(--info-alternative, #dbe8fb);
+        --message-color-icon: var(--info, #155bcb);
         --message-border-color: rgba(var(--info-rgb, 21, 91, 203), 0.25);
     }
 }
@@ -163,7 +163,7 @@
     line-height: 1.5;
     margin-bottom: var(--spacing-scale-3x, 1.25rem);
     padding-bottom: 1rem;
-    padding-left: 3.25rem; // Space for official Gov.br SVG status icon
+    padding-left: 3.25rem;
     padding-right: 1.25rem;
     padding-top: 1rem;
     position: relative;
@@ -197,7 +197,6 @@
         }
     }
 
-    // Alert headings
     .alert-heading,
     h1, h2, h3, h4, h5, h6 {
         color: inherit;
@@ -206,7 +205,6 @@
         margin-bottom: 0.35rem;
     }
 
-    // Links inside alerts
     a,
     .alert-link {
         color: inherit;
@@ -218,7 +216,6 @@
         }
     }
 
-    // Close button (.btn-close, .close)
     .btn-close,
     .close {
         background-size: 0.85rem;
@@ -243,66 +240,63 @@
         }
     }
 
-    // Success Alert (.alert-success)
+    /* stylelint-disable function-url-scheme-disallowed-list */
     &.alert-success {
         background-color: var(--success-alternative, #e3f5e1);
         border-color: rgba(var(--success-rgb, 22, 136, 33), 0.25);
         border-left-color: var(--success, #168821);
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
 
         &::before {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23168821'%3e%3cpath d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z'/%3e%3c/svg%3e");
         }
     }
 
-    // Danger / Error Alert (.alert-danger, .alert-error)
     &.alert-danger,
     &.alert-error {
         background-color: var(--danger-alternative, #fde0db);
         border-color: rgba(var(--danger-rgb, 229, 34, 7), 0.25);
         border-left-color: var(--danger, #e52207);
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
 
         &::before {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e52207'%3e%3cpath d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z'/%3e%3c/svg%3e");
         }
     }
 
-    // Warning Alert (.alert-warning)
     &.alert-warning {
         background-color: var(--warning-alternative, #fff5c2);
         border-color: rgba(var(--warning-rgb, 255, 205, 7), 0.4);
         border-left-color: #c2850c;
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
 
         &::before {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23c2850c'%3e%3cpath d='M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z'/%3e%3c/svg%3e");
         }
     }
 
-    // Info Alert (.alert-info)
     &.alert-info {
         background-color: var(--info-alternative, #dbe8fb);
         border-color: rgba(var(--info-rgb, 21, 91, 203), 0.25);
         border-left-color: var(--info, #155bcb);
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
 
         &::before {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23155bcb'%3e%3cpath d='M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z'/%3e%3c/svg%3e");
         }
     }
 
-    // Secondary Alert (.alert-secondary)
     &.alert-secondary {
         background-color: var(--color-secondary-02, #f8f8f8);
         border-color: var(--color-secondary-03, #ededed);
-        border-left-color: var(--color-secondary-06, #888888);
-        color: var(--color-light, #333333);
+        border-left-color: var(--color-secondary-06, #888);
+        color: var(--color-light, #333);
 
         &::before {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23888888'%3e%3cpath d='M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z'/%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23888'%3e%3cpath d='M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z'/%3e%3c/svg%3e");
         }
     }
+    /* stylelint-enable function-url-scheme-disallowed-list */
 }
 
 // When alert is applied directly to a paragraph (<p class="alert ...">)
@@ -334,12 +328,12 @@ table .alert,
 // Reference: https://www.gov.br/ds/components/notification?tab=visao-geral
 // --------------------------------------------------------------------------
 .toast {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     border: 1px solid var(--color-secondary-03, #ededed);
     border-left: 4px solid var(--notification-border-color, var(--interactive, #1351b4));
     border-radius: var(--surface-rounder-md, 8px);
     box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
-    color: var(--color-light, #333333);
+    color: var(--color-light, #333);
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: var(--font-size-scale-base, 0.875rem);
     max-width: 420px;
@@ -349,7 +343,7 @@ table .alert,
     // Semantic Variants (.toast-success, .toast-danger, .toast-warning, .toast-info)
     &.toast-success {
         --notification-border-color: var(--success, #168821);
-        --notification-icon-color:   var(--success, #168821);
+        --notification-icon-color: var(--success, #168821);
         border-left-color: var(--success, #168821);
 
         .toast-body:before {
@@ -360,7 +354,7 @@ table .alert,
     &.toast-danger,
     &.toast-error {
         --notification-border-color: var(--danger, #e52207);
-        --notification-icon-color:   var(--danger, #e52207);
+        --notification-icon-color: var(--danger, #e52207);
         border-left-color: var(--danger, #e52207);
 
         .toast-body:before {
@@ -370,7 +364,7 @@ table .alert,
 
     &.toast-warning {
         --notification-border-color: var(--warning, #ffcd07);
-        --notification-icon-color:   #c2850c; // High contrast yellow/gold for icons on white
+        --notification-icon-color: #c2850c; // High contrast yellow/gold for icons on white
         border-left-color: var(--warning, #ffcd07);
 
         .toast-body:before {
@@ -380,7 +374,7 @@ table .alert,
 
     &.toast-info {
         --notification-border-color: var(--info, #155bcb);
-        --notification-icon-color:   var(--info, #155bcb);
+        --notification-icon-color: var(--info, #155bcb);
         border-left-color: var(--info, #155bcb);
 
         .toast-body:before {
@@ -391,19 +385,19 @@ table .alert,
     .toast-header {
         background-color: transparent;
         border-bottom: 1px solid var(--color-secondary-03, #ededed);
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         padding: 0.75rem 1rem 0.5rem 1rem;
 
         .toast-title {
-            color: var(--color-light, #333333);
+            color: var(--color-light, #333);
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-size: var(--font-size-scale-base, 0.875rem);
             font-weight: var(--font-weight-semi-bold, 600);
         }
 
         .toast-subtitle {
-            color: var(--color-secondary-07, #555555);
+            color: var(--color-secondary-07, #555);
             font-size: var(--font-size-scale-down-01, 0.75rem);
             font-weight: var(--font-weight-regular, 400);
         }
@@ -411,7 +405,7 @@ table .alert,
 
     .toast-body {
         align-items: flex-start;
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-base, 0.875rem);
         line-height: 1.45;
@@ -428,7 +422,7 @@ table .alert,
         }
 
         .toast-message {
-            color: var(--color-light, #333333);
+            color: var(--color-light, #333);
             flex: 1;
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-weight: var(--font-weight-regular, 400);
@@ -450,7 +444,7 @@ table .alert,
         align-self: flex-start;
         background-size: 0.75rem;
         border-radius: 50%;
-        color: var(--color-secondary-07, #555555);
+        color: var(--color-secondary-07, #555);
         cursor: pointer;
         opacity: 0.7;
         padding: 0.4rem;
@@ -473,12 +467,12 @@ table .alert,
 
 // Gov.br DS Direct Component Support (.br-notification)
 .br-notification {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     border: 1px solid var(--color-secondary-03, #ededed);
     border-left: 4px solid var(--interactive, #1351b4);
     border-radius: var(--surface-rounder-md, 8px);
     box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
-    color: var(--color-light, #333333);
+    color: var(--color-light, #333);
     display: flex;
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: var(--font-size-scale-base, 0.875rem);
@@ -497,7 +491,7 @@ table .alert,
     }
 
     .notification-title {
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         display: block;
         font-weight: var(--font-weight-semi-bold, 600);
         margin-bottom: var(--spacing-scale-half, 0.25rem);
@@ -506,7 +500,7 @@ table .alert,
     .close {
         background: transparent;
         border: none;
-        color: var(--color-secondary-07, #555555);
+        color: var(--color-secondary-07, #555);
         cursor: pointer;
         opacity: 0.7;
 

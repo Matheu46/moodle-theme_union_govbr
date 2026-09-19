@@ -25,7 +25,7 @@
 // Base Card Container (.card and .br-card)
 .card,
 .br-card {
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     border: 1px solid var(--color-secondary-03, #ededed);
     border-radius: var(--surface-rounder-md, 8px);
     box-shadow: var(--surface-shadow-sm, 0 1px 6px rgba(0, 0, 0, 0.16));
@@ -47,7 +47,7 @@
     &.clickable {
         &:hover {
             box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
-            border-color: var(--color-secondary-04, #cccccc);
+            border-color: var(--color-secondary-04, #ccc);
             transform: translateY(-2px);
         }
     }
@@ -63,7 +63,7 @@
 a.card:hover,
 a.br-card:hover {
     box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
-    border-color: var(--color-secondary-04, #cccccc);
+    border-color: var(--color-secondary-04, #ccc);
     transform: translateY(-2px);
     text-decoration: none;
 }
@@ -79,11 +79,16 @@ a.br-card:hover {
 
     // Card titles in header
     .card-title,
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-weight: 600;
         font-size: 1.125rem; // 18px
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
         margin: 0;
         line-height: 1.4;
     }
@@ -103,13 +108,13 @@ a.br-card:hover {
 .br-card .card-content {
     flex: 1 1 auto;
     padding: var(--spacing-scale-2xh, 1.25rem);
-    color: var(--color-secondary-08, #333333);
+    color: var(--color-secondary-08, #333);
     font-size: 0.875rem; // 14px
     line-height: 1.5;
 
     // Card text
     .card-text {
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
         margin-bottom: var(--spacing-scale-baseh, 0.75rem);
 
         &:last-child {
@@ -118,20 +123,20 @@ a.br-card:hover {
     }
 
     .text-muted {
-        color: var(--color-secondary-06, #888888);
+        color: var(--color-secondary-06, #888);
     }
 
     .card-title {
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-weight: 600;
         font-size: 1.125rem;
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
         margin-bottom: var(--spacing-scale-base, 0.5rem);
     }
 
     .card-subtitle {
         font-size: 0.8125rem;
-        color: var(--color-secondary-06, #888888);
+        color: var(--color-secondary-06, #888);
         margin-bottom: var(--spacing-scale-baseh, 0.75rem);
     }
 }
@@ -176,7 +181,7 @@ a.br-card:hover {
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: var(--color-secondary-04, #cccccc);
+            background-color: var(--color-secondary-04, #ccc);
             border-radius: 4px;
         }
     }
@@ -198,7 +203,7 @@ a.br-card:hover {
 
         &:hover {
             box-shadow: var(--surface-shadow-md, 0 3px 6px rgba(0, 0, 0, 0.16));
-            border-color: var(--color-secondary-04, #cccccc);
+            border-color: var(--color-secondary-04, #ccc);
         }
 
         .card-img-top {
@@ -208,7 +213,7 @@ a.br-card:hover {
 
         .coursename {
             font-weight: 600;
-            color: var(--color-secondary-08, #333333);
+            color: var(--color-secondary-08, #333);
             text-decoration: none;
 
             &:hover {
@@ -221,7 +226,7 @@ a.br-card:hover {
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--color-secondary-06, #888888);
+            color: var(--color-secondary-06, #888);
             font-weight: 500;
         }
 
@@ -244,13 +249,13 @@ a.br-card:hover {
     border-radius: var(--surface-rounder-md, 8px);
     border: 1px solid var(--color-secondary-03, #ededed);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
 
     .card-title {
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: 1rem; // 16px
         font-weight: 600;
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
     }
 }
 

@@ -52,7 +52,7 @@
             border-radius: var(--surface-rounder-pill, 999em);
             border: 1px solid transparent;
             background-color: transparent;
-            color: var(--color-secondary-08, #333333);
+            color: var(--color-secondary-08, #333);
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-size: var(--font-size-scale-base, 0.875rem); // 14px
             font-weight: var(--font-weight-medium, 500);
@@ -89,7 +89,7 @@
         .page-link[aria-current="page"] {
             background-color: var(--interactive, #1351b4);
             border-color: var(--interactive, #1351b4);
-            color: var(--color-secondary-01, #ffffff);
+            color: var(--color-secondary-01, #fff);
             font-weight: var(--font-weight-semi-bold, 600);
             pointer-events: none;
             cursor: default;
@@ -145,7 +145,7 @@
     margin: var(--spacing-scale-4x, 1.5rem) 0;
     font-family: var(--font-family-base, 'Rawline', sans-serif);
     font-size: var(--font-size-scale-base, 0.875rem);
-    color: var(--color-secondary-08, #333333);
+    color: var(--color-secondary-08, #333);
 
     &:empty {
         display: none;
@@ -185,7 +185,7 @@
         padding: 0 var(--spacing-scale-base, 0.5rem);
         border-radius: var(--surface-rounder-pill, 999em);
         background-color: var(--interactive, #1351b4);
-        color: var(--color-secondary-01, #ffffff);
+        color: var(--color-secondary-01, #fff);
         font-weight: var(--font-weight-semi-bold, 600);
     }
 }
@@ -199,7 +199,7 @@
     [data-region="paging-control-limit-container"] {
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-base, 0.875rem);
-        color: var(--color-secondary-08, #333333);
+        color: var(--color-secondary-08, #333);
 
         .btn {
             font-size: var(--font-size-scale-down-01, 0.75rem);

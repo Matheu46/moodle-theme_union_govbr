@@ -58,21 +58,21 @@
     --footer-assigns-width: 180px;
 
     --background-dark: var(--blue-warm-vivid-90, #071d41);
-    --color-dark: #ffffff;
+    --color-dark: #fff;
     --color-dark-rgb: 255, 255, 255;
     --interactive-dark: var(--blue-warm-20, #c5d4eb);
     --interactive-dark-rgb: 197, 212, 235;
-    --visited-dark: #cccccc;
+    --visited-dark: #ccc;
     --hover-dark: 0.25;
     --pressed-dark: 0.45;
     --focus-color-dark: #ffcd07;
 
-    --background-light: #ffffff;
-    --color-light: #333333;
+    --background-light: #fff;
+    --color-light: #333;
     --color-light-rgb: 51, 51, 51;
     --interactive-light: var(--blue-warm-vivid-70, #1351b4);
     --interactive-light-rgb: 19, 81, 180;
-    --visited-light: #555555;
+    --visited-light: #555;
     --hover-light: 0.16;
     --pressed-light: 0.35;
     --focus-color-light: #ffcd07;
@@ -90,15 +90,15 @@
     --focus: var(--focus-color-dark);
     --border-color: rgba(255, 255, 255, 0.15);
 
-    --hover-text-color: #ffffff;
+    --hover-text-color: #fff;
     --item-hover-bg: rgba(255, 255, 255, 0.1);
-    --item-hover-color: #ffffff;
-    --social-title-color: #ffffff;
+    --item-hover-color: #fff;
+    --social-title-color: #fff;
     --social-bg: transparent;
     --social-color: var(--interactive-dark);
     --social-hover-bg: rgba(255, 255, 255, 0.15);
-    --social-hover-color: #ffffff;
-    --info-color: #ffffff;
+    --social-hover-color: #fff;
+    --info-color: #fff;
     --technical-info-color: rgba(255, 255, 255, 0.85);
 
     background: var(--background);
@@ -152,7 +152,7 @@
         --social-hover-bg: rgba(0, 0, 0, 0.08);
         --social-hover-color: var(--interactive-light);
         --info-color: var(--color-light);
-        --technical-info-color: var(--color-secondary-07, #555555);
+        --technical-info-color: var(--color-secondary-07, #555);
 
         border-top: 1px solid var(--border-color);
     }

@@ -26,15 +26,15 @@
 // Gov.br Design System Custom Header (.br-header)
 // --------------------------------------------------------------------------
 .br-header {
-    --header-padding-small:   var(--spacing-scale-base, 8px);
-    --header-padding-medium:  var(--spacing-scale-2x, 16px);
-    --header-padding-large:   var(--spacing-scale-3x, 24px);
-    --header-padding:         var(--header-padding-medium);
-    --header-logo-size:       40px;
-    --header-title-size:      var(--font-size-scale-up-02, 1.25rem);
-    --header-subtitle-size:   var(--font-size-scale-base, 0.875rem);
+    --header-padding-small: var(--spacing-scale-base, 8px);
+    --header-padding-medium: var(--spacing-scale-2x, 16px);
+    --header-padding-large: var(--spacing-scale-3x, 24px);
+    --header-padding: var(--header-padding-medium);
+    --header-logo-size: 40px;
+    --header-title-size: var(--font-size-scale-up-02, 1.25rem);
+    --header-subtitle-size: var(--font-size-scale-base, 0.875rem);
 
-    background-color: var(--background-light, #ffffff);
+    background-color: var(--background-light, #fff);
     box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.16));
     display: flex;
     flex-direction: column;
@@ -73,7 +73,7 @@
         }
 
         .header-sign {
-            color: var(--color-light, #333333);
+            color: var(--color-light, #333);
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-size: var(--font-size-scale-base, 0.875rem);
             font-weight: var(--font-weight-medium, 500);
@@ -137,7 +137,7 @@
             flex-direction: column;
 
             .header-title {
-                color: var(--color-light, #333333);
+                color: var(--color-light, #333);
                 font-family: var(--font-family-base, 'Rawline', sans-serif);
                 font-size: var(--header-title-size);
                 font-weight: var(--font-weight-bold, 700);
@@ -146,7 +146,7 @@
             }
 
             .header-subtitle {
-                color: var(--color-secondary-07, #555555);
+                color: var(--color-secondary-07, #555);
                 font-family: var(--font-family-base, 'Rawline', sans-serif);
                 font-size: var(--header-subtitle-size);
                 font-weight: var(--font-weight-regular, 400);
@@ -174,7 +174,7 @@
                 border-color: transparent;
 
                 &:focus {
-                    background-color: var(--background-light, #ffffff);
+                    background-color: var(--background-light, #fff);
                     border-color: var(--focus, #ffcd07);
                     box-shadow: 0 0 0 2px var(--focus, #ffcd07);
                 }
@@ -216,7 +216,7 @@
 // Moodle Top Navbar Integration (.navbar.fixed-top)
 // --------------------------------------------------------------------------
 .navbar.fixed-top {
-    background-color: var(--background-light, #ffffff) !important;
+    background-color: var(--background-light, #fff) !important;
     border-bottom: 1px solid var(--color-secondary-03, #ededed);
     box-shadow: var(--surface-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.16));
     min-height: 72px;
@@ -229,7 +229,7 @@
         display: flex;
         align-items: center;
         gap: var(--spacing-scale-baseh, 0.75rem);
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         text-decoration: none;
 
@@ -243,7 +243,7 @@
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-size: 1.125rem;
             font-weight: 600;
-            color: var(--color-light, #333333);
+            color: var(--color-light, #333);
             letter-spacing: -0.01em;
         }
 
@@ -261,7 +261,7 @@
         }
 
         .nav-link {
-            color: var(--color-light, #333333);
+            color: var(--color-light, #333);
             font-family: var(--font-family-base, 'Rawline', sans-serif);
             font-size: var(--font-size-scale-base, 0.875rem);
             font-weight: var(--font-weight-medium, 500);
@@ -344,13 +344,13 @@
 
                 &::after {
                     right: 11px;
-                    border-bottom-color: var(--background-light, #ffffff);
+                    border-bottom-color: var(--background-light, #fff);
                 }
             }
 
             .count-container {
                 background-color: var(--danger, #e52207);
-                color: #ffffff;
+                color: #fff;
                 font-family: var(--font-family-base, 'Rawline', sans-serif);
                 font-size: 0.6875rem;
                 font-weight: 700;
@@ -364,7 +364,7 @@
             .popover-region-container {
                 top: 100%;
                 margin-top: 0;
-                background-color: var(--background-light, #ffffff);
+                background-color: var(--background-light, #fff);
                 border: 1px solid var(--color-secondary-03, #ededed);
                 border-radius: var(--surface-rounder-md, 8px);
                 box-shadow: var(--surface-shadow-lg, 0 6px 12px rgba(0, 0, 0, 0.16));
@@ -372,14 +372,14 @@
 
                 .popover-region-header-container {
                     align-items: center;
-                    background-color: var(--background-light, #ffffff);
+                    background-color: var(--background-light, #fff);
                     border-bottom: 1px solid var(--color-secondary-03, #ededed);
                     display: flex;
                     justify-content: space-between;
                     padding: 0 var(--spacing-scale-2x, 1rem);
 
                     .popover-region-header-text {
-                        color: var(--color-light, #333333);
+                        color: var(--color-light, #333);
                         font-family: var(--font-family-base, 'Rawline', sans-serif);
                         font-size: var(--font-size-scale-base, 0.875rem);
                         font-weight: var(--font-weight-semi-bold, 600);
@@ -396,7 +396,7 @@
                         button {
                             align-items: center;
                             border-radius: 50%;
-                            color: var(--color-secondary-07, #555555);
+                            color: var(--color-secondary-07, #555);
                             display: inline-flex;
                             height: 28px;
                             justify-content: center;
@@ -458,7 +458,7 @@
                                 }
 
                                 .notification-message {
-                                    color: var(--color-light, #333333);
+                                    color: var(--color-light, #333);
                                     font-size: 0.8125rem;
                                     line-height: 1.4;
                                 }
@@ -466,7 +466,7 @@
 
                             .content-item-footer {
                                 .timestamp {
-                                    color: var(--color-secondary-07, #555555);
+                                    color: var(--color-secondary-07, #555);
                                     font-size: 0.6875rem;
                                 }
                             }
@@ -484,7 +484,7 @@
                         }
 
                         .empty-message {
-                            color: var(--color-secondary-07, #555555);
+                            color: var(--color-secondary-07, #555);
                             font-family: var(--font-family-base, 'Rawline', sans-serif);
                             font-size: var(--font-size-scale-base, 0.875rem);
                             padding: var(--spacing-scale-5x, 2.5rem) var(--spacing-scale-2x, 1rem);
@@ -588,7 +588,7 @@
                 font-family: var(--font-family-base, 'Rawline', sans-serif);
                 font-size: var(--font-size-scale-base, 0.875rem);
                 font-weight: var(--font-weight-medium, 500);
-                color: var(--color-light, #333333);
+                color: var(--color-light, #333);
             }
         }
 
@@ -604,7 +604,7 @@
                 font-family: var(--font-family-base, 'Rawline', sans-serif);
                 font-size: var(--font-size-scale-base, 0.875rem);
                 font-weight: var(--font-weight-regular, 400);
-                color: var(--color-light, #333333);
+                color: var(--color-light, #333);
                 padding: var(--spacing-scale-base, 0.5rem) var(--spacing-scale-2xh, 1.25rem);
                 display: flex;
                 align-items: center;
@@ -642,7 +642,7 @@
                 font-size: 0.875rem;
 
                 &:focus {
-                    background-color: var(--background-light, #ffffff);
+                    background-color: var(--background-light, #fff);
                     border-color: var(--focus, #ffcd07);
                     box-shadow: 0 0 0 2px var(--focus, #ffcd07);
                 }
@@ -682,7 +682,7 @@
         font-family: var(--font-family-base, 'Rawline', sans-serif);
         font-size: var(--font-size-scale-up-03, 1.5rem);
         font-weight: var(--font-weight-bold, 700);
-        color: var(--color-light, #333333);
+        color: var(--color-light, #333);
         line-height: 1.25;
         margin-bottom: var(--spacing-scale-half, 0.25rem);
     }
@@ -701,7 +701,7 @@
     // Welcome message
     .welcome-message {
         font-family: var(--font-family-base, 'Rawline', sans-serif);
-        color: var(--color-secondary-07, #555555);
+        color: var(--color-secondary-07, #555);
         font-size: var(--font-size-scale-base, 0.875rem);
     }
 }
