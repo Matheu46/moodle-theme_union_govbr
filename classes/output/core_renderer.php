@@ -286,8 +286,8 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
         $context = [
             'errormessage' => $custommessage,
             'homeurl' => (new moodle_url('/'))->out(),
-            'homelabel' => get_string('error_btn_home', 'theme_union_govbr'),
-            'backlabel' => get_string('error_btn_back', 'theme_union_govbr'),
+            'homelabel' => get_string('home', 'core'),
+            'backlabel' => get_string('back', 'core'),
             'continuelink' => (!empty($link) && !empty($CFG->rolesactive)) ? (string)$link : null,
             'hasdebug' => !empty($CFG->debugdeveloper),
         ];
@@ -308,7 +308,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
             // If user is not logged in or is guest, offer login button.
             if (!isloggedin() || isguestuser()) {
                 $context['loginurl'] = get_login_url();
-                $context['loginlabel'] = get_string('error_btn_login', 'theme_union_govbr');
+                $context['loginlabel'] = get_string('login', 'core');
             }
         } else {
             $context['illustrationurl'] = $this->image_url('illustrations/error/general_error', 'theme')->out();

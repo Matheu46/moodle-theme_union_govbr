@@ -24,13 +24,13 @@
         "illustrationurl": "http://example.com/theme/image.php?image=illustrations/error/404",
         "badgeclass": "badge-govbr-404",
         "errorbadge": "Erro 404",
-        "errortitle": "Página não encontrada",
-        "errordescription": "O endereço que você tentou acessar não foi encontrado.",
+        "errortitle": "Page not found",
+        "errordescription": "The address you tried to access was not found.",
         "errormessage": "",
         "homeurl": "http://example.com/",
-        "homelabel": "Página Inicial",
+        "homelabel": "Home",
         "backurl": "javascript:history.back()",
-        "backlabel": "Voltar",
+        "backlabel": "Back",
         "hasdebug": false
     }
 }}
@@ -86,7 +86,7 @@
                         <div class="mb-2"><strong>{{#str}} error_debug_code, theme_union_govbr {{/str}}:</strong> <code>{{debugdata.errorcode}}</code></div>
                     {{/debugdata.errorcode}}
                     {{#debugdata.moreinfourl}}
-                        <div class="mb-2"><strong>{{#str}} error_debug_moreinfo, theme_union_govbr {{/str}}:</strong> <a href="{{{debugdata.moreinfourl}}}" target="_blank" rel="noopener noreferrer">{{debugdata.moreinfourl}}</a></div>
+                        <div class="mb-2"><strong>{{#str}} moreinformation, core {{/str}}:</strong> <a href="{{{debugdata.moreinfourl}}}" target="_blank" rel="noopener noreferrer">{{debugdata.moreinfourl}}</a></div>
                     {{/debugdata.moreinfourl}}
                     {{#debugdata.debuginfo}}
                         <div class="mb-2"><strong>Debug info:</strong> <pre class="bg-light p-2 rounded mt-1 mb-0">{{{debugdata.debuginfo}}}</pre></div>
