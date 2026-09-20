@@ -1,6 +1,5 @@
 # Theme Union Gov.br (`theme_union_govbr`)
 
-[![Moodle Plugin](https://img.shields.io/badge/moodle-4.1%20to%205.x-orange.svg)](https://moodle.org/plugins/theme_union_govbr)
 [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0.html)
 
 **Theme Union Gov.br** is a Moodle child theme based on the widely adopted [**Boost Union**](https://moodle.org/plugins/theme_boost_union) theme. It is specifically designed to adapt Moodle to the Brazilian Federal Government's official design standard: the **[GovBR Design System (GovBR DS)](https://gov.br/ds)**.
