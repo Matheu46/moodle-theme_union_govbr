@@ -1,0 +1,14 @@
+# Ignore development files and directories from git archive (e.g., zip releases)
+/.camp export-ignore
+/.codex export-ignore
+/.github export-ignore
+/.gitignore export-ignore
+/.gitattributes export-ignore
+/.prompts export-ignore
+/AGENTS.md export-ignore
+/phpunit.xml export-ignore
+/tests export-ignore
+
+# Ignore all language packs from the release zip except English
+/lang/* export-ignore
+/lang/en -export-ignore
