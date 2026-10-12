@@ -24,10 +24,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version      = 2026091704;
+$plugin->version      = 2026101200;
 $plugin->requires     = 2025041400; // Moodle 5.0.
 $plugin->component    = 'theme_union_govbr';
-$plugin->release      = 'v1.0.0';
+$plugin->release      = 'v1.0.1';
 $plugin->maturity     = MATURITY_STABLE;
 $plugin->dependencies = [
     'theme_boost_union' => 2024041600,
