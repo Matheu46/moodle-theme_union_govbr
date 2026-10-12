@@ -185,7 +185,7 @@ function theme_union_govbr_get_main_scss_content($theme) {
     $barragovbrfile = __DIR__ . '/scss/barragovbr.scss';
     if (file_exists($barragovbrfile)) {
         $enabled = get_config('theme_union_govbr', 'enablebarragovbr');
-        if ($enabled === false || !empty($enabled)) {
+        if (!empty($enabled)) {
             $scss .= "\n" . file_get_contents($barragovbrfile);
         }
     }

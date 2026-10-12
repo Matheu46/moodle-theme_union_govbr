@@ -64,7 +64,7 @@ Theme settings can be managed at:
 ### Top Identity Bar (`Barra Gov.br`)
 | Setting | Description | Default |
 | :--- | :--- | :--- |
-| **Enable Gov.br Bar** (`enablebarragovbr`) | Toggles the top Gov.br identity bar on or off. | Enabled (`1`) |
+| **Enable Gov.br Bar** (`enablebarragovbr`) | Toggles the top Gov.br identity bar on or off. | Disabled (`0`) |
 | **Header Signature Text** (`govbr_header_sign`) | Text displayed beside the logo (e.g. "Governo Federal", "Ministério da Educação"). | `Governo Federal` |
 | **Gov.br Bar Links** (`govbr_header_links`) | Links displayed on the right side of the bar formatted as `Title\|URL` (one per line). | Standard Gov.br portal links |
 | **Bar Background** (`govbr_header_background`) | Color scheme: Light (*default*) or Dark (*official Gov.br navy blue*). | `light` |

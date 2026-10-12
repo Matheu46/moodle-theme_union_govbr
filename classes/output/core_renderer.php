@@ -384,7 +384,7 @@ class core_renderer extends \theme_boost_union\output\core_renderer {
         $html = parent::standard_top_of_body_html();
 
         $enabled = get_config('theme_union_govbr', 'enablebarragovbr');
-        if ($enabled === false || !empty($enabled)) {
+        if (!empty($enabled)) {
             $headersign = get_config('theme_union_govbr', 'govbr_header_sign');
             if ($headersign === false) {
                 $headersign = 'Governo Federal';

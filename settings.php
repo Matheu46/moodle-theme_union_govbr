@@ -31,7 +31,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_union_govbr/enablebarragovbr';
     $title = get_string('enablebarragovbr', 'theme_union_govbr');
     $description = get_string('enablebarragovbr_desc', 'theme_union_govbr');
-    $default = 1;
+    $default = 0;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
