@@ -235,10 +235,13 @@ function theme_union_govbr_get_pre_scss($theme) {
 
     require_once($CFG->dirroot . '/theme/boost_union/lib.php');
 
-    $scss = '';
+    // Start with Boost Union's pre SCSS.
+    $scss = theme_boost_union_get_pre_scss($theme);
+
+    // Append Union Gov.br's pre SCSS (variables, font definitions).
     $prefile = __DIR__ . '/scss/pre.scss';
     if (file_exists($prefile)) {
-        $scss .= file_get_contents($prefile);
+        $scss .= "\n" . file_get_contents($prefile);
     }
     return $scss;
 }
@@ -254,7 +257,9 @@ function theme_union_govbr_get_extra_scss($theme) {
 
     require_once($CFG->dirroot . '/theme/boost_union/lib.php');
 
-    $scss = '';
+    // Start with Boost Union's extra SCSS.
+    $scss = theme_boost_union_get_extra_scss($theme);
+
     return $scss;
 }
 

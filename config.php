@@ -25,8 +25,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 // Inherit the whole theme config from Boost Union (layouts, regions, etc.).
+// Use require (not require_once) to guarantee all settings are added even if config was previously included.
 // phpcs:ignore moodle.Files.RequireLogin.Missing
-require_once($CFG->dirroot . '/theme/boost_union/config.php');
+require($CFG->dirroot . '/theme/boost_union/config.php');
 
 // Require own locallib.php.
 require_once($CFG->dirroot . '/theme/union_govbr/locallib.php');
