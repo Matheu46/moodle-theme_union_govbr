@@ -89,13 +89,13 @@
                         <div class="mb-2"><strong>{{#str}} moreinformation, core {{/str}}:</strong> <a href="{{{debugdata.moreinfourl}}}" target="_blank" rel="noopener noreferrer">{{debugdata.moreinfourl}}</a></div>
                     {{/debugdata.moreinfourl}}
                     {{#debugdata.debuginfo}}
-                        <div class="mb-2"><strong>Debug info:</strong> <pre class="bg-light p-2 rounded mt-1 mb-0">{{{debugdata.debuginfo}}}</pre></div>
+                        <div class="mb-2"><strong>{{#str}} error_debug_info, theme_union_govbr {{/str}}:</strong> <pre class="bg-light p-2 rounded mt-1 mb-0">{{{debugdata.debuginfo}}}</pre></div>
                     {{/debugdata.debuginfo}}
                     {{#debugdata.backtrace}}
-                        <div class="mb-2"><strong>Stack trace:</strong> <div class="bg-light p-2 rounded mt-1">{{{debugdata.backtrace}}}</div></div>
+                        <div class="mb-2"><strong>{{#str}} error_debug_stacktrace, theme_union_govbr {{/str}}:</strong> <div class="bg-light p-2 rounded mt-1">{{{debugdata.backtrace}}}</div></div>
                     {{/debugdata.backtrace}}
                     {{#debugdata.obbuffer}}
-                        <div class="mb-2"><strong>Output buffer:</strong> <pre class="bg-light p-2 rounded mt-1 mb-0">{{debugdata.obbuffer}}</pre></div>
+                        <div class="mb-2"><strong>{{#str}} error_debug_outputbuffer, theme_union_govbr {{/str}}:</strong> <pre class="bg-light p-2 rounded mt-1 mb-0">{{debugdata.obbuffer}}</pre></div>
                     {{/debugdata.obbuffer}}
                 </div>
             </details>
