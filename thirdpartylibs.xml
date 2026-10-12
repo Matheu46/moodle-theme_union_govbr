@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<libraries>
+  <library>
+    <location>fonts/rawline</location>
+    <name>Rawline</name>
+    <description>Rawline is an open-source sans-serif font family by Henrique Ibaldo based on Raleway with lining numbers, used by the Brazilian Gov.br Design System.</description>
+    <version>1.0.0</version>
+    <license>OFL</license>
+    <licenseversion>1.1</licenseversion>
+    <repository>https://github.com/h-ibaldo/Raleway_Fixed_Numerals</repository>
+    <copyrights>
+      <copyright>2010 - 2013 Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida</copyright>
+      <copyright>2016 Henrique Ibaldo</copyright>
+    </copyrights>
+  </library>
+</libraries>
+
